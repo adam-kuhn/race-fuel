@@ -17,7 +17,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Nutrition Tracker</h2>
-        <button type='button' onClick={this.showFuelList}>Fuel List</button>
+        <button type='button' onClick={this.showFuelList}>Input Fuel</button>
         {this.props.showFuelList && <FuelList />}
       </div>
     )
