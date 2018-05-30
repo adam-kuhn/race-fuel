@@ -1,4 +1,4 @@
-import {SHOW_FUEL_LIST} from '../actions'
+import {SETLIST, SHOW_FUEL_LIST} from '../actions'
 const initialState = {
   showFuelList: false
 }
@@ -9,6 +9,12 @@ function display (state = initialState, action) {
       return {
         ...state,
         showFuelList: true
+      }
+    }
+    case (SETLIST): {
+      return {
+        ...state,
+        showFuelList: false
       }
     }
     default: {
