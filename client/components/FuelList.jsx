@@ -1,4 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
+import {setList} from '../actions'
 
 class FuelList extends React.Component {
   constructor () {
@@ -32,6 +35,9 @@ class FuelList extends React.Component {
       [e.target.name]: newValue
     })
   }
+  componentWillUnmount () {
+    this.props.dispatch(setList(this.state))
+  }
 
   render () {
     return (
@@ -61,4 +67,4 @@ class FuelList extends React.Component {
   }
 }
 
-export default FuelList
+export default connect()(FuelList)

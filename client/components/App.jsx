@@ -1,13 +1,33 @@
 import React from 'react'
-import FuelList from './FuelList'
+import {connect} from 'react-redux'
 
-const App = () => {
-  return (
-    <div>
-      <h2>React and Redux development is ready to GOOOO!</h2>
-      <FuelList />
-    </div>
-  )
+import FuelList from './FuelList'
+import {showFuelList} from '../actions'
+
+class App extends React.Component {
+  constructor () {
+    super()
+    this.showFuelList = this.showFuelList.bind(this)
+  }
+
+  showFuelList () {
+    this.props.dispatch(showFuelList())
+  }
+  render () {
+    return (
+      <div>
+        <h2>Nutrition Tracker</h2>
+        <button type='button' onClick={this.showFuelList}>Fuel List</button>
+        {this.props.showFuelList && <FuelList />}
+      </div>
+    )
+  }
 }
 
-export default App
+function mapStateToProps (state) {
+  return {
+    showFuelList: state.display.showFuelList
+  }
+}
+
+export default connect(mapStateToProps)(App)

@@ -1,7 +1,14 @@
-export const EXAMPLE = 'EXAMPLE'
+export const SETLIST = 'SETLIST'
+export const SHOW_FUEL_LIST = 'SHOW_FUEL_LIST'
 
-export const example = () => {
+export const showFuelList = () => {
   return {
-    type: EXAMPLE
+    type: SHOW_FUEL_LIST
+  }
+}
+export const setList = (fuel) => {
+  return {
+    type: SETLIST,
+    fuel
   }
 }
