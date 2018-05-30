@@ -41,6 +41,21 @@ class FuelList extends React.Component {
           <button type='button' name='gu' onClick={this.plusOne}>+</button>
           <button type='button' name='gu' onClick={this.minusOne}>-</button>
         </li>
+        <li>ClifBar
+          <input value={this.state.clifbar} name='clifbar' onChange={this.handleChange} />
+          <button type='button' name='clifbar' onClick={this.plusOne}>+</button>
+          <button type='button' name='clifbar' onClick={this.minusOne}>-</button>
+        </li>
+        <li>Power Balls
+          <input value={this.state.balls} name='balls' onChange={this.handleChange} />
+          <button type='button' name='balls' onClick={this.plusOne}>+</button>
+          <button type='button' name='balls' onClick={this.minusOne}>-</button>
+        </li>
+        <li>Peanut Butter and Jelly
+          <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
+          <button type='button' name='pbj' onClick={this.plusOne}>+</button>
+          <button type='button' name='pbj' onClick={this.minusOne}>-</button>
+        </li>
       </ul>
     )
   }
