@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 
 import FuelList from './FuelList'
 import LiveList from './LiveList'
+import Lap from './Lap'
+
 import {showFuelList} from '../actions'
 
 class App extends React.Component {
@@ -21,6 +23,7 @@ class App extends React.Component {
         <button type='button' onClick={this.showFuelList}>Input Fuel</button>
         {this.props.showFuelList && <FuelList />}
         <LiveList />
+        <Lap />
       </div>
     )
   }

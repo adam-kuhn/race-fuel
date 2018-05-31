@@ -1,4 +1,4 @@
-import {SETLIST} from '../actions'
+import {SETLIST, NEXT_LAP} from '../actions'
 const initialState = {
   gu: 0,
   clifbar: 0,
@@ -15,6 +15,12 @@ function fuelList (state = initialState, action) {
         balls: action.fuel.balls,
         pbj: action.fuel.pbj
       }
+    }
+    case (NEXT_LAP): {
+      for (let fuel in action.lapFuel) {
+        action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
+      }
+      return action.fuelList
     }
     default: {
       return state
