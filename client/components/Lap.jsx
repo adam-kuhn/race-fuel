@@ -19,28 +19,38 @@ class Lap extends React.Component {
 
   handleChange (e) {
     const {gu, clifbar, balls, pbj} = this.state
-    const amountSelected = gu + clifbar + balls + pbj
-    const previousCal = this.state.calories
-    // let updateCal = 0
-    // if (e.target.name === 'gu') {
-    //   updateCal += (e.target.value * 100)
-    // }
-    // if (e.target.name === 'clifbar') {
-    //   updateCal += (e.target.value * 50)
-    // }
-    // if (e.target.name === 'balls') {
-    //   updateCal += (e.target.value * 23)
-    // }
-    const itemsCal = e.target.getAttribute('data-cal')
-    const calories = itemsCal * e.target.value
+    const guCal = gu * 100
+    const clifCal = clifbar * 50
+    const ballCal = balls * 23
+    const pbjCal = pbj * 222
+    let totalCal = 0
+    if (e.target.name === 'gu') {
+      totalCal = (e.target.value * 100) + clifCal + ballCal + pbjCal
+    }
+    if (e.target.name === 'clifbar') {
+      totalCal = (e.target.value * 50) + guCal + ballCal + pbjCal
+    }
+    if (e.target.name === 'balls') {
+      totalCal = (e.target.value * 23) + guCal + clifCal + pbjCal
+    }
+    if (e.target.name === 'pbj') {
+      totalCal = (e.target.value * 222) + guCal + clifCal + ballCal
+    }
     this.setState({
       [e.target.name]: Number(e.target.value),
-      calories: previousCal + calories
+      calories: totalCal
     })
   }
 
   submitLap () {
     this.props.dispatch(nextLap(this.props.lap, this.state))
+    this.setState({
+      gu: 0,
+      clifbar: 0,
+      balls: 0,
+      pbj: 0,
+      calories: 0
+    })
   }
 
   render () {
