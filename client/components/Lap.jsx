@@ -23,7 +23,7 @@ class Lap extends React.Component {
   }
 
   submitLap () {
-    this.props.dispatch(nextLap(this.props.lap))
+    this.props.dispatch(nextLap(this.props.lap, this.state))
   }
 
   render () {
