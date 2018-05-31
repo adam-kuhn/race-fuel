@@ -1,4 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
+import {setList} from '../actions'
 
 class FuelList extends React.Component {
   constructor () {
@@ -12,6 +15,7 @@ class FuelList extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.plusOne = this.plusOne.bind(this)
     this.minusOne = this.minusOne.bind(this)
+    this.closeList = this.closeList.bind(this)
   }
   handleChange (e) {
     this.setState({
@@ -32,33 +36,39 @@ class FuelList extends React.Component {
       [e.target.name]: newValue
     })
   }
+  closeList () {
+    this.props.dispatch(setList(this.state))
+  }
 
   render () {
     return (
-      <ul>
-        <li>Gu
-          <input value={this.state.gu} name='gu' onChange={this.handleChange} />
-          <button type='button' name='gu' onClick={this.plusOne}>+</button>
-          <button type='button' name='gu' onClick={this.minusOne}>-</button>
-        </li>
-        <li>ClifBar
-          <input value={this.state.clifbar} name='clifbar' onChange={this.handleChange} />
-          <button type='button' name='clifbar' onClick={this.plusOne}>+</button>
-          <button type='button' name='clifbar' onClick={this.minusOne}>-</button>
-        </li>
-        <li>Power Balls
-          <input value={this.state.balls} name='balls' onChange={this.handleChange} />
-          <button type='button' name='balls' onClick={this.plusOne}>+</button>
-          <button type='button' name='balls' onClick={this.minusOne}>-</button>
-        </li>
-        <li>Peanut Butter and Jelly
-          <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
-          <button type='button' name='pbj' onClick={this.plusOne}>+</button>
-          <button type='button' name='pbj' onClick={this.minusOne}>-</button>
-        </li>
-      </ul>
+      <div>
+        <button type='button' onClick={this.closeList}>Close Input</button>
+        <ul>
+          <li>Gu
+            <input value={this.state.gu} name='gu' onChange={this.handleChange} />
+            <button type='button' name='gu' onClick={this.plusOne}>+</button>
+            <button type='button' name='gu' onClick={this.minusOne}>-</button>
+          </li>
+          <li>ClifBar
+            <input value={this.state.clifbar} name='clifbar' onChange={this.handleChange} />
+            <button type='button' name='clifbar' onClick={this.plusOne}>+</button>
+            <button type='button' name='clifbar' onClick={this.minusOne}>-</button>
+          </li>
+          <li>Power Balls
+            <input value={this.state.balls} name='balls' onChange={this.handleChange} />
+            <button type='button' name='balls' onClick={this.plusOne}>+</button>
+            <button type='button' name='balls' onClick={this.minusOne}>-</button>
+          </li>
+          <li>Peanut Butter and Jelly
+            <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
+            <button type='button' name='pbj' onClick={this.plusOne}>+</button>
+            <button type='button' name='pbj' onClick={this.minusOne}>-</button>
+          </li>
+        </ul>
+      </div>
     )
   }
 }
 
-export default FuelList
+export default connect()(FuelList)
