@@ -1,5 +1,10 @@
 import {SETLIST} from '../actions'
-const initialState = {}
+const initialState = {
+  gu: 0,
+  clifbar: 0,
+  balls: 0,
+  pbj: 0
+}
 
 function fuelList (state = initialState, action) {
   switch (action.type) {
