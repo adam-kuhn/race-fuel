@@ -43,7 +43,7 @@ class FuelList extends React.Component {
   render () {
     return (
       <div>
-        <button type='button' onClick={this.closeList}>Close Input</button>
+        <button type='button' onClick={this.closeList}>Submit Fuel List</button>
         <ul>
           <li>Gu
             <input value={this.state.gu} name='gu' onChange={this.handleChange} />
