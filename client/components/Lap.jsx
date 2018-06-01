@@ -11,7 +11,8 @@ class Lap extends React.Component {
       clifbar: 0,
       balls: 0,
       pbj: 0,
-      calories: 0
+      calories: 0,
+      water: 0
     }
     this.handleChange = this.handleChange.bind(this)
     this.submitLap = this.submitLap.bind(this)
@@ -36,6 +37,9 @@ class Lap extends React.Component {
     if (e.target.name === 'pbj') {
       totalCal = (e.target.value * 222) + guCal + clifCal + ballCal
     }
+    if (e.target.name === 'water') {
+      totalCal = guCal + clifCal + ballCal + pbjCal
+    }
     this.setState({
       [e.target.name]: Number(e.target.value),
       calories: totalCal
@@ -49,7 +53,8 @@ class Lap extends React.Component {
       clifbar: 0,
       balls: 0,
       pbj: 0,
-      calories: 0
+      calories: 0,
+      water: 0
     })
   }
 
@@ -71,6 +76,9 @@ class Lap extends React.Component {
           </li>
           <li>Peanut Butter and Jelly Sandwich (1/2)
             <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
+          </li>
+          <li>Water (mL)
+            <input value={this.state.water} name='water' onChange={this.handleChange} />
           </li>
         </ul>
         <h3>Calories {this.state.calories}</h3>

@@ -5,7 +5,8 @@ const initialState = {
   clifbar: 0,
   gu: 0,
   pbj: 0,
-  balls: 0
+  balls: 0,
+  water: 0
 }
 
 function totals (state = initialState, action) {

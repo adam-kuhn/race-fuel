@@ -4,7 +4,8 @@ const initialState = {
   clifbar: 0,
   balls: 0,
   pbj: 0,
-  calories: 0
+  calories: 0,
+  water: 0
 }
 
 function fuelList (state = initialState, action) {
@@ -15,7 +16,8 @@ function fuelList (state = initialState, action) {
         gu: action.fuel.gu,
         clifbar: action.fuel.clifbar,
         balls: action.fuel.balls,
-        pbj: action.fuel.pbj
+        pbj: action.fuel.pbj,
+        water: action.fuel.water
       }
     }
     case (NEXT_LAP): {
