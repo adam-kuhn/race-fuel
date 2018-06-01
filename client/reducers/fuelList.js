@@ -22,11 +22,6 @@ function fuelList (state = initialState, action) {
     }
     case (NEXT_LAP): {
       for (let fuel in action.lapFuel) {
-        // if (fuel === 'calories') {
-        //   action.fuelList[fuel] = action.fuelList[fuel] + action.lapFuel[fuel]
-        // } else {
-        //   action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
-        // }
         action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
       }
 
