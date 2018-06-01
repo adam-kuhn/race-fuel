@@ -1,6 +1,7 @@
 export const SETLIST = 'SETLIST'
 export const SHOW_FUEL_LIST = 'SHOW_FUEL_LIST'
 export const NEXT_LAP = 'NEXT_LAP'
+export const TOTALS = 'TOTALS'
 
 export const showFuelList = () => {
   return {

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import FuelList from './FuelList'
 import LiveList from './LiveList'
 import Lap from './Lap'
+import Totals from './Totals'
 
 import {showFuelList} from '../actions'
 
@@ -24,6 +25,7 @@ class App extends React.Component {
         {this.props.showFuelList && <FuelList />}
         <LiveList />
         <Lap />
+        <Totals />
       </div>
     )
   }
