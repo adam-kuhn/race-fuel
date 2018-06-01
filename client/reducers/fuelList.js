@@ -3,7 +3,8 @@ const initialState = {
   gu: 0,
   clifbar: 0,
   balls: 0,
-  pbj: 0
+  pbj: 0,
+  calories: 0
 }
 
 function fuelList (state = initialState, action) {
@@ -18,7 +19,11 @@ function fuelList (state = initialState, action) {
     }
     case (NEXT_LAP): {
       for (let fuel in action.lapFuel) {
-        action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
+        if (fuel === 'calories') {
+          action.fuelList[fuel] = action.fuelList[fuel] + action.lapFuel[fuel]
+        } else {
+          action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
+        }
       }
       return action.fuelList
     }
