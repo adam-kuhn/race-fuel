@@ -19,7 +19,7 @@ class Totals extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    calories: state.totals.calories,
+    calories: state.fuelList.calories,
     water: state.totals.water,
     clifbar: state.totals.clifbar,
     gu: state.totals.gu,
