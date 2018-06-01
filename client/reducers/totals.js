@@ -9,7 +9,6 @@ const initialState = {
 }
 
 function totals (state = initialState, action) {
-  console.log(action.totals)
   switch (action.type) {
     case (NEXT_LAP): {
       for (let fuel in action.lapFuel) {
