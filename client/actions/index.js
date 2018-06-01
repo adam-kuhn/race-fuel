@@ -13,17 +13,18 @@ export const setList = (fuel) => {
     fuel
   }
 }
-export const update = (lap, lapFuel, fuelList) => {
+export const update = (lap, lapFuel, fuelList, totals) => {
   return {
     type: NEXT_LAP,
     lap,
     lapFuel,
-    fuelList
+    fuelList,
+    totals
   }
 }
 export const nextLap = (lap, lapFuel) => {
   return (dispatch, getState) => {
     const state = getState()
-    dispatch(update(lap, lapFuel, state.fuelList))
+    dispatch(update(lap, lapFuel, state.fuelList, state.totals))
   }
 }
