@@ -9,7 +9,7 @@ class LiveList extends React.Component {
         <li>ClifBar {this.props.clifbar}</li>
         <li>Power Balls {this.props.balls}</li>
         <li>Peanut Butter Jelly {this.props.pbj}</li>
-        <li>Water {this.props.water}</li>
+        <li>Water {this.props.water} L</li>
       </ul>
     )
   }

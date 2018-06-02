@@ -11,7 +11,7 @@ class Totals extends React.Component {
         <p>ClifBars eaten {this.props.clifbar}</p>
         <p>Power Balls eaten {this.props.balls}</p>
         <p>Peanut Butter and Jelly Sandwiches eaten {this.props.pbj}</p>
-        <p>Water drank {this.props.water} ml</p>
+        <p>Water drank {this.props.water} L</p>
       </div>
     )
   }
