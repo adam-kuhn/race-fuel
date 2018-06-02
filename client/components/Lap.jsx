@@ -21,21 +21,22 @@ class Lap extends React.Component {
   handleChange (e) {
     const {gu, clifbar, balls, pbj} = this.state
     const guCal = gu * 100
-    const clifCal = clifbar * 50
+    const clifCal = clifbar * 135
     const ballCal = balls * 23
-    const pbjCal = pbj * 222
+    const pbjCal = pbj * 100
     let totalCal = 0
+
     if (e.target.name === 'gu') {
       totalCal = (e.target.value * 100) + clifCal + ballCal + pbjCal
     }
     if (e.target.name === 'clifbar') {
-      totalCal = (e.target.value * 50) + guCal + ballCal + pbjCal
+      totalCal = (e.target.value * 135) + guCal + ballCal + pbjCal
     }
     if (e.target.name === 'balls') {
-      totalCal = (e.target.value * 23) + guCal + clifCal + pbjCal
+      totalCal = (e.target.value * 110) + guCal + clifCal + pbjCal
     }
     if (e.target.name === 'pbj') {
-      totalCal = (e.target.value * 222) + guCal + clifCal + ballCal
+      totalCal = (e.target.value * 100) + guCal + clifCal + ballCal
     }
     if (e.target.name === 'water') {
       totalCal = guCal + clifCal + ballCal + pbjCal
@@ -66,7 +67,7 @@ class Lap extends React.Component {
         <p>Values below are ~100 calories each</p>
         <ul>
           <li>Gu (1 gel)
-            <input value={this.state.gu} name='gu' onChange={this.handleChange} data-cal={100} />
+            <input value={this.state.gu} name='gu' onChange={this.handleChange}/>
           </li>
           <li>ClifBar (1/2)
             <input value={this.state.clifbar} name='clifbar' onChange={this.handleChange} />
