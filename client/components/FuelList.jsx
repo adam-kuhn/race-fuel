@@ -11,6 +11,7 @@ class FuelList extends React.Component {
       clifbar: 0,
       balls: 0,
       pbj: 0,
+      banana: 0,
       water: 0
     }
     this.handleChange = this.handleChange.bind(this)
@@ -65,6 +66,11 @@ class FuelList extends React.Component {
             <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
             <button type='button' name='pbj' onClick={this.plusOne}>+</button>
             <button type='button' name='pbj' onClick={this.minusOne}>-</button>
+          </li>
+          <li>Banana
+            <input value={this.state.banana} name='banana' onChange={this.handleChange} />
+            <button type='button' name='banana' onClick={this.plusOne}>+</button>
+            <button type='button' name='banana' onClick={this.minusOne}>-</button>
           </li>
           <li>Water
             <input value={this.state.water} name='water' onChange={this.handleChange} />

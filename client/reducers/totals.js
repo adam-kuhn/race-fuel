@@ -6,6 +6,7 @@ const initialState = {
   gu: 0,
   pbj: 0,
   balls: 0,
+  banana: 0,
   water: 0
 }
 

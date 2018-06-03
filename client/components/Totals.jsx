@@ -11,6 +11,7 @@ class Totals extends React.Component {
         <p>ClifBars eaten {this.props.clifbar}</p>
         <p>Power Balls eaten {this.props.balls}</p>
         <p>Peanut Butter and Jelly Sandwiches eaten {this.props.pbj}</p>
+        <p>Banana eaten {this.props.banana} </p>
         <p>Water drank {this.props.water} L</p>
       </div>
     )
@@ -24,7 +25,8 @@ function mapStateToProps (state) {
     gu: state.totals.gu,
     pbj: state.totals.pbj,
     balls: state.totals.balls,
-    water: state.totals.water
+    water: state.totals.water,
+    banana: state.totals.banana
   }
 }
 

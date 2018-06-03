@@ -11,6 +11,7 @@ class Lap extends React.Component {
       clifbar: 0,
       balls: 0,
       pbj: 0,
+      banana: 0,
       calories: 0,
       water: 0
     }
@@ -19,27 +20,31 @@ class Lap extends React.Component {
   }
 
   handleChange (e) {
-    const {gu, clifbar, balls, pbj} = this.state
+    const {gu, clifbar, balls, pbj, banana} = this.state
     const guCal = gu * 100
     const clifCal = clifbar * 135
     const ballCal = balls * 23
     const pbjCal = pbj * 100
+    const banCal = banana * 100
     let totalCal = 0
 
     if (e.target.name === 'gu') {
-      totalCal = (e.target.value * 100) + clifCal + ballCal + pbjCal
+      totalCal = (e.target.value * 100) + clifCal + ballCal + pbjCal + banCal
     }
     if (e.target.name === 'clifbar') {
-      totalCal = (e.target.value * 135) + guCal + ballCal + pbjCal
+      totalCal = (e.target.value * 135) + guCal + ballCal + pbjCal + banCal
     }
     if (e.target.name === 'balls') {
-      totalCal = (e.target.value * 110) + guCal + clifCal + pbjCal
+      totalCal = (e.target.value * 110) + guCal + clifCal + pbjCal + banCal
     }
     if (e.target.name === 'pbj') {
-      totalCal = (e.target.value * 100) + guCal + clifCal + ballCal
+      totalCal = (e.target.value * 100) + guCal + clifCal + ballCal + banCal
+    }
+    if (e.target.name === 'banana') {
+      totalCal = (e.target.value * 100) + guCal + clifCal + ballCal + pbjCal
     }
     if (e.target.name === 'water') {
-      totalCal = guCal + clifCal + ballCal + pbjCal
+      totalCal = guCal + clifCal + ballCal + pbjCal + banCal
     }
     this.setState({
       [e.target.name]: Number(e.target.value),
@@ -54,6 +59,7 @@ class Lap extends React.Component {
       clifbar: 0,
       balls: 0,
       pbj: 0,
+      banana: 0,
       calories: 0,
       water: 0
     })
@@ -77,6 +83,9 @@ class Lap extends React.Component {
           </li>
           <li>Peanut Butter and Jelly Sandwich (1/2)
             <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
+          </li>
+          <li>Banana
+            <input value={this.state.banana} name='banana' onChange={this.handleChange} />
           </li>
           <li>Water (mL)
             <input value={this.state.water} name='water' onChange={this.handleChange} />

@@ -4,6 +4,7 @@ const initialState = {
   clifbar: 0,
   balls: 0,
   pbj: 0,
+  banana: 0,
   calories: 0,
   water: 0
 }
@@ -17,6 +18,7 @@ function fuelList (state = initialState, action) {
         clifbar: action.fuel.clifbar,
         balls: action.fuel.balls,
         pbj: action.fuel.pbj,
+        banana: action.fuel.banana,
         water: action.fuel.water
       }
     }
