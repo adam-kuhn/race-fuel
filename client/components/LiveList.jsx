@@ -9,6 +9,7 @@ class LiveList extends React.Component {
         <li>ClifBar {this.props.clifbar}</li>
         <li>Power Balls {this.props.balls}</li>
         <li>Peanut Butter Jelly {this.props.pbj}</li>
+        <li>Banana {this.props.banana}</li>
         <li>Water {this.props.water} L</li>
       </ul>
     )
@@ -21,7 +22,8 @@ function mapStateToProps (state) {
     clifbar: state.fuelList.clifbar,
     balls: state.fuelList.balls,
     pbj: state.fuelList.pbj,
-    water: state.fuelList.water
+    water: state.fuelList.water,
+    banana: state.fuelList.banana
   }
 }
 export default connect(mapStateToProps)(LiveList)
