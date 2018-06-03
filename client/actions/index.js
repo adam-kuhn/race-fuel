@@ -18,6 +18,7 @@ export const update = (lap, lapFuel, fuelList, totals) => {
   lapFuel.pbj = lapFuel.pbj / 2
   lapFuel.balls = lapFuel.balls * 2
   lapFuel.water = lapFuel.water / 1000
+  console.log(lapFuel, totals)
   return {
     type: NEXT_LAP,
     lap,
@@ -29,6 +30,6 @@ export const update = (lap, lapFuel, fuelList, totals) => {
 export const nextLap = (lap, lapFuel) => {
   return (dispatch, getState) => {
     const state = getState()
-    dispatch(update(lap, lapFuel, state.fuelList, state.totals))
+    dispatch(update(lap, lapFuel, state.fuelList, state.totals.fuel))
   }
 }

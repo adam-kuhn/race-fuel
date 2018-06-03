@@ -1,12 +1,55 @@
 import {SETLIST, NEXT_LAP} from '../actions'
 const initialState = {
-  gu: 0,
-  clifbar: 0,
-  balls: 0,
-  pbj: 0,
-  banana: 0,
-  calories: 0,
-  water: 0
+  fuel: [
+    // {
+    //   id: 1,
+    //   type: 'calories',
+    //   amount: 0,
+    //   text: 'Calories eaten'
+    // },
+    {
+      id: 2,
+      name: 'clifbar',
+      amount: 0,
+      liveText: 'ClifBars',
+      lapText: 'ClifBars (1/2)'
+    },
+    {
+      id: 3,
+      name: 'gu',
+      amount: 0,
+      liveText: 'Gu',
+      lapText: 'Gu (1 gel)'
+    },
+    {
+      id: 4,
+      name: 'pbj',
+      amount: 0,
+      liveText: 'Peanut Butter and Jelly Sandwiches',
+      lapText: 'Peanut Butter and Jelly Sandwiches (1/2)'
+    },
+    {
+      id: 5,
+      name: 'balls',
+      amount: 0,
+      liveText: 'Power Balls',
+      lapText: 'Power Balls (2 balls)'
+    },
+    {
+      id: 6,
+      name: 'banana',
+      amount: 0,
+      liveText: 'Bananas',
+      lapText: 'Bananas (1)'
+    },
+    {
+      id: 7,
+      name: 'water',
+      amount: 0,
+      liveText: 'Water (L)',
+      lapText: 'Water (mL)'
+    }
+  ]
 }
 
 function fuelList (state = initialState, action) {

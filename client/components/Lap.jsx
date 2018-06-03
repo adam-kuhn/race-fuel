@@ -72,7 +72,14 @@ class Lap extends React.Component {
         <p>Need to eat ~200-300 calories per hour</p>
         <p>Values below are ~100 calories each</p>
         <ul>
-          <li>Gu (1 gel)
+          {this.props.lapFuel.map(item => {
+            return (
+              <li key={item.id}>{item.lapText}
+                <input value={this.state[item.name]} name={item.name} onChange={this.handleChange}/>
+              </li>
+            )
+          })}
+          {/* <li>Gu (1 gel)
             <input value={this.state.gu} name='gu' onChange={this.handleChange}/>
           </li>
           <li>ClifBar (1/2)
@@ -89,7 +96,7 @@ class Lap extends React.Component {
           </li>
           <li>Water (mL)
             <input value={this.state.water} name='water' onChange={this.handleChange} />
-          </li>
+          </li> */}
         </ul>
         <h3>Calories {this.state.calories}</h3>
         <button type='button' onClick={this.submitLap}>Next Lap</button>
@@ -100,7 +107,8 @@ class Lap extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    lap: state.lap
+    lap: state.lap,
+    lapFuel: state.fuelList.fuel
   }
 }
 
