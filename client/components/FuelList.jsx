@@ -47,40 +47,23 @@ class FuelList extends React.Component {
       <div>
         <button type='button' onClick={this.closeList}>Submit Fuel List</button>
         <ul>
-          <li>Gu
-            <input value={this.state.gu} name='gu' onChange={this.handleChange} />
-            <button type='button' name='gu' onClick={this.plusOne}>+</button>
-            <button type='button' name='gu' onClick={this.minusOne}>-</button>
-          </li>
-          <li>ClifBar
-            <input value={this.state.clifbar} name='clifbar' onChange={this.handleChange} />
-            <button type='button' name='clifbar' onClick={this.plusOne}>+</button>
-            <button type='button' name='clifbar' onClick={this.minusOne}>-</button>
-          </li>
-          <li>Power Balls
-            <input value={this.state.balls} name='balls' onChange={this.handleChange} />
-            <button type='button' name='balls' onClick={this.plusOne}>+</button>
-            <button type='button' name='balls' onClick={this.minusOne}>-</button>
-          </li>
-          <li>Peanut Butter and Jelly
-            <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
-            <button type='button' name='pbj' onClick={this.plusOne}>+</button>
-            <button type='button' name='pbj' onClick={this.minusOne}>-</button>
-          </li>
-          <li>Banana
-            <input value={this.state.banana} name='banana' onChange={this.handleChange} />
-            <button type='button' name='banana' onClick={this.plusOne}>+</button>
-            <button type='button' name='banana' onClick={this.minusOne}>-</button>
-          </li>
-          <li>Water
-            <input value={this.state.water} name='water' onChange={this.handleChange} />
-            <button type='button' name='water' onClick={this.plusOne}>+</button>
-            <button type='button' name='water' onClick={this.minusOne}>-</button>
-          </li>
+          {this.props.fuel.map(item => {
+            return (
+              <li key={item.id}>{item.liveText}
+                <input value={this.state[item.name]} name={item.name} onChange={this.handleChange}/>
+                <button type='button' name={item.name} onClick={this.plusOne}>+</button>
+                <button type='button' name={item.name} onClick={this.minusOne}>-</button>
+              </li>
+            )
+          })}
         </ul>
       </div>
     )
   }
 }
 
-export default connect()(FuelList)
+const mapStateToProps = (state) => {
+  return state.fuelList
+}
+
+export default connect(mapStateToProps)(FuelList)

@@ -79,24 +79,6 @@ class Lap extends React.Component {
               </li>
             )
           })}
-          {/* <li>Gu (1 gel)
-            <input value={this.state.gu} name='gu' onChange={this.handleChange}/>
-          </li>
-          <li>ClifBar (1/2)
-            <input value={this.state.clifbar} name='clifbar' onChange={this.handleChange} />
-          </li>
-          <li>Power Balls (2 balls)
-            <input value={this.state.balls} name='balls' onChange={this.handleChange} />
-          </li>
-          <li>Peanut Butter and Jelly Sandwich (1/2)
-            <input value={this.state.pbj} name='pbj' onChange={this.handleChange} />
-          </li>
-          <li>Banana
-            <input value={this.state.banana} name='banana' onChange={this.handleChange} />
-          </li>
-          <li>Water (mL)
-            <input value={this.state.water} name='water' onChange={this.handleChange} />
-          </li> */}
         </ul>
         <h3>Calories {this.state.calories}</h3>
         <button type='button' onClick={this.submitLap}>Next Lap</button>
