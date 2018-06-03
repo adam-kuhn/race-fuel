@@ -5,25 +5,17 @@ class LiveList extends React.Component {
   render () {
     return (
       <ul>
-        <li>Gu {this.props.gu}</li>
-        <li>ClifBar {this.props.clifbar}</li>
-        <li>Power Balls {this.props.balls}</li>
-        <li>Peanut Butter Jelly {this.props.pbj}</li>
-        <li>Banana {this.props.banana}</li>
-        <li>Water {this.props.water} L</li>
+        {this.props.fuel.map(item => {
+          return (
+            <li key={item.id}>{item.liveText} {item.amount}</li>
+          )
+        })}
       </ul>
     )
   }
 }
 
 function mapStateToProps (state) {
-  return {
-    gu: state.fuelList.gu,
-    clifbar: state.fuelList.clifbar,
-    balls: state.fuelList.balls,
-    pbj: state.fuelList.pbj,
-    water: state.fuelList.water,
-    banana: state.fuelList.banana
-  }
+  return state.fuelList
 }
 export default connect(mapStateToProps)(LiveList)
