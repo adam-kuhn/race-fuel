@@ -6,36 +6,14 @@ import {setList} from '../actions'
 class FuelList extends React.Component {
   constructor () {
     super()
-    this.state = {
-      gu: 0,
-      clifbar: 0,
-      balls: 0,
-      pbj: 0,
-      banana: 0,
-      water: 0
-    }
+    this.state = {}
     this.handleChange = this.handleChange.bind(this)
-    this.plusOne = this.plusOne.bind(this)
-    this.minusOne = this.minusOne.bind(this)
     this.closeList = this.closeList.bind(this)
   }
   handleChange (e) {
     this.setState({
+      ...this.state,
       [e.target.name]: Number(e.target.value)
-    })
-  }
-
-  plusOne (e) {
-    const newValue = this.state[e.target.name] + 1
-    this.setState({
-      [e.target.name]: newValue
-    })
-  }
-
-  minusOne (e) {
-    const newValue = this.state[e.target.name] - 1
-    this.setState({
-      [e.target.name]: newValue
     })
   }
   closeList () {
@@ -50,9 +28,7 @@ class FuelList extends React.Component {
           {this.props.fuel.map(item => {
             return (
               <li key={item.id}>{item.liveText}
-                <input value={this.state[item.name]} name={item.name} onChange={this.handleChange}/>
-                <button type='button' name={item.name} onClick={this.plusOne}>+</button>
-                <button type='button' name={item.name} onClick={this.minusOne}>-</button>
+                <input value={this.state[item.name] || 0} name={item.name} onChange={this.handleChange}/>
               </li>
             )
           })}
