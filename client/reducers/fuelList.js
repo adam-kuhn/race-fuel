@@ -49,20 +49,24 @@ const initialState = {
       liveText: 'Water (L)',
       lapText: 'Water (mL)'
     }
-  ]
+  ],
+  fuelSet: false
 }
 
 function fuelList (state = initialState, action) {
   switch (action.type) {
     case (SETLIST): {
+      const fuelItem = Object.keys(action.fuelList)
+      for (let item of state.fuel) {
+        for (let i = 0; i < fuelItem.length; i++) {
+          if (item.name === fuelItem[i]) {
+            item.amount = action.fuelList[fuelItem[i]]
+          }
+        }
+      }
       return {
         ...state,
-        gu: action.fuel.gu,
-        clifbar: action.fuel.clifbar,
-        balls: action.fuel.balls,
-        pbj: action.fuel.pbj,
-        banana: action.fuel.banana,
-        water: action.fuel.water
+        fuelSet: true
       }
     }
     case (NEXT_LAP): {

@@ -19,7 +19,6 @@ class FuelList extends React.Component {
   closeList () {
     this.props.dispatch(setList(this.state))
   }
-
   render () {
     return (
       <div>

@@ -7,10 +7,10 @@ export const showFuelList = () => {
     type: SHOW_FUEL_LIST
   }
 }
-export const setList = (fuel) => {
+export const setList = (fuelList) => {
   return {
     type: SETLIST,
-    fuel
+    fuelList
   }
 }
 export const update = (lap, lapFuel, fuelList, totals) => {
@@ -18,7 +18,6 @@ export const update = (lap, lapFuel, fuelList, totals) => {
   lapFuel.pbj = lapFuel.pbj / 2
   lapFuel.balls = lapFuel.balls * 2
   lapFuel.water = lapFuel.water / 1000
-  console.log(lapFuel, totals)
   return {
     type: NEXT_LAP,
     lap,
