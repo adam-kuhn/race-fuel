@@ -58,9 +58,9 @@ function fuelList (state = initialState, action) {
     case (SETLIST): {
       const fuelItem = Object.keys(action.fuelList)
       for (let item of state.fuel) {
-        for (let i = 0; i < fuelItem.length; i++) {
-          if (item.name === fuelItem[i]) {
-            item.amount = action.fuelList[fuelItem[i]]
+        for (let fuelName of fuelItem) {
+          if (item.name === fuelName) {
+            item.amount = action.fuelList[fuelName]
           }
         }
       }
