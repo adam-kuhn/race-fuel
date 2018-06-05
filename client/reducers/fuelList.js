@@ -47,43 +47,43 @@ const initialState = {
   totals: [
     {
       id: 1,
-      type: 'calories',
+      name: 'calories',
       amount: 0,
       text: 'Calories eaten'
     },
     {
       id: 2,
-      type: 'clifbar',
+      name: 'clifbar',
       amount: 0,
       text: 'ClifBars eaten'
     },
     {
       id: 3,
-      type: 'gu',
+      name: 'gu',
       amount: 0,
       text: 'Gu gels eaten'
     },
     {
       id: 4,
-      type: 'pbj',
+      name: 'pbj',
       amount: 0,
       text: 'Peanut Butter and Jelly Sandwiches eaten'
     },
     {
       id: 5,
-      type: 'balls',
+      name: 'balls',
       amount: 0,
       text: 'Power Balls eaten'
     },
     {
       id: 6,
-      type: 'banana',
+      name: 'banana',
       amount: 0,
       text: 'Bananas eaten'
     },
     {
       id: 7,
-      type: 'water',
+      name: 'water',
       amount: 0,
       text: 'Water drank'
     }
@@ -126,7 +126,7 @@ function fuelList (state = initialState, action) {
       const itemForTotal = Object.keys(action.lapFuel)
       for (let item of action.totals) {
         for (let fuelName of itemForTotal) {
-          if (item.type === fuelName) {
+          if (item.name === fuelName) {
             item.amount = item.amount + action.lapFuel[fuelName]
           }
         }
