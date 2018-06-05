@@ -7,5 +7,5 @@ import totals from './totals'
 export default combineReducers({
   display,
   fuelList,
-  totals
+  // totals
 })

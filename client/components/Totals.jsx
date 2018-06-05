@@ -6,7 +6,7 @@ class Totals extends React.Component {
     return (
       <div>
         <h2>Totals!</h2>
-        {this.props.fuel.map(item => {
+        {this.props.totals.map(item => {
           return (
             <p key={item.id}>{item.text} {item.amount}</p>
           )
@@ -17,7 +17,7 @@ class Totals extends React.Component {
 }
 
 function mapStateToProps (state) {
-  return state.totals
+  return state.fuelList
 }
 
 export default connect(mapStateToProps)(Totals)

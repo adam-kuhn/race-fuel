@@ -29,6 +29,6 @@ export const update = (lap, lapFuel, fuelList, totals) => {
 export const nextLap = (lap, lapFuel) => {
   return (dispatch, getState) => {
     const state = getState()
-    dispatch(update(lap, lapFuel, state.fuelList, state.totals.fuel))
+    dispatch(update(lap, lapFuel, state.fuelList.fuel, state.fuelList.totals))
   }
 }

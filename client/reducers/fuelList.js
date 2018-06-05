@@ -50,6 +50,50 @@ const initialState = {
       lapText: 'Water (mL)'
     }
   ],
+  totals: [
+    {
+      id: 1,
+      type: 'calories',
+      amount: 0,
+      text: 'Calories eaten'
+    },
+    {
+      id: 2,
+      type: 'clifbar',
+      amount: 0,
+      text: 'ClifBars eaten'
+    },
+    {
+      id: 3,
+      type: 'gu',
+      amount: 0,
+      text: 'Gu gels eaten'
+    },
+    {
+      id: 4,
+      type: 'pbj',
+      amount: 0,
+      text: 'Peanut Butter and Jelly Sandwiches eaten'
+    },
+    {
+      id: 5,
+      type: 'balls',
+      amount: 0,
+      text: 'Power Balls eaten'
+    },
+    {
+      id: 6,
+      type: 'banana',
+      amount: 0,
+      text: 'Bananas eaten'
+    },
+    {
+      id: 7,
+      type: 'water',
+      amount: 0,
+      text: 'Water drank'
+    }
+  ],
   fuelSet: false,
   lap: 1
 }
@@ -78,10 +122,18 @@ function fuelList (state = initialState, action) {
     }
     case (NEXT_LAP): {
       const fuelItem = Object.keys(action.lapFuel)
-      for (let item of action.fuelList.fuel) {
+      for (let item of action.fuelList) {
         for (let fuelName of fuelItem) {
           if (item.name === fuelName) {
             item.amount = item.amount - action.lapFuel[fuelName]
+          }
+        }
+      }
+      const itemForTotal = Object.keys(action.lapFuel)
+      for (let item of action.totals) {
+        for (let fuelName of itemForTotal) {
+          if (item.type === fuelName) {
+            item.amount = item.amount + action.lapFuel[fuelName]
           }
         }
       }
