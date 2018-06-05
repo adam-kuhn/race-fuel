@@ -62,50 +62,6 @@ const initialState = {
       totalText: 'Water drank'
     }
   ],
-  // totals: [
-  //   {
-  //     id: 1,
-  //     name: 'calories',
-  //     amount: 0,
-  //     text: 'Calories eaten'
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'clifbar',
-  //     amount: 0,
-  //     text: 'ClifBars eaten'
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'gu',
-  //     amount: 0,
-  //     text: 'Gu gels eaten'
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'pbj',
-  //     amount: 0,
-  //     text: 'Peanut Butter and Jelly Sandwiches eaten'
-  //   },
-  //   {
-  //     id: 5,
-  //     name: 'balls',
-  //     amount: 0,
-  //     text: 'Power Balls eaten'
-  //   },
-  //   {
-  //     id: 6,
-  //     name: 'banana',
-  //     amount: 0,
-  //     text: 'Bananas eaten'
-  //   },
-  //   {
-  //     id: 7,
-  //     name: 'water',
-  //     amount: 0,
-  //     text: 'Water drank'
-  //   }
-  // ],
   fuelSet: false,
   lap: 1
 }
@@ -142,14 +98,6 @@ function fuelList (state = initialState, action) {
           }
         }
       }
-      // const itemForTotal = Object.keys(action.lapFuel)
-      // for (let item of action.totals) {
-      //   for (let fuelName of itemForTotal) {
-      //     if (item.name === fuelName) {
-      //       item.amount = item.amount + action.lapFuel[fuelName]
-      //     }
-      //   }
-      // }
       return {
         ...state,
         lap: action.lap + 1
