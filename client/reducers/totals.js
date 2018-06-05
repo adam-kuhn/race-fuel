@@ -44,17 +44,40 @@ const initialState = {
       amount: 0,
       text: 'Water drank'
     }
-  ]
+  ],
+  updated: 0
 }
+
+// const fuelItem = Object.keys(action.lapFuel)
+// for (let item of action.fuelList.fuel) {
+//   for (let fuelName of fuelItem) {
+//     if (item.name === fuelName) {
+//       item.amount = item.amount - action.lapFuel[fuelName]
+//     }
+//   }
+// }
 
 function totals (state = initialState, action) {
   switch (action.type) {
-    // case (NEXT_LAP): {
-    //   for (let fuel in action.lapFuel) {
-    //     action.totals[fuel] = action.totals[fuel] + action.lapFuel[fuel]
-    //   }
-    //   return action.totals
-    // }
+    case (NEXT_LAP): {
+      console.log('totals', action.totals)
+      console.log('lap', action.lapFuel)
+      const fuelItem = Object.keys(action.lapFuel)
+      for (let item of action.totals) {
+        for (let fuelName of fuelItem) {
+          if (item.type === fuelName) {
+            item.amount = item.amount + action.lapFuel[fuelName]
+          }
+        }
+      }
+      // for (let fuel in action.lapFuel) {
+      //   action.totals[fuel] = action.totals[fuel] + action.lapFuel[fuel]
+      // }
+      return {
+        ...state,
+        updated: state.updated + 1
+      }
+    }
     default:
       return state
   }
