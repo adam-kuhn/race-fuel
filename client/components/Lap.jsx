@@ -73,12 +73,15 @@ class Lap extends React.Component {
         <p>Values below are ~100 calories each</p>
         <ul>
           {this.props.lapFuel.map(item => {
-            return (
-              <li key={item.id}>{item.lapText}
-                <input value={this.state[item.name]} name={item.name} onChange={this.handleChange}/>
-              </li>
-            )
+            if (item.id !== 1) {
+              return (
+                <li key={item.id}>{item.lapText}
+                  <input value={this.state[item.name]} name={item.name} onChange={this.handleChange}/>
+                </li>
+              )
+            }
           })}
+
         </ul>
         <h3>Calories {this.state.calories}</h3>
         <button type='button' onClick={this.submitLap}>Next Lap</button>

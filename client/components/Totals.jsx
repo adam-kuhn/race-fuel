@@ -6,9 +6,9 @@ class Totals extends React.Component {
     return (
       <div>
         <h2>Totals!</h2>
-        {this.props.totals.map(item => {
+        {this.props.fuel.map(item => {
           return (
-            <p key={item.id}>{item.text} {item.amount}</p>
+            <p key={item.id}>{item.totalText} {item.totalAmount}</p>
           )
         })}
       </div>
