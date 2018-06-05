@@ -77,8 +77,6 @@ function fuelList (state = initialState, action) {
       }
     }
     case (NEXT_LAP): {
-      console.log('lap', action.lapFuel)
-      console.log('list', action.fuelList)
       const fuelItem = Object.keys(action.lapFuel)
       for (let item of action.fuelList.fuel) {
         for (let fuelName of fuelItem) {
@@ -87,11 +85,6 @@ function fuelList (state = initialState, action) {
           }
         }
       }
-      console.log('after loop', action.fuelList)
-      // for (let fuel in action.lapFuel) {
-      //   action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
-      // }
-
       return {
         ...state,
         lap: action.lap + 1
