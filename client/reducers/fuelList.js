@@ -1,12 +1,6 @@
 import {SETLIST, NEXT_LAP, SHOW_FUEL_LIST} from '../actions'
 const initialState = {
   fuel: [
-    // {
-    //   id: 1,
-    //   type: 'calories',
-    //   amount: 0,
-    //   text: 'Calories eaten'
-    // },
     {
       id: 2,
       name: 'clifbar',
