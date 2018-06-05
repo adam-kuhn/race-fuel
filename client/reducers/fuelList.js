@@ -50,7 +50,8 @@ const initialState = {
       lapText: 'Water (mL)'
     }
   ],
-  fuelSet: false
+  fuelSet: false,
+  lap: 1
 }
 
 function fuelList (state = initialState, action) {
@@ -76,11 +77,25 @@ function fuelList (state = initialState, action) {
       }
     }
     case (NEXT_LAP): {
-      for (let fuel in action.lapFuel) {
-        action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
+      console.log('lap', action.lapFuel)
+      console.log('list', action.fuelList)
+      const fuelItem = Object.keys(action.lapFuel)
+      for (let item of action.fuelList.fuel) {
+        for (let fuelName of fuelItem) {
+          if (item.name === fuelName) {
+            item.amount = item.amount - action.lapFuel[fuelName]
+          }
+        }
       }
+      console.log('after loop', action.fuelList)
+      // for (let fuel in action.lapFuel) {
+      //   action.fuelList[fuel] = action.fuelList[fuel] - action.lapFuel[fuel]
+      // }
 
-      return action.fuelList
+      return {
+        ...state,
+        lap: action.lap + 1
+      }
     }
     default: {
       return state

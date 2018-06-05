@@ -89,7 +89,7 @@ class Lap extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    lap: state.lap,
+    lap: state.fuelList.lap,
     lapFuel: state.fuelList.fuel
   }
 }

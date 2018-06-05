@@ -25,7 +25,7 @@ class App extends React.Component {
         {this.props.showFuelList && <FuelList />}
         <LiveList />
         <Lap />
-        <Totals />
+        {/* <Totals /> */}
       </div>
     )
   }

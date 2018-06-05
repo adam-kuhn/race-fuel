@@ -49,12 +49,12 @@ const initialState = {
 
 function totals (state = initialState, action) {
   switch (action.type) {
-    case (NEXT_LAP): {
-      for (let fuel in action.lapFuel) {
-        action.totals[fuel] = action.totals[fuel] + action.lapFuel[fuel]
-      }
-      return action.totals
-    }
+    // case (NEXT_LAP): {
+    //   for (let fuel in action.lapFuel) {
+    //     action.totals[fuel] = action.totals[fuel] + action.lapFuel[fuel]
+    //   }
+    //   return action.totals
+    // }
     default:
       return state
   }
