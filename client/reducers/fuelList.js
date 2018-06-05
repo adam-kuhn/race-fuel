@@ -138,17 +138,18 @@ function fuelList (state = initialState, action) {
         for (let fuelName of fuelItem) {
           if (item.name === fuelName) {
             item.amount = item.amount - action.lapFuel[fuelName]
+            item.totalAmount = item.totalAmount + action.lapFuel[fuelName]
           }
         }
       }
-      const itemForTotal = Object.keys(action.lapFuel)
-      for (let item of action.totals) {
-        for (let fuelName of itemForTotal) {
-          if (item.name === fuelName) {
-            item.amount = item.amount + action.lapFuel[fuelName]
-          }
-        }
-      }
+      // const itemForTotal = Object.keys(action.lapFuel)
+      // for (let item of action.totals) {
+      //   for (let fuelName of itemForTotal) {
+      //     if (item.name === fuelName) {
+      //       item.amount = item.amount + action.lapFuel[fuelName]
+      //     }
+      //   }
+      // }
       return {
         ...state,
         lap: action.lap + 1

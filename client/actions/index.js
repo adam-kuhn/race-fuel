@@ -13,7 +13,7 @@ export const setList = (fuelList) => {
     fuelList
   }
 }
-export const update = (lap, lapFuel, fuelList, totals) => {
+export const update = (lap, lapFuel, fuelList) => {
   lapFuel.clifbar = lapFuel.clifbar / 2
   lapFuel.pbj = lapFuel.pbj / 2
   lapFuel.balls = lapFuel.balls * 2
@@ -22,13 +22,12 @@ export const update = (lap, lapFuel, fuelList, totals) => {
     type: NEXT_LAP,
     lap,
     lapFuel,
-    fuelList,
-    totals
+    fuelList
   }
 }
 export const nextLap = (lap, lapFuel) => {
   return (dispatch, getState) => {
     const state = getState()
-    dispatch(update(lap, lapFuel, state.fuelList.fuel, state.fuelList.totals))
+    dispatch(update(lap, lapFuel, state.fuelList.fuel))
   }
 }
