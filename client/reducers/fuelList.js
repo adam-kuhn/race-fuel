@@ -1,8 +1,7 @@
-import {SETLIST, NEXT_LAP, SHOW_FUEL_LIST, ADD_TO_LIST} from '../actions'
+import {SETLIST, NEXT_LAP, ADD_TO_LIST} from '../actions'
 import list from '../lib/standardFuel'
 const initialState = {
   fuel: list,
-  fuelSet: false,
   lap: 1
 }
 
@@ -19,13 +18,7 @@ function fuelList (state = initialState, action) {
       }
       return {
         ...state,
-        fuelSet: true
-      }
-    }
-    case (SHOW_FUEL_LIST): {
-      return {
-        ...state,
-        fuelSet: false
+        fuel: state.fuel
       }
     }
     case (NEXT_LAP): {
