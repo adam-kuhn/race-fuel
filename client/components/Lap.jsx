@@ -25,12 +25,15 @@ class Lap extends React.Component {
 
   submitLap () {
     this.props.dispatch(nextLap(this.props.lap, this.state))
-    this.props.lapFuel.map(item => {
+    const items = this.props.lapFuel.map(item => {
+      return item.name
+    })
+    for (let fuel of items) {
       this.setState({
         calories: 0,
-        [item.name]: 0
+        [fuel]: 0
       })
-    })
+    }
   }
 
   render () {
