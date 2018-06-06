@@ -8,7 +8,6 @@ class AddItem extends React.Component {
     super()
     this.state = {
       name: '',
-      amount: '',
       itemCalories: ''
     }
     this.handleChange = this.handleChange.bind(this)
@@ -37,10 +36,6 @@ class AddItem extends React.Component {
         <p>Item:
           <input name='name' value={this.state.name}
             onChange={this.handleChange} placeholder='what fuel?' />
-        </p>
-        <p>Amount:
-          <input name ='amount' value={this.state.amount}
-            onChange={this.handleChange} placeholder='how many?'/>
         </p>
         <p>Calories per serving:
           <input name='itemCalories' value={this.state.itemCalories}
