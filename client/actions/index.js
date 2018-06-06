@@ -1,6 +1,7 @@
 export const SETLIST = 'SETLIST'
 export const SHOW_FUEL_LIST = 'SHOW_FUEL_LIST'
 export const NEXT_LAP = 'NEXT_LAP'
+export const ADD_TO_LIST = 'ADD_TO_LIST'
 
 export const showFuelList = () => {
   return {
@@ -14,10 +15,6 @@ export const setList = (fuelList) => {
   }
 }
 export const update = (lap, lapFuel, fuelList) => {
-  lapFuel.clifbar = lapFuel.clifbar / 2
-  lapFuel.pbj = lapFuel.pbj / 2
-  lapFuel.balls = lapFuel.balls * 2
-  lapFuel.water = lapFuel.water / 1000
   return {
     type: NEXT_LAP,
     lap,
@@ -29,5 +26,19 @@ export const nextLap = (lap, lapFuel) => {
   return (dispatch, getState) => {
     const state = getState()
     dispatch(update(lap, lapFuel, state.fuelList.fuel))
+  }
+}
+
+export const addItemToList = (item, fuelList) => {
+  return {
+    type: ADD_TO_LIST,
+    item,
+    fuelList
+  }
+}
+export const addItem = (item) => {
+  return (dispatch, getState) => {
+    const state = getState()
+    dispatch(addItemToList(item, state.fuelList.fuel))
   }
 }

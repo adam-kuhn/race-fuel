@@ -1,4 +1,4 @@
-import {SETLIST, NEXT_LAP, SHOW_FUEL_LIST} from '../actions'
+import {SETLIST, NEXT_LAP, SHOW_FUEL_LIST, ADD_TO_LIST} from '../actions'
 const initialState = {
   fuel: [
     {
@@ -14,7 +14,8 @@ const initialState = {
       liveText: 'ClifBars',
       lapText: 'ClifBars (1/2)',
       totalAmount: 0,
-      totalText: 'ClifBars eaten'
+      totalText: 'ClifBars eaten',
+      itemCalories: 135
     },
     {
       id: 3,
@@ -23,7 +24,8 @@ const initialState = {
       liveText: 'Gu',
       lapText: 'Gu (1 gel)',
       totalAmount: 0,
-      totalText: 'Gu gels eaten'
+      totalText: 'Gu gels eaten',
+      itemCalories: 100
     },
     {
       id: 4,
@@ -32,7 +34,8 @@ const initialState = {
       liveText: 'Peanut Butter and Jelly Sandwiches',
       lapText: 'Peanut Butter and Jelly Sandwiches (1/2)',
       totalAmount: 0,
-      totalText: 'Peanut Butter and Jelly Sandwiches eaten'
+      totalText: 'Peanut Butter and Jelly Sandwiches eaten',
+      itemCalories: 100
     },
     {
       id: 5,
@@ -41,7 +44,8 @@ const initialState = {
       liveText: 'Power Balls',
       lapText: 'Power Balls (2 balls)',
       totalAmount: 0,
-      totalText: 'Power Balls eaten'
+      totalText: 'Power Balls eaten',
+      itemCalories: 110
     },
     {
       id: 6,
@@ -50,16 +54,17 @@ const initialState = {
       liveText: 'Bananas',
       lapText: 'Bananas (1)',
       totalAmount: 0,
-      totalText: 'Bananas eaten'
+      totalText: 'Bananas eaten',
+      itemCalories: 100
     },
     {
       id: 7,
       name: 'water',
       amount: 0,
-      liveText: 'Water (L)',
+      liveText: 'Water (mL)',
       lapText: 'Water (mL)',
       totalAmount: 0,
-      totalText: 'Water drank'
+      totalText: 'Water drank (mL)'
     }
   ],
   fuelSet: false,
@@ -101,6 +106,17 @@ function fuelList (state = initialState, action) {
       return {
         ...state,
         lap: action.lap + 1
+      }
+    }
+    case (ADD_TO_LIST): {
+      action.item.id = action.fuelList.length + 1
+      action.item.liveText = action.item.name
+      action.item.lapText = action.item.name
+      action.item.totalAmount = 0
+      action.item.totalText = action.item.name
+      return {
+        ...state,
+        fuel: [...action.fuelList, action.item]
       }
     }
     default: {
