@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import AddItem from './AddItem'
 
 import {setList} from '../actions'
 
@@ -34,6 +35,7 @@ class FuelList extends React.Component {
             }
           })}
         </ul>
+        <AddItem />
       </div>
     )
   }
