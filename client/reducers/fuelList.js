@@ -1,4 +1,4 @@
-import {SETLIST, NEXT_LAP, SHOW_FUEL_LIST} from '../actions'
+import {SETLIST, NEXT_LAP, SHOW_FUEL_LIST, ADD_TO_LIST} from '../actions'
 const initialState = {
   fuel: [
     {
@@ -101,6 +101,17 @@ function fuelList (state = initialState, action) {
       return {
         ...state,
         lap: action.lap + 1
+      }
+    }
+    case (ADD_TO_LIST): {
+      action.item.id = action.fuelList.length + 1
+      action.item.liveText = action.item.name
+      action.item.lapText = action.item.name
+      action.item.totalAmount = 0
+      action.item.totalText = action.item.name
+      return {
+        ...state,
+        fuel: [...action.fuelList, action.item]
       }
     }
     default: {
