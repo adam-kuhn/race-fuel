@@ -34,8 +34,7 @@ class Lap extends React.Component {
     return (
       <div>
         <h2>Lap {this.props.lap}</h2>
-        <p>Need to eat ~200-300 calories per hour</p>
-        <p>Values below are ~100 calories each</p>
+        <p>Need to eat ~200-400 calories per hour</p>
         <ul>
           {this.props.lapFuel.map(item => {
             if (item.id !== 1) {

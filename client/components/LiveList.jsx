@@ -4,15 +4,18 @@ import {connect} from 'react-redux'
 class LiveList extends React.Component {
   render () {
     return (
-      <ul>
-        {this.props.fuel.map(item => {
-          if (item.id !== 1) {
-            return (
-              <li key={item.id}>{item.liveText} {item.amount}</li>
-            )
-          }
-        })}
-      </ul>
+      <div>
+        <h3>Number of Servings Left </h3>
+        <ul>
+          {this.props.fuel.map(item => {
+            if (item.id !== 1) {
+              return (
+                <li key={item.id}>{item.liveText} {item.amount}</li>
+              )
+            }
+          })}
+        </ul>
+      </div>
     )
   }
 }
