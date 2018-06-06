@@ -28,6 +28,10 @@ class AddItem extends React.Component {
   }
   submitItem () {
     this.props.dispatch(addItem(this.state))
+    this.setState({
+      name: '',
+      itemCalories: ''
+    })
   }
   render () {
     return (
