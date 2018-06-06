@@ -29,7 +29,8 @@ class FuelList extends React.Component {
             if (item.id !== 1) {
               return (
                 <li key={item.id}>{item.liveText}
-                  <input value={this.state[item.name] || 0} name={item.name} onChange={this.handleChange}/>
+                  <input value={this.state[item.name] || 0}
+                    name={item.name} onChange={this.handleChange}/>
                 </li>
               )
             }

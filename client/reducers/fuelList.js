@@ -14,7 +14,8 @@ const initialState = {
       liveText: 'ClifBars',
       lapText: 'ClifBars (1/2)',
       totalAmount: 0,
-      totalText: 'ClifBars eaten'
+      totalText: 'ClifBars eaten',
+      itemCalories: 135
     },
     {
       id: 3,
@@ -23,7 +24,8 @@ const initialState = {
       liveText: 'Gu',
       lapText: 'Gu (1 gel)',
       totalAmount: 0,
-      totalText: 'Gu gels eaten'
+      totalText: 'Gu gels eaten',
+      itemCalories: 100
     },
     {
       id: 4,
@@ -32,7 +34,8 @@ const initialState = {
       liveText: 'Peanut Butter and Jelly Sandwiches',
       lapText: 'Peanut Butter and Jelly Sandwiches (1/2)',
       totalAmount: 0,
-      totalText: 'Peanut Butter and Jelly Sandwiches eaten'
+      totalText: 'Peanut Butter and Jelly Sandwiches eaten',
+      itemCalories: 100
     },
     {
       id: 5,
@@ -41,7 +44,8 @@ const initialState = {
       liveText: 'Power Balls',
       lapText: 'Power Balls (2 balls)',
       totalAmount: 0,
-      totalText: 'Power Balls eaten'
+      totalText: 'Power Balls eaten',
+      itemCalories: 110
     },
     {
       id: 6,
@@ -50,7 +54,8 @@ const initialState = {
       liveText: 'Bananas',
       lapText: 'Bananas (1)',
       totalAmount: 0,
-      totalText: 'Bananas eaten'
+      totalText: 'Bananas eaten',
+      itemCalories: 100
     },
     {
       id: 7,

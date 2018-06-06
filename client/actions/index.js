@@ -15,10 +15,10 @@ export const setList = (fuelList) => {
   }
 }
 export const update = (lap, lapFuel, fuelList) => {
-  lapFuel.clifbar = lapFuel.clifbar / 2
-  lapFuel.pbj = lapFuel.pbj / 2
-  lapFuel.balls = lapFuel.balls * 2
-  lapFuel.water = lapFuel.water / 1000
+  // lapFuel.clifbar = lapFuel.clifbar / 2
+  // lapFuel.pbj = lapFuel.pbj / 2
+  // lapFuel.balls = lapFuel.balls * 2
+  // lapFuel.water = lapFuel.water / 1000
   return {
     type: NEXT_LAP,
     lap,

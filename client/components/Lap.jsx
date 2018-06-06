@@ -7,61 +7,26 @@ class Lap extends React.Component {
   constructor () {
     super()
     this.state = {
-      gu: 0,
-      clifbar: 0,
-      balls: 0,
-      pbj: 0,
-      banana: 0,
-      calories: 0,
-      water: 0
+      calories: 0
     }
     this.handleChange = this.handleChange.bind(this)
     this.submitLap = this.submitLap.bind(this)
   }
-
   handleChange (e) {
-    const {gu, clifbar, balls, pbj, banana} = this.state
-    const guCal = gu * 100
-    const clifCal = clifbar * 135
-    const ballCal = balls * 23
-    const pbjCal = pbj * 100
-    const banCal = banana * 100
-    let totalCal = 0
-
-    if (e.target.name === 'gu') {
-      totalCal = (e.target.value * 100) + clifCal + ballCal + pbjCal + banCal
-    }
-    if (e.target.name === 'clifbar') {
-      totalCal = (e.target.value * 135) + guCal + ballCal + pbjCal + banCal
-    }
-    if (e.target.name === 'balls') {
-      totalCal = (e.target.value * 110) + guCal + clifCal + pbjCal + banCal
-    }
-    if (e.target.name === 'pbj') {
-      totalCal = (e.target.value * 100) + guCal + clifCal + ballCal + banCal
-    }
-    if (e.target.name === 'banana') {
-      totalCal = (e.target.value * 100) + guCal + clifCal + ballCal + pbjCal
-    }
-    if (e.target.name === 'water') {
-      totalCal = guCal + clifCal + ballCal + pbjCal + banCal
-    }
+    const difference = e.target.value - (this.state[e.target.name] || 0)
+    const itemCalories = e.target.getAttribute('data-cal')
+    const caloriesEaten = ((itemCalories * difference) + this.state.calories)
     this.setState({
+      ...this.state,
       [e.target.name]: Number(e.target.value),
-      calories: totalCal
+      calories: caloriesEaten
     })
   }
 
   submitLap () {
     this.props.dispatch(nextLap(this.props.lap, this.state))
     this.setState({
-      gu: 0,
-      clifbar: 0,
-      balls: 0,
-      pbj: 0,
-      banana: 0,
-      calories: 0,
-      water: 0
+      calories: 0
     })
   }
 
@@ -76,7 +41,8 @@ class Lap extends React.Component {
             if (item.id !== 1) {
               return (
                 <li key={item.id}>{item.lapText}
-                  <input value={this.state[item.name]} name={item.name} onChange={this.handleChange}/>
+                  <input value={this.state[item.name] || 0} name={item.name}
+                    onChange={this.handleChange} data-cal={item.itemCalories}/>
                 </li>
               )
             }
