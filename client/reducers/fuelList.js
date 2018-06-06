@@ -61,10 +61,10 @@ const initialState = {
       id: 7,
       name: 'water',
       amount: 0,
-      liveText: 'Water (L)',
+      liveText: 'Water (mL)',
       lapText: 'Water (mL)',
       totalAmount: 0,
-      totalText: 'Water drank'
+      totalText: 'Water drank (mL)'
     }
   ],
   fuelSet: false,
