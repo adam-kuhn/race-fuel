@@ -65,7 +65,6 @@ const initialState = {
       lapText: 'Water (mL)',
       totalAmount: 0,
       totalText: 'Water drank'
-      // itemCalories: 1
     }
   ],
   fuelSet: false,
