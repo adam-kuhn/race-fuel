@@ -26,8 +26,8 @@ function fuelList (state = initialState, action) {
       for (let item of action.fuelList) {
         for (let fuelName of fuelItem) {
           if (item.name === fuelName) {
-            item.amount = item.amount - action.lapFuel[fuelName]
-            item.totalAmount = item.totalAmount + action.lapFuel[fuelName]
+            item.amount = item.amount - (action.lapFuel[fuelName] * (item.serving || 1))
+            item.totalAmount = item.totalAmount + (action.lapFuel[fuelName] * (item.serving || 1))
           }
         }
       }

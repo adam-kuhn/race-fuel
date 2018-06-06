@@ -14,7 +14,8 @@ export default
     lapText: 'ClifBars (1/2)',
     totalAmount: 0,
     totalText: 'ClifBars eaten',
-    itemCalories: 135
+    itemCalories: 135,
+    serving: 0.5
   },
   {
     id: 3,
@@ -34,7 +35,9 @@ export default
     lapText: 'Peanut Butter and Jelly Sandwiches (1/2)',
     totalAmount: 0,
     totalText: 'Peanut Butter and Jelly Sandwiches eaten',
-    itemCalories: 100
+    itemCalories: 100,
+    serving: 0.5
+
   },
   {
     id: 5,
@@ -44,7 +47,9 @@ export default
     lapText: 'Power Balls (2 balls)',
     totalAmount: 0,
     totalText: 'Power Balls eaten',
-    itemCalories: 110
+    itemCalories: 110,
+    serving: 2
+
   },
   {
     id: 6,
