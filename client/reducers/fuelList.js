@@ -41,6 +41,7 @@ function fuelList (state = initialState, action) {
       action.item.liveText = action.item.name
       action.item.lapText = action.item.name
       action.item.totalAmount = 0
+      action.item.amount = 0
       action.item.totalText = action.item.name
       return {
         ...state,
