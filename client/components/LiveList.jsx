@@ -10,7 +10,7 @@ class LiveList extends React.Component {
           {this.props.fuel.map(item => {
             if (item.id !== 1) {
               return (
-                <li key={item.id}>{item.liveText} {item.amount}</li>
+                <li key={item.id}>{item.lapText} {item.amount}</li>
               )
             }
           })}
