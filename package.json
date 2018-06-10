@@ -7,7 +7,7 @@
     "dev": "nodemon --watch server & webpack --watch",
     "test": "jest --watch --noStackTrace"
   },
-  "description": "boilerplate set up for react and redux development",
+  "description": "keep track of an athletes nutrition during an event",
   "repository": "https://github.com/adam-kuhn/boilerplate.git",
   "author": "adam-kuhn <adam.kuhn20@gmail.com>",
   "license": "MIT",
