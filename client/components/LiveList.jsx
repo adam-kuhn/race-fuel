@@ -5,7 +5,7 @@ class LiveList extends React.Component {
   render () {
     return (
       <div>
-        <h3>Reamining Fuel</h3>
+        <h3>Remaining Fuel</h3>
         <ul>
           {this.props.fuel.map(item => {
             if (item.id !== 1) {
