@@ -1,6 +1,6 @@
 import {SETLIST, SHOW_FUEL_LIST} from '../actions'
 const initialState = {
-  showFuelList: false
+  showSelect: true
 }
 
 function display (state = initialState, action) {

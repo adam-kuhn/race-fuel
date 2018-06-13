@@ -5,6 +5,7 @@ import FuelList from './FuelList'
 import LiveList from './LiveList'
 import Lap from './Lap'
 import Totals from './Totals'
+import Select from './Select'
 
 import {showFuelList} from '../actions'
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Nutrition Tracker</h2>
+        {this.props.showSelect && <Select />}
         <button type='button' onClick={this.showFuelList}>Input Fuel</button>
         {this.props.showFuelList && <FuelList />}
         {!this.props.showFuelList && <LiveList />}
@@ -33,7 +35,8 @@ class App extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    showFuelList: state.display.showFuelList
+    showFuelList: state.display.showFuelList,
+    showSelect: state.display.showSelect
   }
 }
 
