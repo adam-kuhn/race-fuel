@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {standard} from '../actions'
+import {standard, custom} from '../actions'
 
 class Select extends React.Component {
   constructor () {
@@ -10,7 +10,7 @@ class Select extends React.Component {
     this.standard = this.standard.bind(this)
   }
   custom () {
-    this.props.dispatch()
+    this.props.dispatch(custom())
   }
   standard () {
     this.props.dispatch(standard())

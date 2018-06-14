@@ -1,4 +1,4 @@
-import {SETLIST, SHOW_FUEL_LIST, STANDARD} from '../actions'
+import {SETLIST, SHOW_FUEL_LIST, STANDARD, CUSTOM} from '../actions'
 const initialState = {
   showSelect: true
 }
@@ -18,6 +18,11 @@ function display (state = initialState, action) {
       }
     }
     case (STANDARD): {
+      return {
+        showSelect: false
+      }
+    }
+    case (CUSTOM): {
       return {
         showSelect: false
       }
