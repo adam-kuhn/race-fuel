@@ -26,7 +26,7 @@ class FuelList extends React.Component {
         <button type='button' onClick={this.closeList}>Submit Fuel List</button>
         <ul>
           {this.props.fuel.map(item => {
-            if (item.id !== 1) {
+            if (item.name !== 'calories') {
               return (
                 <li key={item.id}>{item.liveText}
                   <input value={this.state[item.name] || 0}

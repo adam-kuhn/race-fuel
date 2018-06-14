@@ -44,7 +44,7 @@ class Lap extends React.Component {
         <p>Input servings eaten</p>
         <ul>
           {this.props.lapFuel.map(item => {
-            if (item.id !== 1) {
+            if (item.name !== 'calories') {
               return (
                 <li key={item.id}>{item.lapText}
                   <input value={this.state[item.name] || 0} name={item.name}
