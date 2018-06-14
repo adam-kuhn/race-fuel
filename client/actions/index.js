@@ -2,6 +2,7 @@ export const SETLIST = 'SETLIST'
 export const SHOW_FUEL_LIST = 'SHOW_FUEL_LIST'
 export const NEXT_LAP = 'NEXT_LAP'
 export const ADD_TO_LIST = 'ADD_TO_LIST'
+export const STANDARD = 'STANDARD'
 
 export const showFuelList = () => {
   return {
@@ -40,5 +41,11 @@ export const addItem = (item) => {
   return (dispatch, getState) => {
     const state = getState()
     dispatch(addItemToList(item, state.fuelList.fuel))
+  }
+}
+
+export const standard = () => {
+  return {
+    type: STANDARD
   }
 }
