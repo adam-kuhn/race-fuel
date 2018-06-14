@@ -10,7 +10,12 @@ function fuelList (state = initialState, action) {
     case (CUSTOM): {
       return {
         ...state,
-        fuel: []
+        fuel: [ {
+          id: 1,
+          name: 'calories',
+          totalAmount: 0,
+          totalText: 'Calories eaten'
+        }]
       }
     }
     case (SETLIST): {
