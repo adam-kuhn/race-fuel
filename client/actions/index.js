@@ -4,6 +4,7 @@ export const NEXT_LAP = 'NEXT_LAP'
 export const ADD_TO_LIST = 'ADD_TO_LIST'
 export const STANDARD = 'STANDARD'
 export const CUSTOM = 'CUSTOM'
+export const GO_HOME = 'GO_HOME'
 
 export const showFuelList = () => {
   return {
@@ -54,5 +55,11 @@ export const standard = () => {
 export const custom = () => {
   return {
     type: CUSTOM
+  }
+}
+
+export const goHome = () => {
+  return {
+    type: GO_HOME
   }
 }

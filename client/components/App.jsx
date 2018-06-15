@@ -6,6 +6,7 @@ import LiveList from './LiveList'
 import Lap from './Lap'
 import Totals from './Totals'
 import Select from './Select'
+import HomeBtn from './HomeBtn'
 
 import {showFuelList} from '../actions'
 
@@ -23,6 +24,7 @@ class App extends React.Component {
       <div>
         <h2>Nutrition Tracker</h2>
         {this.props.showSelect && <Select />}
+        {!this.props.showSelect && <HomeBtn />}
         {!this.props.showSelect && <button type='button' onClick={this.showFuelList}>Input Fuel</button>}
         {!this.props.showSelect && this.props.showFuelList && <FuelList />}
         {!this.props.showSelect && !this.props.showFuelList && <LiveList />}

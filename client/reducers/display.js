@@ -1,4 +1,4 @@
-import {SETLIST, SHOW_FUEL_LIST, STANDARD, CUSTOM} from '../actions'
+import {SETLIST, SHOW_FUEL_LIST, STANDARD, CUSTOM, GO_HOME} from '../actions'
 const initialState = {
   showSelect: true
 }
@@ -26,6 +26,11 @@ function display (state = initialState, action) {
       return {
         showSelect: false,
         showFuelList: true
+      }
+    }
+    case (GO_HOME): {
+      return {
+        showSelect: true
       }
     }
     default: {
