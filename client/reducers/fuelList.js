@@ -1,4 +1,4 @@
-import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM} from '../actions'
+import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME} from '../actions'
 import list from '../lib/standardFuel'
 const initialState = {
   fuel: list,
@@ -57,6 +57,12 @@ function fuelList (state = initialState, action) {
       return {
         ...state,
         fuel: [...action.fuelList, action.item]
+      }
+    }
+    case (GO_HOME): {
+      return {
+        fuel: list,
+        lap: 1
       }
     }
     default: {
