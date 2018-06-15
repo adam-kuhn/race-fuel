@@ -1,4 +1,4 @@
-import {SETLIST, NEXT_LAP, ADD_TO_LIST} from '../actions'
+import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM} from '../actions'
 import list from '../lib/standardFuel'
 const initialState = {
   fuel: list,
@@ -7,6 +7,17 @@ const initialState = {
 
 function fuelList (state = initialState, action) {
   switch (action.type) {
+    case (CUSTOM): {
+      return {
+        ...state,
+        fuel: [ {
+          id: 1,
+          name: 'calories',
+          totalAmount: 0,
+          totalText: 'Calories eaten'
+        }]
+      }
+    }
     case (SETLIST): {
       const fuelItem = Object.keys(action.fuelList)
       for (let item of state.fuel) {
