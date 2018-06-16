@@ -103,3 +103,14 @@ test('display does overwrite previous state GO_HOME', () => {
   const keys = Object.keys(actual)
   expect(keys.length).toBe(expected)
 })
+
+test('returns state on default', () => {
+  const expected = true
+  const action = {
+    type: 'no action'
+  }
+  const actual = display(state, action)
+  const keys = Object.keys(actual)
+  expect(actual.showSelect).toBe(expected)
+  expect(keys.length).toBe(1)
+})
