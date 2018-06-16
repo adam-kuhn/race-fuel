@@ -25,7 +25,7 @@ class App extends React.Component {
         <h2>Nutrition Tracker</h2>
         {this.props.showSelect && <Select />}
         {!this.props.showSelect && <HomeBtn />}
-        {!this.props.showSelect && <button type='button' onClick={this.showFuelList}>Input Fuel</button>}
+        {!this.props.showSelect && !this.props.showFuelList && <button type='button' onClick={this.showFuelList}>Input Fuel</button>}
         {!this.props.showSelect && this.props.showFuelList && <FuelList />}
         {!this.props.showSelect && !this.props.showFuelList && <LiveList />}
         {!this.props.showSelect && <Lap />}
