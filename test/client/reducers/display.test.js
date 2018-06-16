@@ -22,3 +22,21 @@ test('display does not overwrite previous state on SHOW_FUEL_LIST', () => {
   const keys = Object.keys(actual)
   expect(keys.length).toBe(expected)
 })
+
+test('display return correct display on SETLIST', () => {
+  const expected = false
+  const action = {
+    type: SETLIST
+  }
+  const actual = display(state, action)
+  expect(actual.showFuelList).toBe(expected)
+})
+test('display does not overwrite previous state on SETLIST', () => {
+  const expected = 2
+  const action = {
+    type: SETLIST
+  }
+  const actual = display(state, action)
+  const keys = Object.keys(actual)
+  expect(keys.length).toBe(expected)
+})
