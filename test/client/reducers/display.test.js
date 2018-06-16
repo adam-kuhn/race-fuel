@@ -61,3 +61,26 @@ test('display does overwrite previous state on STANDARD', () => {
   const keys = Object.keys(actual)
   expect(keys.length).toBe(expected)
 })
+
+test('display return correct display on CUSTOM', () => {
+  const expected = {
+    showSelect: false,
+    showFuelList: true
+  }
+  const action = {
+    type: CUSTOM
+  }
+  const actual = display(state, action)
+  expect(actual.showSelect).toBe(expected.showSelect)
+  expect(actual.showFuelList).toBe(expected.showFuelList)
+})
+
+test('display does overwrite previous state CUSTOM', () => {
+  const expected = 2
+  const action = {
+    type: CUSTOM
+  }
+  const actual = display(state, action)
+  const keys = Object.keys(actual)
+  expect(keys.length).toBe(expected)
+})
