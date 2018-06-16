@@ -1,4 +1,5 @@
-import {SETLIST, SHOW_FUEL_LIST, STANDARD, CUSTOM, GO_HOME} from '../actions'
+import {SETLIST, SHOW_FUEL_LIST,
+  STANDARD, CUSTOM, GO_HOME} from '../actions'
 const initialState = {
   showSelect: true
 }
