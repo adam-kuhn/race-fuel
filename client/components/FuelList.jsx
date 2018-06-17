@@ -23,7 +23,7 @@ class FuelList extends React.Component {
     } else {
       this.setState({
         ...this.state,
-        [e.target.name]: Number(e.target.value),
+        [e.target.name]: newValue,
         wrongInput: false
       })
     }
