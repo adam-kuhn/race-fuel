@@ -1,3 +1,26 @@
-test('suite is working', () => {
-  expect(true).toBeTruthy()
+import {SETLIST, NEXT_LAP, ADD_TO_LIST,
+  CUSTOM, GO_HOME} from '../../../client/actions'
+import fuelList from '../../../client/reducers/fuelList'
+import list from '../../../client/lib/standardFuel'
+
+const state = {
+  fuel: list,
+  lap: 1
+}
+test('fueList does not return a preset list on CUSTOM', () => {
+  const expected = [{
+    id: 1,
+    name: 'calories',
+    totalAmount: 0,
+    totalText: 'Calories eaten'
+  }]
+  const action = {
+    type: CUSTOM
+  }
+  const actual = fuelList(state, action)
+  expect(actual.fuel[0].id).toBe(expected[0].id)
+  expect(actual.fuel[0].name).toBe(expected[0].name)
+  expect(actual.fuel[0].totalAmount).toBe(expected[0].totalAmount)
+  expect(actual.fuel[0].totalText).toBe(expected[0].totalText)
+  expect(actual.lap).toBe(1)
 })
