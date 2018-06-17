@@ -9,7 +9,7 @@ class HomeBtn extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick () {
-    this.props.dispatch(goHome())
+    this.props.dispatch(goHome(this.props.list))
   }
   render () {
     return (
@@ -18,4 +18,10 @@ class HomeBtn extends React.Component {
   }
 }
 
-export default connect()(HomeBtn)
+function mapStateToProps (state) {
+  return {
+    list: state.fuelList.fuel
+  }
+}
+
+export default connect(mapStateToProps)(HomeBtn)

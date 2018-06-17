@@ -58,8 +58,9 @@ export const custom = () => {
   }
 }
 
-export const goHome = () => {
+export const goHome = (list) => {
   return {
-    type: GO_HOME
+    type: GO_HOME,
+    list
   }
 }

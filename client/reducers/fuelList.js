@@ -55,10 +55,12 @@ function fuelList (state = initialState, action) {
       }
     }
     case (GO_HOME): {
+      for (let i = 0; i < action.list.length; i++) {
+        action.list[i].amount = 0
+      }
       return {
-        fuel: [...state.fuelList.fuel, list],
+        fuel: list,
         lap: 1
-        // test: 'hi'
       }
     }
     default: {
