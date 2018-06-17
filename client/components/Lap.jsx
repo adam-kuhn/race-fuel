@@ -7,20 +7,32 @@ class Lap extends React.Component {
   constructor () {
     super()
     this.state = {
-      calories: 0
+      calories: 0,
+      wrongInput: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.submitLap = this.submitLap.bind(this)
   }
   handleChange (e) {
-    const difference = e.target.value - (this.state[e.target.name] || 0)
+    const newValue = Number(e.target.value)
     const itemCalories = e.target.getAttribute('data-cal')
-    const caloriesEaten = ((itemCalories * difference) + this.state.calories)
-    this.setState({
-      ...this.state,
-      [e.target.name]: Number(e.target.value),
-      calories: caloriesEaten
-    })
+    if (!(newValue + 1)) {
+      const lowerCals = this.state.calories - (this.state[e.target.name] * itemCalories)
+      this.setState({
+        [e.target.name]: 0,
+        calories: lowerCals || 0,
+        wrongInput: true
+      })
+    } else {
+      const difference = e.target.value - (this.state[e.target.name] || 0)
+      const caloriesEaten = ((itemCalories * difference) + this.state.calories)
+      this.setState({
+        ...this.state,
+        [e.target.name]: newValue,
+        calories: caloriesEaten,
+        wrongInput: false
+      })
+    }
   }
 
   submitLap () {
@@ -42,6 +54,7 @@ class Lap extends React.Component {
         <h2>Lap {this.props.lap}</h2>
         <p>Need to eat ~200-400 calories per hour</p>
         <p>Input servings eaten</p>
+        {this.state.wrongInput && <p>Please input numbers only.</p>}
         <ul>
           {this.props.lapFuel.map(item => {
             if (item.name !== 'calories') {
