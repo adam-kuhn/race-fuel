@@ -7,15 +7,26 @@ import {setList} from '../actions'
 class FuelList extends React.Component {
   constructor () {
     super()
-    this.state = {}
+    this.state = {
+      wrongInput: false
+    }
     this.handleChange = this.handleChange.bind(this)
     this.closeList = this.closeList.bind(this)
   }
   handleChange (e) {
-    this.setState({
-      ...this.state,
-      [e.target.name]: Number(e.target.value)
-    })
+    const newValue = Number(e.target.value)
+    if (!(newValue + 1)) {
+      this.setState({
+        [e.target.name]: 0,
+        wrongInput: true
+      })
+    } else {
+      this.setState({
+        ...this.state,
+        [e.target.name]: Number(e.target.value),
+        wrongInput: false
+      })
+    }
   }
   closeList () {
     this.props.dispatch(setList(this.state))
@@ -24,6 +35,7 @@ class FuelList extends React.Component {
     return (
       <div>
         <button type='button' onClick={this.closeList}>Submit Fuel List</button>
+        {this.state.wrongInput && <p>Please input numbers only.</p>}
         <ul>
           {this.props.fuel.map(item => {
             if (item.name !== 'calories') {
