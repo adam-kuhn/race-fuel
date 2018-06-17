@@ -55,8 +55,9 @@ function fuelList (state = initialState, action) {
       }
     }
     case (GO_HOME): {
-      for (let i = 0; i < action.list.length; i++) {
-        action.list[i].amount = 0
+      const fuelList = action.list
+      for (let item of fuelList) {
+        item.amount = 0
       }
       return {
         fuel: list,
