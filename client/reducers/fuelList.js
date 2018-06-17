@@ -13,6 +13,7 @@ function fuelList (state = initialState, action) {
         fuel: [ {
           id: 1,
           name: 'calories',
+          keyName: 'calories',
           totalAmount: 0,
           totalText: 'Calories eaten'
         }]
@@ -22,7 +23,7 @@ function fuelList (state = initialState, action) {
       const fuelItem = Object.keys(action.fuelList)
       for (let item of state.fuel) {
         for (let fuelName of fuelItem) {
-          if (item.name === fuelName) {
+          if (item.keyName === fuelName) {
             item.amount = action.fuelList[fuelName]
           }
         }
@@ -34,9 +35,10 @@ function fuelList (state = initialState, action) {
     }
     case (NEXT_LAP): {
       const fuelItem = Object.keys(action.lapFuel)
+      console.log(fuelItem)
       for (let item of action.fuelList) {
         for (let fuelName of fuelItem) {
-          if (item.name === fuelName) {
+          if (item.keyName === fuelName) {
             item.amount = item.amount - (action.lapFuel[fuelName] * (item.serving || 1))
             item.totalAmount = item.totalAmount + (action.lapFuel[fuelName] * (item.serving || 1))
           }

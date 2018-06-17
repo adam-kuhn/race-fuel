@@ -8,6 +8,7 @@ class AddItem extends React.Component {
     super()
     this.state = {
       name: '',
+      keyName: '',
       itemCalories: '',
       wrongInput: false,
       noValue: false
@@ -17,9 +18,12 @@ class AddItem extends React.Component {
   }
   handleChange (e) {
     if (e.target.name === 'name') {
+      const itemName = e.target.value
+      const keyName = itemName.replace(/\s/g, '')
       this.setState({
         ...this.state,
-        [e.target.name]: e.target.value
+        name: itemName,
+        keyName
       })
     } else {
       const newValue = Number(e.target.value)
@@ -45,6 +49,7 @@ class AddItem extends React.Component {
       this.props.dispatch(addItem(this.state))
       this.setState({
         name: '',
+        keyName: '',
         itemCalories: '',
         wrongInput: false,
         noValue: false

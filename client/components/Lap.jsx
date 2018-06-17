@@ -38,7 +38,7 @@ class Lap extends React.Component {
   submitLap () {
     this.props.dispatch(nextLap(this.props.lap, this.state))
     const items = this.props.lapFuel.map(item => {
-      return item.name
+      return item.keyName
     })
     for (let fuel of items) {
       this.setState({
@@ -57,10 +57,10 @@ class Lap extends React.Component {
         {this.state.wrongInput && <p>Please input numbers only.</p>}
         <ul>
           {this.props.lapFuel.map(item => {
-            if (item.name !== 'calories') {
+            if (item.keyName !== 'calories') {
               return (
                 <li key={item.id}>{item.lapText}
-                  <input value={this.state[item.name] || 0} name={item.name}
+                  <input value={this.state[item.keyName] || 0} name={item.keyName}
                     onChange={this.handleChange} data-cal={item.itemCalories}/>
                 </li>
               )

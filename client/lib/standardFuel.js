@@ -3,12 +3,14 @@ export default
   {
     id: 1,
     name: 'calories',
+    keyName: 'calories',
     totalAmount: 0,
     totalText: 'Calories eaten'
   },
   {
     id: 2,
     name: 'clifbar',
+    keyName: 'clifbar',
     amount: 0,
     liveText: 'ClifBars',
     lapText: 'ClifBars (1/2)',
@@ -20,6 +22,7 @@ export default
   {
     id: 3,
     name: 'gu',
+    keyName: 'gu',
     amount: 0,
     liveText: 'Gu',
     lapText: 'Gu (1 gel)',
@@ -30,6 +33,7 @@ export default
   {
     id: 4,
     name: 'pbj',
+    keyName: 'pbj',
     amount: 0,
     liveText: 'Peanut Butter and Jelly Sandwiches',
     lapText: 'Peanut Butter and Jelly Sandwiches (1/2)',
@@ -42,6 +46,7 @@ export default
   {
     id: 5,
     name: 'balls',
+    keyName: 'balls',
     amount: 0,
     liveText: 'Power Balls',
     lapText: 'Power Balls (2 balls)',
@@ -54,6 +59,7 @@ export default
   {
     id: 6,
     name: 'banana',
+    keyName: 'banana',
     amount: 0,
     liveText: 'Bananas',
     lapText: 'Bananas (1)',
@@ -64,6 +70,7 @@ export default
   {
     id: 7,
     name: 'water',
+    keyName: 'water',
     amount: 0,
     liveText: 'Water (mL)',
     lapText: 'Water (mL)',
