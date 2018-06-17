@@ -19,7 +19,6 @@ class AddItem extends React.Component {
   handleChange (e) {
     if (e.target.name === 'name') {
       const itemName = e.target.value
-      
       const keyName = itemName.replace(/\s/g, '').toLowerCase()
       this.setState({
         ...this.state,
