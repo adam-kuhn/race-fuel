@@ -60,10 +60,10 @@ class AddItem extends React.Component {
             onChange={this.handleChange} placeholder='what fuel?' />
         </p>
         <p>Calories per serving:
-          {this.state.wrongInput && <p>Please use numbers only.</p>}
           <input value={this.state.itemCalories}
             onChange={this.handleChange} placeholder='how many calories?'/>
         </p>
+        {this.state.wrongInput && <p>Please use numbers only.</p>}
         {this.state.noValue && <p>Please fill out all fields.</p>}
         <button type='button' onClick={this.submitItem}>Add Item</button>
       </div>
