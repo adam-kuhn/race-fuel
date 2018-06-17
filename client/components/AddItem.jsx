@@ -9,7 +9,8 @@ class AddItem extends React.Component {
     this.state = {
       name: '',
       itemCalories: '',
-      wrongInput: false
+      wrongInput: false,
+      noValue: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.submitItem = this.submitItem.bind(this)
@@ -36,11 +37,19 @@ class AddItem extends React.Component {
     }
   }
   submitItem () {
-    this.props.dispatch(addItem(this.state))
-    this.setState({
-      name: '',
-      itemCalories: ''
-    })
+    if (this.state.name === '' || this.state.itemCalories === '') {
+      this.setState({
+        noValue: true
+      })
+    } else {
+      this.props.dispatch(addItem(this.state))
+      this.setState({
+        name: '',
+        itemCalories: '',
+        wrongInput: false,
+        noValue: false
+      })
+    }
   }
   render () {
     return (
@@ -55,6 +64,7 @@ class AddItem extends React.Component {
           <input value={this.state.itemCalories}
             onChange={this.handleChange} placeholder='how many calories?'/>
         </p>
+        {this.state.noValue && <p>Please fill out all fields.</p>}
         <button type='button' onClick={this.submitItem}>Add Item</button>
       </div>
     )
