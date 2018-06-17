@@ -29,7 +29,6 @@ function fuelList (state = initialState, action) {
     }
     case (NEXT_LAP): {
       const fuelItem = Object.keys(action.lapFuel)
-      console.log(fuelItem)
       for (let item of action.fuelList) {
         for (let fuelName of fuelItem) {
           if (item.keyName === fuelName) {
@@ -57,8 +56,9 @@ function fuelList (state = initialState, action) {
     }
     case (GO_HOME): {
       return {
-        fuel: list,
+        fuel: [...state.fuelList.fuel, list],
         lap: 1
+        // test: 'hi'
       }
     }
     default: {
