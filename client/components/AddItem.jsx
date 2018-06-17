@@ -8,7 +8,8 @@ class AddItem extends React.Component {
     super()
     this.state = {
       name: '',
-      itemCalories: ''
+      itemCalories: '',
+      wrongInput: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.submitItem = this.submitItem.bind(this)
@@ -20,10 +21,18 @@ class AddItem extends React.Component {
         [e.target.name]: e.target.value
       })
     } else {
-      this.setState({
-        ...this.state,
-        [e.target.name]: Number(e.target.value)
-      })
+      const newValue = Number(e.target.value)
+      if (!(newValue + 1)) {
+        this.setState({
+          itemCalories: '',
+          wrongInput: true
+        })
+      } else {
+        this.setState({
+          itemCalories: newValue,
+          wrongInput: false
+        })
+      }
     }
   }
   submitItem () {
@@ -42,7 +51,8 @@ class AddItem extends React.Component {
             onChange={this.handleChange} placeholder='what fuel?' />
         </p>
         <p>Calories per serving:
-          <input name='itemCalories' value={this.state.itemCalories}
+          {this.state.wrongInput && <p>Please use numbers only.</p>}
+          <input value={this.state.itemCalories}
             onChange={this.handleChange} placeholder='how many calories?'/>
         </p>
         <button type='button' onClick={this.submitItem}>Add Item</button>
