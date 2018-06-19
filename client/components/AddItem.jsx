@@ -2,12 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import {addItem} from '../actions'
-
-function camelize (string) {
-  return string.replace(/(?:^\w|[A-Z]|\b\w)/g, (letter, index) => {
-    return index === 0 ? letter.toLowerCase() : letter.toUpperCase()
-  }).replace(/\s+|[^a-zA-Z]/g, '')
-}
+import camelize from '../lib/camel'
 
 class AddItem extends React.Component {
   constructor () {
