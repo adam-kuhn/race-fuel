@@ -3,6 +3,12 @@ import {connect} from 'react-redux'
 
 import {addItem} from '../actions'
 
+function camelize (string) {
+  return string.replace(/(?:^\w|[A-Z]|\b\w)/g, (letter, index) => {
+    return index === 0 ? letter.toLowerCase() : letter.toUpperCase()
+  }).replace(/\s+|[^a-zA-Z]/g, '')
+}
+
 class AddItem extends React.Component {
   constructor () {
     super()
@@ -19,7 +25,7 @@ class AddItem extends React.Component {
   handleChange (e) {
     if (e.target.name === 'name') {
       const itemName = e.target.value
-      const keyName = itemName.replace(/\s/g, '').toLowerCase()
+      const keyName = camelize(itemName)
       this.setState({
         ...this.state,
         name: itemName,
