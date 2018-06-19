@@ -70,3 +70,24 @@ test('fuelList updates overall list on NEXT_LAP', () => {
   const actual = fuelList(state, action)
   expect(actual.fuel[1].amount).toBe(expected)
 })
+
+test('fuelList adds a new item on ADD_TO_LIST', () => {
+  const expectedAmount = 0
+  const expectedText = 'new item'
+  const expectedId = 8
+  const action = {
+    type: ADD_TO_LIST,
+    fuelList: list,
+    item: {
+      name: 'new item'
+    }
+  }
+  const actual = fuelList(state, action)
+  expect(actual.fuel[actual.fuel.length - 1].liveText).toBe(expectedText)
+  expect(actual.fuel[actual.fuel.length - 1].lapText).toBe(expectedText)
+  expect(actual.fuel[actual.fuel.length - 1].totalText).toBe(expectedText)
+  expect(actual.fuel[actual.fuel.length - 1].name).toBe(expectedText)
+  expect(actual.fuel[actual.fuel.length - 1].id).toBe(expectedId)
+  expect(actual.fuel[actual.fuel.length - 1].amount).toBe(expectedAmount)
+  expect(actual.fuel[actual.fuel.length - 1].totalAmount).toBe(expectedAmount)
+})
