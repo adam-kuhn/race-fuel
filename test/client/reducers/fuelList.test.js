@@ -91,3 +91,24 @@ test('fuelList adds a new item on ADD_TO_LIST', () => {
   expect(actual.fuel[actual.fuel.length - 1].amount).toBe(expectedAmount)
   expect(actual.fuel[actual.fuel.length - 1].totalAmount).toBe(expectedAmount)
 })
+
+test('fuelList returns all amount to 0 on GO_HOME', () => {
+  const expected = 0
+  const action = {
+    type: GO_HOME,
+    list: [{
+      name: 'pbj',
+      amount: 22,
+      totalAmount: 2
+    },
+    {name: 'balls',
+      amount: 3,
+      totalAmoun: -3}
+    ]
+  }
+  const actual = fuelList(state, action)
+  expect(actual.fuel[0].amount).toBe(expected)
+  expect(actual.fuel[1].amount).toBe(expected)
+  expect(actual.fuel[0].totalAmount).toBe(expected)
+  expect(actual.fuel[1].totalAmount).toBe(expected)
+})
