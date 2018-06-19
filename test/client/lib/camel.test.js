@@ -1,5 +1,22 @@
 import camelize from '../../../client/lib/camel'
 
-test('test suite set up and working', () => {
-  expect(true).toBeTruthy()
+test('camelize converts first letter to lowerCase "This in to camelcase"', () => {
+  const string = 'This in to camelcase'
+  const expected = 'thisInToCamelcase'
+  const actual = camelize(string)
+  expect(actual).toBe(expected)
+})
+
+test('camelize ignores uppercase letters after spaces "this In To camelcase"', () => {
+  const string = 'this In To camelcase'
+  const expected = 'thisInToCamelcase'
+  const actual = camelize(string)
+  expect(actual).toBe(expected)
+})
+
+test('camelize removes special characters', () => {
+  const string = 'make$j tHis() cameL Case'
+  const expected = 'makeJThisCamelCase'
+  const actual = camelize(string)
+  expect(actual).toBe(expected)
 })
