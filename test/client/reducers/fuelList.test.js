@@ -44,3 +44,29 @@ test('fuelList updates on the number of items on SETLIST', () => {
   expect(actual.fuel[2].amount).toBe(expected[0].amount)
   expect(actual.fuel[5].amount).toBe(expected[1].amount)
 })
+
+test('fuelList updates lap count on NEXT_LAP', () => {
+  const expected = {
+    lap: 3
+  }
+  const action = {
+    type: NEXT_LAP,
+    lapFuel: [{}],
+    fuelList: [{}],
+    lap: 2
+  }
+  const actual = fuelList(state, action)
+  expect(actual.lap).toBe(expected.lap)
+})
+
+test('fuelList updates overall list on NEXT_LAP', () => {
+  const expected = -1.5
+  const action = {
+    type: NEXT_LAP,
+    lapFuel: {clifbar: 3},
+    fuelList: list,
+    lap: 2
+  }
+  const actual = fuelList(state, action)
+  expect(actual.fuel[1].amount).toBe(expected)
+})
