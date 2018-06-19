@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import {addItem} from '../actions'
+import camelize from '../lib/camel'
 
 class AddItem extends React.Component {
   constructor () {
@@ -19,7 +20,7 @@ class AddItem extends React.Component {
   handleChange (e) {
     if (e.target.name === 'name') {
       const itemName = e.target.value
-      const keyName = itemName.replace(/\s/g, '').toLowerCase()
+      const keyName = camelize(itemName)
       this.setState({
         ...this.state,
         name: itemName,
