@@ -18,7 +18,9 @@ class App extends React.Component {
         {!this.props.showSelect && !this.props.showFuelList && <LiveList />}
         {!this.props.showSelect && <Lap />}
         {!this.props.showSelect && <Totals />}
-        {!this.props.showSelect && <HomeBtn />}
+        <div className="center">
+          {!this.props.showSelect && <HomeBtn />}
+        </div>
       </div>
     )
   }
