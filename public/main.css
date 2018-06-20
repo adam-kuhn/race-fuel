@@ -8,3 +8,12 @@
   display: flex;
   justify-content: center
 }
+
+.btn-primary-card {
+  background-color: #2b4764;
+  border-color: #28415b;
+}
+.btn-primary-card:hover {
+  background-color: #6089b5;
+  border-color: #6089b5;
+}
