@@ -66,7 +66,7 @@ class AddItem extends React.Component {
             onChange={this.handleChange} placeholder='what fuel?' />
         </p>
         <p>Calories per serving:
-          <input value={this.state.itemCalories}
+          <input className='form-control' value={this.state.itemCalories}
             onChange={this.handleChange} placeholder='how many calories?'/>
         </p>
         {this.state.wrongInput && <p className='text-danger'>Please use numbers only.</p>}

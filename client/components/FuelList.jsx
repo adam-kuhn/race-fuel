@@ -41,7 +41,7 @@ class FuelList extends React.Component {
             if (item.name !== 'calories') {
               return (
                 <li key={item.id}>{item.liveText}
-                  <input value={this.state[item.keyName] || 0}
+                  <input className='form-control' value={this.state[item.keyName] || 0}
                     name={item.keyName} onChange={this.handleChange}/>
                 </li>
               )

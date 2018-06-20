@@ -60,7 +60,7 @@ class Lap extends React.Component {
             if (item.keyName !== 'calories') {
               return (
                 <li key={item.id}>{item.lapText}
-                  <input value={this.state[item.keyName] || 0} name={item.keyName}
+                  <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
                     onChange={this.handleChange} data-cal={item.itemCalories}/>
                 </li>
               )
