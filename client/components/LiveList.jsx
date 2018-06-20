@@ -23,9 +23,9 @@ class LiveList extends React.Component {
               )
             }
           })}
+          <button type='button' className="btn btn-primary"
+            onClick={this.editFuelList}>Edit Fuel List</button>
         </div>
-        <button type='button' className="btn btn-primary"
-          onClick={this.editFuelList}>Edit Fuel List</button>
       </div>
     )
   }
