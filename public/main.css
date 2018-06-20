@@ -1,3 +1,7 @@
 body {
   background-color: rgb(177, 177, 218);
 }
+
+button {
+  padding: 5rem;
+}
