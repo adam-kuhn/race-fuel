@@ -60,18 +60,22 @@ class AddItem extends React.Component {
   render () {
     return (
       <div>
-        <h3>Add Custom Item</h3>
-        <p>Item:
-          <input className='form-control' name='name' value={this.state.name}
-            onChange={this.handleChange} placeholder='what fuel?' />
-        </p>
-        <p>Calories per serving:
-          <input className='form-control' value={this.state.itemCalories}
-            onChange={this.handleChange} placeholder='how many calories?'/>
-        </p>
-        {this.state.wrongInput && <p className='text-danger'>Please use numbers only.</p>}
-        {this.state.noValue && <p className='text-danger'>Please fill out all fields.</p>}
-        <button type='button' className="btn btn-primary" onClick={this.submitItem}>Add Item</button>
+        <div className="card text-white bg-warning mb-3">
+          <h3 className="card-header">Add Custom Item</h3>
+          <div className="card-body">
+            <p>Item:
+              <input className='form-control' name='name' value={this.state.name}
+                onChange={this.handleChange} placeholder='what fuel?' />
+            </p>
+            <p>Calories per serving:
+              <input className='form-control' value={this.state.itemCalories}
+                onChange={this.handleChange} placeholder='how many calories?'/>
+            </p>
+            {this.state.wrongInput && <p className='text-danger'>Please use numbers only.</p>}
+            {this.state.noValue && <p className='text-danger'>Please fill out all fields.</p>}
+          </div>
+        </div>
+        <button type='button' className="btn btn-warning text-white" onClick={this.submitItem}>Add Item</button>
       </div>
     )
   }
