@@ -58,9 +58,10 @@ function fuelList (state = initialState, action) {
       const fuelList = action.list
       for (let item of fuelList) {
         item.amount = 0
+        item.totalAmount = 0
       }
       return {
-        fuel: list,
+        fuel: fuelList,
         lap: 1
       }
     }
