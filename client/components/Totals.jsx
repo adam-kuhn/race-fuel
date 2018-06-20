@@ -4,13 +4,15 @@ import {connect} from 'react-redux'
 class Totals extends React.Component {
   render () {
     return (
-      <div>
-        <h2>Totals!</h2>
-        {this.props.fuel.map(item => {
-          return (
-            <p key={item.id}>{item.totalText} {item.totalAmount}</p>
-          )
-        })}
+      <div className="card text-white bg-info mb-3">
+        <h2 className="card-header">Totals!</h2>
+        <div className="card-body">
+          {this.props.fuel.map(item => {
+            return (
+              <p className="card-text" key={item.id}>{item.totalText} {item.totalAmount}</p>
+            )
+          })}
+        </div>
       </div>
     )
   }

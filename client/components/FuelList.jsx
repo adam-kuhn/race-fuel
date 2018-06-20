@@ -34,14 +34,14 @@ class FuelList extends React.Component {
   render () {
     return (
       <div>
-        <button type='button' onClick={this.closeList}>Submit Fuel List</button>
-        {this.state.wrongInput && <p>Please input numbers only.</p>}
+        <button type='button' className="btn btn-primary" onClick={this.closeList}>Submit Fuel List</button>
+        {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
         <ul>
           {this.props.fuel.map(item => {
             if (item.name !== 'calories') {
               return (
                 <li key={item.id}>{item.liveText}
-                  <input value={this.state[item.keyName] || 0}
+                  <input className='form-control' value={this.state[item.keyName] || 0}
                     name={item.keyName} onChange={this.handleChange}/>
                 </li>
               )

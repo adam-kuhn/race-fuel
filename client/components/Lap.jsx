@@ -51,25 +51,28 @@ class Lap extends React.Component {
   render () {
     return (
       <div>
-        <h2>Lap {this.props.lap}</h2>
-        <p>Need to eat ~200-400 calories per hour</p>
-        <p>Input servings eaten</p>
-        {this.state.wrongInput && <p>Please input numbers only.</p>}
-        <ul>
-          {this.props.lapFuel.map(item => {
-            if (item.keyName !== 'calories') {
-              return (
-                <li key={item.id}>{item.lapText}
-                  <input value={this.state[item.keyName] || 0} name={item.keyName}
-                    onChange={this.handleChange} data-cal={item.itemCalories}/>
-                </li>
-              )
-            }
-          })}
-
-        </ul>
-        <h3>Calories {this.state.calories}</h3>
-        <button type='button' onClick={this.submitLap}>Next Lap</button>
+        <div className="card text-white bg-success mb-3">
+          <div className='card-header'>
+            <h2>Lap {this.props.lap}</h2>
+            <p>Need to eat ~200-400 calories per hour</p>
+            <p>Input servings eaten</p>
+          </div>
+          <div className="card-body">
+            {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
+            {this.props.lapFuel.map(item => {
+              if (item.keyName !== 'calories') {
+                return (
+                  <p className="card-text" key={item.id}>{item.lapText}
+                    <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
+                      onChange={this.handleChange} data-cal={item.itemCalories}/>
+                  </p>
+                )
+              }
+            })}
+            <h3>Calories {this.state.calories}</h3>
+          </div>
+        </div>
+        <button type='button' className="btn btn-success" onClick={this.submitLap}>Next Lap</button>
       </div>
     )
   }

@@ -62,16 +62,16 @@ class AddItem extends React.Component {
       <div>
         <h3>Add Custom Item</h3>
         <p>Item:
-          <input name='name' value={this.state.name}
+          <input className='form-control' name='name' value={this.state.name}
             onChange={this.handleChange} placeholder='what fuel?' />
         </p>
         <p>Calories per serving:
-          <input value={this.state.itemCalories}
+          <input className='form-control' value={this.state.itemCalories}
             onChange={this.handleChange} placeholder='how many calories?'/>
         </p>
-        {this.state.wrongInput && <p>Please use numbers only.</p>}
-        {this.state.noValue && <p>Please fill out all fields.</p>}
-        <button type='button' onClick={this.submitItem}>Add Item</button>
+        {this.state.wrongInput && <p className='text-danger'>Please use numbers only.</p>}
+        {this.state.noValue && <p className='text-danger'>Please fill out all fields.</p>}
+        <button type='button' className="btn btn-primary" onClick={this.submitItem}>Add Item</button>
       </div>
     )
   }
