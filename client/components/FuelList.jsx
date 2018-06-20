@@ -35,7 +35,7 @@ class FuelList extends React.Component {
     return (
       <div>
         <div className="card text-white bg-primary mb-3">
-          <h3 className="card-header">Edit Fuel List</h3>
+          <h3 className="card-header">Input Fuel List</h3>
           {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
           <div className="card-body">
             {this.props.fuel.map(item => {
