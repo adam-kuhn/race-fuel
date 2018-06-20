@@ -34,20 +34,25 @@ class FuelList extends React.Component {
   render () {
     return (
       <div>
+        <div className="card text-white bg-primary mb-3">
+          <h3 className="card-header">Edit Fuel List</h3>
+          {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
+          <div className="card-body">
+            {this.props.fuel.map(item => {
+              if (item.name !== 'calories') {
+                return (
+                  <p className="card-text" key={item.id}>{item.liveText}
+                    <input className='form-control' value={this.state[item.keyName] || 0}
+                      name={item.keyName} onChange={this.handleChange}/>
+                  </p>
+                )
+              }
+            })}
+          </div>
+        </div>
+
         <button type='button' className="btn btn-primary" onClick={this.closeList}>Submit Fuel List</button>
-        {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
-        <ul>
-          {this.props.fuel.map(item => {
-            if (item.name !== 'calories') {
-              return (
-                <li key={item.id}>{item.liveText}
-                  <input className='form-control' value={this.state[item.keyName] || 0}
-                    name={item.keyName} onChange={this.handleChange}/>
-                </li>
-              )
-            }
-          })}
-        </ul>
+
         <AddItem />
       </div>
     )
