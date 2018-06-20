@@ -71,7 +71,7 @@ class AddItem extends React.Component {
         </p>
         {this.state.wrongInput && <p className='text-danger'>Please use numbers only.</p>}
         {this.state.noValue && <p className='text-danger'>Please fill out all fields.</p>}
-        <button type='button' onClick={this.submitItem}>Add Item</button>
+        <button type='button' className="btn btn-primary" onClick={this.submitItem}>Add Item</button>
       </div>
     )
   }

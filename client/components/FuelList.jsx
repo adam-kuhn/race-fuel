@@ -34,7 +34,7 @@ class FuelList extends React.Component {
   render () {
     return (
       <div>
-        <button type='button' onClick={this.closeList}>Submit Fuel List</button>
+        <button type='button' className="btn btn-primary" onClick={this.closeList}>Submit Fuel List</button>
         {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
         <ul>
           {this.props.fuel.map(item => {
