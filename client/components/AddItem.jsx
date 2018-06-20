@@ -62,7 +62,7 @@ class AddItem extends React.Component {
       <div>
         <h3>Add Custom Item</h3>
         <p>Item:
-          <input name='name' value={this.state.name}
+          <input className='form-control' name='name' value={this.state.name}
             onChange={this.handleChange} placeholder='what fuel?' />
         </p>
         <p>Calories per serving:
