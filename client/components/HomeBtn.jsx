@@ -13,7 +13,7 @@ class HomeBtn extends React.Component {
   }
   render () {
     return (
-      <button type='button' onClick={this.handleClick}>Start Over</button>
+      <button type='button' className="btn btn-danger" onClick={this.handleClick}>Start Over</button>
     )
   }
 }
