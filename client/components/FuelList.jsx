@@ -35,7 +35,7 @@ class FuelList extends React.Component {
     return (
       <div>
         <button type='button' onClick={this.closeList}>Submit Fuel List</button>
-        {this.state.wrongInput && <p>Please input numbers only.</p>}
+        {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
         <ul>
           {this.props.fuel.map(item => {
             if (item.name !== 'calories') {

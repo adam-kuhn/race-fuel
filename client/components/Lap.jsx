@@ -54,7 +54,7 @@ class Lap extends React.Component {
         <h2>Lap {this.props.lap}</h2>
         <p>Need to eat ~200-400 calories per hour</p>
         <p>Input servings eaten</p>
-        {this.state.wrongInput && <p>Please input numbers only.</p>}
+        {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
         <ul>
           {this.props.lapFuel.map(item => {
             if (item.keyName !== 'calories') {
