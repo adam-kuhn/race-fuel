@@ -4,17 +4,17 @@ import {connect} from 'react-redux'
 class LiveList extends React.Component {
   render () {
     return (
-      <div>
-        <h3>Remaining Fuel</h3>
-        <ul>
+      <div className='card text-white bg-primary mb-3'>
+        <h3 className='card-header'>Remaining Fuel</h3>
+        <div className='card-body'>
           {this.props.fuel.map(item => {
             if (item.name !== 'calories') {
               return (
-                <li key={item.id}>{item.liveText} {item.amount}</li>
+                <p className='card-text' key={item.id}>{item.liveText} {item.amount}</p>
               )
             }
           })}
-        </ul>
+        </div>
       </div>
     )
   }
