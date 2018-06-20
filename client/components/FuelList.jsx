@@ -13,6 +13,7 @@ class FuelList extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.closeList = this.closeList.bind(this)
   }
+
   handleChange (e) {
     const newValue = Number(e.target.value)
     if (!(newValue + 1)) {
