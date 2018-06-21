@@ -38,6 +38,10 @@
   border-color: #97dac9;
 }
 
-.center button{
-  margin: 10rem 10%;
+.btn-select {
+  margin: 3rem 10%;
+}
+
+.title {
+  margin: 5% 0;
 }

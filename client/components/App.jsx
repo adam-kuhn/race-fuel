@@ -12,15 +12,15 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <h2>Nutrition Tracker</h2>
+        <div className="center title">
+          <h2>Nutrition Tracker</h2>
+        </div>
         {this.props.showSelect && <Select />}
         {!this.props.showSelect && this.props.showFuelList && <FuelList />}
         {!this.props.showSelect && !this.props.showFuelList && <LiveList />}
         {!this.props.showSelect && <Lap />}
         {!this.props.showSelect && <Totals />}
-        <div className="center">
-          {!this.props.showSelect && <HomeBtn />}
-        </div>
+        {!this.props.showSelect && <HomeBtn />}
       </div>
     )
   }

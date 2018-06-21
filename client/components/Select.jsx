@@ -18,8 +18,8 @@ class Select extends React.Component {
   render () {
     return (
       <div className="center">
-        <button type='button' className="btn btn-primary" onClick={this.custom}>Custom List</button>
-        <button type='button' className="btn btn-primary"onClick={this.standard}>Standard List</button>
+        <button type='button' className="btn btn-primary btn-select" onClick={this.custom}>Custom List</button>
+        <button type='button' className="btn btn-primary btn-select"onClick={this.standard}>Standard List</button>
       </div>
     )
   }
