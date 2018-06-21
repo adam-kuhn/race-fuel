@@ -9,16 +9,24 @@ export default
   },
   {
     id: 2,
-    name: 'clifbar',
-    keyName: 'clifbar',
-    amount: 0,
-    liveText: 'ClifBars',
-    lapText: 'ClifBars (1/2)',
+    name: 'distance',
+    keyName: 'distance',
+    lapText: 'distance (km)',
     totalAmount: 0,
-    totalText: 'ClifBars eaten',
-    itemCalories: 135,
-    serving: 0.5
+    totalText: 'Distance (km)'
   },
+  // {
+  //   id: 2,
+  //   name: 'clifbar',
+  //   keyName: 'clifbar',
+  //   amount: 0,
+  //   liveText: 'ClifBars',
+  //   lapText: 'ClifBars (1/2)',
+  //   totalAmount: 0,
+  //   totalText: 'ClifBars eaten',
+  //   itemCalories: 135,
+  //   serving: 0.5
+  // },
   {
     id: 3,
     name: 'gu',
