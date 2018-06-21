@@ -20,7 +20,8 @@ function display (state = initialState, action) {
     }
     case (STANDARD): {
       return {
-        showSelect: false
+        showSelect: false,
+        showFuelList: true
       }
     }
     case (CUSTOM): {
