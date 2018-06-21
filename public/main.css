@@ -27,3 +27,13 @@
   background-color: #d6a559;
   border-color: #c87f0a;
 }
+
+.btn-success-card {
+  background-color: #009670;
+  border-color: #008966;
+}
+
+.btn-success-card:hover {
+  background-color: #97dac9;
+  border-color: #97dac9;
+}

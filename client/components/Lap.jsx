@@ -71,7 +71,7 @@ class Lap extends React.Component {
             })}
             <h3>Calories {this.state.calories}</h3>
             <div className="center">
-              <button type='button' className="btn btn-success" onClick={this.submitLap}>Next Lap</button>
+              <button type='button' className="btn btn-success btn-success-card" onClick={this.submitLap}>Next Lap</button>
             </div>
           </div>
         </div>
