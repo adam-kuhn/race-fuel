@@ -17,3 +17,13 @@
   background-color: #6089b5;
   border-color: #6089b5;
 }
+
+.btn-warning-card {
+  background-color: #d4860b;
+    border-color: #c87f0a;
+}
+
+.btn-warning-card:hover {
+  background-color: #d6a559;
+  border-color: #c87f0a;
+}
