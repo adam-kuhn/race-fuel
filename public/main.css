@@ -1,8 +1,47 @@
-body {
-  /* background-color: rgb(177, 177, 218); */
-  /* background-color: black; */
+
+.card {
+  max-width: 80%;
+  margin-left: 10%;
 }
 
-button {
-  /* padding: 5rem; */
+.center {
+  display: flex;
+  justify-content: center
+}
+
+.btn-primary-card {
+  background-color: #2b4764;
+  border-color: #28415b;
+}
+.btn-primary-card:hover {
+  background-color: #6089b5;
+  border-color: #6089b5;
+}
+
+.btn-warning-card {
+  background-color: #d4860b;
+    border-color: #c87f0a;
+}
+
+.btn-warning-card:hover {
+  background-color: #d6a559;
+  border-color: #c87f0a;
+}
+
+.btn-success-card {
+  background-color: #009670;
+  border-color: #008966;
+}
+
+.btn-success-card:hover {
+  background-color: #97dac9;
+  border-color: #97dac9;
+}
+
+.btn-select {
+  margin: 3rem 10%;
+}
+
+.title {
+  margin: 5% 0;
 }
