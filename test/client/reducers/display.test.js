@@ -53,7 +53,7 @@ test('display returns correct display on STANDARD', () => {
 })
 
 test('display does overwrite previous state on STANDARD', () => {
-  const expected = 1
+  const expected = 2
   const action = {
     type: STANDARD
   }
