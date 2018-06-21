@@ -17,11 +17,9 @@ class LiveList extends React.Component {
         <h3 className='card-header'>Remaining Fuel</h3>
         <div className='card-body'>
           {this.props.fuel.map(item => {
-            if (item.name !== 'calories') {
-              return (
-                <p className='card-text' key={item.id}>{item.liveText} {item.amount}</p>
-              )
-            }
+            return (
+              <p className='card-text' key={item.id}>{item.liveText} {item.amount}</p>
+            )
           })}
           <div className="center">
             <button type='button' className="btn btn-primary btn-primary-card"

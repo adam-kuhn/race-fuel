@@ -15,20 +15,20 @@ export default
     totalAmount: 0,
     totalText: 'Distance (km)'
   },
-  // {
-  //   id: 2,
-  //   name: 'clifbar',
-  //   keyName: 'clifbar',
-  //   amount: 0,
-  //   liveText: 'ClifBars',
-  //   lapText: 'ClifBars (1/2)',
-  //   totalAmount: 0,
-  //   totalText: 'ClifBars eaten',
-  //   itemCalories: 135,
-  //   serving: 0.5
-  // },
   {
     id: 3,
+    name: 'clifbar',
+    keyName: 'clifbar',
+    amount: 0,
+    liveText: 'ClifBars',
+    lapText: 'ClifBars (1/2)',
+    totalAmount: 0,
+    totalText: 'ClifBars eaten',
+    itemCalories: 135,
+    serving: 0.5
+  },
+  {
+    id: 4,
     name: 'gu',
     keyName: 'gu',
     amount: 0,
@@ -39,7 +39,7 @@ export default
     itemCalories: 100
   },
   {
-    id: 4,
+    id: 5,
     name: 'pbj',
     keyName: 'pbj',
     amount: 0,
@@ -52,7 +52,7 @@ export default
 
   },
   {
-    id: 5,
+    id: 6,
     name: 'balls',
     keyName: 'balls',
     amount: 0,
@@ -65,7 +65,7 @@ export default
 
   },
   {
-    id: 6,
+    id: 7,
     name: 'banana',
     keyName: 'banana',
     amount: 0,
@@ -76,7 +76,7 @@ export default
     itemCalories: 100
   },
   {
-    id: 7,
+    id: 8,
     name: 'water',
     keyName: 'water',
     amount: 0,
