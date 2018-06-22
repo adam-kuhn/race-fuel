@@ -8,7 +8,7 @@ function Measurements (props) {
         <p key={unit.id} id={unit.id}>{unit.name === 'distance' &&
         props.km ? unit.lapTextKm
           : unit.lapTextMi || unit.lapText}
-        <input name={unit.name} value={unit.totalAmount} onChange={props.change}/>
+        <input name={unit.name} value={props.lapState[unit.name] || 0} onChange={props.change}/>
         </p>
       )
     })
