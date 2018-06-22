@@ -1,8 +1,26 @@
 import {TOGGLE_UNITS} from '../actions'
 
 const initialState = {
-  distance: 0,
-  time: 0
+  measurements: [
+    {
+      id: '1m',
+      name: 'distance',
+      keyName: 'distance',
+      lapTextKm: 'distance (km)',
+      lapTextMi: 'distance (Mi)',
+      totalAmount: 0,
+      totalTextKm: 'Distance (km)',
+      totalTextMi: 'Distance (mi)'
+    },
+    {
+      id: '2m',
+      name: 'time',
+      keyName: 'time',
+      lapText: 'time',
+      totalAmount: 0,
+      totalText: 'time'
+    }
+  ]
 }
 
 const distanceAndTime = (state = initialState, action) => {

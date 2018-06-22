@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import DistanceSelect from './DistanceSelect'
+import Measurements from './Measurements'
 
 import {nextLap} from '../actions'
 
@@ -15,6 +16,7 @@ class Lap extends React.Component {
     this.submitLap = this.submitLap.bind(this)
   }
   handleChange (e) {
+    console.log('here', e.target.value)
     const newValue = Number(e.target.value)
     const itemCalories = e.target.getAttribute('data-cal')
     if (!(newValue + 1)) {
@@ -80,6 +82,7 @@ class Lap extends React.Component {
               }
             })}
             <h3>Calories {this.state.calories}</h3>
+            <Measurements change={this.handleChange} />
             <div className="center">
               <button type='button' className="btn btn-success btn-success-card" onClick={this.submitLap}>Next Lap</button>
             </div>
