@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import DistanceSelect from './DistanceSelect'
 
 import {nextLap} from '../actions'
 
@@ -56,13 +57,22 @@ class Lap extends React.Component {
             <h2>Lap {this.props.lap}</h2>
             <p>Need to eat ~200-400 calories per hour</p>
             <p>Input servings eaten</p>
+            <DistanceSelect />
           </div>
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
             {this.props.lapFuel.map(item => {
               if (item.keyName !== 'calories') {
+                if (this.props.km && item.keyName === 'distance') {
+                  return (
+                    <p className="card-text" key={item.id}>{item.lapTextKm}
+                      <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
+                        onChange={this.handleChange} data-cal={item.itemCalories}/>
+                    </p>
+                  )
+                }
                 return (
-                  <p className="card-text" key={item.id}>{item.lapText}
+                  <p className="card-text" key={item.id}>{item.lapText || item.lapTextMi}
                     <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
                       onChange={this.handleChange} data-cal={item.itemCalories}/>
                   </p>
@@ -83,7 +93,8 @@ class Lap extends React.Component {
 function mapStateToProps (state) {
   return {
     lap: state.fuelList.lap,
-    lapFuel: state.fuelList.fuel
+    lapFuel: state.fuelList.fuel,
+    km: state.display.km
   }
 }
 

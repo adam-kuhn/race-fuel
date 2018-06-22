@@ -11,9 +11,11 @@ export default
     id: 2,
     name: 'distance',
     keyName: 'distance',
-    lapText: 'distance (km)',
+    lapTextKm: 'distance (km)',
+    lapTextMi: 'distance (Mi)',
     totalAmount: 0,
-    totalText: 'Distance (km)'
+    totalTextKm: 'Distance (km)',
+    totalTextMi: 'Distance (mi)'
   },
   {
     id: 3,

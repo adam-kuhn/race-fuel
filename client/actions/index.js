@@ -5,6 +5,7 @@ export const ADD_TO_LIST = 'ADD_TO_LIST'
 export const STANDARD = 'STANDARD'
 export const CUSTOM = 'CUSTOM'
 export const GO_HOME = 'GO_HOME'
+export const TOGGLE_UNITS = 'TOGGLE_UNITS'
 
 export const showFuelList = () => {
   return {
@@ -62,5 +63,12 @@ export const goHome = (list) => {
   return {
     type: GO_HOME,
     list
+  }
+}
+
+export const changeUnits = (boolean) => {
+  return {
+    type: TOGGLE_UNITS,
+    boolean
   }
 }
