@@ -7,16 +7,6 @@ export default
     totalAmount: 0,
     totalText: 'Calories eaten'
   },
-  // {
-  //   id: 2,
-  //   name: 'distance',
-  //   keyName: 'distance',
-  //   lapTextKm: 'distance (km)',
-  //   lapTextMi: 'distance (Mi)',
-  //   totalAmount: 0,
-  //   totalTextKm: 'Distance (km)',
-  //   totalTextMi: 'Distance (mi)'
-  // },
   {
     id: 3,
     name: 'clifbar',
