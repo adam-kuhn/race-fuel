@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import MeasurementTotal from './MeasurementTotal'
+
 class Totals extends React.Component {
   render () {
     return (
@@ -12,11 +14,7 @@ class Totals extends React.Component {
               <p className="card-text" key={item.id}>{item.totalText} {item.totalAmount}</p>
             )
           })}
-          {this.props.measurements.map(unit => {
-            return (
-              <p className="card-text" key={unit.id}>{unit.totalTextKm} {unit.totalAmount}</p>
-            )
-          })}
+          <MeasurementTotal />
         </div>
       </div>
     )
