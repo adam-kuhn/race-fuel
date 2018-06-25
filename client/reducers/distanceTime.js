@@ -32,9 +32,6 @@ const distanceAndTime = (state = initialState, action) => {
       }
     }
     case (NEXT_LAP): {
-      // const measurements = Object.keys(action.distanceTime)
-      // for (let unit of )
-      // for (let value of action.distanceTime) {
       for (let value = 0; value < action.distanceTime.length; value++) {
         for (let measured in action.lapFuel) {
           if (measured === action.distanceTime[value].name) {
