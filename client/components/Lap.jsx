@@ -39,6 +39,7 @@ class Lap extends React.Component {
   }
 
   submitLap () {
+    console.log(this.state)
     this.props.dispatch(nextLap(this.props.lap, this.state))
     const items = this.props.lapFuel.map(item => {
       return item.keyName

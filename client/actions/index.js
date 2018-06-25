@@ -18,18 +18,20 @@ export const setList = (fuelList) => {
     fuelList
   }
 }
-export const update = (lap, lapFuel, fuelList) => {
+export const update = (lap, lapFuel,
+  fuelList, distanceTime) => {
   return {
     type: NEXT_LAP,
     lap,
     lapFuel,
-    fuelList
+    fuelList,
+    distanceTime
   }
 }
 export const nextLap = (lap, lapFuel) => {
   return (dispatch, getState) => {
     const state = getState()
-    dispatch(update(lap, lapFuel, state.fuelList.fuel))
+    dispatch(update(lap, lapFuel, state.fuelList.fuel, state.distanceTime.measurements))
   }
 }
 

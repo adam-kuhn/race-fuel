@@ -1,4 +1,4 @@
-import {TOGGLE_UNITS} from '../actions'
+import {TOGGLE_UNITS, NEXT_LAP} from '../actions'
 
 const initialState = {
   measurements: [
@@ -29,6 +29,22 @@ const distanceAndTime = (state = initialState, action) => {
       return {
         ...state,
         distance: 2
+      }
+    }
+    case (NEXT_LAP): {
+      // const measurements = Object.keys(action.distanceTime)
+      // for (let unit of )
+      // for (let value of action.distanceTime) {
+      for (let value = 0; value < action.distanceTime.length; value++) {
+        for (let measured in action.lapFuel) {
+          if (measured === action.distanceTime[value].name) {
+            action.distanceTime[value].totalAmount += action.lapFuel[measured]
+          }
+        }
+      }
+      return {
+        ...state,
+        measurements: [...action.distanceTime]
       }
     }
     default: {
