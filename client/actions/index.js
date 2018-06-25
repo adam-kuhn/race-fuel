@@ -68,9 +68,11 @@ export const goHome = (list) => {
   }
 }
 
-export const changeUnits = (boolean) => {
+export const changeUnits = (boolean, distance, measurements) => {
   return {
     type: TOGGLE_UNITS,
-    boolean
+    boolean,
+    distance,
+    measurements
   }
 }

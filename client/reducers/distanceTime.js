@@ -26,9 +26,14 @@ const initialState = {
 const distanceAndTime = (state = initialState, action) => {
   switch (action.type) {
     case (TOGGLE_UNITS): {
+      if (action.boolean === true) {
+        action.measurements[0].totalAmount = action.distance / 1.6
+      } else {
+        action.measurements[0].totalAmount = action.distance * 1.6
+      }
       return {
         ...state,
-        distance: 2
+        measurements: [...action.measurements]
       }
     }
     case (NEXT_LAP): {
