@@ -6,8 +6,8 @@ function Measurements (props) {
     props.measure.map(unit => {
       return (
         <p className="card-text" key={unit.id} id={unit.id}>{unit.name === 'distance' &&
-        props.km ? unit.lapTextKm
-          : unit.lapTextMi || unit.lapText}
+        props.km ? unit.text
+          : unit.textMi || unit.text}
         <input className="form-control" name={unit.name} value={props.lapState[unit.name] || 0} onChange={props.change}/>
         </p>
       )

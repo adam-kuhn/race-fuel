@@ -5,18 +5,15 @@ const initialState = {
     {
       id: '1m',
       name: 'distance',
-      lapTextKm: 'Distance (km)',
-      lapTextMi: 'Distance (Mi)',
-      totalAmount: 0,
-      totalTextKm: 'Distance (km)',
-      totalTextMi: 'Distance (mi)'
+      text: 'Distance (Km)',
+      textMi: 'Distance (Mi)',
+      totalAmount: 0
     },
     {
       id: '2m',
       name: 'time',
-      lapText: 'Time',
-      totalAmount: 0,
-      totalText: 'Time'
+      text: 'Time',
+      totalAmount: 0
     }
   ]
 }
