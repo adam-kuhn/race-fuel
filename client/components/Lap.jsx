@@ -39,13 +39,14 @@ class Lap extends React.Component {
 
   submitLap () {
     this.props.dispatch(nextLap(this.props.lap, this.state))
-    const items = this.props.lapFuel.map(item => {
-      return item.keyName
+    const submittedItems = this.props.lapFuel.concat(this.props.distanceTime)
+    const items = submittedItems.map(item => {
+      return item.keyName || item.name
     })
-    for (let fuel of items) {
+    for (let item of items) {
       this.setState({
         calories: 0,
-        [fuel]: 0
+        [item]: 0
       })
     }
   }
@@ -88,7 +89,8 @@ function mapStateToProps (state) {
   return {
     lap: state.fuelList.lap,
     lapFuel: state.fuelList.fuel,
-    km: state.display.km
+    km: state.display.km,
+    distanceTime: state.distanceTime.measurements
   }
 }
 
