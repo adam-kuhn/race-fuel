@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import DistanceSelect from './DistanceSelect'
+import Measurements from './Measurements'
 
 import {nextLap} from '../actions'
 
@@ -36,14 +38,16 @@ class Lap extends React.Component {
   }
 
   submitLap () {
-    this.props.dispatch(nextLap(this.props.lap, this.state))
-    const items = this.props.lapFuel.map(item => {
-      return item.keyName
+    const {lap, lapFuel, distanceTime, dispatch} = this.props
+    dispatch(nextLap(lap, this.state))
+    const submittedItems = lapFuel.concat(distanceTime)
+    const items = submittedItems.map(item => {
+      return item.keyName || item.name
     })
-    for (let fuel of items) {
+    for (let item of items) {
       this.setState({
         calories: 0,
-        [fuel]: 0
+        [item]: 0
       })
     }
   }
@@ -56,6 +60,7 @@ class Lap extends React.Component {
             <h2>Lap {this.props.lap}</h2>
             <p>Need to eat ~200-400 calories per hour</p>
             <p>Input servings eaten</p>
+            <DistanceSelect />
           </div>
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
@@ -70,6 +75,7 @@ class Lap extends React.Component {
               }
             })}
             <h3>Calories {this.state.calories}</h3>
+            <Measurements change={this.handleChange} lapState={this.state}/>
             <div className="center">
               <button type='button' className="btn btn-success btn-success-card" onClick={this.submitLap}>Next Lap</button>
             </div>
@@ -83,7 +89,9 @@ class Lap extends React.Component {
 function mapStateToProps (state) {
   return {
     lap: state.fuelList.lap,
-    lapFuel: state.fuelList.fuel
+    lapFuel: state.fuelList.fuel,
+    km: state.display.km,
+    distanceTime: state.distanceTime.measurements
   }
 }
 

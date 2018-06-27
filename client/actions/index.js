@@ -5,6 +5,7 @@ export const ADD_TO_LIST = 'ADD_TO_LIST'
 export const STANDARD = 'STANDARD'
 export const CUSTOM = 'CUSTOM'
 export const GO_HOME = 'GO_HOME'
+export const TOGGLE_UNITS = 'TOGGLE_UNITS'
 
 export const showFuelList = () => {
   return {
@@ -17,18 +18,20 @@ export const setList = (fuelList) => {
     fuelList
   }
 }
-export const update = (lap, lapFuel, fuelList) => {
+export const update = (lap, lapFuel,
+  fuelList, distanceTime) => {
   return {
     type: NEXT_LAP,
     lap,
     lapFuel,
-    fuelList
+    fuelList,
+    distanceTime
   }
 }
 export const nextLap = (lap, lapFuel) => {
   return (dispatch, getState) => {
     const state = getState()
-    dispatch(update(lap, lapFuel, state.fuelList.fuel))
+    dispatch(update(lap, lapFuel, state.fuelList.fuel, state.distanceTime.measurements))
   }
 }
 
@@ -58,9 +61,19 @@ export const custom = () => {
   }
 }
 
-export const goHome = (list) => {
+export const goHome = (list, distanceTime) => {
   return {
     type: GO_HOME,
-    list
+    list,
+    distanceTime
+  }
+}
+
+export const changeUnits = (boolean, distance, measurements) => {
+  return {
+    type: TOGGLE_UNITS,
+    boolean,
+    distance,
+    measurements
   }
 }

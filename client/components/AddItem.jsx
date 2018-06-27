@@ -74,7 +74,8 @@ class AddItem extends React.Component {
             {this.state.wrongInput && <p className='text-danger'>Please use numbers only.</p>}
             {this.state.noValue && <p className='text-danger'>Please fill out all fields.</p>}
             <div className="center">
-              <button type='button' className="btn btn-warning btn-warning-card text-white" onClick={this.submitItem}>Add Item</button>
+              <button type='button' className="btn btn-warning btn-warning-card text-white"
+                onClick={this.submitItem}>Add Item</button>
             </div>
           </div>
         </div>

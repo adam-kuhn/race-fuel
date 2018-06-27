@@ -9,12 +9,14 @@ class HomeBtn extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick () {
-    this.props.dispatch(goHome(this.props.list))
+    const {list, distanceTime} = this.props
+    this.props.dispatch(goHome(list, distanceTime))
   }
   render () {
     return (
       <div className="center">
-        <button type='button' className="btn btn-danger" onClick={this.handleClick}>Start Over</button>
+        <button type='button' className="btn btn-danger"
+          onClick={this.handleClick}>Start Over</button>
       </div>
     )
   }
@@ -22,7 +24,8 @@ class HomeBtn extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    list: state.fuelList.fuel
+    list: state.fuelList.fuel,
+    distanceTime: state.distanceTime.measurements
   }
 }
 
