@@ -5,7 +5,6 @@ const initialState = {
     {
       id: '1m',
       name: 'distance',
-      keyName: 'distance',
       lapTextKm: 'Distance (km)',
       lapTextMi: 'Distance (Mi)',
       totalAmount: 0,
@@ -15,7 +14,6 @@ const initialState = {
     {
       id: '2m',
       name: 'time',
-      keyName: 'time',
       lapText: 'Time',
       totalAmount: 0,
       totalText: 'Time'

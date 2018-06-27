@@ -16,7 +16,6 @@ class Lap extends React.Component {
     this.submitLap = this.submitLap.bind(this)
   }
   handleChange (e) {
-    console.log('here', e.target.value)
     const newValue = Number(e.target.value)
     const itemCalories = e.target.getAttribute('data-cal')
     if (!(newValue + 1)) {
@@ -65,16 +64,8 @@ class Lap extends React.Component {
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
             {this.props.lapFuel.map(item => {
               if (item.keyName !== 'calories') {
-                if (this.props.km && item.keyName === 'distance') {
-                  return (
-                    <p className="card-text" key={item.id}>{item.lapTextKm}
-                      <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
-                        onChange={this.handleChange} data-cal={item.itemCalories}/>
-                    </p>
-                  )
-                }
                 return (
-                  <p className="card-text" key={item.id}>{item.lapText || item.lapTextMi}
+                  <p className="card-text" key={item.id}>{item.lapText}
                     <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
                       onChange={this.handleChange} data-cal={item.itemCalories}/>
                   </p>
