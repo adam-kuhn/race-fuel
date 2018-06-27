@@ -38,8 +38,9 @@ class Lap extends React.Component {
   }
 
   submitLap () {
-    this.props.dispatch(nextLap(this.props.lap, this.state))
-    const submittedItems = this.props.lapFuel.concat(this.props.distanceTime)
+    const {lap, lapFuel, distanceTime, dispatch} = this.props
+    dispatch(nextLap(lap, this.state))
+    const submittedItems = lapFuel.concat(distanceTime)
     const items = submittedItems.map(item => {
       return item.keyName || item.name
     })
