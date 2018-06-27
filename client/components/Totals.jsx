@@ -11,7 +11,8 @@ class Totals extends React.Component {
         <div className="card-body">
           {this.props.fuelList.fuel.map(item => {
             return (
-              <p className="card-text" key={item.id}>{item.totalText} {item.totalAmount}</p>
+              <p className="card-text" key={item.id}>{item.totalText}
+                {item.totalAmount}</p>
             )
           })}
           <MeasurementTotal />

@@ -14,7 +14,8 @@ class HomeBtn extends React.Component {
   render () {
     return (
       <div className="center">
-        <button type='button' className="btn btn-danger" onClick={this.handleClick}>Start Over</button>
+        <button type='button' className="btn btn-danger"
+          onClick={this.handleClick}>Start Over</button>
       </div>
     )
   }

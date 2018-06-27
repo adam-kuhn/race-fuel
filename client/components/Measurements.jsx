@@ -5,10 +5,12 @@ function Measurements (props) {
   return (
     props.measure.map(unit => {
       return (
-        <p className="card-text" key={unit.id} id={unit.id}>{unit.name === 'distance' &&
+        <p className="card-text" key={unit.id} id={unit.id}>
+          {unit.name === 'distance' &&
         props.km ? unit.text
-          : unit.textMi || unit.text}
-        <input className="form-control" name={unit.name} value={props.lapState[unit.name] || 0} onChange={props.change}/>
+            : unit.textMi || unit.text}
+          <input className="form-control" name={unit.name}
+            value={props.lapState[unit.name] || 0} onChange={props.change}/>
         </p>
       )
     })

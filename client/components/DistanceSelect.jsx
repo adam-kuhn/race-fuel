@@ -17,7 +17,8 @@ class DistanceSelect extends React.Component {
     return (
       <div>
         <button type='button' value={this.props.km}
-          onClick={this.handleClick}>{this.props.km ? 'miles' : 'kilometer'}</button>
+          onClick={this.handleClick}>
+          {this.props.km ? 'miles' : 'kilometer'}</button>
       </div>
     )
   }

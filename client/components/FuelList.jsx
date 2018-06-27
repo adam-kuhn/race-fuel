@@ -50,7 +50,8 @@ class FuelList extends React.Component {
               }
             })}
             <div className="center">
-              <button type='button' className="btn btn-primary btn-primary-card" onClick={this.closeList}>Submit Fuel List</button>
+              <button type='button' className="btn btn-primary btn-primary-card"
+                onClick={this.closeList}>Submit Fuel List</button>
             </div>
           </div>
         </div>
