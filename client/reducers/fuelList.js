@@ -15,7 +15,7 @@ function fuelList (state = initialState, action) {
     case (CUSTOM): {
       return {
         ...state,
-        fuel: [list[0], list[7]]
+        fuel: [list[0], list[6]]
       }
     }
     case (SETLIST): {

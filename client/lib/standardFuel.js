@@ -8,7 +8,7 @@ export default
     totalText: 'Calories eaten'
   },
   {
-    id: 3,
+    id: 2,
     name: 'clifbar',
     keyName: 'clifbar',
     amount: 0,
@@ -20,7 +20,7 @@ export default
     serving: 0.5
   },
   {
-    id: 4,
+    id: 3,
     name: 'gu',
     keyName: 'gu',
     amount: 0,
@@ -31,7 +31,7 @@ export default
     itemCalories: 100
   },
   {
-    id: 5,
+    id: 4,
     name: 'pbj',
     keyName: 'pbj',
     amount: 0,
@@ -44,7 +44,7 @@ export default
 
   },
   {
-    id: 6,
+    id: 5,
     name: 'balls',
     keyName: 'balls',
     amount: 0,
@@ -57,7 +57,7 @@ export default
 
   },
   {
-    id: 7,
+    id: 6,
     name: 'banana',
     keyName: 'banana',
     amount: 0,
@@ -68,7 +68,7 @@ export default
     itemCalories: 100
   },
   {
-    id: 8,
+    id: 7,
     name: 'water',
     keyName: 'water',
     amount: 0,
