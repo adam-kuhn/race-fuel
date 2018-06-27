@@ -1,4 +1,4 @@
-import {TOGGLE_UNITS, NEXT_LAP} from '../actions'
+import {TOGGLE_UNITS, NEXT_LAP, GO_HOME} from '../actions'
 
 const initialState = {
   measurements: [
@@ -32,18 +32,37 @@ const distanceAndTime = (state = initialState, action) => {
       }
     }
     case (NEXT_LAP): {
-      for (let value = 0; value < action.distanceTime.length; value++) {
-        for (let measured in action.lapFuel) {
-          if (measured === action.distanceTime[value].name) {
-            action.distanceTime[value].totalAmount += action.lapFuel[measured]
+      const {distanceTime, lapFuel} = action
+      // for (let value = 0; value < action.distanceTime.length; value++) {
+      for (let value of distanceTime) {
+        // for (let measured in action.lapFuel) {
+        for (let measured in lapFuel) {
+          // if (measured === action.distanceTime[value].name) {
+          if (measured === value.name) {
+            // action.distanceTime[value].totalAmount += action.lapFuel[measured]
+            value.totalAmount += lapFuel[measured]
           }
         }
       }
       return {
         ...state,
-        measurements: [...action.distanceTime]
+        // measurements: [...action.distanceTime]
+        measurements: [...distanceTime]
       }
     }
+    case (GO_HOME): {
+      const measurements = action.distanceTime
+      for (let unit of measurements) {
+        unit.totalAmount = 0
+      }
+      return {
+        ...state,
+        // it works without the below line, but not sure why?
+        measurements: [...measurements]
+
+      }
+    }
+
     default: {
       return initialState
     }

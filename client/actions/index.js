@@ -61,10 +61,11 @@ export const custom = () => {
   }
 }
 
-export const goHome = (list) => {
+export const goHome = (list, distanceTime) => {
   return {
     type: GO_HOME,
-    list
+    list,
+    distanceTime
   }
 }
 
