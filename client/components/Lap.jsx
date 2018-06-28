@@ -19,12 +19,19 @@ class Lap extends React.Component {
     const newValue = Number(e.target.value)
     const itemCalories = e.target.getAttribute('data-cal')
     if (!(newValue + 1)) {
-      const lowerCals = this.state.calories - (this.state[e.target.name] * itemCalories)
-      this.setState({
-        [e.target.name]: 0,
-        calories: lowerCals || 0,
-        wrongInput: true
-      })
+      if (e.target.name === 'time' || e.target.name === 'distance') {
+        this.setState({
+          [e.target.name]: 0,
+          wrongInput: true
+        })
+      } else {
+        const lowerCals = this.state.calories - (this.state[e.target.name] * itemCalories)
+        this.setState({
+          [e.target.name]: 0,
+          calories: lowerCals || 0,
+          wrongInput: true
+        })
+      }
     } else {
       const difference = e.target.value - (this.state[e.target.name] || 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.calories)
