@@ -44,6 +44,7 @@ function fuelList (state = initialState, action) {
       }
       return {
         ...state,
+        fuel: [...action.fuelList],
         lap: action.lap + 1
       }
     }
