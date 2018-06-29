@@ -16,7 +16,7 @@ function fuelList (state = initialState, action) {
     case (CUSTOM): {
       return {
         ...state,
-        fuel: [list[0], list[6]]
+        fuel: [list[0], list[1]]
       }
     }
     case (SETLIST): {
@@ -74,11 +74,11 @@ function fuelList (state = initialState, action) {
     }
     case (TOGGLE_WATER): {
       if (action.boolean === true) {
-        action.fuel[6].totalAmount = action.totalWater * 1000
-        action.fuel[6].amount = action.water * 1000
+        action.fuel[1].totalAmount = action.totalWater * 1000
+        action.fuel[1].amount = action.water * 1000
       } else {
-        action.fuel[6].amount = action.water / 1000
-        action.fuel[6].totalAmount = action.totalWater / 1000
+        action.fuel[1].amount = action.water / 1000
+        action.fuel[1].totalAmount = action.totalWater / 1000
       }
       return {
         ...state,
