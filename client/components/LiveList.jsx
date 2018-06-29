@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import {showFuelList} from '../actions'
+import LitreMlSelect from './LitreMlSelect'
 
 class LiveList extends React.Component {
   constructor () {
@@ -15,9 +16,15 @@ class LiveList extends React.Component {
     return (
       <div className='card text-white bg-primary mb-3'>
         <h3 className='card-header'>Remaining Fuel</h3>
+        <LitreMlSelect />
         <div className='card-body'>
           {this.props.fuel.map(item => {
             if (item.name !== 'calories') {
+              if (item.name === 'water') {
+                return (
+                  <p className="card-text" key={item.id}>{this.props.litre ? item.liveText : item.liveTextMl}</p>
+                )
+              }
               return (
                 <p className='card-text' key={item.id}>{item.liveText} {item.amount}</p>
               )
@@ -34,6 +41,9 @@ class LiveList extends React.Component {
 }
 
 function mapStateToProps (state) {
-  return state.fuelList
+  return {
+    fuel: state.fuelList.fuel,
+    litre: state.display.litre
+  }
 }
 export default connect(mapStateToProps)(LiveList)

@@ -72,9 +72,12 @@ export default
     name: 'water',
     keyName: 'water',
     amount: 0,
-    liveText: 'Water (mL)',
-    lapText: 'Water (mL)',
+    liveText: 'Water (L)',
+    liveTextMl: 'Water (mL)',
+    lapText: 'Water (L)',
+    lapTextMl: 'Water (mL)',
     totalAmount: 0,
-    totalText: 'Water drank (mL)'
+    totalText: 'Water drank (L)',
+    totalTextMl: 'Water drank (mL)'
   }
 ]
