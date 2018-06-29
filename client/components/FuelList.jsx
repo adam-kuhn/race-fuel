@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import AddItem from './AddItem'
+import LitreMlSelect from './LitreMlSelect'
 
 import {setList} from '../actions'
 
@@ -37,6 +38,7 @@ class FuelList extends React.Component {
       <div>
         <div className="card text-white bg-primary mb-3">
           <h3 className="card-header">Input Fuel List</h3>
+          <LitreMlSelect />
           {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
           <div className="card-body">
             {this.props.fuel.map(item => {
