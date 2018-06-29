@@ -78,10 +78,12 @@ export const changeUnits = (boolean, distance, measurements) => {
   }
 }
 
-export const changeWater = (boolean, water) => {
+export const changeWater = (boolean, fuel, totalWater, water) => {
   return {
     type: TOGGLE_WATER,
     boolean,
+    fuel,
+    totalWater,
     water
   }
 }

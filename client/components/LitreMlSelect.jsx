@@ -9,7 +9,7 @@ class LitreMlSelect extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick (e) {
-    this.props.dispatch(changeWater(JSON.parse(e.target.value)), this.props.water)
+    this.props.dispatch(changeWater(JSON.parse(e.target.value), this.props.fuel, this.props.fuel[6].totalAmount, this.props.fuel[6].amount))
   }
   render () {
     return (
@@ -25,7 +25,7 @@ class LitreMlSelect extends React.Component {
 const mapStateToProps = (state) => {
   return {
     litre: state.display.litre,
-    water: state.fuelList.fuel[6]
+    fuel: state.fuelList.fuel
   }
 }
 
