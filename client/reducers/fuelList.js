@@ -1,4 +1,5 @@
-import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME, STANDARD} from '../actions'
+import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME, STANDARD,
+  TOGGLE_WATER} from '../actions'
 import list from '../lib/standardFuel'
 const initialState = {
   lap: 1
@@ -69,6 +70,17 @@ function fuelList (state = initialState, action) {
       return {
         fuel: fuelList,
         lap: 1
+      }
+    }
+    case (TOGGLE_WATER): {
+      if (action.boolean === true) {
+        action.water.totalAmount = action.water.totalAmount * 1000
+      } else {
+        action.water.totalAmount = action.water.totalAmount / 1000
+      }
+      return {
+        ...state,
+        fuel: [...action.water]
       }
     }
     default: {
