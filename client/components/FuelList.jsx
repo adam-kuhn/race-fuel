@@ -43,6 +43,14 @@ class FuelList extends React.Component {
           <div className="card-body">
             {this.props.fuel.map(item => {
               if (item.name !== 'calories') {
+                if (item.name === 'water') {
+                  return (
+                    <p className="card-text" key={item.id}>{this.props.litre ? item.liveText : item.liveTextMl}
+                      <input className='form-control' value={this.state[item.keyName] || 0}
+                        name={item.keyName} onChange={this.handleChange}/>
+                    </p>
+                  )
+                }
                 return (
                   <p className="card-text" key={item.id}>{item.liveText}
                     <input className='form-control' value={this.state[item.keyName] || 0}
@@ -64,7 +72,10 @@ class FuelList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return state.fuelList
+  return {
+    fuel: state.fuelList.fuel,
+    litre: state.display.litre
+  }
 }
 
 export default connect(mapStateToProps)(FuelList)
