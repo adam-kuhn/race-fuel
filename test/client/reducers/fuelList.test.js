@@ -41,8 +41,8 @@ test('fuelList updates on the number of items on SETLIST', () => {
     }
   }
   const actual = fuelList(state, action)
-  expect(actual.fuel[2].amount).toBe(expected[0].amount)
-  expect(actual.fuel[5].amount).toBe(expected[1].amount)
+  expect(actual.fuel[3].amount).toBe(expected[0].amount)
+  expect(actual.fuel[6].amount).toBe(expected[1].amount)
 })
 
 test('fuelList updates lap count on NEXT_LAP', () => {
@@ -68,7 +68,7 @@ test('fuelList updates overall list on NEXT_LAP', () => {
     lap: 2
   }
   const actual = fuelList(state, action)
-  expect(actual.fuel[1].amount).toBe(expected)
+  expect(actual.fuel[2].amount).toBe(expected)
 })
 
 test('fuelList adds a new item on ADD_TO_LIST', () => {
