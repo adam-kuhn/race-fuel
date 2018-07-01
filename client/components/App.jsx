@@ -10,17 +10,18 @@ import HomeBtn from './HomeBtn'
 
 class App extends React.Component {
   render () {
+    const {showSelect, showFuelList} = this.props
     return (
       <div>
         <div className="center title">
           <h2>Nutrition Tracker</h2>
         </div>
-        {this.props.showSelect && <Select />}
-        {!this.props.showSelect && this.props.showFuelList && <FuelList />}
-        {!this.props.showSelect && !this.props.showFuelList && <LiveList />}
-        {!this.props.showSelect && !this.props.showFuelList && <Lap />}
-        {!this.props.showSelect && !this.props.showFuelList && <Totals />}
-        {!this.props.showSelect && <HomeBtn />}
+        {showSelect && <Select />}
+        {!showSelect && showFuelList && <FuelList />}
+        {!showSelect && !showFuelList && <LiveList />}
+        {!showSelect && !showFuelList && <Lap />}
+        {!showSelect && !showFuelList && <Totals />}
+        {!showSelect && <HomeBtn />}
       </div>
     )
   }

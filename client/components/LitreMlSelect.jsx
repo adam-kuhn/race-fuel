@@ -9,9 +9,12 @@ class LitreMlSelect extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick (e) {
-    this.props.dispatch(changeWater(JSON.parse(e.target.value),
-      this.props.fuel, this.props.fuel[1].totalAmount,
-      this.props.fuel[1].amount))
+    const {dispatch, fuel} = this.props
+    const waterLeft = fuel[1].amount
+    const waterTotal = fuel[1].totalAmount
+    dispatch(changeWater(JSON.parse(e.target.value),
+      fuel, waterTotal,
+      waterLeft))
   }
   render () {
     return (

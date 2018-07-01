@@ -29,7 +29,6 @@ class Totals extends React.Component {
 function mapStateToProps (state) {
   return {
     fuelList: state.fuelList,
-    measurements: state.distanceTime.measurements,
     litre: state.display.litre
   }
 }

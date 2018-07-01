@@ -2,15 +2,16 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 function Measurements (props) {
+  const {measure, km, lapState, change} = props
   return (
-    props.measure.map(unit => {
+    measure.map(unit => {
       return (
         <p className="card-text" key={unit.id} id={unit.id}>
           {unit.name === 'distance' &&
-        props.km ? unit.text
+        km ? unit.text
             : unit.textMi || unit.text}
           <input className="form-control" name={unit.name}
-            value={props.lapState[unit.name] || 0} onChange={props.change}/>
+            value={lapState[unit.name] || 0} onChange={change}/>
         </p>
       )
     })
