@@ -16,9 +16,10 @@ class LitreMlSelect extends React.Component {
   render () {
     return (
       <div>
-        <p>Water units</p>
-        <button type="button" onClick={this.handleClick} value={this.props.litre}>
+        <p>Water units <button type="button" onClick={this.handleClick}
+          value={this.props.litre}>
           {this.props.litre ? 'mL' : 'L' }</button>
+        </p>
       </div>
     )
   }
