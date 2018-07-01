@@ -9,8 +9,8 @@ class HomeBtn extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick () {
-    const {list, distanceTime} = this.props
-    this.props.dispatch(goHome(list, distanceTime))
+    const {dispatch, list, distanceTime} = this.props
+    dispatch(goHome(list, distanceTime))
   }
   render () {
     return (

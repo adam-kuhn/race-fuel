@@ -75,15 +75,18 @@ class Lap extends React.Component {
               if (item.keyName !== 'calories') {
                 if (item.name === 'water') {
                   return (
-                    <p className="card-text" key={item.id}>{this.props.litre ? item.liveText : item.liveTextMl}
-                      <input className='form-control' value={this.state[item.keyName] || 0}
-                        name={item.keyName} onChange={this.handleChange}/>
+                    <p className="card-text" key={item.id}>{this.props.litre
+                      ? item.liveText : item.liveTextMl}
+                    <input className='form-control'
+                      value={this.state[item.keyName] || 0}
+                      name={item.keyName} onChange={this.handleChange}/>
                     </p>
                   )
                 }
                 return (
                   <p className="card-text" key={item.id}>{item.lapText}
-                    <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
+                    <input className='form-control'
+                      value={this.state[item.keyName] || 0} name={item.keyName}
                       onChange={this.handleChange} data-cal={item.itemCalories}/>
                   </p>
                 )
@@ -92,7 +95,8 @@ class Lap extends React.Component {
             <h3>Calories {this.state.calories}</h3>
             <Measurements change={this.handleChange} lapState={this.state}/>
             <div className="center">
-              <button type='button' className="btn btn-success btn-success-card" onClick={this.submitLap}>Next Lap</button>
+              <button type='button' className="btn btn-success btn-success-card"
+                onClick={this.submitLap}>Next Lap</button>
             </div>
           </div>
         </div>
