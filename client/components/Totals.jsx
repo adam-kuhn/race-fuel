@@ -12,11 +12,13 @@ class Totals extends React.Component {
           {this.props.fuelList.fuel.map(item => {
             if (item.name === 'water') {
               return (
-                <p className="card-text" key={item.id}>{this.props.litre ? item.totalText : item.totalTextMl} {item.totalAmount} </p>
+                <p className="card-text" key={item.id}>{this.props.litre
+                  ? item.totalText : item.totalTextMl} {item.totalAmount} </p>
               )
             }
             return (
-              <p className="card-text" key={item.id}>{item.totalText} {item.totalAmount}</p>
+              <p className="card-text" key={item.id}>
+                {item.totalText} {item.totalAmount}</p>
             )
           })}
           <MeasurementTotal />
