@@ -10,6 +10,11 @@ class Totals extends React.Component {
         <h2 className="card-header">Totals!</h2>
         <div className="card-body">
           {this.props.fuelList.fuel.map(item => {
+            if (item.name === 'water') {
+              return (
+                <p className="card-text" key={item.id}>{this.props.litre ? item.totalText : item.totalTextMl} {item.totalAmount} </p>
+              )
+            }
             return (
               <p className="card-text" key={item.id}>{item.totalText} {item.totalAmount}</p>
             )
@@ -24,7 +29,8 @@ class Totals extends React.Component {
 function mapStateToProps (state) {
   return {
     fuelList: state.fuelList,
-    measurements: state.distanceTime.measurements
+    measurements: state.distanceTime.measurements,
+    litre: state.display.litre
   }
 }
 

@@ -1,8 +1,9 @@
 import {SETLIST, SHOW_FUEL_LIST,
-  STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS} from '../actions'
+  STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER} from '../actions'
 const initialState = {
   showSelect: true,
-  km: true
+  km: true,
+  litre: true
 }
 
 function display (state = initialState, action) {
@@ -43,6 +44,12 @@ function display (state = initialState, action) {
       return {
         ...state,
         km: !action.boolean
+      }
+    }
+    case (TOGGLE_WATER): {
+      return {
+        ...state,
+        litre: !action.boolean
       }
     }
     default: {

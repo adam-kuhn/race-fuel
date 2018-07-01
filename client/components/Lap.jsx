@@ -73,6 +73,14 @@ class Lap extends React.Component {
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
             {this.props.lapFuel.map(item => {
               if (item.keyName !== 'calories') {
+                if (item.name === 'water') {
+                  return (
+                    <p className="card-text" key={item.id}>{this.props.litre ? item.liveText : item.liveTextMl}
+                      <input className='form-control' value={this.state[item.keyName] || 0}
+                        name={item.keyName} onChange={this.handleChange}/>
+                    </p>
+                  )
+                }
                 return (
                   <p className="card-text" key={item.id}>{item.lapText}
                     <input className='form-control' value={this.state[item.keyName] || 0} name={item.keyName}
@@ -98,7 +106,8 @@ function mapStateToProps (state) {
     lap: state.fuelList.lap,
     lapFuel: state.fuelList.fuel,
     km: state.display.km,
-    distanceTime: state.distanceTime.measurements
+    distanceTime: state.distanceTime.measurements,
+    litre: state.display.litre
   }
 }
 

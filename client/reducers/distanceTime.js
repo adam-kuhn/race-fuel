@@ -46,7 +46,6 @@ const distanceAndTime = (state = initialState, action) => {
       }
       return {
         ...state,
-        // measurements: [...action.distanceTime]
         measurements: [...distanceTime]
       }
     }
@@ -57,7 +56,7 @@ const distanceAndTime = (state = initialState, action) => {
       }
       return {
         ...state,
-        // it works without the below line, but not sure why?
+        // it works without the below line, I can just return state. but not sure why, because that does not work on NEXT_LAP
         measurements: [...measurements]
 
       }

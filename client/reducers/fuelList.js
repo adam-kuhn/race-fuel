@@ -1,4 +1,5 @@
-import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME, STANDARD} from '../actions'
+import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME, STANDARD,
+  TOGGLE_WATER} from '../actions'
 import list from '../lib/standardFuel'
 const initialState = {
   lap: 1
@@ -15,7 +16,7 @@ function fuelList (state = initialState, action) {
     case (CUSTOM): {
       return {
         ...state,
-        fuel: [list[0], list[6]]
+        fuel: [list[0], list[1]]
       }
     }
     case (SETLIST): {
@@ -44,6 +45,7 @@ function fuelList (state = initialState, action) {
       }
       return {
         ...state,
+        fuel: [...action.fuelList],
         lap: action.lap + 1
       }
     }
@@ -68,6 +70,19 @@ function fuelList (state = initialState, action) {
       return {
         fuel: fuelList,
         lap: 1
+      }
+    }
+    case (TOGGLE_WATER): {
+      if (action.boolean === true) {
+        action.fuel[1].totalAmount = action.totalWater * 1000
+        action.fuel[1].amount = action.water * 1000
+      } else {
+        action.fuel[1].amount = action.water / 1000
+        action.fuel[1].totalAmount = action.totalWater / 1000
+      }
+      return {
+        ...state,
+        fuel: [...action.fuel]
       }
     }
     default: {
