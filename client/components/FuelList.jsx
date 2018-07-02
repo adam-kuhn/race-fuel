@@ -25,13 +25,17 @@ class FuelList extends React.Component {
     } else {
       this.setState({
         ...this.state,
-        [e.target.name]: newValue,
+        [e.target.name]: e.target.value,
         wrongInput: false
       })
     }
   }
   closeList () {
-    this.props.dispatch(setList(this.state))
+    let itemValues = {}
+    for (let item in this.state) {
+      itemValues[item] = this.state[item]
+    }
+    this.props.dispatch(setList(itemValues))
   }
   render () {
     return (
