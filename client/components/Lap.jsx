@@ -18,36 +18,21 @@ class Lap extends React.Component {
   handleChange (e) {
     const newValue = Number(e.target.value)
     const itemCalories = e.target.getAttribute('data-cal')
-    if (!(newValue + 1) ) {
+    if (!(newValue + 1)) {
       if (e.target.name === 'time' || e.target.name === 'distance') {
         this.setState({
-          [e.target.name]: 0,
+          [e.target.name]: '',
           wrongInput: true
         })
       } else {
         const lowerCals = this.state.calories - (this.state[e.target.name] * itemCalories)
         this.setState({
-          [e.target.name]: 0,
+          [e.target.name]: '',
           calories: lowerCals || 0,
           wrongInput: true
         })
       }
-    } else if (newValue + 1 && e.target.value.includes('.')) {
-      if (e.target.value[e.target.value.length - 1] === '.') {
-        this.setState({
-          // ...this.state,
-          [e.target.name]: e.target.value,
-          wrongInput: false
-
-        })
-      } else {
-        this.setState({
-          [e.target.name]: e.target.value,
-          wrongInput: false
-        })
-      }
     } else {
-      console.log(newValue, e.target.value)
       const difference = e.target.value - (this.state[e.target.name] || 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.calories)
       this.setState({
@@ -61,17 +46,19 @@ class Lap extends React.Component {
 
   submitLap () {
     const {lap, lapFuel, distanceTime, dispatch} = this.props
-    dispatch(nextLap(lap, this.state))
     const submittedItems = lapFuel.concat(distanceTime)
     const items = submittedItems.map(item => {
       return item.keyName || item.name
     })
+    let lapValues = {}
     for (let item of items) {
+      lapValues[item] = Number(this.state[item]) || 0
       this.setState({
         calories: 0,
-        [item]: 0
+        [item]: ''
       })
     }
+    dispatch(nextLap(lap, lapValues))
   }
 
   render () {
@@ -93,7 +80,7 @@ class Lap extends React.Component {
                     <p className="card-text" key={item.id}>{this.props.litre
                       ? item.liveText : item.liveTextMl}
                     <input className='form-control'
-                      value={this.state[item.keyName] || 0}
+                      value={this.state[item.keyName] || ''}
                       name={item.keyName} onChange={this.handleChange}/>
                     </p>
                   )
@@ -101,7 +88,7 @@ class Lap extends React.Component {
                 return (
                   <p className="card-text" key={item.id}>{item.lapText}
                     <input className='form-control'
-                      value={this.state[item.keyName] || 0} name={item.keyName}
+                      value={this.state[item.keyName] || ''} name={item.keyName}
                       onChange={this.handleChange} data-cal={item.itemCalories}/>
                   </p>
                 )

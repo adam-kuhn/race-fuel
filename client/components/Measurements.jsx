@@ -11,7 +11,7 @@ function Measurements (props) {
         km ? unit.text
             : unit.textMi || unit.text}
           <input className="form-control" name={unit.name}
-            value={lapState[unit.name] || 0} onChange={change}/>
+            value={lapState[unit.name] || ''} onChange={change}/>
         </p>
       )
     })
