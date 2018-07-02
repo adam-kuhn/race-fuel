@@ -12,6 +12,7 @@ class AddItem extends React.Component {
       keyName: '',
       itemCalories: '',
       wrongInput: false,
+      wrongInputName: false,
       noValue: false
     }
     this.handleChange = this.handleChange.bind(this)
@@ -19,13 +20,20 @@ class AddItem extends React.Component {
   }
   handleChange (e) {
     if (e.target.name === 'name') {
-      const itemName = e.target.value
-      const keyName = camelize(itemName)
-      this.setState({
-        ...this.state,
-        name: itemName,
-        keyName
-      })
+      if (e.target.value.search(/\d/) !== -1) {
+        this.setState({
+          name: '',
+          wrongInputName: true
+        })
+      } else {
+        const itemName = e.target.value
+        const keyName = camelize(itemName)
+        this.setState({
+          name: itemName,
+          keyName,
+          wrongInputName: false
+        })
+      }
     } else {
       const newValue = Number(e.target.value)
       if (!(newValue + 1)) {
@@ -72,8 +80,10 @@ class AddItem extends React.Component {
               <input className='form-control' value={this.state.itemCalories}
                 onChange={this.handleChange} placeholder='how many calories?'/>
             </p>
+            {this.state.wrongInputName &&
+            <p className='text-danger'>Please use letters only for item name.</p>}
             {this.state.wrongInput &&
-            <p className='text-danger'>Please use numbers only.</p>}
+            <p className='text-danger'>Please use numbers only for calories.</p>}
             {this.state.noValue &&
             <p className='text-danger'>Please fill out all fields.</p>}
             <div className="center">
