@@ -18,7 +18,7 @@ class Lap extends React.Component {
   handleChange (e) {
     const newValue = Number(e.target.value)
     const itemCalories = e.target.getAttribute('data-cal')
-    if (!(newValue + 1) && !(e.target.value.includes('.'))) {
+    if (!(newValue + 1) ) {
       if (e.target.name === 'time' || e.target.name === 'distance') {
         this.setState({
           [e.target.name]: 0,
