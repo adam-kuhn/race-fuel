@@ -18,7 +18,7 @@ class Lap extends React.Component {
   handleChange (e) {
     const newValue = Number(e.target.value)
     const itemCalories = e.target.getAttribute('data-cal')
-    if (!(newValue + 1)) {
+    if (!(newValue + 1) && !(e.target.value.includes('.'))) {
       if (e.target.name === 'time' || e.target.name === 'distance') {
         this.setState({
           [e.target.name]: 0,
@@ -32,12 +32,27 @@ class Lap extends React.Component {
           wrongInput: true
         })
       }
+    } else if (newValue + 1 && e.target.value.includes('.')) {
+      if (e.target.value[e.target.value.length - 1] === '.') {
+        this.setState({
+          // ...this.state,
+          [e.target.name]: e.target.value,
+          wrongInput: false
+
+        })
+      } else {
+        this.setState({
+          [e.target.name]: e.target.value,
+          wrongInput: false
+        })
+      }
     } else {
+      console.log(newValue, e.target.value)
       const difference = e.target.value - (this.state[e.target.name] || 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.calories)
       this.setState({
         ...this.state,
-        [e.target.name]: newValue,
+        [e.target.name]: e.target.value,
         calories: caloriesEaten,
         wrongInput: false
       })
