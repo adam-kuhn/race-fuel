@@ -19,7 +19,7 @@ class FuelList extends React.Component {
     const newValue = Number(e.target.value)
     if (!(newValue + 1)) {
       this.setState({
-        [e.target.name]: 0,
+        [e.target.name]: '',
         wrongInput: true
       })
     } else {
@@ -49,16 +49,18 @@ class FuelList extends React.Component {
                     <p className="card-text" key={item.id}>{this.props.litre
                       ? item.liveText : item.liveTextMl}
                     <input className='form-control'
-                      value={this.state[item.keyName] || 0}
-                      name={item.keyName} onChange={this.handleChange}/>
+                      value={this.state[item.keyName] || ''}
+                      name={item.keyName} onChange={this.handleChange}
+                      placeholder="0"/>
                     </p>
                   )
                 }
                 return (
                   <p className="card-text" key={item.id}>{item.liveText}
                     <input className='form-control'
-                      value={this.state[item.keyName] || 0}
-                      name={item.keyName} onChange={this.handleChange}/>
+                      value={this.state[item.keyName] || ''}
+                      name={item.keyName} onChange={this.handleChange}
+                      placeholder="0"/>
                   </p>
                 )
               }

@@ -81,7 +81,8 @@ class Lap extends React.Component {
                       ? item.liveText : item.liveTextMl}
                     <input className='form-control'
                       value={this.state[item.keyName] || ''}
-                      name={item.keyName} onChange={this.handleChange}/>
+                      name={item.keyName} onChange={this.handleChange}
+                      placeholder="0"/>
                     </p>
                   )
                 }
@@ -89,7 +90,8 @@ class Lap extends React.Component {
                   <p className="card-text" key={item.id}>{item.lapText}
                     <input className='form-control'
                       value={this.state[item.keyName] || ''} name={item.keyName}
-                      onChange={this.handleChange} data-cal={item.itemCalories}/>
+                      onChange={this.handleChange} data-cal={item.itemCalories}
+                      placeholder="0"/>
                   </p>
                 )
               }
