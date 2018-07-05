@@ -10,7 +10,7 @@ const MeasurementTotal = (props) => {
       if (unit.name === 'distance') {
         return (
           <DistanceTotal key={unit.id}
-            text={unit.text} textMi={unit.textMi}
+            text={unit.text}
             total={unit.totalAmount}
             km={props.km} />
         )

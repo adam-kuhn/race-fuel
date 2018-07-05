@@ -1,20 +1,27 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import LapDistance from './LapDistance'
+import LapTime from './LapTime'
 function Measurements (props) {
   const {measure, km, lapState, change} = props
   return (
     measure.map(unit => {
-      return (
-        <p className="card-text" key={unit.id} id={unit.id}>
-          {unit.name === 'distance' &&
-        km ? unit.text
-            : unit.textMi || unit.text}
-          <input className="form-control" name={unit.name}
-            value={lapState[unit.name] || ''} onChange={change}
-            placeholder="0"/>
-        </p>
-      )
+      if (unit.name === 'distance') {
+        return (
+          <LapDistance key={unit.id}
+            text={unit.text} name={unit.name}
+            value={lapState[unit.name] || ''}
+            change={change} km={km} />
+        )
+      } else {
+        return (
+          <LapTime key={unit.id}
+            text={unit.text} name={unit.name}
+            value={lapState[unit.name] || ''}
+            change={change}/>
+        )
+      }
     })
   )
 }

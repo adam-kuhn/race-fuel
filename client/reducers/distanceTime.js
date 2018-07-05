@@ -5,8 +5,10 @@ const initialState = {
     {
       id: '1m',
       name: 'distance',
-      text: 'Distance (Km)',
-      textMi: 'Distance (Mi)',
+      text: {
+        km: 'Distance (Km)',
+        mi: 'Distance (Mi)'
+      },
       totalAmount: 0
     },
     {

@@ -1,16 +1,16 @@
 import React from 'react'
 
 const DistanceTotal = (props) => {
-  const {text, textMi, total, km} = props
+  const {text, total, km} = props
   if (km) {
     return (
       <p className="card-text">
-        {text} {total}</p>
+        {text.km} {total}</p>
     )
   } else {
     return (
       <p className="card-text">
-        {textMi} {total}</p>
+        {text.mi} {total}</p>
     )
   }
 }
