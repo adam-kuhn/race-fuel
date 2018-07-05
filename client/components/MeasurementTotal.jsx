@@ -6,7 +6,8 @@ const MeasurementTotal = (props) => {
     props.measurements.map(unit => {
       if (props.km && unit.name === 'distance') {
         return (
-          <p className="card-text" key={unit.id}>{unit.text} {unit.totalAmount}</p>
+          <p className="card-text" key={unit.id}>
+            {unit.text} {unit.totalAmount}</p>
         )
       } else {
         return (

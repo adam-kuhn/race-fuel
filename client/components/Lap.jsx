@@ -21,13 +21,13 @@ class Lap extends React.Component {
     if (!(newValue + 1)) {
       if (e.target.name === 'time' || e.target.name === 'distance') {
         this.setState({
-          [e.target.name]: 0,
+          [e.target.name]: '',
           wrongInput: true
         })
       } else {
         const lowerCals = this.state.calories - (this.state[e.target.name] * itemCalories)
         this.setState({
-          [e.target.name]: 0,
+          [e.target.name]: '',
           calories: lowerCals || 0,
           wrongInput: true
         })
@@ -37,7 +37,7 @@ class Lap extends React.Component {
       const caloriesEaten = ((itemCalories * difference) + this.state.calories)
       this.setState({
         ...this.state,
-        [e.target.name]: newValue,
+        [e.target.name]: e.target.value,
         calories: caloriesEaten,
         wrongInput: false
       })
@@ -46,17 +46,19 @@ class Lap extends React.Component {
 
   submitLap () {
     const {lap, lapFuel, distanceTime, dispatch} = this.props
-    dispatch(nextLap(lap, this.state))
     const submittedItems = lapFuel.concat(distanceTime)
     const items = submittedItems.map(item => {
       return item.keyName || item.name
     })
+    let lapValues = {}
     for (let item of items) {
+      lapValues[item] = Number(this.state[item]) || 0
       this.setState({
         calories: 0,
-        [item]: 0
+        [item]: ''
       })
     }
+    dispatch(nextLap(lap, lapValues))
   }
 
   render () {
@@ -78,16 +80,18 @@ class Lap extends React.Component {
                     <p className="card-text" key={item.id}>{this.props.litre
                       ? item.liveText : item.liveTextMl}
                     <input className='form-control'
-                      value={this.state[item.keyName] || 0}
-                      name={item.keyName} onChange={this.handleChange}/>
+                      value={this.state[item.keyName] || ''}
+                      name={item.keyName} onChange={this.handleChange}
+                      placeholder="0"/>
                     </p>
                   )
                 }
                 return (
                   <p className="card-text" key={item.id}>{item.lapText}
                     <input className='form-control'
-                      value={this.state[item.keyName] || 0} name={item.keyName}
-                      onChange={this.handleChange} data-cal={item.itemCalories}/>
+                      value={this.state[item.keyName] || ''} name={item.keyName}
+                      onChange={this.handleChange} data-cal={item.itemCalories}
+                      placeholder="0"/>
                   </p>
                 )
               }
