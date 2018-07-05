@@ -6,7 +6,7 @@ import LiveList from './List/LiveList'
 import Lap from './Lap/Lap'
 import Totals from './Totals/Totals'
 import Select from './Select/Select'
-import HomeBtn from './HomeBtn'
+import HomeBtn from './HomeBtn/HomeBtn'
 
 class App extends React.Component {
   render () {
