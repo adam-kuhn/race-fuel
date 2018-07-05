@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import LapDistance from './LapDistance'
-import LapTime from './LapTime'
+import LapDistance from './LapMeasurements/LapDistance'
+import LapTime from './LapMeasurements/LapTime'
+
 function Measurements (props) {
   const {measure, km, lapState, change} = props
   return (

@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import FuelList from './FuelList'
 import LiveList from './LiveList'
-import Lap from './Lap'
+import Lap from './Lap/Lap'
 import Totals from './Totals'
 import Select from './Select'
 import HomeBtn from './HomeBtn'
