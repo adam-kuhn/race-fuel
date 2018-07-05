@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {standard, custom} from '../actions'
+import {standard, custom} from '../../actions'
 
 class Select extends React.Component {
   constructor () {

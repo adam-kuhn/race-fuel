@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import FuelList from './FuelList'
-import LiveList from './LiveList'
-import Lap from './Lap'
-import Totals from './Totals'
-import Select from './Select'
-import HomeBtn from './HomeBtn'
+import FuelList from './List/FuelList'
+import LiveList from './List/LiveList'
+import Lap from './Lap/Lap'
+import Totals from './Totals/Totals'
+import Select from './Select/Select'
+import HomeBtn from './HomeBtn/HomeBtn'
 
 class App extends React.Component {
   render () {

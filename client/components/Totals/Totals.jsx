@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import MeasurementTotal from './MeasurementTotal'
+import MeasurementTotal from './Measurements/MeasurementTotal'
 
 class Totals extends React.Component {
   render () {
