@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import DistanceTotal from './DistanceTotal'
-import TimeTotal from './TimeTotal'
+import DistanceTotal from './UnitTotals/DistanceTotal'
+import TimeTotal from './UnitTotals/TimeTotal'
 
 const MeasurementTotal = (props) => {
   return (
