@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import FuelList from './FuelList'
-import LiveList from './LiveList'
+import FuelList from './List/FuelList'
+import LiveList from './List/LiveList'
 import Lap from './Lap/Lap'
 import Totals from './Totals/Totals'
 import Select from './Select/Select'

@@ -1,9 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import AddItem from './AddItem'
-import LitreMlSelect from './Select/UnitSelect/LitreMlSelect'
 
-import {setList} from '../actions'
+import AddItem from './AddItem/AddItem'
+import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+
+import {setList} from '../../actions'
 
 class FuelList extends React.Component {
   constructor () {
