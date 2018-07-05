@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import DistanceSelect from '../DistanceSelect'
+import DistanceSelect from '../Select/UnitSelect/DistanceSelect'
 import Measurements from './Measurements/Measurements'
 
 import {nextLap} from '../../actions'

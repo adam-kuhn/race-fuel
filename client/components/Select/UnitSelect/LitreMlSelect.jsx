@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {changeWater} from '../actions'
+import {changeWater} from '../../../actions'
 
 class LitreMlSelect extends React.Component {
   constructor () {

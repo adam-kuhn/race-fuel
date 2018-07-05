@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import {showFuelList} from '../actions'
-import LitreMlSelect from './LitreMlSelect'
+import LitreMlSelect from './Select/UnitSelect/LitreMlSelect'
 
 class LiveList extends React.Component {
   constructor () {

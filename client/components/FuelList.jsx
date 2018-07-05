@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import AddItem from './AddItem'
-import LitreMlSelect from './LitreMlSelect'
+import LitreMlSelect from './Select/UnitSelect/LitreMlSelect'
 
 import {setList} from '../actions'
 

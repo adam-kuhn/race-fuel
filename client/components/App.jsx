@@ -5,7 +5,7 @@ import FuelList from './FuelList'
 import LiveList from './LiveList'
 import Lap from './Lap/Lap'
 import Totals from './Totals/Totals'
-import Select from './Select'
+import Select from './Select/Select'
 import HomeBtn from './HomeBtn'
 
 class App extends React.Component {
