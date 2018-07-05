@@ -14,6 +14,11 @@ const initialState = {
       name: 'time',
       text: 'Time',
       totalAmount: 0
+      // {
+      //   hours: 0,
+      //   minutes: 0,
+      //   seconds: 0
+      // }
     }
   ]
 }

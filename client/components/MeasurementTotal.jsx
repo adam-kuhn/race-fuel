@@ -1,18 +1,25 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import DistanceTotal from './DistanceTotal'
+import TimeTotal from './TimeTotal'
+
 const MeasurementTotal = (props) => {
   return (
     props.measurements.map(unit => {
-      if (props.km && unit.name === 'distance') {
+      if (unit.name === 'distance') {
         return (
-          <p className="card-text" key={unit.id}>
-            {unit.text} {unit.totalAmount}</p>
+          <DistanceTotal key={unit.id}
+            text={unit.text} textMi={unit.textMi}
+            total={unit.totalAmount}
+            km={props.km} />
         )
       } else {
         return (
-          <p className="card-text" key={unit.id}>{unit.textMi ||
-            unit.text} {unit.totalAmount}</p>
+          <TimeTotal key={unit.id}
+            text={unit.text}
+            total={unit.totalAmount}
+          />
         )
       }
     })
