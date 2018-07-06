@@ -14,7 +14,12 @@ const initialState = {
     {
       id: '2m',
       name: 'time',
-      text: 'Time',
+      text: {
+        main: 'Time',
+        hour: 'hour',
+        min: 'min',
+        sec: 's'
+      },
       totalAmount: 0
       // {
       //   hours: 0,
