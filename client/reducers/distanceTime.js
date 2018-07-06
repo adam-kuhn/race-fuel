@@ -20,12 +20,11 @@ const initialState = {
         min: 'min',
         sec: 's'
       },
-      totalAmount: 0
-      // {
-      //   hours: 0,
-      //   minutes: 0,
-      //   seconds: 0
-      // }
+      totalAmount: {
+        hour: 0,
+        min: 0,
+        sec: 0
+      }
     }
   ]
 }
