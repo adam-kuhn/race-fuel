@@ -20,6 +20,7 @@ export const setList = (fuelList) => {
   }
 }
 export const update = (lap, lapFuel, fuelList, distanceTime) => {
+  console.log('lapfuel', lapFuel)
   return {
     type: NEXT_LAP,
     lap,
