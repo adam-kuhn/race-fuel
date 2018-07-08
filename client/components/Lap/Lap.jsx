@@ -63,7 +63,6 @@ class Lap extends React.Component {
         [value]: ''
       })
     }
-    console.log('lap values', lapValues)
     dispatch(nextLap(lap, lapValues))
   }
 

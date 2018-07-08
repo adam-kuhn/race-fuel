@@ -43,15 +43,14 @@ const distanceAndTime = (state = initialState, action) => {
       }
     }
     case (NEXT_LAP): {
-      console.log(action.lapFuel)
       const {distanceTime, lapFuel} = action
-      // for (let value = 0; value < action.distanceTime.length; value++) {
       for (let value of distanceTime) {
-        // for (let measured in action.lapFuel) {
         for (let measured in lapFuel) {
-          // if (measured === action.distanceTime[value].name) {
-          if (measured === value.name) {
-            // action.distanceTime[value].totalAmount += action.lapFuel[measured]
+          if (measured === value.name && value.name === 'time') {
+            for (let unitOfTime in value.totalAmount) {
+              value.totalAmount[unitOfTime] += lapFuel[measured][unitOfTime]
+            }
+          } else if (measured === value.name && value.name === 'distance') {
             value.totalAmount += lapFuel[measured]
           }
         }
