@@ -28,6 +28,19 @@ const initialState = {
     }
   ]
 }
+const sumTime = (time) => {
+  if (time.sec > 60) {
+    time.sec -= 60
+    time.min++
+    sumTime(time)
+  }
+  if (time.min > 60) {
+    time.min -= 60
+    time.hour++
+    sumTime(time)
+  }
+  return time
+}
 
 const distanceAndTime = (state = initialState, action) => {
   switch (action.type) {
@@ -48,13 +61,17 @@ const distanceAndTime = (state = initialState, action) => {
         for (let measured in lapFuel) {
           if (measured === value.name && value.name === 'time') {
             for (let unitOfTime in value.totalAmount) {
-              value.totalAmount[unitOfTime] += lapFuel[measured][unitOfTime]
+              value.totalAmount[unitOfTime] += lapFuel[measured][unitOfTime] || 0
             }
           } else if (measured === value.name && value.name === 'distance') {
             value.totalAmount += lapFuel[measured]
           }
         }
       }
+      console.log(distanceTime)
+      const timeValue = distanceTime[1].totalAmount
+      const adjustedTime = sumTime(timeValue)
+      distanceTime[1].totalAmount = adjustedTime
       return {
         ...state,
         measurements: [...distanceTime]
