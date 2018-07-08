@@ -53,7 +53,7 @@ class Lap extends React.Component {
     }
     for (let value in oldState) {
       const newValue = Number(oldState[value])
-      if (value === 'hour' || value === 'min' || value === 's') {
+      if (value === 'hour' || value === 'min' || value === 'sec') {
         lapValues.time[value] = newValue
       } else {
         lapValues[value] = newValue
