@@ -68,7 +68,6 @@ const distanceAndTime = (state = initialState, action) => {
           }
         }
       }
-      console.log(distanceTime)
       const timeValue = distanceTime[1].totalAmount
       const adjustedTime = sumTime(timeValue)
       distanceTime[1].totalAmount = adjustedTime
