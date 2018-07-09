@@ -73,7 +73,7 @@ class Lap extends React.Component {
           <div className='card-header'>
             <h2>Lap {this.props.lap}</h2>
             <p>Need to eat ~200-400 calories per hour</p>
-            <p>Input servings eaten</p>
+            <p>Input amount eaten</p>
             <DistanceSelect />
           </div>
           <div className="card-body">

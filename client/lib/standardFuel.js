@@ -26,11 +26,10 @@ export default
     keyName: 'clifbar',
     amount: 0,
     liveText: 'ClifBars',
-    lapText: 'ClifBars (1/2)',
+    lapText: 'ClifBars',
     totalAmount: 0,
     totalText: 'ClifBars eaten',
-    itemCalories: 135,
-    serving: 0.5
+    itemCalories: 270
   },
   {
     id: 4,
@@ -38,7 +37,7 @@ export default
     keyName: 'gu',
     amount: 0,
     liveText: 'Gu',
-    lapText: 'Gu (1 gel)',
+    lapText: 'Gu',
     totalAmount: 0,
     totalText: 'Gu gels eaten',
     itemCalories: 100
@@ -49,12 +48,10 @@ export default
     keyName: 'pbj',
     amount: 0,
     liveText: 'Peanut Butter and Jelly Sandwiches',
-    lapText: 'Peanut Butter and Jelly Sandwiches (1/2)',
+    lapText: 'Peanut Butter and Jelly Sandwiches',
     totalAmount: 0,
     totalText: 'Peanut Butter and Jelly Sandwiches eaten',
-    itemCalories: 100,
-    serving: 0.5
-
+    itemCalories: 200
   },
   {
     id: 6,
@@ -62,12 +59,10 @@ export default
     keyName: 'balls',
     amount: 0,
     liveText: 'Power Balls',
-    lapText: 'Power Balls (2 balls)',
+    lapText: 'Power Balls',
     totalAmount: 0,
     totalText: 'Power Balls eaten',
-    itemCalories: 110,
-    serving: 2
-
+    itemCalories: 55
   },
   {
     id: 7,
@@ -75,7 +70,7 @@ export default
     keyName: 'banana',
     amount: 0,
     liveText: 'Bananas',
-    lapText: 'Bananas (1)',
+    lapText: 'Bananas',
     totalAmount: 0,
     totalText: 'Bananas eaten',
     itemCalories: 100
