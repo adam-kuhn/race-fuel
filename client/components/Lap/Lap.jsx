@@ -46,17 +46,21 @@ class Lap extends React.Component {
   }
 
   submitLap () {
-    const {lap, lapFuel, distanceTime, dispatch} = this.props
-    const submittedItems = lapFuel.concat(distanceTime)
-    const items = submittedItems.map(item => {
-      return item.keyName || item.name
-    })
-    let lapValues = {}
-    for (let item of items) {
-      lapValues[item] = Number(this.state[item]) || 0
+    const {lap, dispatch} = this.props
+    const oldState = this.state
+    let lapValues = {
+      time: {}
+    }
+    for (let value in oldState) {
+      const newValue = Number(oldState[value])
+      if (value === 'hour' || value === 'min' || value === 'sec') {
+        lapValues.time[value] = newValue
+      } else {
+        lapValues[value] = newValue
+      }
       this.setState({
         calories: 0,
-        [item]: ''
+        [value]: ''
       })
     }
     dispatch(nextLap(lap, lapValues))

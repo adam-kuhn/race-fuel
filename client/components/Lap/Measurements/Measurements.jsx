@@ -19,7 +19,7 @@ function Measurements (props) {
         return (
           <LapTime key={unit.id}
             text={unit.text} name={unit.name}
-            value={lapState[unit.name] || ''}
+            value={lapState}
             change={change}/>
         )
       }
