@@ -13,7 +13,7 @@ test('fueList does not return a preset list on CUSTOM', () => {
     id: 1,
     name: 'calories',
     totalAmount: 0,
-    totalText: 'Calories eaten'
+    text: 'Calories'
   }]
   const action = {
     type: CUSTOM
@@ -22,7 +22,7 @@ test('fueList does not return a preset list on CUSTOM', () => {
   expect(actual.fuel[0].id).toBe(expected[0].id)
   expect(actual.fuel[0].name).toBe(expected[0].name)
   expect(actual.fuel[0].totalAmount).toBe(expected[0].totalAmount)
-  expect(actual.fuel[0].totalText).toBe(expected[0].totalText)
+  expect(actual.fuel[0].text).toBe(expected[0].text)
   expect(actual.lap).toBe(1)
 })
 
@@ -60,7 +60,7 @@ test('fuelList updates lap count on NEXT_LAP', () => {
 })
 
 test('fuelList updates overall list on NEXT_LAP', () => {
-  const expected = -1.5
+  const expected = -3
   const action = {
     type: NEXT_LAP,
     lapFuel: {clifbar: 3},
@@ -83,8 +83,7 @@ test('fuelList adds a new item on ADD_TO_LIST', () => {
     }
   }
   const actual = fuelList(state, action)
-  expect(actual.fuel[actual.fuel.length - 1].liveText).toBe(expectedText)
-  expect(actual.fuel[actual.fuel.length - 1].lapText).toBe(expectedText)
+  expect(actual.fuel[actual.fuel.length - 1].text).toBe(expectedText)
   expect(actual.fuel[actual.fuel.length - 1].totalText).toBe(expectedText)
   expect(actual.fuel[actual.fuel.length - 1].name).toBe(expectedText)
   expect(actual.fuel[actual.fuel.length - 1].id).toBe(expectedId)

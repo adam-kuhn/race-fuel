@@ -13,12 +13,12 @@ class Totals extends React.Component {
             if (item.name === 'water') {
               return (
                 <p className="card-text" key={item.id}>{this.props.litre
-                  ? item.totalText : item.totalTextMl} {item.totalAmount} </p>
+                  ? item.text.waterL : item.text.waterMl} {item.totalAmount} </p>
               )
             }
             return (
               <p className="card-text" key={item.id}>
-                {item.totalText} {item.totalAmount}</p>
+                {item.text} {item.totalAmount}</p>
             )
           })}
           <MeasurementTotal />
