@@ -79,7 +79,13 @@ const distanceAndTime = (state = initialState, action) => {
     case (GO_HOME): {
       const measurements = action.distanceTime
       for (let unit of measurements) {
-        unit.totalAmount = 0
+        if (unit.name === 'time') {
+          for (let unitOfTime in unit.totalAmount) {
+            unit.totalAmount[unitOfTime] = 0
+          }
+        } else {
+          unit.totalAmount = 0
+        }
       }
       return {
         ...state,
