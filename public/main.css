@@ -45,3 +45,14 @@
 .title {
   margin: 5% 0;
 }
+
+.time {
+  margin-top: -1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.time-input {
+  max-width: 4rem;
+  text-align: center;
+}
