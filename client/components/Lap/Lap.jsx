@@ -83,7 +83,7 @@ class Lap extends React.Component {
                 if (item.name === 'water') {
                   return (
                     <p className="card-text" key={item.id}>{this.props.litre
-                      ? item.liveText : item.liveTextMl}
+                      ? item.text.waterL : item.text.waterMl}
                     <input className='form-control'
                       value={this.state[item.keyName] || ''}
                       name={item.keyName} onChange={this.handleChange}
@@ -92,7 +92,7 @@ class Lap extends React.Component {
                   )
                 }
                 return (
-                  <p className="card-text" key={item.id}>{item.lapText}
+                  <p className="card-text" key={item.id}>{item.text}
                     <input className='form-control'
                       value={this.state[item.keyName] || ''} name={item.keyName}
                       onChange={this.handleChange} data-cal={item.itemCalories}

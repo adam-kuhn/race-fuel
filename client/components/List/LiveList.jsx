@@ -23,12 +23,12 @@ class LiveList extends React.Component {
               if (item.name === 'water') {
                 return (
                   <p className="card-text" key={item.id}>{this.props.litre
-                    ? item.liveText : item.liveTextMl} {item.amount}</p>
+                    ? item.text.waterL : item.text.waterMl} {item.amount}</p>
                 )
               }
               return (
                 <p className='card-text' key={item.id}>
-                  {item.liveText} {item.amount}</p>
+                  {item.text} {item.amount}</p>
               )
             }
           })}

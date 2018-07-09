@@ -5,30 +5,26 @@ export default
     name: 'calories',
     keyName: 'calories',
     totalAmount: 0,
-    totalText: 'Calories eaten'
+    text: 'Calories'
   },
   {
     id: 2,
     name: 'water',
     keyName: 'water',
     amount: 0,
-    liveText: 'Water (L)',
-    liveTextMl: 'Water (mL)',
-    lapText: 'Water (L)',
-    lapTextMl: 'Water (mL)',
-    totalAmount: 0,
-    totalText: 'Water drank (L)',
-    totalTextMl: 'Water drank (mL)'
+    text: {
+      waterL: 'Water (L)',
+      waterMl: 'Water (mL)'
+    },
+    totalAmount: 0
   },
   {
     id: 3,
     name: 'clifbar',
     keyName: 'clifbar',
     amount: 0,
-    liveText: 'ClifBars',
-    lapText: 'ClifBars',
+    text: 'ClifBars',
     totalAmount: 0,
-    totalText: 'ClifBars eaten',
     itemCalories: 270
   },
   {
@@ -36,10 +32,8 @@ export default
     name: 'gu',
     keyName: 'gu',
     amount: 0,
-    liveText: 'Gu',
-    lapText: 'Gu',
+    text: 'Gu',
     totalAmount: 0,
-    totalText: 'Gu gels eaten',
     itemCalories: 100
   },
   {
@@ -47,10 +41,8 @@ export default
     name: 'pbj',
     keyName: 'pbj',
     amount: 0,
-    liveText: 'Peanut Butter and Jelly Sandwiches',
-    lapText: 'Peanut Butter and Jelly Sandwiches',
+    text: 'Peanut Butter and Jelly Sandwiches',
     totalAmount: 0,
-    totalText: 'Peanut Butter and Jelly Sandwiches eaten',
     itemCalories: 200
   },
   {
@@ -58,10 +50,8 @@ export default
     name: 'balls',
     keyName: 'balls',
     amount: 0,
-    liveText: 'Power Balls',
-    lapText: 'Power Balls',
+    text: 'Power Balls',
     totalAmount: 0,
-    totalText: 'Power Balls eaten',
     itemCalories: 55
   },
   {
@@ -69,10 +59,8 @@ export default
     name: 'banana',
     keyName: 'banana',
     amount: 0,
-    liveText: 'Bananas',
-    lapText: 'Bananas',
+    text: 'Bananas',
     totalAmount: 0,
-    totalText: 'Bananas eaten',
     itemCalories: 100
   }
 ]
