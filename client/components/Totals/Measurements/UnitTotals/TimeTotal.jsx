@@ -4,7 +4,7 @@ const TimeTotal = (props) => {
   const {text, total} = props
   return (
     <p className="card-text">{text.main}&nbsp;
-      {total.hour} : {total.min} : {total.sec}</p>
+      {total.hour}hr : {total.min}min : {total.sec}s</p>
   )
 }
 
