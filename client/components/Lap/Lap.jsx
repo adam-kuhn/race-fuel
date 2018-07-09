@@ -79,14 +79,14 @@ class Lap extends React.Component {
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
             {this.props.lapFuel.map(item => {
-              if (item.keyName !== 'calories') {
+              if (item.name !== 'calories') {
                 if (item.name === 'water') {
                   return (
                     <p className="card-text" key={item.id}>{this.props.litre
                       ? item.text.waterL : item.text.waterMl}
                     <input className='form-control'
-                      value={this.state[item.keyName] || ''}
-                      name={item.keyName} onChange={this.handleChange}
+                      value={this.state[item.keyName || item.name] || ''}
+                      name={item.keyName || item.name} onChange={this.handleChange}
                       placeholder="0"/>
                     </p>
                   )
@@ -94,7 +94,7 @@ class Lap extends React.Component {
                 return (
                   <p className="card-text" key={item.id}>{item.text}
                     <input className='form-control'
-                      value={this.state[item.keyName] || ''} name={item.keyName}
+                      value={this.state[item.keyName || item.name] || ''} name={item.keyName || item.name}
                       onChange={this.handleChange} data-cal={item.itemCalories}
                       placeholder="0"/>
                   </p>
