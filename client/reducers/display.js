@@ -3,7 +3,8 @@ import {SETLIST, SHOW_FUEL_LIST,
 const initialState = {
   showSelect: true,
   km: true,
-  litre: true
+  litre: true,
+  showSplits: true
 }
 
 function display (state = initialState, action) {

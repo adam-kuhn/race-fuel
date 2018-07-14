@@ -7,10 +7,11 @@ import Lap from './Lap/Lap'
 import Totals from './Totals/Totals'
 import Select from './Select/Select'
 import HomeBtn from './HomeBtn/HomeBtn'
+import Splits from './Splits/Splits'
 
 class App extends React.Component {
   render () {
-    const {showSelect, showFuelList} = this.props
+    const {showSelect, showFuelList, showSplits} = this.props
     return (
       <div>
         <div className="center title">
@@ -21,6 +22,7 @@ class App extends React.Component {
         {!showSelect && !showFuelList && <LiveList />}
         {!showSelect && !showFuelList && <Lap />}
         {!showSelect && !showFuelList && <Totals />}
+        {showSplits && <Splits />}
         {!showSelect && <HomeBtn />}
       </div>
     )
@@ -30,7 +32,8 @@ class App extends React.Component {
 function mapStateToProps (state) {
   return {
     showFuelList: state.display.showFuelList,
-    showSelect: state.display.showSelect
+    showSelect: state.display.showSelect,
+    showSplits: state.display.showSplits
   }
 }
 
