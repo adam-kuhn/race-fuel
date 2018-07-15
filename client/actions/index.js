@@ -7,6 +7,7 @@ export const CUSTOM = 'CUSTOM'
 export const GO_HOME = 'GO_HOME'
 export const TOGGLE_UNITS = 'TOGGLE_UNITS'
 export const TOGGLE_WATER = 'TOGGLE_WATER'
+export const SHOW_SPLITS = 'SHOW_SPLITS'
 
 export const showFuelList = () => {
   return {
@@ -85,5 +86,11 @@ export const changeWater = (boolean, fuel, totalWater, water) => {
     fuel,
     totalWater,
     water
+  }
+}
+
+export const showSplits = () => {
+  return {
+    type: SHOW_SPLITS
   }
 }

@@ -1,10 +1,11 @@
 import {SETLIST, SHOW_FUEL_LIST,
-  STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER} from '../actions'
+  STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER,
+  SHOW_SPLITS} from '../actions'
 const initialState = {
   showSelect: true,
   km: true,
   litre: true,
-  showSplits: true
+  showSplits: false
 }
 
 function display (state = initialState, action) {
@@ -51,6 +52,12 @@ function display (state = initialState, action) {
       return {
         ...state,
         litre: !action.boolean
+      }
+    }
+    case (SHOW_SPLITS): {
+      return {
+        ...state,
+        showSplits: true
       }
     }
     default: {
