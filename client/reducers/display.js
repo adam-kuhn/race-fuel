@@ -15,7 +15,8 @@ function display (state = initialState, action) {
     case (SHOW_EDIT_LIST): {
       return {
         ...state,
-        showEditList: true
+        showEditList: true,
+        showMain: false
       }
     }
     case (SETLIST): {
