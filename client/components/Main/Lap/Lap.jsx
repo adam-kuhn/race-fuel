@@ -10,7 +10,9 @@ class Lap extends React.Component {
   constructor () {
     super()
     this.state = {
-      calories: 0,
+      fuel: {
+        calories: 0
+      },
       wrongInput: false
     }
     this.handleChange = this.handleChange.bind(this)
@@ -22,24 +24,30 @@ class Lap extends React.Component {
     if (!(newValue + 1)) {
       if (e.target.name === 'time' || e.target.name === 'distance') {
         this.setState({
-          [e.target.name]: '',
+          fuel: {
+            [e.target.name]: ''
+          },
           wrongInput: true
         })
       } else {
-        const lowerCals = this.state.calories - (this.state[e.target.name] * itemCalories)
+        const lowerCals = this.state.fuel.calories - (this.state.fuel[e.target.name] * itemCalories)
         this.setState({
-          [e.target.name]: '',
-          calories: lowerCals || 0,
+          fuel: {
+            [e.target.name]: '',
+            calories: lowerCals || 0
+          },
           wrongInput: true
         })
       }
     } else {
-      const difference = e.target.value - (this.state[e.target.name] || 0)
-      const caloriesEaten = ((itemCalories * difference) + this.state.calories)
+      const difference = e.target.value - (this.state.fuel[e.target.name] || 0)
+      const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories)
       this.setState({
-        ...this.state,
-        [e.target.name]: e.target.value,
-        calories: caloriesEaten,
+        fuel: {
+          ...this.state.fuel,
+          [e.target.name]: e.target.value,
+          calories: caloriesEaten
+        },
         wrongInput: false
       })
     }
@@ -47,7 +55,7 @@ class Lap extends React.Component {
 
   submitLap () {
     const {lap, dispatch} = this.props
-    const oldState = this.state
+    const oldState = this.state.fuel
     let lapValues = {
       time: {}
     }
@@ -58,12 +66,13 @@ class Lap extends React.Component {
       } else {
         lapValues[value] = newValue
       }
-      this.setState({
-        calories: 0,
-        [value]: ''
-      })
     }
     dispatch(nextLap(lap, lapValues))
+    this.setState({
+      fuel: {
+        calories: 0
+      }
+    })
   }
 
   render () {
@@ -85,7 +94,7 @@ class Lap extends React.Component {
                     <p className="card-text" key={item.id}>{this.props.litre
                       ? item.text.waterL : item.text.waterMl}
                     <input className='form-control'
-                      value={this.state[item.keyName || item.name] || ''}
+                      value={this.state.fuel[item.keyName || item.name] || ''}
                       name={item.keyName || item.name} onChange={this.handleChange}
                       placeholder="0"/>
                     </p>
@@ -94,15 +103,15 @@ class Lap extends React.Component {
                 return (
                   <p className="card-text" key={item.id}>{item.text}
                     <input className='form-control'
-                      value={this.state[item.keyName || item.name] || ''} name={item.keyName || item.name}
+                      value={this.state.fuel[item.keyName || item.name] || ''} name={item.keyName || item.name}
                       onChange={this.handleChange} data-cal={item.itemCalories}
                       placeholder="0"/>
                   </p>
                 )
               }
             })}
-            <h3>Calories {this.state.calories}</h3>
-            <Measurements change={this.handleChange} lapState={this.state}/>
+            <h3>Calories {this.state.fuel.calories}</h3>
+            <Measurements change={this.handleChange} lapState={this.state.fuel}/>
             <div className="center">
               <button type='button' className="btn btn-success btn-success-card"
                 onClick={this.submitLap}>Next Lap</button>
