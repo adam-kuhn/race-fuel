@@ -19,7 +19,7 @@ class Splits extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    lapInfo: state.lapInfo || [2]
+    lapInfo: state.splits.lapInfo
   }
 }
 
