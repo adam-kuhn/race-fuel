@@ -3,9 +3,10 @@ import {SETLIST, SHOW_FUEL_LIST,
   SHOW_SPLITS} from '../actions'
 const initialState = {
   showSelect: true,
+  showFuelList: false,
+  showSplits: false,
   km: true,
-  litre: true,
-  showSplits: false
+  litre: true
 }
 
 function display (state = initialState, action) {
