@@ -25,7 +25,7 @@ class App extends React.Component {
         {showMain && <Totals />}
         {showSplits && <Splits />}
         {!showSelect && <HomeBtn />}
-        {!showSelect && <GoToSplits />}
+        {showMain && <GoToSplits />}
       </div>
     )
   }
