@@ -7,7 +7,7 @@ import Lap from './Lap/Lap'
 import Totals from './Totals/Totals'
 import Select from './Select/Select'
 import HomeBtn from './HomeBtn/HomeBtn'
-// import GoToSplits from './GoToSplits/GoToSplits'
+import GoToSplits from './GoToSplits/GoToSplits'
 import Splits from './Splits/Splits'
 
 class App extends React.Component {
@@ -25,7 +25,7 @@ class App extends React.Component {
         {!showSelect && !showFuelList && <Totals />}
         {showSplits && <Splits />}
         {!showSelect && <HomeBtn />}
-        {/* {!showSelect && <GoToSplits />} */}
+        {!showSelect && <GoToSplits />}
       </div>
     )
   }
