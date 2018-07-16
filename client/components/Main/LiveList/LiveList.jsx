@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {showFuelList} from '../../actions'
-import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+import {showEditList} from '../../../actions'
+import LitreMlSelect from '../../Select/UnitSelect/LitreMlSelect'
 
 class LiveList extends React.Component {
   constructor () {
@@ -10,7 +10,7 @@ class LiveList extends React.Component {
     this.editFuelList = this.editFuelList.bind(this)
   }
   editFuelList () {
-    this.props.dispatch(showFuelList())
+    this.props.dispatch(showEditList())
   }
   render () {
     return (

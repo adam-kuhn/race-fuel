@@ -1,5 +1,5 @@
 export const SETLIST = 'SETLIST'
-export const SHOW_FUEL_LIST = 'SHOW_FUEL_LIST'
+export const SHOW_EDIT_LIST = 'SHOW_EDIT_LIST'
 export const NEXT_LAP = 'NEXT_LAP'
 export const ADD_TO_LIST = 'ADD_TO_LIST'
 export const STANDARD = 'STANDARD'
@@ -9,9 +9,9 @@ export const TOGGLE_UNITS = 'TOGGLE_UNITS'
 export const TOGGLE_WATER = 'TOGGLE_WATER'
 export const SHOW_SPLITS = 'SHOW_SPLITS'
 
-export const showFuelList = () => {
+export const showEditList = () => {
   return {
-    type: SHOW_FUEL_LIST
+    type: SHOW_EDIT_LIST
   }
 }
 export const setList = (fuelList) => {

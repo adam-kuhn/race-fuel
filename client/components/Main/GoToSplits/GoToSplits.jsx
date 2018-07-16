@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {showSplits} from '../../actions'
+import {showSplits} from '../../../actions'
 
 class GoToSplits extends React.Component {
   constructor () {

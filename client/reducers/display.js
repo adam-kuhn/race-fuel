@@ -1,45 +1,51 @@
-import {SETLIST, SHOW_FUEL_LIST,
+import {SETLIST, SHOW_EDIT_LIST,
   STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER,
   SHOW_SPLITS} from '../actions'
 const initialState = {
   showSelect: true,
+  showEditList: false,
+  showMain: false,
+  showSplits: false,
   km: true,
-  litre: true,
-  showSplits: false
+  litre: true
 }
 
 function display (state = initialState, action) {
   switch (action.type) {
-    case (SHOW_FUEL_LIST): {
+    case (SHOW_EDIT_LIST): {
       return {
         ...state,
-        showFuelList: true
+        showEditList: true
       }
     }
     case (SETLIST): {
       return {
         ...state,
-        showFuelList: false
+        showEditList: false,
+        showMain: true
       }
     }
     case (STANDARD): {
       return {
         ...state,
         showSelect: false,
-        showFuelList: true
+        showEditList: true
       }
     }
     case (CUSTOM): {
       return {
         ...state,
         showSelect: false,
-        showFuelList: true
+        showEditList: true
       }
     }
     case (GO_HOME): {
       return {
         ...state,
-        showSelect: true
+        showSelect: true,
+        showMain: false,
+        showEditList: false,
+        showSplits: false
       }
     }
     case (TOGGLE_UNITS): {
@@ -57,7 +63,8 @@ function display (state = initialState, action) {
     case (SHOW_SPLITS): {
       return {
         ...state,
-        showSplits: true
+        showSplits: true,
+        showMain: false
       }
     }
     default: {

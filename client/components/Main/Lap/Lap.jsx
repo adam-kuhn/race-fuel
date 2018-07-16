@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import DistanceSelect from '../Select/UnitSelect/DistanceSelect'
+import DistanceSelect from '../../Select/UnitSelect/DistanceSelect'
 import Measurements from './Measurements/Measurements'
 
-import {nextLap} from '../../actions'
+import {nextLap} from '../../../actions'
 
 class Lap extends React.Component {
   constructor () {
