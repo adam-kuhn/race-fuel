@@ -39,7 +39,8 @@ function display (state = initialState, action) {
     case (GO_HOME): {
       return {
         ...state,
-        showSelect: true
+        showSelect: true,
+        showSplits: false
       }
     }
     case (TOGGLE_UNITS): {
