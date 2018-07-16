@@ -12,17 +12,17 @@ import Splits from './Splits/Splits'
 
 class App extends React.Component {
   render () {
-    const {showSelect, showFuelList, showSplits} = this.props
+    const {showSelect, showEditList, showMain, showSplits} = this.props
     return (
       <div>
         <div className="center title">
           <h2>Nutrition Tracker</h2>
         </div>
         {showSelect && <Select />}
-        {!showSelect && showFuelList && <FuelList />}
-        {!showSelect && !showFuelList && <LiveList />}
-        {!showSelect && !showFuelList && <Lap />}
-        {!showSelect && !showFuelList && <Totals />}
+        {showEditList && <FuelList />}
+        {showMain && <LiveList />}
+        {showMain && <Lap />}
+        {showMain && <Totals />}
         {showSplits && <Splits />}
         {!showSelect && <HomeBtn />}
         {!showSelect && <GoToSplits />}
@@ -33,7 +33,8 @@ class App extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    showFuelList: state.display.showFuelList,
+    showEditList: state.display.showEditList,
+    showMain: state.display.showMain,
     showSelect: state.display.showSelect,
     showSplits: state.display.showSplits
   }
