@@ -2,12 +2,9 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import FuelList from './List/FuelList'
-import LiveList from './List/LiveList'
-import Lap from './Lap/Lap'
-import Totals from './Totals/Totals'
 import Select from './Select/Select'
+import Main from './Main/Main'
 import HomeBtn from './HomeBtn/HomeBtn'
-import GoToSplits from './GoToSplits/GoToSplits'
 import Splits from './Splits/Splits'
 
 class App extends React.Component {
@@ -20,12 +17,9 @@ class App extends React.Component {
         </div>
         {showSelect && <Select />}
         {showEditList && <FuelList />}
-        {showMain && <LiveList />}
-        {showMain && <Lap />}
-        {showMain && <Totals />}
+        {showMain && <Main />}
         {showSplits && <Splits />}
         {!showSelect && <HomeBtn />}
-        {showMain && <GoToSplits />}
       </div>
     )
   }
