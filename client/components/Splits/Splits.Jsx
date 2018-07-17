@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import LapInfo from './LapInfo/LapInfo'
 import BackToMain from './BackToMain/BackToMain'
+import SplitNav from './SplitNav/SplitNav'
 
 class Splits extends React.Component {
   constructor () {
@@ -45,9 +46,10 @@ class Splits extends React.Component {
       <div>
         <h2>Split Component</h2>
         <LapInfo info={this.props.lapInfo[this.state.lapIndex]} />
-        <p>{this.state.errorMessage}</p>
-        <button type='button' onClick={this.handlePrevious}>Previous</button>
-        <button type='button' onClick={this.handleNext}>Next</button>
+        <SplitNav
+          errorMsg={this.state.errorMessage}
+          next={this.handleNext}
+          previous={this.handlePrevious}/>
         <BackToMain />
       </div>
     )
