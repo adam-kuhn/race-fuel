@@ -12,33 +12,36 @@ class Splits extends React.Component {
       lapIndex: 0,
       errorMessage: ''
     }
-    this.handleNext = this.handleNext.bind(this)
-    this.handlePrevious = this.handlePrevious.bind(this)
+    this.handleSplitNav = this.handleSplitNav.bind(this)
   }
-  handleNext () {
+
+  handleSplitNav (e) {
+    const delta = Number(e.target.value)
     const currentLap = this.state.lapIndex
-    if (currentLap + 1 === this.props.lapInfo.length) {
-      this.setState({
-        errorMessage: 'This is the last lap.'
-      })
-    } else {
-      this.setState({
-        lapIndex: currentLap + 1,
-        errorMessage: ''
-      })
-    }
-  }
-  handlePrevious () {
-    const currentLap = this.state.lapIndex
-    if (currentLap - 1 < 0) {
-      this.setState({
-        errorMessage: 'This is the first lap.'
-      })
-    } else {
-      this.setState({
-        lapIndex: currentLap - 1,
-        errorMessage: ''
-      })
+    switch (delta) {
+      case (-1):
+        if (currentLap === 0 && delta === -1) {
+          this.setState({
+            errorMessage: 'This is the first lap.'
+          })
+        } else {
+          this.setState({
+            lapIndex: currentLap + delta,
+            errorMessage: ''
+          })
+        }
+        break
+      case (1):
+        if (currentLap + 1 === this.props.lapInfo.length) {
+          this.setState({
+            errorMessage: 'This is the first lap.'
+          })
+        } else {
+          this.setState({
+            lapIndex: currentLap + 1,
+            errorMessage: ''
+          })
+        }
     }
   }
   render () {
@@ -48,8 +51,7 @@ class Splits extends React.Component {
         <LapInfo info={this.props.lapInfo[this.state.lapIndex]} />
         <SplitNav
           errorMsg={this.state.errorMessage}
-          next={this.handleNext}
-          previous={this.handlePrevious}/>
+          nav={this.handleSplitNav}/>
         <BackToMain />
       </div>
     )
