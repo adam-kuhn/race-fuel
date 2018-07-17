@@ -28,7 +28,17 @@ class Splits extends React.Component {
     }
   }
   handlePrevious () {
-
+    const currentLap = this.state.lapIndex
+    if (currentLap - 1 < 0) {
+      this.setState({
+        errorMessage: 'This is the first lap.'
+      })
+    } else {
+      this.setState({
+        lapIndex: currentLap - 1,
+        errorMessage: ''
+      })
+    }
   }
   render () {
     return (
@@ -36,8 +46,8 @@ class Splits extends React.Component {
         <h2>Split Component</h2>
         <LapInfo info={this.props.lapInfo[this.state.lapIndex]} />
         <p>{this.state.errorMessage}</p>
+        <button type='button' onClick={this.handlePrevious}>Previous</button>
         <button type='button' onClick={this.handleNext}>Next</button>
-        {/* next lap / prev lap buttons */}
         <BackToMain />
       </div>
     )
