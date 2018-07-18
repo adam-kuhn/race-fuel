@@ -18,30 +18,28 @@ class Splits extends React.Component {
   handleSplitNav (e) {
     const delta = Number(e.target.value)
     const currentLap = this.state.lapIndex
-    switch (delta) {
-      case (-1):
-        if (currentLap === 0 && delta === -1) {
-          this.setState({
-            errorMessage: 'This is the first lap.'
-          })
-        } else {
-          this.setState({
-            lapIndex: currentLap + delta,
-            errorMessage: ''
-          })
-        }
-        break
-      case (1):
-        if (currentLap + 1 === this.props.lapInfo.length) {
-          this.setState({
-            errorMessage: 'This is the first lap.'
-          })
-        } else {
-          this.setState({
-            lapIndex: currentLap + 1,
-            errorMessage: ''
-          })
-        }
+    if (delta === -1) {
+      if (currentLap === 0) {
+        this.setState({
+          errorMessage: 'This is the first lap.'
+        })
+      } else {
+        this.setState({
+          lapIndex: currentLap + delta,
+          errorMessage: ''
+        })
+      }
+    } else {
+      if (currentLap + 1 === this.props.lapInfo.length) {
+        this.setState({
+          errorMessage: 'This is the last lap.'
+        })
+      } else {
+        this.setState({
+          lapIndex: currentLap + 1,
+          errorMessage: ''
+        })
+      }
     }
   }
   render () {
