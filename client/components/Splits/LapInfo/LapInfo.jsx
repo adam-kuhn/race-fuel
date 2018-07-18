@@ -7,6 +7,10 @@ const LapInfo = (props) => {
       return (
         <p key={idx}>{keyName} {props.info[keyName]} </p>
       )
+    } else {
+      return (
+        <p key={idx}>{keyName} {props.info[keyName].hour || 0}hr {props.info[keyName].min || 0}min {props.info[keyName].sec || 0}s</p>
+      )
     }
   })
   return (
