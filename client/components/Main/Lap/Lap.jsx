@@ -25,14 +25,16 @@ class Lap extends React.Component {
       if (e.target.name === 'time' || e.target.name === 'distance') {
         this.setState({
           fuel: {
+            ...this.state.fuel,
             [e.target.name]: ''
           },
           wrongInput: true
         })
       } else {
-        const lowerCals = this.state.fuel.calories - (this.state.fuel[e.target.name] * itemCalories)
+        const lowerCals = this.state.fuel.calories - (itemCalories * (this.state.fuel[e.target.name] || 0))
         this.setState({
           fuel: {
+            ...this.state.fuel,
             [e.target.name]: '',
             calories: lowerCals || 0
           },
@@ -114,7 +116,7 @@ class Lap extends React.Component {
             <Measurements change={this.handleChange} lapState={this.state.fuel}/>
             <div className="center">
               <button type='button' className="btn btn-success btn-success-card"
-                onClick={this.submitLap}>Next Lap</button>
+                onClick={this.submitLap} disabled={this.state.wrongInput}>Next Lap</button>
             </div>
           </div>
         </div>
