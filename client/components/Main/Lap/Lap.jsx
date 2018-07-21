@@ -73,7 +73,8 @@ class Lap extends React.Component {
     this.setState({
       fuel: {
         calories: 0
-      }
+      },
+      wrongInput: false
     })
   }
 
@@ -116,7 +117,7 @@ class Lap extends React.Component {
             <Measurements change={this.handleChange} lapState={this.state.fuel}/>
             <div className="center">
               <button type='button' className="btn btn-success btn-success-card"
-                onClick={this.submitLap} disabled={this.state.wrongInput}>Next Lap</button>
+                onClick={this.submitLap}>Next Lap</button>
             </div>
           </div>
         </div>
