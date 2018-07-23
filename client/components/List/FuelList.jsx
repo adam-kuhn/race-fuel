@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+import DeleteItem from './DeleteItem/DeleteItem'
 
 import {setList} from '../../actions'
 
@@ -51,22 +52,28 @@ class FuelList extends React.Component {
               if (item.name !== 'calories') {
                 if (item.name === 'water') {
                   return (
-                    <p className="card-text" key={item.id}>{this.props.litre
-                      ? item.text.waterL : item.text.waterMl}
-                    <input className='form-control'
-                      value={this.state[item.keyName || item.name] || ''}
-                      name={item.keyName || item.name} onChange={this.handleChange}
-                      placeholder="0"/>
-                    </p>
+                    <div>
+                      <p className="card-text" key={item.id}>{this.props.litre
+                        ? item.text.waterL : item.text.waterMl}
+                      <input className='form-control'
+                        value={this.state[item.keyName || item.name] || ''}
+                        name={item.keyName || item.name} onChange={this.handleChange}
+                        placeholder="0"/>
+                      </p>
+                      <DeleteItem />
+                    </div>
                   )
                 }
                 return (
-                  <p className="card-text" key={item.id}>{item.text}
-                    <input className='form-control'
-                      value={this.state[item.keyName || item.name] || ''}
-                      name={item.keyName || item.name} onChange={this.handleChange}
-                      placeholder="0"/>
-                  </p>
+                  <div>
+                    <p className="card-text" key={item.id}>{item.text}
+                      <input className='form-control'
+                        value={this.state[item.keyName || item.name] || ''}
+                        name={item.keyName || item.name} onChange={this.handleChange}
+                        placeholder="0"/>
+                    </p>
+                    <DeleteItem />
+                  </div>
                 )
               }
             })}
