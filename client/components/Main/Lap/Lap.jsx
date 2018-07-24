@@ -111,7 +111,8 @@ class Lap extends React.Component {
                       value={this.state.fuel[item.keyName || item.name]
                         ? this.state.fuel[item.keyName || item.name].value : ''}
                       name={item.keyName || item.name} onChange={this.handleChange}
-                      placeholder="0"/>
+                      placeholder="0" data-text={this.props.litre
+                        ? item.text.waterL : item.text.waterMl}/>
                     </p>
                   )
                 }
