@@ -60,7 +60,7 @@ class FuelList extends React.Component {
                         name={item.keyName || item.name} onChange={this.handleChange}
                         placeholder="0"/>
                       </p>
-                      <DeleteItem item={item.keyName || item.name}/>
+                      <DeleteItem itemId={item.id}/>
                     </div>
                   )
                 }
@@ -72,7 +72,7 @@ class FuelList extends React.Component {
                         name={item.keyName || item.name} onChange={this.handleChange}
                         placeholder="0"/>
                     </p>
-                    <DeleteItem item={item.keyName || item.name}/>
+                    <DeleteItem itemId={item.id}/>
                   </div>
                 )
               }
