@@ -1,11 +1,12 @@
 import {SETLIST, SHOW_EDIT_LIST,
   STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER,
-  SHOW_SPLITS, BACK_TO_MAIN} from '../actions'
+  SHOW_SPLITS, BACK_TO_MAIN, NEXT_LAP} from '../actions'
 const initialState = {
   showSelect: true,
   showEditList: false,
   showMain: false,
   showSplits: false,
+  disableSplitButton: true,
   km: true,
   litre: true
 }
@@ -72,7 +73,14 @@ function display (state = initialState, action) {
       return {
         ...state,
         showSplits: false,
-        showMain: true
+        showMain: true,
+        disableSplitButton: true
+      }
+    }
+    case (NEXT_LAP): {
+      return {
+        ...state,
+        disableSplitButton: false
       }
     }
     default: {

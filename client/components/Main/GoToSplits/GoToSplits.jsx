@@ -15,10 +15,17 @@ class GoToSplits extends React.Component {
     return (
       <div className="center">
         <button type='button' className="btn btn-danger"
-          onClick={this.handleClick}>View Splits</button>
+          onClick={this.handleClick}
+          disabled={this.props.disableSplit}>View Splits</button>
       </div>
     )
   }
 }
 
-export default connect()(GoToSplits)
+const mapStateToProps = (state) => {
+  return {
+    disableSplit: state.display.disableSplitButton
+  }
+}
+
+export default connect(mapStateToProps)(GoToSplits)
