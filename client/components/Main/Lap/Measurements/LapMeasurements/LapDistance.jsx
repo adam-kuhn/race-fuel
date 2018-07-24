@@ -7,7 +7,8 @@ const LapDistance = (props) => {
       {km ? text.km : text.mi}
       <input className="form-control" name={name}
         value={value} onChange={change}
-        placeholder="0"/>
+        placeholder="0"
+        data-text={km ? text.km : text.mi}/>
     </p>
   )
 }
