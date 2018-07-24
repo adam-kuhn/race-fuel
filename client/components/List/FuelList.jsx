@@ -52,27 +52,27 @@ class FuelList extends React.Component {
               if (item.name !== 'calories') {
                 if (item.name === 'water') {
                   return (
-                    <div>
-                      <p className="card-text" key={item.id}>{this.props.litre
+                    <div key={item.id}>
+                      <p className="card-text" >{this.props.litre
                         ? item.text.waterL : item.text.waterMl}
                       <input className='form-control'
                         value={this.state[item.keyName || item.name] || ''}
                         name={item.keyName || item.name} onChange={this.handleChange}
                         placeholder="0"/>
                       </p>
-                      <DeleteItem />
+                      <DeleteItem item={item.keyName || item.name}/>
                     </div>
                   )
                 }
                 return (
-                  <div>
-                    <p className="card-text" key={item.id}>{item.text}
+                  <div key={item.id}>
+                    <p className="card-text" >{item.text}
                       <input className='form-control'
                         value={this.state[item.keyName || item.name] || ''}
                         name={item.keyName || item.name} onChange={this.handleChange}
                         placeholder="0"/>
                     </p>
-                    <DeleteItem />
+                    <DeleteItem item={item.keyName || item.name}/>
                   </div>
                 )
               }
