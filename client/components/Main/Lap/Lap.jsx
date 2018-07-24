@@ -26,28 +26,39 @@ class Lap extends React.Component {
         this.setState({
           fuel: {
             ...this.state.fuel,
-            [e.target.name]: ''
+            [e.target.name]: {
+              value: ''
+            }
           },
           wrongInput: true
         })
       } else {
-        const lowerCals = this.state.fuel.calories - (itemCalories * (this.state.fuel[e.target.name] || 0))
+        const lowerCals = this.state.fuel.calories -
+        (itemCalories * (this.state.fuel[e.target.name]
+          ? this.state.fuel[e.target.name].value : 0))
         this.setState({
           fuel: {
             ...this.state.fuel,
-            [e.target.name]: '',
+            [e.target.name]: {
+              value: ''
+            },
             calories: lowerCals || 0
           },
           wrongInput: true
         })
       }
     } else {
-      const difference = e.target.value - (this.state.fuel[e.target.name] || 0)
+      const difference = e.target.value - (this.state.fuel[e.target.name]
+        ? this.state.fuel[e.target.name].value : 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories)
+      const itemText = e.target.getAttribute('data-text')
       this.setState({
         fuel: {
           ...this.state.fuel,
-          [e.target.name]: e.target.value,
+          [e.target.name]: {
+            value: e.target.value,
+            text: itemText
+          },
           calories: caloriesEaten
         },
         wrongInput: false
@@ -97,7 +108,8 @@ class Lap extends React.Component {
                     <p className="card-text" key={item.id}>{this.props.litre
                       ? item.text.waterL : item.text.waterMl}
                     <input className='form-control'
-                      value={this.state.fuel[item.keyName || item.name] || ''}
+                      value={this.state.fuel[item.keyName || item.name]
+                        ? this.state.fuel[item.keyName || item.name].value : ''}
                       name={item.keyName || item.name} onChange={this.handleChange}
                       placeholder="0"/>
                     </p>
@@ -106,9 +118,12 @@ class Lap extends React.Component {
                 return (
                   <p className="card-text" key={item.id}>{item.text}
                     <input className='form-control'
-                      value={this.state.fuel[item.keyName || item.name] || ''} name={item.keyName || item.name}
+                      value={this.state.fuel[item.keyName || item.name]
+                        ? this.state.fuel[item.keyName || item.name].value : ''}
+                      name={item.keyName || item.name}
                       onChange={this.handleChange} data-cal={item.itemCalories}
-                      placeholder="0"/>
+                      placeholder="0"
+                      data-text={item.text}/>
                   </p>
                 )
               }
