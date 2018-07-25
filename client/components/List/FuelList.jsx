@@ -52,7 +52,7 @@ class FuelList extends React.Component {
               if (item.name !== 'calories') {
                 if (item.name === 'water') {
                   return (
-                    <div key={item.id}>
+                    <div className='fuel-list'key={item.id}>
                       <p className="card-text" >{this.props.litre
                         ? item.text.waterL : item.text.waterMl}
                       <input className='form-control'
@@ -65,7 +65,7 @@ class FuelList extends React.Component {
                   )
                 }
                 return (
-                  <div key={item.id}>
+                  <div className='fuel-list' key={item.id}>
                     <p className="card-text" >{item.text}
                       <input className='form-control'
                         value={this.state[item.keyName || item.name] || ''}
