@@ -69,17 +69,25 @@ class Lap extends React.Component {
   submitLap () {
     const {lap, dispatch} = this.props
     const oldState = this.state.fuel
+    // console.log(oldState)
     let lapValues = {
       time: {}
     }
-    for (let value in oldState) {
-      const newValue = Number(oldState[value])
-      if (value === 'hour' || value === 'min' || value === 'sec') {
-        lapValues.time[value] = newValue
+    for (let item in oldState) {
+      const newValue = Number(oldState[item].value)
+      if (item === 'calories') {
+        lapValues.calories = oldState.calories
+      } else if (item === 'hour' || item === 'min' || item === 'sec') {
+        lapValues.time[item] = {}
+        lapValues.time[item].value = newValue
+        lapValues.time[item].text = oldState[item].text
       } else {
-        lapValues[value] = newValue
+        lapValues[item] = {}
+        lapValues[item].value = newValue
+        lapValues[item].text = oldState[item].text
       }
     }
+    console.log(lapValues)
     dispatch(nextLap(lap, lapValues))
     this.setState({
       fuel: {
