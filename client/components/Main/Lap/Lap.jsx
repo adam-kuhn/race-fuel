@@ -93,7 +93,9 @@ class Lap extends React.Component {
     dispatch(nextLap(lap, lapValues))
     this.setState({
       fuel: {
-        calories: 0
+        calories: {
+          value: 0
+        }
       },
       wrongInput: false
     })
