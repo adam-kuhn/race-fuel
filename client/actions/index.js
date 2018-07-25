@@ -91,7 +91,6 @@ export const changeWater = (boolean, fuel, totalWater, water) => {
   }
 }
 
-<<<<<<< HEAD
 export const showSplits = () => {
   return {
     type: SHOW_SPLITS
@@ -101,11 +100,12 @@ export const showSplits = () => {
 export const backToMain = () => {
   return {
     type: BACK_TO_MAIN
-=======
+  }
+}
+
 export const deleteItem = (itemId) => {
   return {
     type: DELETE_ITEM,
     itemId
->>>>>>> d3e04e2030307935ba15d1b7b440f7d202e38335
   }
 }
