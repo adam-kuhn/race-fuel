@@ -14,8 +14,9 @@ class DeleteItem extends React.Component {
   }
   render () {
     return (
-      <button type='button' onClick={this.handleClick}
-        value={this.props.itemId}>Delete Item
+      <button className="btn btn-danger"
+        type='button' onClick={this.handleClick}
+        value={this.props.itemId}>Remove Item
       </button>
     )
   }
