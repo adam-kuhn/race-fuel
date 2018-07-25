@@ -37,9 +37,9 @@ function fuelList (state = initialState, action) {
       const fuelItem = Object.keys(action.lapFuel)
       for (let item of action.fuelList) {
         for (let fuelName of fuelItem) {
-          if (item.keyName === fuelName || item.name === fuelName) {
-            item.amount = item.amount - (action.lapFuel[fuelName])
-            item.totalAmount = item.totalAmount + (action.lapFuel[fuelName])
+          if (item.name === fuelName || item.keyName === fuelName) {
+            item.amount = item.amount - (action.lapFuel[fuelName].value)
+            item.totalAmount = item.totalAmount + (action.lapFuel[fuelName].value)
           }
         }
       }
