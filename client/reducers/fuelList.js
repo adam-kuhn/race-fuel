@@ -1,5 +1,5 @@
 import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME, STANDARD,
-  TOGGLE_WATER} from '../actions'
+  TOGGLE_WATER, DELETE_ITEM} from '../actions'
 import list from '../lib/standardFuel'
 const initialState = {
   lap: 1
@@ -82,6 +82,14 @@ function fuelList (state = initialState, action) {
       return {
         ...state,
         fuel: [...action.fuel]
+      }
+    }
+    case (DELETE_ITEM): {
+      return {
+        ...state,
+        fuel: state.fuel.filter(item => {
+          return item.id !== action.itemId
+        })
       }
     }
     default: {
