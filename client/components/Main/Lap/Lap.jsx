@@ -11,7 +11,9 @@ class Lap extends React.Component {
     super()
     this.state = {
       fuel: {
-        calories: 0
+        calories: {
+          value: 0
+        }
       },
       wrongInput: false
     }
@@ -33,7 +35,7 @@ class Lap extends React.Component {
           wrongInput: true
         })
       } else {
-        const lowerCals = this.state.fuel.calories -
+        const lowerCals = this.state.fuel.calories.value -
         (itemCalories * (this.state.fuel[e.target.name]
           ? this.state.fuel[e.target.name].value : 0))
         this.setState({
@@ -42,7 +44,9 @@ class Lap extends React.Component {
             [e.target.name]: {
               value: ''
             },
-            calories: lowerCals || 0
+            calories: {
+              value: lowerCals || 0
+            }
           },
           wrongInput: true
         })
@@ -50,7 +54,7 @@ class Lap extends React.Component {
     } else {
       const difference = e.target.value - (this.state.fuel[e.target.name]
         ? this.state.fuel[e.target.name].value : 0)
-      const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories)
+      const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories.value)
       const itemText = e.target.getAttribute('data-text')
       this.setState({
         fuel: {
@@ -59,7 +63,9 @@ class Lap extends React.Component {
             value: e.target.value,
             text: itemText
           },
-          calories: caloriesEaten
+          calories: {
+            value: caloriesEaten
+          }
         },
         wrongInput: false
       })
@@ -69,25 +75,21 @@ class Lap extends React.Component {
   submitLap () {
     const {lap, dispatch} = this.props
     const oldState = this.state.fuel
-    // console.log(oldState)
     let lapValues = {
       time: {}
     }
     for (let item in oldState) {
       const newValue = Number(oldState[item].value)
-      if (item === 'calories') {
-        lapValues.calories = oldState.calories
-      } else if (item === 'hour' || item === 'min' || item === 'sec') {
+      if (item === 'hour' || item === 'min' || item === 'sec') {
         lapValues.time[item] = {}
         lapValues.time[item].value = newValue
         lapValues.time[item].text = oldState[item].text
       } else {
         lapValues[item] = {}
         lapValues[item].value = newValue
-        lapValues[item].text = oldState[item].text
+        lapValues[item].text = oldState[item].text || 'Calories'
       }
     }
-    console.log(lapValues)
     dispatch(nextLap(lap, lapValues))
     this.setState({
       fuel: {
@@ -137,7 +139,7 @@ class Lap extends React.Component {
                 )
               }
             })}
-            <h3>Calories {this.state.fuel.calories}</h3>
+            <h3>Calories {this.state.fuel.calories.value}</h3>
             <Measurements change={this.handleChange} lapState={this.state.fuel}/>
             <div className="center">
               <button type='button' className="btn btn-success btn-success-card"
