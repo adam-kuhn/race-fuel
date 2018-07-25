@@ -14,13 +14,9 @@ class DeleteItem extends React.Component {
   }
   render () {
     return (
-      <div>
-        <h2>DeleteItem component</h2>
-        <button type='button' onClick={this.handleClick}
-          value={this.props.itemId}>Delete Item
-        </button>
-      </div>
-
+      <button type='button' onClick={this.handleClick}
+        value={this.props.itemId}>Delete Item
+      </button>
     )
   }
 }
