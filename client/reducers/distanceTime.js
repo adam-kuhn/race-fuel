@@ -62,7 +62,7 @@ const distanceAndTime = (state = initialState, action) => {
           if (measured === value.name && value.name === 'time') {
             for (let unitOfTime in value.totalAmount) {
               value.totalAmount[unitOfTime] +=
-              (lapFuel[measured][unitOfTime] ? lapFuel[measured][unitOfTime].value : 0)
+              (lapFuel[measured][unitOfTime] || 0)
             }
           } else if (measured === value.name && value.name === 'distance') {
             value.totalAmount += lapFuel[measured].value

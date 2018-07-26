@@ -2,7 +2,6 @@ import React from 'react'
 
 const LapInfo = (props) => {
   const keys = Object.keys(props.info)
-  console.log(keys)
   const data = keys.map((item, idx) => {
     if (item !== 'time') {
       return (
@@ -10,7 +9,7 @@ const LapInfo = (props) => {
       )
     } else {
       return (
-        <p className='card-text' key={idx}>Time {props.info[item].hour.value || 0}hr {props.info[item].min.value || 0}min {props.info[item].sec.value || 0}s</p>
+        <p className='card-text' key={idx}>Time {props.info[item].hour || 0}hr {props.info[item].min || 0}min {props.info[item].sec || 0}s</p>
       )
     }
   })
