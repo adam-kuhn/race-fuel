@@ -4,8 +4,13 @@ import {SETLIST, SHOW_EDIT_LIST,
 
 const state = {
   showSelect: true,
+  showNav: false,
   showEditList: false,
+  showList: false,
+  showLap: false,
   showSplits: false,
+  showTotals: false,
+  disableSplitButton: true,
   km: true,
   litre: true
 }
@@ -20,7 +25,7 @@ test('display returns correct display on SHOW_EDIT_LIST', () => {
 })
 
 test('display does not overwrite previous state on SHOW_EDIT_LIST', () => {
-  const expected = 6
+  const expected = 10
   const action = {
     type: SHOW_EDIT_LIST
   }
@@ -39,7 +44,7 @@ test('display returns correct display on SETLIST', () => {
 })
 
 test('display does not overwrite previous state on SETLIST', () => {
-  const expected = 6
+  const expected = 10
   const action = {
     type: SETLIST
   }
@@ -58,7 +63,7 @@ test('display returns correct display on STANDARD', () => {
 })
 
 test('display does overwrite previous state on STANDARD', () => {
-  const expected = 6
+  const expected = 10
   const action = {
     type: STANDARD
   }
@@ -81,7 +86,7 @@ test('display returns correct display on CUSTOM', () => {
 })
 
 test('display does overwrite previous state CUSTOM', () => {
-  const expected = 6
+  const expected = 10
   const action = {
     type: CUSTOM
   }
@@ -100,7 +105,7 @@ test('display returns correct display on GO_HOME', () => {
 })
 
 test('display does NOT overwrite previous state GO_HOME', () => {
-  const expected = 6
+  const expected = 10
   const action = {
     type: GO_HOME
   }
@@ -117,5 +122,5 @@ test('returns state on default', () => {
   const actual = display(state, action)
   const keys = Object.keys(actual)
   expect(actual.showSelect).toBe(expected)
-  expect(keys.length).toBe(6)
+  expect(keys.length).toBe(10)
 })
