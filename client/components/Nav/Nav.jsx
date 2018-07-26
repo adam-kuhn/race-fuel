@@ -18,7 +18,8 @@ class Nav extends React.Component {
     return (
       <div>
         <GoTo click={this.handleNav}
-          text='Splits' type='SHOW_SPLITS'/>
+          text='Splits' type='SHOW_SPLITS'
+          disable={this.props.disableSplitButton} />
         <GoTo click={this.handleNav}
           text='Lap Details' type='SHOW_LAP' />
         <GoTo click={this.handleNav}
@@ -31,4 +32,9 @@ class Nav extends React.Component {
   }
 }
 
-export default connect()(Nav)
+const mapStateToProps = (state) => {
+  return {
+    disableSplitButton: state.display.disableSplitButton
+  }
+}
+export default connect(mapStateToProps)(Nav)
