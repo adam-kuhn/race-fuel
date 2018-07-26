@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Route} from 'react-router-dom'
 
 import Navigator from './Navigator/Navigator'
 import FuelList from './List/FuelList'
@@ -16,8 +17,10 @@ class App extends React.Component {
         <div className="center title">
           <h2>Nutrition Tracker</h2>
         </div>
+        <Route exact path="/" component={Select} />
+        <Route path="/RemainingFuel" component={FuelList} />
         {!showSelect && <Navigator />}
-        {showSelect && <Select />}
+        {/* {showSelect && <Select />} */}
         {showEditList && <FuelList />}
         {showMain && <Main />}
         {showSplits && <Splits />}
