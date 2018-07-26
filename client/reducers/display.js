@@ -48,7 +48,11 @@ function display (state = initialState, action) {
         ...state,
         showSelect: true,
         showEditList: false,
-        showSplits: false
+        showList: false,
+        showLap: false,
+        showSplits: false,
+        showTotals: false,
+        disableSplitButton: true
       }
     }
     case (TOGGLE_UNITS): {
