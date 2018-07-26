@@ -5,7 +5,6 @@ import {SETLIST, SHOW_EDIT_LIST,
 const state = {
   showSelect: true,
   showEditList: false,
-  showMain: false,
   showSplits: false,
   km: true,
   litre: true
