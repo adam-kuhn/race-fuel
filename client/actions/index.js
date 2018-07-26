@@ -109,3 +109,9 @@ export const deleteItem = (itemId) => {
     itemId
   }
 }
+
+export const navigate = (type) => {
+  return {
+    type
+  }
+}

@@ -4,7 +4,8 @@ import {SETLIST, SHOW_EDIT_LIST,
 const initialState = {
   showSelect: true,
   showEditList: false,
-  showMain: false,
+  showList: false,
+  showLap: false,
   showSplits: false,
   disableSplitButton: true,
   km: true,
@@ -24,7 +25,7 @@ function display (state = initialState, action) {
       return {
         ...state,
         showEditList: false,
-        showMain: true
+        showList: true
       }
     }
     case (STANDARD): {

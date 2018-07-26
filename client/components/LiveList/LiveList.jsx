@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {showEditList} from '../../../actions'
-import LitreMlSelect from '../../Select/UnitSelect/LitreMlSelect'
+import {showEditList} from '../../actions'
+import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 
 class LiveList extends React.Component {
   constructor () {
