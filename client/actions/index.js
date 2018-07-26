@@ -10,6 +10,7 @@ export const TOGGLE_WATER = 'TOGGLE_WATER'
 export const SHOW_SPLITS = 'SHOW_SPLITS'
 export const BACK_TO_MAIN = 'BACK_TO_MAIN'
 export const DELETE_ITEM = 'DELETE_ITEM'
+export const SHOW_LAP = 'SHOW_LAP'
 
 export const showEditList = () => {
   return {

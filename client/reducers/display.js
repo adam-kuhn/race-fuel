@@ -1,6 +1,7 @@
 import {SETLIST, SHOW_EDIT_LIST,
   STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER,
-  SHOW_SPLITS, BACK_TO_MAIN, NEXT_LAP} from '../actions'
+  SHOW_SPLITS, BACK_TO_MAIN, NEXT_LAP,
+  SHOW_LAP} from '../actions'
 const initialState = {
   showSelect: true,
   showEditList: false,
@@ -67,7 +68,17 @@ function display (state = initialState, action) {
       return {
         ...state,
         showSplits: true,
-        showMain: false
+        showMain: false,
+        showEditList: false,
+        showLap: false
+      }
+    }
+    case (SHOW_LAP): {
+      return {
+        ...state,
+        showLap: true,
+        showEditList: false,
+        showSplits: false
       }
     }
     case (BACK_TO_MAIN): {
