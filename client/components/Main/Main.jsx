@@ -3,7 +3,7 @@ import React from 'react'
 import LiveList from './LiveList/LiveList'
 import Lap from './Lap/Lap'
 import Totals from './Totals/Totals'
-import GoToSplits from './GoToSplits/GoToSplits'
+// import GoToSplits from './GoToSplits/GoToSplits'
 
 const Main = () => {
   return (
@@ -11,7 +11,7 @@ const Main = () => {
       <LiveList />
       <Lap />
       <Totals />
-      <GoToSplits />
+      {/* <GoToSplits /> */}
     </div>
   )
 }
