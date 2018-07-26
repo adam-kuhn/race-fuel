@@ -2,8 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import GoTo from './GoTo/GoTo'
-import HomeBtn from './HomeBtn/HomeBtn'
-
 import {navigate} from '../../actions'
 
 class Nav extends React.Component {
@@ -26,7 +24,6 @@ class Nav extends React.Component {
           text='Fuel List' type='SHOW_LIST' />
         <GoTo click={this.handleNav}
           text='Totals' type='SHOW_TOTALS' />
-        <HomeBtn />
       </div>
     )
   }

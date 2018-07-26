@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {goHome} from '../../../actions'
+import {goHome} from '../../actions'
 
 class HomeBtn extends React.Component {
   constructor () {

@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Nav from './Nav/Nav'
+import HomeBtn from './HomeBtn/HomeBtn'
 import FuelList from './List/FuelList'
 import LiveList from './LiveList/LiveList'
 import Lap from './Lap/Lap'
@@ -19,6 +20,7 @@ class App extends React.Component {
           <h2>Nutrition Tracker</h2>
         </div>
         {!showSelect && <Nav />}
+        {!showSelect && <HomeBtn />}
         {showSelect && <Select />}
         {showEditList && <FuelList />}
         {showList && <LiveList />}
