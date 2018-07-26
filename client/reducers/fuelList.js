@@ -30,7 +30,7 @@ function fuelList (state = initialState, action) {
       }
       return {
         ...state,
-        fuel: state.fuel
+        fuel: [...state.fuel]
       }
     }
     case (NEXT_LAP): {

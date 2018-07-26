@@ -2,7 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import LapInfo from './LapInfo/LapInfo'
-import BackToMain from './BackToMain/BackToMain'
 import SplitNav from './SplitNav/SplitNav'
 
 class Splits extends React.Component {
@@ -53,7 +52,6 @@ class Splits extends React.Component {
           <SplitNav
             errorMsg={this.state.errorMessage}
             nav={this.handleSplitNav}/>
-          <BackToMain />
         </div>
       </div>
     )
