@@ -23,6 +23,8 @@ class Nav extends React.Component {
         <p>Will be List</p>
         <GoTo click={this.handleNav}
           text='Lap Details' type='SHOW_LAP' />
+        <GoTo click={this.handleNav}
+          text='Fuel List' type='SHOW_LIST' />
         <p>Will Be Totals</p>
       </div>
     )
