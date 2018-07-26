@@ -13,13 +13,13 @@ import Totals from './Totals/Totals'
 class App extends React.Component {
   render () {
     const {showSelect, showEditList, showList,
-      showLap, showTotals, showSplits} = this.props
+      showLap, showTotals, showSplits, showNav} = this.props
     return (
       <div>
         <div className="center title">
           <h2>Nutrition Tracker</h2>
         </div>
-        {!showSelect && <Nav />}
+        {showNav && <Nav />}
         {!showSelect && <HomeBtn />}
         {showSelect && <Select />}
         {showEditList && <FuelList />}
@@ -34,6 +34,7 @@ class App extends React.Component {
 
 function mapStateToProps (state) {
   return {
+    showNav: state.display.showNav,
     showEditList: state.display.showEditList,
     showList: state.display.showList,
     showSelect: state.display.showSelect,

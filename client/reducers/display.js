@@ -4,6 +4,7 @@ import {SETLIST, SHOW_EDIT_LIST,
   SHOW_LAP, SHOW_LIST, SHOW_TOTALS} from '../actions'
 const initialState = {
   showSelect: true,
+  showNav: false,
   showEditList: false,
   showList: false,
   showLap: false,
@@ -26,7 +27,8 @@ function display (state = initialState, action) {
       return {
         ...state,
         showEditList: false,
-        showList: true
+        showList: true,
+        showNav: true
       }
     }
     case (STANDARD): {
@@ -47,6 +49,7 @@ function display (state = initialState, action) {
       return {
         ...state,
         showSelect: true,
+        showNav: false,
         showEditList: false,
         showList: false,
         showLap: false,
