@@ -1,5 +1,5 @@
 export const SETLIST = 'SETLIST'
-export const SHOW_FUEL_LIST = 'SHOW_FUEL_LIST'
+export const SHOW_EDIT_LIST = 'SHOW_EDIT_LIST'
 export const NEXT_LAP = 'NEXT_LAP'
 export const ADD_TO_LIST = 'ADD_TO_LIST'
 export const STANDARD = 'STANDARD'
@@ -7,11 +7,13 @@ export const CUSTOM = 'CUSTOM'
 export const GO_HOME = 'GO_HOME'
 export const TOGGLE_UNITS = 'TOGGLE_UNITS'
 export const TOGGLE_WATER = 'TOGGLE_WATER'
+export const SHOW_SPLITS = 'SHOW_SPLITS'
+export const BACK_TO_MAIN = 'BACK_TO_MAIN'
 export const DELETE_ITEM = 'DELETE_ITEM'
 
-export const showFuelList = () => {
+export const showEditList = () => {
   return {
-    type: SHOW_FUEL_LIST
+    type: SHOW_EDIT_LIST
   }
 }
 export const setList = (fuelList) => {
@@ -86,6 +88,18 @@ export const changeWater = (boolean, fuel, totalWater, water) => {
     fuel,
     totalWater,
     water
+  }
+}
+
+export const showSplits = () => {
+  return {
+    type: SHOW_SPLITS
+  }
+}
+
+export const backToMain = () => {
+  return {
+    type: BACK_TO_MAIN
   }
 }
 

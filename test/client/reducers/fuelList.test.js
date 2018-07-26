@@ -63,7 +63,10 @@ test('fuelList updates overall list on NEXT_LAP', () => {
   const expected = -3
   const action = {
     type: NEXT_LAP,
-    lapFuel: {clifbar: 3},
+    lapFuel: {
+      clifbar: {
+        value: 3}
+    },
     fuelList: list,
     lap: 2
   }

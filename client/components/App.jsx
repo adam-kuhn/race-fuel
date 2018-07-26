@@ -2,25 +2,23 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import FuelList from './List/FuelList'
-import LiveList from './List/LiveList'
-import Lap from './Lap/Lap'
-import Totals from './Totals/Totals'
 import Select from './Select/Select'
+import Main from './Main/Main'
 import HomeBtn from './HomeBtn/HomeBtn'
+import Splits from './Splits/Splits'
 
 class App extends React.Component {
   render () {
-    const {showSelect, showFuelList} = this.props
+    const {showSelect, showEditList, showMain, showSplits} = this.props
     return (
       <div>
         <div className="center title">
           <h2>Nutrition Tracker</h2>
         </div>
         {showSelect && <Select />}
-        {!showSelect && showFuelList && <FuelList />}
-        {!showSelect && !showFuelList && <LiveList />}
-        {!showSelect && !showFuelList && <Lap />}
-        {!showSelect && !showFuelList && <Totals />}
+        {showEditList && <FuelList />}
+        {showMain && <Main />}
+        {showSplits && <Splits />}
         {!showSelect && <HomeBtn />}
       </div>
     )
@@ -29,8 +27,10 @@ class App extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    showFuelList: state.display.showFuelList,
-    showSelect: state.display.showSelect
+    showEditList: state.display.showEditList,
+    showMain: state.display.showMain,
+    showSelect: state.display.showSelect,
+    showSplits: state.display.showSplits
   }
 }
 

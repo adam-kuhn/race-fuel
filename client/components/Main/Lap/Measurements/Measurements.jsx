@@ -12,14 +12,14 @@ function Measurements (props) {
         return (
           <LapDistance key={unit.id}
             text={unit.text} name={unit.name}
-            value={lapState[unit.name] || ''}
+            value={lapState[unit.name] ? lapState[unit.name].value : ''}
             change={change} km={km} />
         )
       } else {
         return (
           <LapTime key={unit.id}
             text={unit.text} name={unit.name}
-            value={lapState}
+            lapState={lapState}
             change={change}/>
         )
       }
