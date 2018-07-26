@@ -12,6 +12,7 @@ export const BACK_TO_MAIN = 'BACK_TO_MAIN'
 export const DELETE_ITEM = 'DELETE_ITEM'
 export const SHOW_LAP = 'SHOW_LAP'
 export const SHOW_LIST = 'SHOW_LIST'
+export const SHOW_TOTALS = 'SHOW_TOTALS'
 
 export const showEditList = () => {
   return {

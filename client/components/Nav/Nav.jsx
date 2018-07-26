@@ -19,13 +19,13 @@ class Nav extends React.Component {
       <div>
         <GoTo click={this.handleNav}
           text='Splits' type='SHOW_SPLITS'/>
-        <HomeBtn />
-        <p>Will be List</p>
         <GoTo click={this.handleNav}
           text='Lap Details' type='SHOW_LAP' />
         <GoTo click={this.handleNav}
           text='Fuel List' type='SHOW_LIST' />
-        <p>Will Be Totals</p>
+        <GoTo click={this.handleNav}
+          text='Totals' type='SHOW_TOTALS' />
+        <HomeBtn />
       </div>
     )
   }

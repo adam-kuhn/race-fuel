@@ -7,12 +7,12 @@ import LiveList from './LiveList/LiveList'
 import Lap from './Lap/Lap'
 import Select from './Select/Select'
 import Splits from './Splits/Splits'
+import Totals from './Totals/Totals'
 
 class App extends React.Component {
   render () {
     const {showSelect, showEditList, showList,
-      showLap,
-      showSplits} = this.props
+      showLap, showTotals, showSplits} = this.props
     return (
       <div>
         <div className="center title">
@@ -24,6 +24,7 @@ class App extends React.Component {
         {showList && <LiveList />}
         {showLap && <Lap />}
         {showSplits && <Splits />}
+        {showTotals && <Totals />}
       </div>
     )
   }
@@ -35,7 +36,8 @@ function mapStateToProps (state) {
     showList: state.display.showList,
     showSelect: state.display.showSelect,
     showSplits: state.display.showSplits,
-    showLap: state.display.showLap
+    showLap: state.display.showLap,
+    showTotals: state.display.showTotals
   }
 }
 
