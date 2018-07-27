@@ -71,5 +71,8 @@
 
 .fuel-list .card-text {
   max-width: 178.69px;
+}
 
+.btn-secondary {
+  width: 6.2rem;
 }
