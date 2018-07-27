@@ -20,13 +20,13 @@ class App extends React.Component {
           <h2>Nutrition Tracker</h2>
         </div>
         {showNav && <Nav />}
-        {!showSelect && <HomeBtn />}
         {showSelect && <Select />}
         {showEditList && <FuelList />}
         {showList && <LiveList />}
         {showLap && <Lap />}
         {showSplits && <Splits />}
         {showTotals && <Totals />}
+        {!showSelect && <HomeBtn />}
       </div>
     )
   }
