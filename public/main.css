@@ -64,9 +64,10 @@
     justify-content: space-around;
 }
 
-/* .form-control {
-  max-width: 178.69px;
-} */
+.nav {
+  justify-content: space-evenly;
+  margin-bottom: 0.8rem;
+}
 
 .fuel-list .card-text {
   max-width: 178.69px;

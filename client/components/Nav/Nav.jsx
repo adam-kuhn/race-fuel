@@ -14,7 +14,7 @@ class Nav extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className='center nav'>
         <GoTo click={this.handleNav}
           text='Splits' type='SHOW_SPLITS'
           disable={this.props.disableSplitButton} />
