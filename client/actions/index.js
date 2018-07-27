@@ -8,8 +8,10 @@ export const GO_HOME = 'GO_HOME'
 export const TOGGLE_UNITS = 'TOGGLE_UNITS'
 export const TOGGLE_WATER = 'TOGGLE_WATER'
 export const SHOW_SPLITS = 'SHOW_SPLITS'
-export const BACK_TO_MAIN = 'BACK_TO_MAIN'
 export const DELETE_ITEM = 'DELETE_ITEM'
+export const SHOW_LAP = 'SHOW_LAP'
+export const SHOW_LIST = 'SHOW_LIST'
+export const SHOW_TOTALS = 'SHOW_TOTALS'
 
 export const showEditList = () => {
   return {
@@ -97,15 +99,15 @@ export const showSplits = () => {
   }
 }
 
-export const backToMain = () => {
-  return {
-    type: BACK_TO_MAIN
-  }
-}
-
 export const deleteItem = (itemId) => {
   return {
     type: DELETE_ITEM,
     itemId
+  }
+}
+
+export const navigate = (type) => {
+  return {
+    type
   }
 }
