@@ -52,15 +52,13 @@ class FuelList extends React.Component {
             {this.props.fuel.map(item => {
               if (item.name !== 'calories') {
                 return (
-                  <div>
-                    <FuelListItem key={item.id}
-                      text={this.props.litre
-                        ? item.text.waterL || item.text : item.text.waterMl || item.text}
-                      value={this.state[item.keyName || item.name] || ''}
-                      name={item.keyName || item.name} change={this.handleChange}
-                    />
-                    <DeleteItem itemId={item.id}/>
-                  </div>
+                  <FuelListItem key={item.id}
+                    text={this.props.litre
+                      ? item.text.waterL || item.text : item.text.waterMl || item.text}
+                    value={this.state[item.keyName || item.name] || ''}
+                    name={item.keyName || item.name} change={this.handleChange}
+                    itemId={item.id}
+                  />
                 )
               }
             })}
