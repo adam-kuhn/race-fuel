@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+import FuelInput from './FuelInput/FuelInput'
 import DeleteItem from './DeleteItem/DeleteItem'
 
 import {setList} from '../../actions'
@@ -55,10 +56,8 @@ class FuelList extends React.Component {
                     <div className='fuel-list'key={item.id}>
                       <p className="card-text" >{this.props.litre
                         ? item.text.waterL : item.text.waterMl}
-                      <input className='form-control'
-                        value={this.state[item.keyName || item.name] || ''}
-                        name={item.keyName || item.name} onChange={this.handleChange}
-                        placeholder="0"/>
+                      <FuelInput value={this.state[item.keyName || item.name] || ''}
+                        name={item.keyName || item.name} change={this.handleChange} />
                       </p>
                       <DeleteItem itemId={item.id}/>
                     </div>
@@ -67,10 +66,8 @@ class FuelList extends React.Component {
                 return (
                   <div className='fuel-list' key={item.id}>
                     <p className="card-text" >{item.text}
-                      <input className='form-control'
-                        value={this.state[item.keyName || item.name] || ''}
-                        name={item.keyName || item.name} onChange={this.handleChange}
-                        placeholder="0"/>
+                      <FuelInput value={this.state[item.keyName || item.name] || ''}
+                        name={item.keyName || item.name} change={this.handleChange} />
                     </p>
                     <DeleteItem itemId={item.id}/>
                   </div>
