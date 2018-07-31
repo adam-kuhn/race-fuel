@@ -52,31 +52,19 @@ class FuelList extends React.Component {
           <div className="card-body">
             {this.props.fuel.map(item => {
               if (item.name !== 'calories') {
-                if (item.name === 'water') {
-                  return (
-                    <div>
-                      <FuelListItem key={item.id}
-                        text={this.props.litre
-                          ? item.text.waterL : item.text.waterMl || item.text}
-                      />
-                      <div className='fuel-list'key={item.id}>
-                        <p className="card-text" >{this.props.litre
-                          ? item.text.waterL : item.text.waterMl}
+                return (
+                  <div>
+                    <FuelListItem key={item.id}
+                      text={this.props.litre
+                        ? item.text.waterL || item.text : item.text.waterMl || item.text}
+                    />
+                    <div className='fuel-list'key={item.id}>
+                      <p className="card-text" >
                         <FuelInput value={this.state[item.keyName || item.name] || ''}
                           name={item.keyName || item.name} change={this.handleChange} />
-                        </p>
-                        <DeleteItem itemId={item.id}/>
-                      </div>
+                      </p>
+                      <DeleteItem itemId={item.id}/>
                     </div>
-                  )
-                }
-                return (
-                  <div className='fuel-list' key={item.id}>
-                    <p className="card-text" >{item.text}
-                      <FuelInput value={this.state[item.keyName || item.name] || ''}
-                        name={item.keyName || item.name} change={this.handleChange} />
-                    </p>
-                    <DeleteItem itemId={item.id}/>
                   </div>
                 )
               }
