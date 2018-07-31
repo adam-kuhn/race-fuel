@@ -5,6 +5,7 @@ import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 import FuelInput from './FuelInput/FuelInput'
 import DeleteItem from './DeleteItem/DeleteItem'
+import FuelListItem from './FuelListItem/FuelListItem'
 
 import {setList} from '../../actions'
 
@@ -53,13 +54,19 @@ class FuelList extends React.Component {
               if (item.name !== 'calories') {
                 if (item.name === 'water') {
                   return (
-                    <div className='fuel-list'key={item.id}>
-                      <p className="card-text" >{this.props.litre
-                        ? item.text.waterL : item.text.waterMl}
-                      <FuelInput value={this.state[item.keyName || item.name] || ''}
-                        name={item.keyName || item.name} change={this.handleChange} />
-                      </p>
-                      <DeleteItem itemId={item.id}/>
+                    <div>
+                      <FuelListItem key={item.id}
+                        text={this.props.litre
+                          ? item.text.waterL : item.text.waterMl || item.text}
+                      />
+                      <div className='fuel-list'key={item.id}>
+                        <p className="card-text" >{this.props.litre
+                          ? item.text.waterL : item.text.waterMl}
+                        <FuelInput value={this.state[item.keyName || item.name] || ''}
+                          name={item.keyName || item.name} change={this.handleChange} />
+                        </p>
+                        <DeleteItem itemId={item.id}/>
+                      </div>
                     </div>
                   )
                 }
