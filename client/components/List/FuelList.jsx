@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 
 import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
-import DeleteItem from './DeleteItem/DeleteItem'
 import FuelListItem from './FuelListItem/FuelListItem'
 
 import {setList} from '../../actions'

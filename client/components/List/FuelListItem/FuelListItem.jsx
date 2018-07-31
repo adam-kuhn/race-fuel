@@ -1,6 +1,6 @@
 import React from 'react'
 
-import DeleteItem from '../DeleteItem/DeleteItem'
+import DeleteItem from './DeleteItem/DeleteItem'
 const FuelListItem = (props) => {
   return (
     <div className='fuel-list'>
