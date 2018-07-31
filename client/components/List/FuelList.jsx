@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 
 import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
-import FuelInput from './FuelInput/FuelInput'
 import DeleteItem from './DeleteItem/DeleteItem'
 import FuelListItem from './FuelListItem/FuelListItem'
 
@@ -57,14 +56,10 @@ class FuelList extends React.Component {
                     <FuelListItem key={item.id}
                       text={this.props.litre
                         ? item.text.waterL || item.text : item.text.waterMl || item.text}
+                      value={this.state[item.keyName || item.name] || ''}
+                      name={item.keyName || item.name} change={this.handleChange}
                     />
-                    <div className='fuel-list'key={item.id}>
-                      <p className="card-text" >
-                        <FuelInput value={this.state[item.keyName || item.name] || ''}
-                          name={item.keyName || item.name} change={this.handleChange} />
-                      </p>
-                      <DeleteItem itemId={item.id}/>
-                    </div>
+                    <DeleteItem itemId={item.id}/>
                   </div>
                 )
               }
