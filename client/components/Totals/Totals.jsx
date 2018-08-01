@@ -10,15 +10,9 @@ class Totals extends React.Component {
         <h2 className="card-header">Totals!</h2>
         <div className="card-body">
           {this.props.fuelList.fuel.map(item => {
-            if (item.name === 'water') {
-              return (
-                <p className="card-text" key={item.id}>{this.props.litre
-                  ? item.text.waterL : item.text.waterMl} {item.totalAmount} </p>
-              )
-            }
             return (
-              <p className="card-text" key={item.id}>
-                {item.text} {item.totalAmount}</p>
+              <p className='card-text' key={item.id}>{this.props.litre ? item.text.waterL || item.text
+                : item.text.waterMl || item.text} {item.totalAmount} </p>
             )
           })}
           <MeasurementTotal />
