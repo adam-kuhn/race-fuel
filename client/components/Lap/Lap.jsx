@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import DistanceSelect from '../Select/UnitSelect/DistanceSelect'
+import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 import Measurements from './Measurements/Measurements'
 
 import {nextLap} from '../../actions'
@@ -82,7 +83,6 @@ class Lap extends React.Component {
       const newValue = Number(oldState[item].value)
       if (item === 'hour' || item === 'min' || item === 'sec') {
         lapValues.time[item] = newValue
-        // lapValues.time[item].value = newValue
       } else {
         lapValues[item] = {}
         lapValues[item].value = newValue
@@ -109,6 +109,7 @@ class Lap extends React.Component {
             <p>Need to eat ~200-400 calories per hour</p>
             <p>Input amount eaten</p>
             <DistanceSelect />
+            <LitreMlSelect />
           </div>
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
