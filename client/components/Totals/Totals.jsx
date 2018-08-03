@@ -2,12 +2,14 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import MeasurementTotal from './Measurements/MeasurementTotal'
+import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 
 class Totals extends React.Component {
   render () {
     return (
       <div className="card text-white bg-info mb-3">
         <h2 className="card-header">Totals!</h2>
+        <LitreMlSelect />
         <div className="card-body">
           {this.props.fuelList.fuel.map(item => {
             return (
