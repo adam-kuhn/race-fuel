@@ -1,7 +1,9 @@
 import {SETLIST, SHOW_EDIT_LIST,
-  STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER,
+  STANDARD, CUSTOM, GO_HOME,
   SHOW_SPLITS, NEXT_LAP,
   SHOW_LAP, SHOW_LIST, SHOW_TOTALS} from '../actions'
+import {TOGGLE_UNITS, TOGGLE_WATER} from '../actions/toggle'
+
 const initialState = {
   showSelect: true,
   showNav: false,

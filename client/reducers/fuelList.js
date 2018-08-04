@@ -1,5 +1,7 @@
-import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME, STANDARD,
-  TOGGLE_WATER, DELETE_ITEM} from '../actions'
+import {SETLIST, NEXT_LAP, ADD_TO_LIST, CUSTOM, GO_HOME,
+  STANDARD, DELETE_ITEM} from '../actions'
+import {TOGGLE_WATER} from '../actions/toggle'
+
 import list from '../lib/standardFuel'
 const initialState = {
   lap: 1
