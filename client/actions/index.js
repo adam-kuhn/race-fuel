@@ -2,8 +2,6 @@ export const SETLIST = 'SETLIST'
 export const SHOW_EDIT_LIST = 'SHOW_EDIT_LIST'
 export const NEXT_LAP = 'NEXT_LAP'
 export const ADD_TO_LIST = 'ADD_TO_LIST'
-export const STANDARD = 'STANDARD'
-export const CUSTOM = 'CUSTOM'
 export const GO_HOME = 'GO_HOME'
 export const SHOW_SPLITS = 'SHOW_SPLITS'
 export const DELETE_ITEM = 'DELETE_ITEM'
@@ -49,18 +47,6 @@ export const addItem = (item) => {
   return (dispatch, getState) => {
     const state = getState()
     dispatch(addItemToList(item, state.fuelList.fuel))
-  }
-}
-
-export const standard = () => {
-  return {
-    type: STANDARD
-  }
-}
-
-export const custom = () => {
-  return {
-    type: CUSTOM
   }
 }
 
