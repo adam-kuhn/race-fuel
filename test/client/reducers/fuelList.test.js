@@ -1,5 +1,5 @@
-import {SETLIST, NEXT_LAP, ADD_TO_LIST,
-  CUSTOM, GO_HOME} from '../../../client/actions'
+import {CUSTOM, GO_HOME} from '../../../client/actions'
+import {SETLIST, NEXT_LAP, ADD_TO_LIST} from '../../../client/actions/fuelList'
 import fuelList from '../../../client/reducers/fuelList'
 import list from '../../../client/lib/standardFuel'
 
