@@ -1,4 +1,5 @@
-import {NEXT_LAP, GO_HOME} from '../actions'
+import {GO_HOME} from '../actions'
+import {NEXT_LAP} from '../actions/fuelList'
 
 const initialState = {
   lapInfo: []

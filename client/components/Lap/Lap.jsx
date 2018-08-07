@@ -5,7 +5,7 @@ import DistanceSelect from '../Select/UnitSelect/DistanceSelect'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 import Measurements from './Measurements/Measurements'
 
-import {nextLap} from '../../actions'
+import {nextLap} from '../../actions/fuelList'
 
 class Lap extends React.Component {
   constructor () {
