@@ -1,5 +1,5 @@
 import display from '../../../client/reducers/display'
-import {SETLIST, SHOW_EDIT_LIST, GO_HOME} from '../../../client/actions'
+import {SETLIST, SHOW_EDIT_LIST, GO_HOME} from '../../../client/actions/navigation'
 import {STANDARD, CUSTOM} from '../../../client/actions/select'
 
 const state = {
