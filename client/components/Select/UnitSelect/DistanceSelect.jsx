@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {changeUnits} from '../../../actions'
+import {changeUnits} from '../../../actions/toggle'
 
 class DistanceSelect extends React.Component {
   constructor () {
