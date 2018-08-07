@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import GoTo from './GoTo/GoTo'
-import {navigate} from '../../actions'
+import {navigate} from '../../actions/navigation'
 
 class Nav extends React.Component {
   constructor () {

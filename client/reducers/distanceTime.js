@@ -1,4 +1,4 @@
-import {NEXT_LAP, GO_HOME} from '../actions'
+import {NEXT_LAP, GO_HOME} from '../actions/navigation'
 import {TOGGLE_UNITS} from '../actions/toggle'
 
 const initialState = {

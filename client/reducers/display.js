@@ -1,6 +1,6 @@
 import {SHOW_EDIT_LIST, GO_HOME,
   SHOW_SPLITS, SHOW_LAP, SHOW_LIST,
-  SHOW_TOTALS} from '../actions'
+  SHOW_TOTALS} from '../actions/navigation'
 import {TOGGLE_UNITS, TOGGLE_WATER} from '../actions/toggle'
 import {STANDARD, CUSTOM} from '../actions/select'
 import {SETLIST, NEXT_LAP} from '../actions/fuelList'
