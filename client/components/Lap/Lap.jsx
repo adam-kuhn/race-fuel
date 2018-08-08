@@ -87,6 +87,7 @@ class Lap extends React.Component {
         lapValues[item] = {}
         lapValues[item].value = newValue
         lapValues[item].text = oldState[item].text || 'Calories'
+        lapValues.lap = this.props.lap
       }
     }
     dispatch(nextLap(lap, lapValues))
