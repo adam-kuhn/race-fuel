@@ -6,7 +6,7 @@ const LapInfo = (props) => {
     <div>
       <p>Lap {props.info.lap}</p>
       {keys.map((item, idx) => {
-        if (item !== 'time' || item !== 'lap') {
+        if (item !== 'time' && item !== 'lap') {
           return (
             <p className='card-text' key={idx}>{props.info[item].text} {props.info[item].value} </p>
           )
