@@ -4,6 +4,9 @@
   margin-left: 10%;
 }
 
+.card-body p {
+  font-size: 1.3rem;
+}
 .center {
   display: flex;
   justify-content: center

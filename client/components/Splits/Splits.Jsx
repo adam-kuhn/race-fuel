@@ -51,7 +51,6 @@ class Splits extends React.Component {
           <div className='center'>
             <LapInfo info={this.props.lapInfo[this.state.lapIndex]} />
           </div>
-
           <SplitNav
             errorMsg={this.state.errorMessage}
             nav={this.handleSplitNav}/>
