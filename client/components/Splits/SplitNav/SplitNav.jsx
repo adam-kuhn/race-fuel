@@ -3,14 +3,16 @@ import React from 'react'
 const SplitNav = (props) => {
   const {errorMsg, nav} = props
   return (
-    <div>
+    <div className='split-nav'>
       <p className='split-info'>{errorMsg}</p>
-      <button type='button' onClick={nav} value={-1}
-        className="far fa-3x fa-arrow-alt-circle-left">
-      </button>
-      <button type='button' onClick={nav} value={1}
-        className="far fa-3x fa-arrow-alt-circle-right">
-      </button>
+      <div>
+        <button type='button' onClick={nav} value={-1}
+          className="nav-btn far fa-3x fa-arrow-alt-circle-left">
+        </button>
+        <button type='button' onClick={nav} value={1}
+          className="nav-btn far fa-3x fa-arrow-alt-circle-right">
+        </button>
+      </div>
     </div>
   )
 }

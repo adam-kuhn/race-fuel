@@ -80,3 +80,14 @@
 .split-info {
   color: #02253cc4
 }
+
+.split-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-btn {
+  margin: 1rem;
+}
