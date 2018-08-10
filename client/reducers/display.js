@@ -23,7 +23,11 @@ function display (state = initialState, action) {
     case (SHOW_EDIT_LIST): {
       return {
         ...state,
-        showEditList: true
+        showEditList: true,
+        showSplits: false,
+        showLap: false,
+        showList: false,
+        showTotals: false
       }
     }
     case (SETLIST): {

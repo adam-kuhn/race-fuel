@@ -4,6 +4,9 @@
   margin-left: 10%;
 }
 
+.card-body p {
+  font-size: 1.3rem;
+}
 .center {
   display: flex;
   justify-content: center
@@ -75,4 +78,24 @@
 
 .btn-secondary {
   width: 6.2rem;
+}
+
+.split-info {
+  color: #02253cc4
+}
+
+.split-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-btn {
+  margin: 1rem;
+  background: #aab3bdd6;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  color: #3d62d4d4;
 }
