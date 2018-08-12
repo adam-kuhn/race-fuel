@@ -68,7 +68,7 @@ class AddItem extends React.Component {
   render () {
     return (
       <div>
-        <div className="card text-white bg-warning mb-3">
+        <div className="card width text-white bg-warning mb-3">
           <h3 className="card-header">Add Custom Item</h3>
           <div className="card-body">
             <p>Item:
