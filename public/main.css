@@ -99,3 +99,9 @@
   border-radius: 2rem;
   color: #3d62d4d4;
 }
+
+.btn-toggle {
+  color: #504848;
+  background-color: #ded2d2d1;
+  height: 2rem;
+}
