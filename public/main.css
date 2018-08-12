@@ -1,7 +1,7 @@
 
 .card {
-  max-width: 80%;
-  margin-left: 10%;
+  max-width: 34rem;
+  margin: auto;
 }
 
 .card-body p {
