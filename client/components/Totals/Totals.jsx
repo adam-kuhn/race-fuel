@@ -10,8 +10,11 @@ class Totals extends React.Component {
     return (
       <div className="card width text-white bg-info mb-3">
         <h2 className="card-header">Totals!</h2>
-        <DistanceSelect />
-        <LitreMlSelect />
+        <div className='toggle'>
+          <p>Units</p>
+          <LitreMlSelect />
+          <DistanceSelect />
+        </div>
         <div className="card-body">
           {this.props.fuelList.fuel.map(item => {
             return (

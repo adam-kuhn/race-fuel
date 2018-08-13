@@ -109,8 +109,11 @@ class Lap extends React.Component {
             <h2>Lap {this.props.lap}</h2>
             <p>Need to eat ~200-400 calories per hour</p>
             <p>Input amount eaten</p>
-            <DistanceSelect />
-            <LitreMlSelect />
+            <div className='toggle'>
+              <p>Units</p>
+              <LitreMlSelect />
+              <DistanceSelect />
+            </div>
           </div>
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}

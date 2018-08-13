@@ -105,3 +105,8 @@
   background-color: #ded2d2d1;
   height: 2rem;
 }
+
+.toggle {
+  display: flex;
+  justify-content: space-evenly
+}
