@@ -11,9 +11,11 @@ class Select extends React.Component {
   }
   custom () {
     this.props.dispatch(custom())
+    this.props.history.push('/AddFuel')
   }
   standard () {
     this.props.dispatch(standard())
+    this.props.history.push('/AddFuel')
   }
   render () {
     return (

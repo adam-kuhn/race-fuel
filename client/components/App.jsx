@@ -21,10 +21,10 @@ class App extends React.Component {
           <h2>Nutrition Tracker</h2>
         </div>
         <Route exact path="/" component={Select} />
-        <Route path="/RemainingFuel" component={FuelList} />
+        <Route path="/AddFuel" component={FuelList} />
         {/* {showSelect && <Select />} */}
         {showNav && <Nav />}
-        {showEditList && <FuelList />}
+        {/* {showEditList && <FuelList />} */}
         {showList && <LiveList />}
         {showLap && <Lap />}
         {showSplits && <Splits />}
