@@ -21,7 +21,8 @@ class App extends React.Component {
           <h2>Nutrition Tracker</h2>
         </div>
         <Route exact path="/" component={Select} />
-        <Route path="/AddFuel" component={FuelList} />
+        <Route exact path="/AddFuel" component={FuelList} />
+
         {/* {showSelect && <Select />} */}
         {showNav && <Nav />}
         {/* {showEditList && <FuelList />} */}

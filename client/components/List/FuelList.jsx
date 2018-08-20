@@ -15,6 +15,7 @@ class FuelList extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.closeList = this.closeList.bind(this)
+    // this.onUnload = this.onUnload.bind(this)
   }
 
   handleChange (e) {
@@ -39,6 +40,19 @@ class FuelList extends React.Component {
     }
     this.props.dispatch(setList(itemValues))
   }
+  componentDidMount () {
+    console.log('hi')
+    window.addEventListener('beforeunload', () => {
+      console.log('hi)')
+      this.props.history.push('/h')
+    })
+  }
+
+  // onUnload () {
+  //   console.log('hih')
+  //   this.props.history.push('/')
+  // }
+
   render () {
     return (
       <div>
