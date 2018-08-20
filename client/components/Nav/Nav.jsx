@@ -14,7 +14,7 @@ class Nav extends React.Component {
   }
   render () {
     return (
-      <div className='center nav'>
+      <div className='center width nav'>
         <GoTo click={this.handleNav}
           text='Fuel List' type={SHOW_LIST} />
         <GoTo click={this.handleNav}

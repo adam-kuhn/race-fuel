@@ -56,7 +56,7 @@ class Lap extends React.Component {
       const difference = e.target.value - (this.state.fuel[e.target.name]
         ? this.state.fuel[e.target.name].value : 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories.value)
-      const itemText = e.target.getAttribute('data-text')
+      const itemText = (e.target.getAttribute('data-text') === 'false')
       this.setState({
         fuel: {
           ...this.state.fuel,
@@ -104,13 +104,16 @@ class Lap extends React.Component {
   render () {
     return (
       <div>
-        <div className="card text-white bg-success mb-3">
+        <div className="card width text-white bg-success mb-3">
           <div className='card-header'>
             <h2>Lap {this.props.lap}</h2>
             <p>Need to eat ~200-400 calories per hour</p>
             <p>Input amount eaten</p>
-            <DistanceSelect />
-            <LitreMlSelect />
+            <div className='toggle'>
+              <p>Units</p>
+              <LitreMlSelect />
+              <DistanceSelect />
+            </div>
           </div>
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}

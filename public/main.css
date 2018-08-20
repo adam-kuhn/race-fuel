@@ -1,7 +1,7 @@
 
-.card {
-  max-width: 80%;
-  margin-left: 10%;
+.width {
+  max-width: 34rem;
+  margin: auto;
 }
 
 .card-body p {
@@ -98,4 +98,15 @@
   padding: 0.5rem;
   border-radius: 2rem;
   color: #3d62d4d4;
+}
+
+.btn-toggle {
+  color: #504848;
+  background-color: #ded2d2d1;
+  height: 2rem;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-evenly
 }

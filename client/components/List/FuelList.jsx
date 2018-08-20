@@ -42,9 +42,12 @@ class FuelList extends React.Component {
   render () {
     return (
       <div>
-        <div className="card text-white bg-primary mb-3">
+        <div className="card width text-white bg-primary mb-3">
           <h3 className="card-header">Input Fuel List</h3>
-          <LitreMlSelect />
+          <div className='toggle'>
+            <p>Units</p>
+            <LitreMlSelect />
+          </div>
           {this.state.wrongInput &&
           <p className='text-danger'>Please input numbers only.</p>}
           <div className="card-body">
