@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 
 import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
-import DeleteItem from './DeleteItem/DeleteItem'
+import FuelListItem from './FuelListItem/FuelListItem'
 
-import {setList} from '../../actions'
+import {setList} from '../../actions/fuelList'
 
 class FuelList extends React.Component {
   constructor () {
@@ -42,38 +42,25 @@ class FuelList extends React.Component {
   render () {
     return (
       <div>
-        <div className="card text-white bg-primary mb-3">
+        <div className="card width text-white bg-primary mb-3">
           <h3 className="card-header">Input Fuel List</h3>
-          <LitreMlSelect />
+          <div className='toggle'>
+            <p>Units</p>
+            <LitreMlSelect />
+          </div>
           {this.state.wrongInput &&
           <p className='text-danger'>Please input numbers only.</p>}
           <div className="card-body">
             {this.props.fuel.map(item => {
               if (item.name !== 'calories') {
-                if (item.name === 'water') {
-                  return (
-                    <div className='fuel-list'key={item.id}>
-                      <p className="card-text" >{this.props.litre
-                        ? item.text.waterL : item.text.waterMl}
-                      <input className='form-control'
-                        value={this.state[item.keyName || item.name] || ''}
-                        name={item.keyName || item.name} onChange={this.handleChange}
-                        placeholder="0"/>
-                      </p>
-                      <DeleteItem itemId={item.id}/>
-                    </div>
-                  )
-                }
                 return (
-                  <div className='fuel-list' key={item.id}>
-                    <p className="card-text" >{item.text}
-                      <input className='form-control'
-                        value={this.state[item.keyName || item.name] || ''}
-                        name={item.keyName || item.name} onChange={this.handleChange}
-                        placeholder="0"/>
-                    </p>
-                    <DeleteItem itemId={item.id}/>
-                  </div>
+                  <FuelListItem key={item.id}
+                    text={this.props.litre
+                      ? item.text.waterL || item.text : item.text.waterMl || item.text}
+                    value={this.state[item.keyName || item.name] || ''}
+                    name={item.keyName || item.name} change={this.handleChange}
+                    itemId={item.id}
+                  />
                 )
               }
             })}

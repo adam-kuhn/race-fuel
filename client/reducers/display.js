@@ -1,11 +1,18 @@
-import {SETLIST, SHOW_EDIT_LIST,
-  STANDARD, CUSTOM, GO_HOME, TOGGLE_UNITS, TOGGLE_WATER,
-  SHOW_SPLITS, BACK_TO_MAIN, NEXT_LAP} from '../actions'
+import {SHOW_EDIT_LIST, GO_HOME,
+  SHOW_SPLITS, SHOW_LAP, SHOW_LIST,
+  SHOW_TOTALS} from '../actions/navigation'
+import {TOGGLE_UNITS, TOGGLE_WATER} from '../actions/toggle'
+import {STANDARD, CUSTOM} from '../actions/select'
+import {SETLIST, NEXT_LAP} from '../actions/fuelList'
+
 const initialState = {
   showSelect: true,
+  showNav: false,
   showEditList: false,
-  showMain: false,
+  showList: false,
+  showLap: false,
   showSplits: false,
+  showTotals: false,
   disableSplitButton: true,
   km: true,
   litre: true
@@ -17,14 +24,18 @@ function display (state = initialState, action) {
       return {
         ...state,
         showEditList: true,
-        showMain: false
+        showSplits: false,
+        showLap: false,
+        showList: false,
+        showTotals: false
       }
     }
     case (SETLIST): {
       return {
         ...state,
         showEditList: false,
-        showMain: true
+        showList: true,
+        showNav: true
       }
     }
     case (STANDARD): {
@@ -45,9 +56,13 @@ function display (state = initialState, action) {
       return {
         ...state,
         showSelect: true,
-        showMain: false,
+        showNav: false,
         showEditList: false,
-        showSplits: false
+        showList: false,
+        showLap: false,
+        showSplits: false,
+        showTotals: false,
+        disableSplitButton: true
       }
     }
     case (TOGGLE_UNITS): {
@@ -66,15 +81,40 @@ function display (state = initialState, action) {
       return {
         ...state,
         showSplits: true,
-        showMain: false
+        showEditList: false,
+        showLap: false,
+        showList: false,
+        showTotals: false
       }
     }
-    case (BACK_TO_MAIN): {
+    case (SHOW_LAP): {
       return {
         ...state,
+        showLap: true,
+        showEditList: false,
         showSplits: false,
-        showMain: true,
-        disableSplitButton: true
+        showList: false,
+        showTotals: false
+      }
+    }
+    case (SHOW_LIST): {
+      return {
+        ...state,
+        showLap: false,
+        showEditList: false,
+        showSplits: false,
+        showList: true,
+        showTotals: false
+      }
+    }
+    case (SHOW_TOTALS): {
+      return {
+        ...state,
+        showLap: false,
+        showEditList: false,
+        showSplits: false,
+        showList: false,
+        showTotals: true
       }
     }
     case (NEXT_LAP): {

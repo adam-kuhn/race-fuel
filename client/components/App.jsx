@@ -2,16 +2,19 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Route} from 'react-router-dom'
 
-import Navigator from './Navigator/Navigator'
+import Nav from './Nav/Nav'
+import HomeBtn from './HomeBtn/HomeBtn'
 import FuelList from './List/FuelList'
+import LiveList from './LiveList/LiveList'
+import Lap from './Lap/Lap'
 import Select from './Select/Select'
-import Main from './Main/Main'
-// import HomeBtn from './HomeBtn/HomeBtn'
 import Splits from './Splits/Splits'
+import Totals from './Totals/Totals'
 
 class App extends React.Component {
   render () {
-    const {showSelect, showEditList, showMain, showSplits} = this.props
+    const {showSelect, showEditList, showList,
+      showLap, showTotals, showSplits, showNav} = this.props
     return (
       <div>
         <div className="center title">
@@ -19,12 +22,14 @@ class App extends React.Component {
         </div>
         <Route exact path="/" component={Select} />
         <Route path="/RemainingFuel" component={FuelList} />
-        {!showSelect && <Navigator />}
         {/* {showSelect && <Select />} */}
+        {showNav && <Nav />}
         {showEditList && <FuelList />}
-        {showMain && <Main />}
+        {showList && <LiveList />}
+        {showLap && <Lap />}
         {showSplits && <Splits />}
-        {/* {!showSelect && <HomeBtn />} */}
+        {showTotals && <Totals />}
+        {!showSelect && <HomeBtn />}
       </div>
     )
   }
@@ -32,10 +37,13 @@ class App extends React.Component {
 
 function mapStateToProps (state) {
   return {
+    showNav: state.display.showNav,
     showEditList: state.display.showEditList,
-    showMain: state.display.showMain,
+    showList: state.display.showList,
     showSelect: state.display.showSelect,
-    showSplits: state.display.showSplits
+    showSplits: state.display.showSplits,
+    showLap: state.display.showLap,
+    showTotals: state.display.showTotals
   }
 }
 

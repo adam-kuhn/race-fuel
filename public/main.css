@@ -1,9 +1,12 @@
 
-.card {
-  max-width: 80%;
-  margin-left: 10%;
+.width {
+  max-width: 34rem;
+  margin: auto;
 }
 
+.card-body p {
+  font-size: 1.3rem;
+}
 .center {
   display: flex;
   justify-content: center
@@ -64,11 +67,46 @@
     justify-content: space-around;
 }
 
-/* .form-control {
-  max-width: 178.69px;
-} */
+.nav {
+  justify-content: space-evenly;
+  margin-bottom: 0.8rem;
+}
 
 .fuel-list .card-text {
   max-width: 178.69px;
+}
 
+.btn-secondary {
+  width: 6.2rem;
+}
+
+.split-info {
+  color: #02253cc4
+}
+
+.split-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-btn {
+  margin: 1rem;
+  background: #aab3bdd6;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  color: #3d62d4d4;
+}
+
+.btn-toggle {
+  color: #504848;
+  background-color: #ded2d2d1;
+  height: 2rem;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-evenly
 }

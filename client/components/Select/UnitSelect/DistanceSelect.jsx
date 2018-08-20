@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {changeUnits} from '../../../actions'
+import {changeUnits} from '../../../actions/toggle'
 
 class DistanceSelect extends React.Component {
   constructor () {
@@ -17,7 +17,7 @@ class DistanceSelect extends React.Component {
   render () {
     return (
       <div>
-        <button type='button' value={this.props.km}
+        <button className='btn btn-toggle' type='button' value={this.props.km}
           onClick={this.handleClick}>
           {this.props.km ? 'miles' : 'kilometer'}</button>
       </div>
