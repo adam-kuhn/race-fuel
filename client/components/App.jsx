@@ -10,6 +10,8 @@ import Select from './Select/Select'
 import Splits from './Splits/Splits'
 import Totals from './Totals/Totals'
 
+import {Doughnut} from 'react-chartjs-2'
+
 class App extends React.Component {
   render () {
     const {showSelect, showEditList, showList,
@@ -18,6 +20,12 @@ class App extends React.Component {
       <div>
         <div className="center title">
           <h2>Nutrition Tracker</h2>
+          <Doughnut data={{labels: ['choc', 'van', 'pln'],
+            datasets: [{
+              label: 'doughnut label',
+              data: [1, 2, 3, 4, 5, 4, 3, 2, 1, 20]
+            }]
+          }} width={100} height={50}/>
         </div>
         {showNav && <Nav />}
         {showSelect && <Select />}
