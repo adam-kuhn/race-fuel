@@ -56,7 +56,7 @@ class Lap extends React.Component {
       const difference = e.target.value - (this.state.fuel[e.target.name]
         ? this.state.fuel[e.target.name].value : 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories.value)
-      const itemText = (e.target.getAttribute('data-text') === 'false')
+      const itemText = (e.target.getAttribute('data-text') || 'false')
       this.setState({
         fuel: {
           ...this.state.fuel,
