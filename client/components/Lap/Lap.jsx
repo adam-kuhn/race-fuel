@@ -14,6 +14,10 @@ class Lap extends React.Component {
       fuel: {
         calories: {
           value: 0
+        },
+        water: {
+          text: '',
+          value: ''
         }
       },
       wrongInput: false
@@ -96,6 +100,10 @@ class Lap extends React.Component {
       fuel: {
         calories: {
           value: 0
+        },
+        water: {
+          text: '',
+          value: ''
         }
       },
       wrongInput: false
