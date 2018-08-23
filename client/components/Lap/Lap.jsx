@@ -20,6 +20,7 @@ class Lap extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.submitLap = this.submitLap.bind(this)
+    this.updateWater = this.updateWater.bind(this)
   }
   handleChange (e) {
     const newValue = Number(e.target.value)
@@ -101,6 +102,19 @@ class Lap extends React.Component {
     })
   }
 
+  updateWater (litre) {
+    this.setState({
+      fuel: {
+        ...this.state.fuel,
+        water: {
+          ...this.state.fuel.water,
+          text: litre
+            ? 'Water (L)' : 'Water (mL)'
+        }
+      }
+    })
+  }
+
   render () {
     return (
       <div>
@@ -112,7 +126,7 @@ class Lap extends React.Component {
           </div>
           <div className='toggle'>
             <p>Units</p>
-            <LitreMlSelect />
+            <LitreMlSelect updateWater={this.updateWater}/>
             <DistanceSelect />
           </div>
           <div className="card-body">
