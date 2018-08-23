@@ -18,6 +18,10 @@ class Lap extends React.Component {
         water: {
           text: '',
           value: ''
+        },
+        distance: {
+          text: '',
+          value: ''
         }
       },
       wrongInput: false
@@ -25,6 +29,7 @@ class Lap extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.submitLap = this.submitLap.bind(this)
     this.updateWater = this.updateWater.bind(this)
+    this.updateKm = this.updateKm.bind(this)
   }
   handleChange (e) {
     const newValue = Number(e.target.value)
@@ -104,6 +109,10 @@ class Lap extends React.Component {
         water: {
           text: '',
           value: ''
+        },
+        distance: {
+          text: '',
+          value: ''
         }
       },
       wrongInput: false
@@ -123,6 +132,19 @@ class Lap extends React.Component {
     })
   }
 
+  updateKm (km) {
+    this.setState({
+      fuel: {
+        ...this.state.fuel,
+        distance: {
+          ...this.state.fuel.distance,
+          text: km
+            ? 'Km' : 'Mi'
+        }
+      }
+    })
+  }
+
   render () {
     return (
       <div>
@@ -135,7 +157,7 @@ class Lap extends React.Component {
           <div className='toggle'>
             <p>Units</p>
             <LitreMlSelect updateWater={this.updateWater}/>
-            <DistanceSelect />
+            <DistanceSelect updateKm={this.updateKm}/>
           </div>
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
