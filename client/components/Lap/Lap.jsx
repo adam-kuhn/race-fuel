@@ -14,15 +14,15 @@ class Lap extends React.Component {
       fuel: {
         calories: {
           value: 0
-        },
-        water: {
-          text: '',
-          value: ''
-        },
-        distance: {
-          text: '',
-          value: ''
         }
+        // water: {
+        //   text: '',
+        //   value: ''
+        // },
+        // distance: {
+        //   text: '',
+        //   value: ''
+        // }
       },
       wrongInput: false
     }
@@ -105,44 +105,68 @@ class Lap extends React.Component {
       fuel: {
         calories: {
           value: 0
-        },
-        water: {
-          text: '',
-          value: ''
-        },
-        distance: {
-          text: '',
-          value: ''
         }
+        // water: {
+        //   text: '',
+        //   value: ''
+        // },
+        // distance: {
+        //   text: '',
+        //   value: ''
+        // }
       },
       wrongInput: false
     })
   }
 
   updateWater (litre) {
-    this.setState({
-      fuel: {
-        ...this.state.fuel,
-        water: {
-          ...this.state.fuel.water,
-          text: litre
-            ? 'Water (L)' : 'Water (mL)'
+    const currentFuelState = this.state.fuel
+    if (currentFuelState.water) {
+      this.setState({
+        fuel: {
+          ...this.state.fuel,
+          water: {
+            ...this.state.fuel.water,
+            text: litre
+              ? 'Water (L)' : 'Water (mL)'
+          }
         }
-      }
-    })
+      })
+    } else {
+      this.setState({
+        fuel: {
+          ...this.state.fuel,
+          water: {
+            text: litre ? 'Water (L)' : 'Water (mL)',
+            value: ''
+          }
+        }
+      })
+    }
   }
 
   updateKm (km) {
-    this.setState({
-      fuel: {
+    const currentFuelState = this.state.fuel
+    if (currentFuelState.distance) {
+      this.setState({
+        fuel: {
+          ...this.state.fuel,
+          distance: {
+            ...this.state.fuel.distance,
+            text: km
+              ? 'Distance (Km)' : 'Distance (Mi)'
+          }
+        }
+      })
+    } else {
+      this.setState({
         ...this.state.fuel,
         distance: {
-          ...this.state.fuel.distance,
-          text: km
-            ? 'Km' : 'Mi'
+          text: km ? 'Km' : 'Mi',
+          value: ''
         }
-      }
-    })
+      })
+    }
   }
 
   render () {

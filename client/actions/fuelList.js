@@ -11,7 +11,6 @@ export const setList = (fuelList) => {
 }
 
 export const update = (lap, lapFuel, fuelList, distanceTime) => {
- console.log('NEXT_LAP')
   return {
     type: NEXT_LAP,
     lap,
