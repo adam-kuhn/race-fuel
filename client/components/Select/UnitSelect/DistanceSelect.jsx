@@ -9,8 +9,12 @@ class DistanceSelect extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick (e) {
-    const {dispatch, totalDistance, measurements} = this.props
-    dispatch(changeUnits(JSON.parse(e.target.value),
+    const {dispatch, totalDistance, measurements, updateKm} = this.props
+    const val = JSON.parse(e.target.value)
+    if (updateKm) {
+      updateKm(val)
+    }
+    dispatch(changeUnits(val,
       totalDistance, measurements))
   }
 

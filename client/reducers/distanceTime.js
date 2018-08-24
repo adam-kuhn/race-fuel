@@ -1,4 +1,5 @@
-import {NEXT_LAP, GO_HOME} from '../actions/navigation'
+import {GO_HOME} from '../actions/navigation'
+import {NEXT_LAP} from '../actions/fuelList'
 import {TOGGLE_UNITS} from '../actions/toggle'
 
 const initialState = {
