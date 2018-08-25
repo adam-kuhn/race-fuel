@@ -9,7 +9,6 @@ import Lap from './Lap/Lap'
 import Select from './Select/Select'
 import Splits from './Splits/Splits'
 import Totals from './Totals/Totals'
-import Graph from './Graph/Graph'
 
 class App extends React.Component {
   render () {
@@ -28,7 +27,6 @@ class App extends React.Component {
         {showSplits && <Splits />}
         {showTotals && <Totals />}
         {!showSelect && <HomeBtn />}
-        <Graph />
       </div>
     )
   }

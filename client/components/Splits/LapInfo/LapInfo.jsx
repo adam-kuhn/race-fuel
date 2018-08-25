@@ -1,5 +1,7 @@
 import React from 'react'
 
+import SplitBarGraph from './SplitBarGraph/SplitBarGraph'
+
 const LapInfo = (props) => {
   const keys = Object.keys(props.info)
   return (
@@ -18,6 +20,7 @@ const LapInfo = (props) => {
           }
         }
       })}
+      <SplitBarGraph lapInfo={props}/>
     </div>
   )
 }
