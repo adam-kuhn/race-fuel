@@ -15,12 +15,23 @@ const SplitBarGraph = (props) => {
   }
   // console.log(props.lapInfo)
   return (
-    <Bar data={{labels: labels,
-      datasets: [{
-        label: 'Fuel Consumes',
-        data: values
-      }]
-    }} width={100} height={50}/>
+    <Bar
+      data={{labels: labels,
+        datasets: [{
+          label: 'Fuel Consumes',
+          data: values
+
+        }]
+      }}
+      options={{
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }} width={100} height={50}/>
   )
 }
 
