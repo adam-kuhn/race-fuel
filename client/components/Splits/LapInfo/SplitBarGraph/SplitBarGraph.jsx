@@ -2,18 +2,20 @@ import React from 'react'
 import {Bar} from 'react-chartjs-2'
 
 const SplitBarGraph = (props) => {
-  const keys = Object.keys(props.lapInfo.info)
+  const lapInfo = props.lapInfo.info
+  const keys = Object.keys(lapInfo)
   const labels = keys.filter(key => {
     return key !== 'time' && key !== 'calories' && key !== 'lap' && key !== 'distance'
   }).sort()
-  console.log(labels)
   let values = []
   for (let item of labels) {
-    console.log(item)
-    console.log(props.lapInfo)
-    values.push(props.lapInfo.info[item].value)
+    if (lapInfo[item].text === 'Water (mL)') {
+      const waterInL = lapInfo[item].value / 1000
+      values.push(waterInL)
+    } else {
+      values.push(lapInfo[item].value)
+    }
   }
-  // console.log(props.lapInfo)
   return (
     <Bar
       data={{labels: labels,
