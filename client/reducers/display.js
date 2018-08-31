@@ -38,20 +38,20 @@ function display (state = initialState, action) {
         showNav: true
       }
     }
-    case (STANDARD): {
-      return {
-        ...state,
-        showSelect: false,
-        showEditList: true
-      }
-    }
-    case (CUSTOM): {
-      return {
-        ...state,
-        showSelect: false,
-        showEditList: true
-      }
-    }
+    // case (STANDARD): {
+    //   return {
+    //     ...state,
+    //     showSelect: false,
+    //     showEditList: true
+    //   }
+    // }
+    // case (CUSTOM): {
+    //   return {
+    //     ...state,
+    //     showSelect: false,
+    //     showEditList: true
+    //   }
+    // }
     case (GO_HOME): {
       return {
         ...state,

@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Route} from 'react-router-dom'
+// import {Route} from 'react-router-dom'
+import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Nav from './Nav/Nav'
 import HomeBtn from './HomeBtn/HomeBtn'
@@ -16,22 +17,25 @@ class App extends React.Component {
     const {showSelect, showEditList, showList,
       showLap, showTotals, showSplits, showNav} = this.props
     return (
-      <div>
-        <div className="center title">
-          <h2>Nutrition Tracker</h2>
-        </div>
-        <Route exact path="/" component={Select} />
-        <Route exact path="/AddFuel" component={FuelList} />
+      <Router>
+        <div>
+          <div className="center title">
+            <h2>Nutrition Tracker</h2>
+          </div>
+          <Route exact path="/" component={Select} />
+          <Route path="/AddFuel/:list" component={FuelList} />
 
-        {/* {showSelect && <Select />} */}
-        {showNav && <Nav />}
-        {/* {showEditList && <FuelList />} */}
-        {showList && <LiveList />}
-        {showLap && <Lap />}
-        {showSplits && <Splits />}
-        {showTotals && <Totals />}
-        {!showSelect && <HomeBtn />}
-      </div>
+          {/* {showSelect && <Select />} */}
+          {showNav && <Nav />}
+          {/* {showEditList && <FuelList />} */}
+          {showList && <LiveList />}
+          {showLap && <Lap />}
+          {showSplits && <Splits />}
+          {showTotals && <Totals />}
+          {!showSelect && <HomeBtn />}
+        </div>
+      </Router>
+
     )
   }
 }

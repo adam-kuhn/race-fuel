@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import {standard, custom} from '../../actions/select'
 
@@ -11,19 +12,21 @@ class Select extends React.Component {
   }
   custom () {
     this.props.dispatch(custom())
-    this.props.history.push('/AddFuel')
   }
   standard () {
     this.props.dispatch(standard())
-    this.props.history.push('/AddFuel')
   }
   render () {
     return (
       <div className="center">
-        <button type='button' className="btn btn-primary btn-select"
-          onClick={this.custom}>Custom List</button>
-        <button type='button' className="btn btn-primary btn-select"
-          onClick={this.standard}>Standard List</button>
+        <Link to='/AddFuel/Custom'>
+          <button type='button' className="btn btn-primary btn-select"
+            onClick={this.custom}>Custom List</button>
+        </Link>
+        <Link to='/AddFuel/Standard'>
+          <button type='button' className="btn btn-primary btn-select"
+            onClick={this.standard}>Standard List</button> 
+        </Link>
       </div>
     )
   }
