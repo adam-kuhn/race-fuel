@@ -6,7 +6,6 @@ import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 import FuelListItem from './FuelListItem/FuelListItem'
 
 import {setList} from '../../actions/fuelList'
-import {custom, standard} from '../../actions/select'
 
 class FuelList extends React.Component {
   constructor () {
@@ -18,14 +17,6 @@ class FuelList extends React.Component {
     this.closeList = this.closeList.bind(this)
   }
 
-  // componentWillMount () {
-  //   const listType = this.props.match.params.list
-  //   if (listType === 'Custom') {
-  //     this.props.dispatch(custom())
-  //   } else {
-  //     this.props.dispatch(standard())
-  //   }
-  // }
   handleChange (e) {
     const newValue = Number(e.target.value)
     if (!(newValue + 1)) {
@@ -50,7 +41,6 @@ class FuelList extends React.Component {
   }
 
   render () {
-    console.log('trying to load')
     return (
       <div>
         <div className="card width text-white bg-primary mb-3">
@@ -88,7 +78,6 @@ class FuelList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.fuelList.fuel)
   return {
     fuel: state.fuelList.fuel,
     litre: state.display.litre
