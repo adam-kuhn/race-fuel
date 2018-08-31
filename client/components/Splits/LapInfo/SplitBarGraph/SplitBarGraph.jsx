@@ -3,12 +3,9 @@ import {Bar} from 'react-chartjs-2'
 
 const SplitBarGraph = (props) => {
   const lapInfo = props.lapInfo.info
-  console.log('lapinfo', lapInfo)
-  // const keys = Object.keys(lapInfo)
   let lapItems = []
   for (let item in lapInfo) {
     let itemText = lapInfo[item].text
-    console.log(itemText)
     if (itemText !== 'Calories' && itemText !== 'Distance (Km)' &&
   itemText !== 'Distanc (Mi)' && itemText) {
       let lapItem = []
@@ -25,14 +22,6 @@ const SplitBarGraph = (props) => {
 
   lapItems.sort()
 
-  // const graphItems = lapItems.filter(item => {
-  //   return item[0] !== 'time' && item[0] !== 'calories' && item[0] !== 'lap' && item[0] !== 'distance'
-  // }).sort()
-
-  console.log('graph items', lapItems)
-  // const labels = lapItems.filter(item => {
-  //   return item !== 'time' && item !== 'calories' && item !== 'lap' && item !== 'distance'
-  // }).sort()
   let graphLabels = []
   let graphValues = []
   for (let item of lapItems) {
@@ -42,14 +31,7 @@ const SplitBarGraph = (props) => {
     graphLabels.push(item[0])
     graphValues.push(item[1])
   }
-  // for (let item of labels) {
-  //   if (lapInfo[item] === 'Water (L)') {
-  //     const waterInL = lapInfo[item].value / 1000
-  //     values.push(waterInL)
-  //   } else {
-  //     values.push(lapInfo[item].value)
-  //   }
-  // }
+
   return (
     <Bar
       data={{labels: graphLabels,
