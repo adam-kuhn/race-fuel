@@ -15,14 +15,6 @@ class Lap extends React.Component {
         calories: {
           value: 0
         }
-        // water: {
-        //   text: '',
-        //   value: ''
-        // },
-        // distance: {
-        //   text: '',
-        //   value: ''
-        // }
       },
       wrongInput: false
     }
@@ -106,14 +98,6 @@ class Lap extends React.Component {
         calories: {
           value: 0
         }
-        // water: {
-        //   text: '',
-        //   value: ''
-        // },
-        // distance: {
-        //   text: '',
-        //   value: ''
-        // }
       },
       wrongInput: false
     })
