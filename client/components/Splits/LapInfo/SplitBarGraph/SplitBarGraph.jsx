@@ -36,6 +36,9 @@ const SplitBarGraph = (props) => {
   let graphLabels = []
   let graphValues = []
   for (let item of lapItems) {
+    if (item[0] === 'Peanut Butter and Jelly Sandwiches') {
+      item[0] = [['PB & J'], ['Sandwhich']]
+    }
     graphLabels.push(item[0])
     graphValues.push(item[1])
   }
