@@ -1,6 +1,5 @@
 import React from 'react'
 import {render} from 'react-dom'
-// import {HashRouter as Router} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
@@ -20,11 +19,9 @@ let persistor = persistStore(store)
 document.addEventListener('DOMContentLoaded', () => {
   render(
     <Provider store={store}>
-      {/* <Router> */}
       <PersistGate loading={null} persistor={persistor}>
         <App />
       </PersistGate>
-      {/* </Router> */}
     </Provider>,
     document.getElementById('app')
   )
