@@ -2,8 +2,7 @@ import {SHOW_EDIT_LIST, GO_HOME,
   SHOW_SPLITS, SHOW_LAP, SHOW_LIST,
   SHOW_TOTALS} from '../actions/navigation'
 import {TOGGLE_UNITS, TOGGLE_WATER} from '../actions/toggle'
-import {STANDARD, CUSTOM} from '../actions/select'
-import {SETLIST, NEXT_LAP, LIVE_APP} from '../actions/fuelList'
+import {NEXT_LAP, LIVE_APP} from '../actions/fuelList'
 
 const initialState = {
   showSelect: true,
@@ -31,28 +30,7 @@ function display (state = initialState, action) {
         showTotals: false
       }
     }
-    // case (SETLIST): {
-    //   return {
-    //     ...state,
-    //     showEditList: false,
-    //     showList: true,
-    //     showNav: true
-    //   }
-    // }
-    // case (STANDARD): {
-    //   return {
-    //     ...state,
-    //     showSelect: false,
-    //     showEditList: true
-    //   }
-    // }
-    // case (CUSTOM): {
-    //   return {
-    //     ...state,
-    //     showSelect: false,
-    //     showEditList: true
-    //   }
-    // }
+
     case (GO_HOME): {
       return {
         ...state,
