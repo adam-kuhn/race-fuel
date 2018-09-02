@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-// import {Route} from 'react-router-dom'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Nav from './Nav/Nav'
@@ -14,7 +13,6 @@ import Totals from './Totals/Totals'
 
 class App extends React.Component {
   render () {
-    const {showLap, showTotals, showSplits} = this.props
     return (
       <Router>
         <div>
@@ -27,11 +25,8 @@ class App extends React.Component {
           <Route path="/RemainingFuel" component={LiveList} />
           <Route path="/LapDetails" component={Lap} />
           <Route path="/Totals" component={Totals} />
-          <Route path="Splits" component={Splits} />
+          <Route path="/Splits" component={Splits} />
           {this.props.live && <HomeBtn />}
-          {/* {showLap && <Lap />} */}
-          {/* {showSplits && <Splits />}
-          {showTotals && <Totals />} */}
         </div>
       </Router>
 
@@ -42,13 +37,7 @@ class App extends React.Component {
 function mapStateToProps (state) {
   return {
     live: state.display.live,
-    nav: state.display.nav,
-    showEditList: state.display.showEditList,
-    showList: state.display.showList,
-    showSelect: state.display.showSelect,
-    showSplits: state.display.showSplits,
-    showLap: state.display.showLap,
-    showTotals: state.display.showTotals
+    nav: state.display.nav
   }
 }
 

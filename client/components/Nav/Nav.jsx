@@ -21,7 +21,7 @@ class Nav extends React.Component {
           text='Lap Details' />
         <GoTo route='/Totals'
           text='Totals' />
-        <GoTo route='Splits'
+        <GoTo route='/Splits'
           text='Splits'
           disable={this.props.disableSplitButton} />
       </div>
