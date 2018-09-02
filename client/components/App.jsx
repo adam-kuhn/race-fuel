@@ -14,8 +14,7 @@ import Totals from './Totals/Totals'
 
 class App extends React.Component {
   render () {
-    const {showSelect, showEditList, showList,
-      showLap, showTotals, showSplits, showNav} = this.props
+    const {showLap, showTotals, showSplits} = this.props
     return (
       <Router>
         <div>
@@ -27,15 +26,9 @@ class App extends React.Component {
           <Route path="/AddFuel/:list" component={FuelList} />
           <Route path='/RemainingFuel' component={LiveList} />
           {this.props.live && <HomeBtn />}
-
-          {/* {showSelect && <Select />} */}
-          {/* {showNav && <Nav />} */}
-          {/* {showEditList && <FuelList />} */}
-          {/* {showList && <LiveList />} */}
           {showLap && <Lap />}
           {showSplits && <Splits />}
           {showTotals && <Totals />}
-          {/* {!showSelect && <HomeBtn />} */}
         </div>
       </Router>
 
