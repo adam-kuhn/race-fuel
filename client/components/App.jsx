@@ -21,7 +21,7 @@ class App extends React.Component {
           <div className="center title">
             <h2>Nutrition Tracker</h2>
           </div>
-          {this.props.live && <Nav />}
+          {this.props.live && this.props.nav && <Nav />}
           <Route exact path="/" component={Select} />
           <Route path="/AddFuel/:list" component={FuelList} />
           <Route path="/RemainingFuel" component={LiveList} />
@@ -42,6 +42,7 @@ class App extends React.Component {
 function mapStateToProps (state) {
   return {
     live: state.display.live,
+    nav: state.display.nav,
     showEditList: state.display.showEditList,
     showList: state.display.showList,
     showSelect: state.display.showSelect,
