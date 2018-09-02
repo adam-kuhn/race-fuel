@@ -3,7 +3,7 @@ import {SHOW_EDIT_LIST, GO_HOME,
   SHOW_TOTALS} from '../actions/navigation'
 import {TOGGLE_UNITS, TOGGLE_WATER} from '../actions/toggle'
 import {STANDARD, CUSTOM} from '../actions/select'
-import {SETLIST, NEXT_LAP} from '../actions/fuelList'
+import {SETLIST, NEXT_LAP, LIVE_APP} from '../actions/fuelList'
 
 const initialState = {
   showSelect: true,
@@ -15,7 +15,8 @@ const initialState = {
   showTotals: false,
   disableSplitButton: true,
   km: true,
-  litre: true
+  litre: true,
+  live: false
 }
 
 function display (state = initialState, action) {
@@ -62,7 +63,14 @@ function display (state = initialState, action) {
         showLap: false,
         showSplits: false,
         showTotals: false,
-        disableSplitButton: true
+        disableSplitButton: true,
+        live: false
+      }
+    }
+    case (LIVE_APP): {
+      return {
+        ...state,
+        live: true
       }
     }
     case (TOGGLE_UNITS): {

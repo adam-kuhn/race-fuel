@@ -6,7 +6,7 @@ import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 import FuelListItem from './FuelListItem/FuelListItem'
 
-import {setList} from '../../actions/fuelList'
+import {setList, appIsLive} from '../../actions/fuelList'
 
 class FuelList extends React.Component {
   constructor () {
@@ -16,6 +16,10 @@ class FuelList extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.closeList = this.closeList.bind(this)
+  }
+
+  componentDidMount () {
+    this.props.dispatch(appIsLive())
   }
 
   handleChange (e) {

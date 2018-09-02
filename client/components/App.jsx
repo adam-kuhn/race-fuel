@@ -22,18 +22,20 @@ class App extends React.Component {
           <div className="center title">
             <h2>Nutrition Tracker</h2>
           </div>
+          {this.props.live && <Nav />}
           <Route exact path="/" component={Select} />
           <Route path="/AddFuel/:list" component={FuelList} />
           <Route path='/RemainingFuel' component={LiveList} />
+          {this.props.live && <HomeBtn />}
 
           {/* {showSelect && <Select />} */}
-          {showNav && <Nav />}
+          {/* {showNav && <Nav />} */}
           {/* {showEditList && <FuelList />} */}
-          {showList && <LiveList />}
+          {/* {showList && <LiveList />} */}
           {showLap && <Lap />}
           {showSplits && <Splits />}
           {showTotals && <Totals />}
-          {!showSelect && <HomeBtn />}
+          {/* {!showSelect && <HomeBtn />} */}
         </div>
       </Router>
 
@@ -43,7 +45,7 @@ class App extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    showNav: state.display.showNav,
+    live: state.display.live,
     showEditList: state.display.showEditList,
     showList: state.display.showList,
     showSelect: state.display.showSelect,
