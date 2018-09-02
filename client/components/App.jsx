@@ -24,6 +24,7 @@ class App extends React.Component {
           </div>
           <Route exact path="/" component={Select} />
           <Route path="/AddFuel/:list" component={FuelList} />
+          <Route path='/RemainingFuel' component={LiveList} />
 
           {/* {showSelect && <Select />} */}
           {showNav && <Nav />}

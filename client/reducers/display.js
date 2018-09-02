@@ -30,14 +30,14 @@ function display (state = initialState, action) {
         showTotals: false
       }
     }
-    case (SETLIST): {
-      return {
-        ...state,
-        showEditList: false,
-        showList: true,
-        showNav: true
-      }
-    }
+    // case (SETLIST): {
+    //   return {
+    //     ...state,
+    //     showEditList: false,
+    //     showList: true,
+    //     showNav: true
+    //   }
+    // }
     // case (STANDARD): {
     //   return {
     //     ...state,
