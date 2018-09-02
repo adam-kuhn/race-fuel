@@ -15,14 +15,14 @@ class Nav extends React.Component {
   render () {
     return (
       <div className='center width nav'>
-        <GoTo click={this.handleNav}
-          text='Fuel List' type={SHOW_LIST} />
-        <GoTo click={this.handleNav}
-          text='Lap Details' type={SHOW_LAP} />
-        <GoTo click={this.handleNav}
-          text='Totals' type={SHOW_TOTALS} />
-        <GoTo click={this.handleNav}
-          text='Splits' type={SHOW_SPLITS}
+        <GoTo route='/RemainingFuel'
+          text='Fuel List' />
+        <GoTo route='LapDetails'
+          text='Lap Details' />
+        <GoTo route='/Totals'
+          text='Totals' />
+        <GoTo route='Splits'
+          text='Splits'
           disable={this.props.disableSplitButton} />
       </div>
     )

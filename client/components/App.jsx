@@ -24,11 +24,14 @@ class App extends React.Component {
           {this.props.live && <Nav />}
           <Route exact path="/" component={Select} />
           <Route path="/AddFuel/:list" component={FuelList} />
-          <Route path='/RemainingFuel' component={LiveList} />
+          <Route path="/RemainingFuel" component={LiveList} />
+          <Route path="/LapDetails" component={Lap} />
+          <Route path="/Totals" component={Totals} />
+          <Route path="Splits" component={Splits} />
           {this.props.live && <HomeBtn />}
-          {showLap && <Lap />}
-          {showSplits && <Splits />}
-          {showTotals && <Totals />}
+          {/* {showLap && <Lap />} */}
+          {/* {showSplits && <Splits />}
+          {showTotals && <Totals />} */}
         </div>
       </Router>
 

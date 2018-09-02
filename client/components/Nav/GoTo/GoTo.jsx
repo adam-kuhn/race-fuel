@@ -1,11 +1,14 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const GoTo = (props) => {
   return (
-    <button className='btn btn-secondary' type='button' value={props.type}
-      onClick={props.click} disabled={props.disable}>
-      {props.text}
-    </button>
+    <Link to={props.route}>
+      <button className='btn btn-secondary' type='button' value={props.type}
+        disabled={props.disable}>
+        {props.text}
+      </button>
+    </Link>
   )
 }
 
