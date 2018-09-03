@@ -1,6 +1,5 @@
-import {GO_HOME} from '../actions/navigation'
 import {NEXT_LAP} from '../actions/fuelList'
-
+import {CLEAN_APP} from '../actions/reset'
 const initialState = {
   lapInfo: []
 }
@@ -11,10 +10,8 @@ const splits = (state = initialState, action) => {
         lapInfo: [...state.lapInfo, action.lapFuel]
       }
     }
-    case (GO_HOME): {
-      return {
-        lapInfo: []
-      }
+    case (CLEAN_APP): {
+      return initialState
     }
     default:
       return state
