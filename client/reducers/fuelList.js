@@ -64,7 +64,15 @@ function fuelList (state = initialState, action) {
       }
     }
     case (CLEAN_APP): {
-      return initialState
+      const fuelList = action.list
+      for (let item of fuelList) {
+        item.amount = 0
+        item.totalAmount = 0
+      }
+      return {
+        fuel: fuelList,
+        lap: 1
+      }
     }
     case (TOGGLE_WATER): {
       if (action.boolean === true) {
