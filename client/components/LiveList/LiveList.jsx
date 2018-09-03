@@ -1,17 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
-// import {showEditList} from '../../actions/navigation'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 
 class LiveList extends React.Component {
-  constructor () {
-    super()
-    this.editFuelList = this.editFuelList.bind(this)
-  }
-  editFuelList () {
-    // this.props.dispatch(showEditList())
-  }
   render () {
     return (
       <div className='card width text-white bg-primary mb-3'>
@@ -36,8 +29,11 @@ class LiveList extends React.Component {
             }
           })}
           <div className="center">
-            <button type='button' className="btn btn-primary btn-primary-card"
-              onClick={this.editFuelList}>Edit Fuel List</button>
+            <Link to='/EditList'>
+              <button type='button' className="btn btn-primary btn-primary-card">
+              Edit Fuel List</button>
+            </Link>
+
           </div>
         </div>
       </div>

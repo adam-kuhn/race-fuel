@@ -22,6 +22,7 @@ class App extends React.Component {
           {this.props.live && this.props.nav && <Nav />}
           <Route exact path="/" component={Select} />
           <Route path="/AddFuel/:list" component={FuelList} />
+          <Route path="/EditList" component={FuelList} />
           <Route path="/RemainingFuel" component={LiveList} />
           <Route path="/LapDetails" component={Lap} />
           <Route path="/Totals" component={Totals} />
