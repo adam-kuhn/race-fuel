@@ -25,7 +25,7 @@ class Select extends React.Component {
         </Link>
         <Link to='/AddFuel/Standard'>
           <button type='button' className="btn btn-primary btn-select"
-            onClick={this.standard}>Standard List</button> 
+            onClick={this.standard}>Standard List</button>
         </Link>
       </div>
     )

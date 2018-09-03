@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import {goHome} from '../../actions/navigation'
 
@@ -15,8 +16,10 @@ class HomeBtn extends React.Component {
   render () {
     return (
       <div className="center">
-        <button type='button' className="btn btn-danger"
-          onClick={this.handleClick}>Start Over</button>
+        <Link to='/'>
+          <button type='button' className="btn btn-danger"
+            onClick={this.handleClick}>Start Over</button>
+        </Link>
       </div>
     )
   }
