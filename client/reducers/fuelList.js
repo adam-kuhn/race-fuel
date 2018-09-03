@@ -1,11 +1,11 @@
-import {GO_HOME} from '../actions/navigation'
 import {TOGGLE_WATER} from '../actions/toggle'
 import {CUSTOM, STANDARD} from '../actions/select'
 import {SETLIST, NEXT_LAP, ADD_TO_LIST, DELETE_ITEM} from '../actions/fuelList'
-
+import {CLEAN_APP} from '../actions/reset'
 import list from '../lib/standardFuel'
 const initialState = {
-  lap: 1
+  lap: 1,
+  fuel: []
 }
 
 function fuelList (state = initialState, action) {
@@ -63,7 +63,7 @@ function fuelList (state = initialState, action) {
         fuel: [...action.fuelList, action.item]
       }
     }
-    case (GO_HOME): {
+    case (CLEAN_APP): {
       const fuelList = action.list
       for (let item of fuelList) {
         item.amount = 0

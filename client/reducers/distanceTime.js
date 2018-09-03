@@ -1,6 +1,6 @@
-import {GO_HOME} from '../actions/navigation'
 import {NEXT_LAP} from '../actions/fuelList'
 import {TOGGLE_UNITS} from '../actions/toggle'
+import {CLEAN_APP} from '../actions/reset'
 
 const initialState = {
   measurements: [
@@ -79,7 +79,7 @@ const distanceAndTime = (state = initialState, action) => {
         measurements: [...distanceTime]
       }
     }
-    case (GO_HOME): {
+    case (CLEAN_APP): {
       const measurements = action.distanceTime
       for (let unit of measurements) {
         if (unit.name === 'time') {
@@ -92,9 +92,7 @@ const distanceAndTime = (state = initialState, action) => {
       }
       return {
         ...state,
-        // it works without the below line, I can just return state. but not sure why, because that does not work on NEXT_LAP
         measurements: [...measurements]
-
       }
     }
 

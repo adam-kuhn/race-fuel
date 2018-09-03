@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 import FuelListItem from './FuelListItem/FuelListItem'
 
-import {setList} from '../../actions/fuelList'
+import {setList, appIsLive} from '../../actions/fuelList'
 
 class FuelList extends React.Component {
   constructor () {
@@ -15,6 +16,10 @@ class FuelList extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.closeList = this.closeList.bind(this)
+  }
+
+  componentDidMount () {
+    this.props.dispatch(appIsLive())
   }
 
   handleChange (e) {
@@ -39,6 +44,7 @@ class FuelList extends React.Component {
     }
     this.props.dispatch(setList(itemValues))
   }
+
   render () {
     return (
       <div>
@@ -65,8 +71,10 @@ class FuelList extends React.Component {
               }
             })}
             <div className="center">
-              <button type='button' className="btn btn-primary btn-primary-card"
-                onClick={this.closeList}>Submit Fuel List</button>
+              <Link to={'/RemainingFuel'}>
+                <button type='button' className="btn btn-primary btn-primary-card"
+                  onClick={this.closeList}>Submit Fuel List</button>
+              </Link>
             </div>
           </div>
         </div>

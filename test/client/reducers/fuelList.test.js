@@ -1,5 +1,6 @@
-import {CUSTOM, GO_HOME} from '../../../client/actions/navigation'
 import {SETLIST, NEXT_LAP, ADD_TO_LIST} from '../../../client/actions/fuelList'
+import {CUSTOM} from '../../../client/actions/select'
+import {CLEAN_APP} from '../../../client/actions/reset'
 import fuelList from '../../../client/reducers/fuelList'
 import list from '../../../client/lib/standardFuel'
 
@@ -97,7 +98,7 @@ test('fuelList adds a new item on ADD_TO_LIST', () => {
 test('fuelList returns all amount to 0 on GO_HOME', () => {
   const expected = 0
   const action = {
-    type: GO_HOME,
+    type: CLEAN_APP,
     list: [{
       name: 'pbj',
       amount: 22,
