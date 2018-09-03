@@ -28,7 +28,7 @@ const LiveList = (props) => {
           }
         })}
         <div className="center">
-          <Link to='/EditList'>
+          <Link to='/AddFuel/EditList'>
             <button type='button' className="btn btn-primary btn-primary-card">
               Edit Fuel List</button>
           </Link>
