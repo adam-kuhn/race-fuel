@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {goHome} from '../../actions/navigation'
+// import {goHome} from '../../actions/navigation'
 
 class HomeBtn extends React.Component {
   constructor () {
@@ -10,8 +10,8 @@ class HomeBtn extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick () {
-    const {dispatch, list, distanceTime} = this.props
-    dispatch(goHome(list, distanceTime))
+    // const {dispatch, list, distanceTime} = this.props
+    // dispatch(goHome(list, distanceTime))
   }
   render () {
     return (

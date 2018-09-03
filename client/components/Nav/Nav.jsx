@@ -2,16 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import GoTo from './GoTo/GoTo'
-import {navigate, SHOW_LIST, SHOW_LAP, SHOW_TOTALS, SHOW_SPLITS} from '../../actions/navigation'
 
 class Nav extends React.Component {
-  constructor () {
-    super()
-    this.handleNav = this.handleNav.bind(this)
-  }
-  handleNav (e) {
-    this.props.dispatch(navigate(e.target.value))
-  }
   render () {
     return (
       <div className='center width nav'>

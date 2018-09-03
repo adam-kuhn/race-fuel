@@ -4,7 +4,8 @@ import {SETLIST, NEXT_LAP, ADD_TO_LIST, DELETE_ITEM} from '../actions/fuelList'
 import {CLEAN_APP} from '../actions/reset'
 import list from '../lib/standardFuel'
 const initialState = {
-  lap: 1
+  lap: 1,
+  fuel: []
 }
 
 function fuelList (state = initialState, action) {
