@@ -92,11 +92,11 @@
 .general-list-body {
   display: flex;
   flex-direction: column;
-  /* margin: 0 10%; */
   margin: 1% 12%;
-  padding: 0 20%;
-  background-color: #cc9b4f;
+  padding: 2% 15%;
+  background-color: #c59425;
   border-radius: 0.8rem;
+  box-shadow: 1px 1px 3px #8e801d;
 }
 
 .nav {
