@@ -58,8 +58,8 @@ const distanceAndTime = (state = initialState, action) => {
       }
     }
     case (NEXT_LAP): {
-      const {distanceTime, lapFuel} = action
-      for (let value of distanceTime) {
+      const {lapFuel} = action
+      for (let value of state.measurements) {
         for (let measured in lapFuel) {
           if (measured === value.name && value.name === 'time') {
             for (let unitOfTime in value.totalAmount) {
@@ -71,12 +71,12 @@ const distanceAndTime = (state = initialState, action) => {
           }
         }
       }
-      const timeValue = distanceTime[1].totalAmount
+      const timeValue = state.measurements[1].totalAmount
       const adjustedTime = sumTime(timeValue)
-      distanceTime[1].totalAmount = adjustedTime
+      state.measurements[1].totalAmount = adjustedTime
       return {
         ...state,
-        measurements: [...distanceTime]
+        measurements: [...state.measurements]
       }
     }
     case (CLEAN_APP): {

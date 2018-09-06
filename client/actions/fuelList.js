@@ -11,35 +11,18 @@ export const setList = (fuelList) => {
   }
 }
 
-export const update = (lap, lapFuel, fuelList, distanceTime) => {
+export const nextLap = (lap, lapFuel) => {
   return {
     type: NEXT_LAP,
     lap,
-    lapFuel,
-    fuelList,
-    distanceTime
-  }
-}
-
-export const nextLap = (lap, lapFuel) => {
-  return (dispatch, getState) => {
-    const state = getState()
-    dispatch(update(lap, lapFuel, state.fuelList.fuel, state.distanceTime.measurements))
-  }
-}
-
-export const addItemToList = (item, fuelList) => {
-  return {
-    type: ADD_TO_LIST,
-    item,
-    fuelList
+    lapFuel
   }
 }
 
 export const addItem = (item) => {
-  return (dispatch, getState) => {
-    const state = getState()
-    dispatch(addItemToList(item, state.fuelList.fuel))
+  return {
+    type: ADD_TO_LIST,
+    item
   }
 }
 

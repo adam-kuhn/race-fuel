@@ -38,7 +38,8 @@ function fuelList (state = initialState, action) {
     }
     case (NEXT_LAP): {
       const fuelItem = Object.keys(action.lapFuel)
-      for (let item of action.fuelList) {
+
+      for (let item of state.fuel) {
         for (let fuelName of fuelItem) {
           if (item.name === fuelName || item.keyName === fuelName) {
             item.amount = item.amount - (action.lapFuel[fuelName].value)
@@ -48,19 +49,19 @@ function fuelList (state = initialState, action) {
       }
       return {
         ...state,
-        fuel: [...action.fuelList],
+        fuel: [...state.fuel],
         lap: action.lap + 1
       }
     }
     case (ADD_TO_LIST): {
-      action.item.id = action.fuelList.length + 1
+      action.item.id = state.fuel.length + 1
       action.item.text = action.item.name
       action.item.totalAmount = 0
       action.item.amount = 0
       action.item.totalText = action.item.name
       return {
         ...state,
-        fuel: [...action.fuelList, action.item]
+        fuel: [...state.fuel, action.item]
       }
     }
     case (CLEAN_APP): {
