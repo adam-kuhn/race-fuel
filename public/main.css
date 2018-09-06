@@ -47,6 +47,10 @@
   border-color: #97dac9;
 }
 
+/* .btn-danger {
+  margin-top: 6%;
+} */
+
 .btn-select {
   margin: 3rem 10%;
 }
@@ -68,9 +72,22 @@
 
 .fuel-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    border: solid grey 5px;
+    border-width: 2.5px 5px;
+    margin: 5% 0;
+}
+.fuel-actions {
+  display: flex;
+  margin: 2%;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.fuel-actions input {
+  max-width: 45%;
 }
 
 .nav {
