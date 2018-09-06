@@ -71,13 +71,14 @@
 }
 
 .fuel-list {
-    display: flex;
+  display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: solid grey 5px;
-    border-width: 2.5px 5px;
     margin: 5% 0;
+    background-color: #4d6177;
+    box-shadow: 1px 1px 9px #af8c8c2e;
+    border-radius: 0.8rem;
 }
 .fuel-actions {
   display: flex;
@@ -96,7 +97,7 @@
 }
 
 .fuel-list .card-text {
-  max-width: 178.69px;
+  margin: 0 10%;
 }
 
 .btn-secondary {
