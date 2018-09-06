@@ -89,6 +89,16 @@
   max-width: 200px;
 }
 
+.general-list-body {
+  display: flex;
+  flex-direction: column;
+  /* margin: 0 10%; */
+  margin: 1% 12%;
+  padding: 0 20%;
+  background-color: #cc9b4f;
+  border-radius: 0.8rem;
+}
+
 .nav {
   justify-content: space-evenly;
   margin-bottom: 0.8rem;
