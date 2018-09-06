@@ -1,4 +1,10 @@
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10%;
+}
 .width {
   max-width: 34rem;
   margin: auto;
