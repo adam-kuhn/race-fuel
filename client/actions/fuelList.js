@@ -19,18 +19,10 @@ export const nextLap = (lap, lapFuel) => {
   }
 }
 
-export const addItemToList = (item, fuelList) => {
+export const addItem = (item) => {
   return {
     type: ADD_TO_LIST,
-    item,
-    fuelList
-  }
-}
-
-export const addItem = (item) => {
-  return (dispatch, getState) => {
-    const state = getState()
-    dispatch(addItemToList(item, state.fuelList.fuel))
+    item
   }
 }
 

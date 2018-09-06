@@ -54,14 +54,14 @@ function fuelList (state = initialState, action) {
       }
     }
     case (ADD_TO_LIST): {
-      action.item.id = action.fuelList.length + 1
+      action.item.id = state.fuel.length + 1
       action.item.text = action.item.name
       action.item.totalAmount = 0
       action.item.amount = 0
       action.item.totalText = action.item.name
       return {
         ...state,
-        fuel: [...action.fuelList, action.item]
+        fuel: [...state.fuel, action.item]
       }
     }
     case (CLEAN_APP): {
