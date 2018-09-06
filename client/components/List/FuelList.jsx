@@ -48,7 +48,7 @@ class FuelList extends React.Component {
   render () {
     return (
       <div>
-        <div className="card width text-white bg-primary mb-3">
+        <div className="card text-white bg-primary mb-3">
           <h3 className="card-header">Input Fuel List</h3>
           <div className='toggle'>
             <p>Units</p>
