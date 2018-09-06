@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Nav from './Nav/Nav'
 import HomeBtn from './HomeBtn/HomeBtn'
@@ -12,35 +13,31 @@ import Totals from './Totals/Totals'
 
 class App extends React.Component {
   render () {
-    const {showSelect, showEditList, showList,
-      showLap, showTotals, showSplits, showNav} = this.props
     return (
-      <div>
-        <div className="center title">
-          <h2>Nutrition Tracker</h2>
+      <Router>
+        <div>
+          <div className="center title">
+            <h2>Nutrition Tracker</h2>
+          </div>
+          {this.props.live && this.props.nav && <Nav />}
+          <Route exact path="/" component={Select} />
+          <Route path="/AddFuel/:list" component={FuelList} />
+          <Route path="/RemainingFuel" component={LiveList} />
+          <Route path="/LapDetails" component={Lap} />
+          <Route path="/Totals" component={Totals} />
+          <Route path="/Splits" component={Splits} />
+          {this.props.live && <HomeBtn />}
         </div>
-        {showNav && <Nav />}
-        {showSelect && <Select />}
-        {showEditList && <FuelList />}
-        {showList && <LiveList />}
-        {showLap && <Lap />}
-        {showSplits && <Splits />}
-        {showTotals && <Totals />}
-        {!showSelect && <HomeBtn />}
-      </div>
+      </Router>
+
     )
   }
 }
 
 function mapStateToProps (state) {
   return {
-    showNav: state.display.showNav,
-    showEditList: state.display.showEditList,
-    showList: state.display.showList,
-    showSelect: state.display.showSelect,
-    showSplits: state.display.showSplits,
-    showLap: state.display.showLap,
-    showTotals: state.display.showTotals
+    live: state.display.live,
+    nav: state.display.nav
   }
 }
 

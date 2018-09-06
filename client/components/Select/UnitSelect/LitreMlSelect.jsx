@@ -9,20 +9,24 @@ class LitreMlSelect extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick (e) {
-    const {dispatch, fuel} = this.props
+    const {dispatch, fuel, updateWater} = this.props
+    const val = JSON.parse(e.target.value)
     const waterLeft = fuel[1].amount
     const waterTotal = fuel[1].totalAmount
-    dispatch(changeWater(JSON.parse(e.target.value),
+    if (updateWater) {
+      updateWater(!val)
+    }
+    dispatch(changeWater(val,
       fuel, waterTotal,
       waterLeft))
   }
   render () {
     return (
       <div>
-        <p>Water units <button type="button" onClick={this.handleClick}
+        <button className='btn btn-toggle' type="button" onClick={this.handleClick}
           value={this.props.litre}>
-          {this.props.litre ? 'mL' : 'L' }</button>
-        </p>
+          {this.props.litre ? 'mL' : 'L' }
+        </button>
       </div>
     )
   }

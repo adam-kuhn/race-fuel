@@ -9,15 +9,19 @@ class DistanceSelect extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick (e) {
-    const {dispatch, totalDistance, measurements} = this.props
-    dispatch(changeUnits(JSON.parse(e.target.value),
+    const {dispatch, totalDistance, measurements, updateKm} = this.props
+    const val = JSON.parse(e.target.value)
+    if (updateKm) {
+      updateKm(val)
+    }
+    dispatch(changeUnits(val,
       totalDistance, measurements))
   }
 
   render () {
     return (
       <div>
-        <button type='button' value={this.props.km}
+        <button className='btn btn-toggle' type='button' value={this.props.km}
           onClick={this.handleClick}>
           {this.props.km ? 'miles' : 'kilometer'}</button>
       </div>

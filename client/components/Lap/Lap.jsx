@@ -20,6 +20,8 @@ class Lap extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.submitLap = this.submitLap.bind(this)
+    this.updateWater = this.updateWater.bind(this)
+    this.updateKm = this.updateKm.bind(this)
   }
   handleChange (e) {
     const newValue = Number(e.target.value)
@@ -56,7 +58,7 @@ class Lap extends React.Component {
       const difference = e.target.value - (this.state.fuel[e.target.name]
         ? this.state.fuel[e.target.name].value : 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories.value)
-      const itemText = e.target.getAttribute('data-text')
+      const itemText = (e.target.getAttribute('data-text') || 'false')
       this.setState({
         fuel: {
           ...this.state.fuel,
@@ -87,6 +89,7 @@ class Lap extends React.Component {
         lapValues[item] = {}
         lapValues[item].value = newValue
         lapValues[item].text = oldState[item].text || 'Calories'
+        lapValues.lap = this.props.lap
       }
     }
     dispatch(nextLap(lap, lapValues))
@@ -100,16 +103,69 @@ class Lap extends React.Component {
     })
   }
 
+  updateWater (litre) {
+    const currentFuelState = this.state.fuel
+    if (currentFuelState.water) {
+      this.setState({
+        fuel: {
+          ...this.state.fuel,
+          water: {
+            ...this.state.fuel.water,
+            text: litre
+              ? 'Water (L)' : 'Water (mL)'
+          }
+        }
+      })
+    } else {
+      this.setState({
+        fuel: {
+          ...this.state.fuel,
+          water: {
+            text: litre ? 'Water (L)' : 'Water (mL)',
+            value: ''
+          }
+        }
+      })
+    }
+  }
+
+  updateKm (km) {
+    const currentFuelState = this.state.fuel
+    if (currentFuelState.distance) {
+      this.setState({
+        fuel: {
+          ...this.state.fuel,
+          distance: {
+            ...this.state.fuel.distance,
+            text: km
+              ? 'Distance (Km)' : 'Distance (Mi)'
+          }
+        }
+      })
+    } else {
+      this.setState({
+        ...this.state.fuel,
+        distance: {
+          text: km ? 'Km' : 'Mi',
+          value: ''
+        }
+      })
+    }
+  }
+
   render () {
     return (
       <div>
-        <div className="card text-white bg-success mb-3">
+        <div className="card width text-white bg-success mb-3">
           <div className='card-header'>
             <h2>Lap {this.props.lap}</h2>
             <p>Need to eat ~200-400 calories per hour</p>
             <p>Input amount eaten</p>
-            <DistanceSelect />
-            <LitreMlSelect />
+          </div>
+          <div className='toggle'>
+            <p>Units</p>
+            <LitreMlSelect updateWater={this.updateWater}/>
+            <DistanceSelect updateKm={this.updateKm}/>
           </div>
           <div className="card-body">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}

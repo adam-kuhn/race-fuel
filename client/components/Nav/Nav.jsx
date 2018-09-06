@@ -2,31 +2,21 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import GoTo from './GoTo/GoTo'
-import {navigate, SHOW_LIST, SHOW_LAP, SHOW_TOTALS, SHOW_SPLITS} from '../../actions/navigation'
 
-class Nav extends React.Component {
-  constructor () {
-    super()
-    this.handleNav = this.handleNav.bind(this)
-  }
-  handleNav (e) {
-    this.props.dispatch(navigate(e.target.value))
-  }
-  render () {
-    return (
-      <div className='center nav'>
-        <GoTo click={this.handleNav}
-          text='Fuel List' type={SHOW_LIST} />
-        <GoTo click={this.handleNav}
-          text='Lap Details' type={SHOW_LAP} />
-        <GoTo click={this.handleNav}
-          text='Totals' type={SHOW_TOTALS} />
-        <GoTo click={this.handleNav}
-          text='Splits' type={SHOW_SPLITS}
-          disable={this.props.disableSplitButton} />
-      </div>
-    )
-  }
+const Nav = (props) => {
+  return (
+    <div className='center width nav'>
+      <GoTo route='/RemainingFuel'
+        text='Fuel List' />
+      <GoTo route='LapDetails'
+        text='Lap Details' />
+      <GoTo route='/Totals'
+        text='Totals' />
+      <GoTo route='/Splits'
+        text='Splits'
+        disable={props.disableSplitButton} />
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => {

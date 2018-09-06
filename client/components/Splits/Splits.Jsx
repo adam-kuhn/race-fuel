@@ -43,12 +43,14 @@ class Splits extends React.Component {
   }
   render () {
     return (
-      <div className='card text-white bg-info mb-3'>
+      <div className='card width text-white bg-info mb-3'>
         <div className='card-header'>
           <h2>Split Component</h2>
         </div>
         <div className='card-body'>
-          <LapInfo info={this.props.lapInfo[this.state.lapIndex]} />
+          <div className='center'>
+            <LapInfo info={this.props.lapInfo[this.state.lapIndex]} />
+          </div>
           <SplitNav
             errorMsg={this.state.errorMessage}
             nav={this.handleSplitNav}/>
