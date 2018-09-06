@@ -64,13 +64,18 @@
 
 .fuel-list {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin: 5% 0;
-    background-color: #4d6177;
-    box-shadow: 1px 1px 9px #af8c8c2e;
-    border-radius: 0.8rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5% 0;
+  background-color: #4d6177;
+  box-shadow: 1px 1px 9px #af8c8c2e;
+  border-radius: 0.8rem;
+}
+.list-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .fuel-actions {
   display: flex;
@@ -80,7 +85,8 @@
 }
 
 .fuel-actions input {
-  max-width: 45%;
+  width: 45%;
+  max-width: 200px;
 }
 
 .nav {
@@ -127,4 +133,10 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 0.6rem;
+}
+
+@media (min-width: 500px) {
+  .fuel-list {
+    width: 80%;
+  }
 }
