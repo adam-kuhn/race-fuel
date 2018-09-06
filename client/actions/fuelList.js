@@ -15,7 +15,7 @@ export const update = (lap, lapFuel, fuelList, distanceTime) => {
     type: NEXT_LAP,
     lap,
     lapFuel,
-    fuelList,
+    // fuelList,
     distanceTime
   }
 }
