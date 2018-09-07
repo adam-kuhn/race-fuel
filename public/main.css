@@ -108,7 +108,7 @@
 .general-list-body {
   display: flex;
   flex-direction: column;
-  margin: 1% 12%;
+  margin: 4% 12%;
   padding: 2% 15%;
   background-color: #c59425;
   border-radius: 0.8rem;
