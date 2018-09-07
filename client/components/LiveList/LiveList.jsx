@@ -21,7 +21,7 @@ class LiveList extends React.Component {
           <p>Units</p>
           <LitreMlSelect />
         </div>
-        <div className='card-body'>
+        <div className='card-body general-body'>
           {this.props.fuel.map(item => {
             if (item.name !== 'calories') {
               if (item.name === 'water') {

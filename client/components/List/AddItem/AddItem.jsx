@@ -70,7 +70,7 @@ class AddItem extends React.Component {
       <div>
         <div className="card text-white bg-warning mb-3">
           <h3 className="card-header">Add Custom Item</h3>
-          <div className="card-body general-list-body">
+          <div className="card-body body-add general-body">
             <p>Item:
               <input className='form-control' name='name'
                 value={this.state.name} onChange={this.handleChange}
