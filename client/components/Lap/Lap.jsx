@@ -167,7 +167,7 @@ class Lap extends React.Component {
             <LitreMlSelect updateWater={this.updateWater}/>
             <DistanceSelect updateKm={this.updateKm}/>
           </div>
-          <div className="card-body general-body">
+          <div className="card-body general-body body-lap">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
             {this.props.lapFuel.map(item => {
               if (item.name !== 'calories') {

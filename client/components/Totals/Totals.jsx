@@ -15,7 +15,7 @@ class Totals extends React.Component {
           <LitreMlSelect />
           <DistanceSelect />
         </div>
-        <div className="card-body general-body">
+        <div className="card-body general-body body-total-split">
           {this.props.fuelList.fuel.map(item => {
             return (
               <p className='card-text' key={item.id}>{this.props.litre ? item.text.waterL || item.text

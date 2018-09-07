@@ -56,7 +56,7 @@ class FuelList extends React.Component {
           </div>
           {this.state.wrongInput &&
           <p className='text-danger'>Please input numbers only.</p>}
-          <div className="card-body list-body general-body">
+          <div className="card-body list-body general-body body-fuel">
             {this.props.fuel.map(item => {
               if (item.name !== 'calories') {
                 return (

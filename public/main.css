@@ -85,9 +85,10 @@
   justify-content: space-around;
   margin: 5% 0;
   background-color: #4d6177;
-  box-shadow: 1px 1px 9px #af8c8c2e;
+  box-shadow: -2px -2px 1px 1px #3a38384a;
   border-radius: 0.8rem;
 }
+
 .list-body {
   display: flex;
   flex-direction: column;
@@ -107,9 +108,7 @@
 
 .general-body {
     margin: 4% 6%;
-    background-color: #c59425;
     border-radius: 0.8rem;
-    box-shadow: 1px 1px 3px #8e801d;
 }
 
 .body-add {
@@ -117,6 +116,24 @@
   flex-direction: column;
   margin: 4% 12%;
   padding: 2% 15%;
+  background-color: #c59425;
+  box-shadow: 1px 1px 3px #8e801d;
+}
+
+.body-fuel {    
+  background-color: #2d5988;
+  box-shadow: 1px 1px 3px #2c3744;
+}
+
+
+.body-lap {
+  background-color: #10906f;
+  box-shadow: 1px 1px 3px #324e47;
+}
+
+.body-total-split {
+  background-color: #519bcc;
+  box-shadow: 1px 1px 3px #404f58;
 }
 
 .nav {
