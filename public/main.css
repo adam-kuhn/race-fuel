@@ -13,6 +13,7 @@
 .card-body p {
   font-size: 1.3rem;
 }
+
 .center {
   display: flex;
   justify-content: space-evenly
@@ -53,6 +54,17 @@
 
 .title {
   margin: 5% 0;
+}
+
+.lap-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lap-item input {
+  width: 3rem;
+  height: 2rem;
 }
 
 .time {
@@ -152,5 +164,9 @@
 @media (min-width: 500px) {
   .fuel-list {
     width: 80%;
+  }
+
+  .lap-item input {
+    width: 11rem;
   }
 }
