@@ -8,7 +8,7 @@ import MeasurementTotal from './Measurements/MeasurementTotal'
 class Totals extends React.Component {
   render () {
     return (
-      <div className="card text-white bg-info mb-3">
+      <div className="card width text-white bg-info mb-3">
         <h2 className="card-header">Totals!</h2>
         <div className='toggle'>
           <p>Units</p>

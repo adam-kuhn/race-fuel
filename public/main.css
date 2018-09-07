@@ -2,8 +2,12 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 0 10%;
+  align-items: center;
+}
+
+.width {
+  width: 80%;
+  max-width: 500px;
 }
 
 .card-body p {

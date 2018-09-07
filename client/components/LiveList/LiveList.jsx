@@ -6,7 +6,7 @@ import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
 
 const LiveList = (props) => {
   return (
-    <div className='card text-white bg-primary mb-3'>
+    <div className='card width text-white bg-primary mb-3'>
       <h3 className='card-header'>Remaining Fuel</h3>
       <div className='toggle'>
         <p>Units</p>

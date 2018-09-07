@@ -155,7 +155,7 @@ class Lap extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='width'>
         <div className="card text-white bg-success mb-3">
           <div className='card-header'>
             <h2>Lap {this.props.lap}</h2>
