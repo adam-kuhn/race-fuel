@@ -15,7 +15,7 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-        <div>
+        <div className='main-container'>
           <div className="center title">
             <h2>Nutrition Tracker</h2>
           </div>

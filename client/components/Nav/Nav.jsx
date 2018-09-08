@@ -5,7 +5,7 @@ import GoTo from './GoTo/GoTo'
 
 const Nav = (props) => {
   return (
-    <div className='center width nav'>
+    <div className='center nav'>
       <GoTo route='/RemainingFuel'
         text='Fuel List' />
       <GoTo route='LapDetails'

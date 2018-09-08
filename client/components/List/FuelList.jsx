@@ -47,8 +47,8 @@ class FuelList extends React.Component {
 
   render () {
     return (
-      <div>
-        <div className="card width text-white bg-primary mb-3">
+      <div className='width'>
+        <div className="card text-white bg-primary mb-3">
           <h3 className="card-header">Input Fuel List</h3>
           <div className='toggle'>
             <p>Units</p>
@@ -56,7 +56,7 @@ class FuelList extends React.Component {
           </div>
           {this.state.wrongInput &&
           <p className='text-danger'>Please input numbers only.</p>}
-          <div className="card-body">
+          <div className="card-body list-body general-body body-fuel">
             {this.props.fuel.map(item => {
               if (item.name !== 'calories') {
                 return (

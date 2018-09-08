@@ -3,40 +3,56 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+import {closeNav} from '../../actions/fuelList'
 
-const LiveList = (props) => {
-  return (
-    <div className='card width text-white bg-primary mb-3'>
-      <h3 className='card-header'>Remaining Fuel</h3>
-      <div className='toggle'>
-        <p>Units</p>
-        <LitreMlSelect />
-      </div>
-      <div className='card-body'>
-        {props.fuel.map(item => {
-          if (item.name !== 'calories') {
-            if (item.name === 'water') {
+class LiveList extends React.Component {
+  constructor () {
+    super()
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick () {
+    this.props.dispatch(closeNav())
+  }
+  render () {
+    return (
+      <div className='card width text-white bg-primary mb-3'>
+        <h3 className='card-header'>Remaining Fuel</h3>
+        <div className='toggle'>
+          <p>Units</p>
+          <LitreMlSelect />
+        </div>
+        <div className='card-body general-body body-fuel'>
+          {this.props.fuel.map(item => {
+            if (item.name !== 'calories') {
+              if (item.name === 'water') {
+                return (
+                  <div className='list-item card-text' key={item.id}>
+                    <p>{this.props.litre
+                      ? item.text.waterL : item.text.waterMl}:</p>
+                    <p>{item.amount}</p>
+                  </div>
+                )
+              }
               return (
-                <p className="card-text" key={item.id}>{props.litre
-                  ? item.text.waterL : item.text.waterMl} {item.amount}</p>
+                <div className='list-item card-text' key={item.id}>
+                  <p>
+                    {item.text}:</p>
+                  <p>{item.amount}</p>
+                </div>
               )
             }
-            return (
-              <p className='card-text' key={item.id}>
-                {item.text} {item.amount}</p>
-            )
-          }
-        })}
-        <div className="center">
-          <Link to='/AddFuel/EditList'>
-            <button type='button' className="btn btn-primary btn-primary-card">
+          })}
+          <div className="center">
+            <Link to='/AddFuel/EditList'>
+              <button type='button' className="btn btn-primary btn-primary-card"
+                onClick={this.handleClick}>
               Edit Fuel List</button>
-          </Link>
-
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 function mapStateToProps (state) {

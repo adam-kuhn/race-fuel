@@ -155,8 +155,8 @@ class Lap extends React.Component {
 
   render () {
     return (
-      <div>
-        <div className="card width text-white bg-success mb-3">
+      <div className='width'>
+        <div className="card text-white bg-success mb-3">
           <div className='card-header'>
             <h2>Lap {this.props.lap}</h2>
             <p>Need to eat ~200-400 calories per hour</p>
@@ -167,13 +167,13 @@ class Lap extends React.Component {
             <LitreMlSelect updateWater={this.updateWater}/>
             <DistanceSelect updateKm={this.updateKm}/>
           </div>
-          <div className="card-body">
+          <div className="card-body general-body body-lap">
             {this.state.wrongInput && <p className='text-danger'>Please input numbers only.</p>}
             {this.props.lapFuel.map(item => {
               if (item.name !== 'calories') {
                 if (item.name === 'water') {
                   return (
-                    <p className="card-text" key={item.id}>{this.props.litre
+                    <p className="card-text list-item" key={item.id}>{this.props.litre
                       ? item.text.waterL : item.text.waterMl}
                     <input className='form-control'
                       value={this.state.fuel[item.keyName || item.name]
@@ -185,7 +185,7 @@ class Lap extends React.Component {
                   )
                 }
                 return (
-                  <p className="card-text" key={item.id}>{item.text}
+                  <p className="card-text list-item" key={item.id}>{item.text}
                     <input className='form-control'
                       value={this.state.fuel[item.keyName || item.name]
                         ? this.state.fuel[item.keyName || item.name].value : ''}
