@@ -18,8 +18,8 @@ class Totals extends React.Component {
         <div className="card-body general-body body-total-split">
           {this.props.fuelList.fuel.map(item => {
             return (
-              <div className='list-item' key={item.id}>
-                <p className='card-text' key={item.id}>{this.props.litre ? item.text.waterL || item.text
+              <div className='list-item card-text' key={item.id}>
+                <p>{this.props.litre ? item.text.waterL || item.text
                   : item.text.waterMl || item.text}: </p>
                 <p>{item.totalAmount}</p>
               </div>

@@ -26,16 +26,16 @@ class LiveList extends React.Component {
             if (item.name !== 'calories') {
               if (item.name === 'water') {
                 return (
-                  <div className='list-item' key={item.id}>
-                    <p className="card-text">{this.props.litre
+                  <div className='list-item card-text' key={item.id}>
+                    <p>{this.props.litre
                       ? item.text.waterL : item.text.waterMl}:</p>
                     <p>{item.amount}</p>
                   </div>
                 )
               }
               return (
-                <div className='list-item' key={item.id}>
-                  <p className='card-text' >
+                <div className='list-item card-text' key={item.id}>
+                  <p>
                     {item.text}:</p>
                   <p>{item.amount}</p>
                 </div>
