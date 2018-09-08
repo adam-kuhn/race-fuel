@@ -56,13 +56,13 @@
   margin: 5% 0;
 }
 
-.lap-item {
+.list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.lap-item input {
+.list-item input {
   width: 3rem;
   height: 2rem;
 }
@@ -187,7 +187,7 @@
     width: 80%;
   }
 
-  .lap-item input {
+  .list-item input {
     width: 11rem;
   }
 }

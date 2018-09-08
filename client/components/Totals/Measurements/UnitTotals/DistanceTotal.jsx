@@ -2,17 +2,14 @@ import React from 'react'
 
 const DistanceTotal = (props) => {
   const {text, total, km} = props
-  if (km) {
-    return (
-      <p className="card-text">
-        {text.km} {total}</p>
-    )
-  } else {
-    return (
-      <p className="card-text">
-        {text.mi} {total}</p>
-    )
-  }
+  return (
+    <div className='list-item'>
+      <p className='card-text'>
+        {km ? text.km : text.mi}:
+      </p>
+      <p>{total}</p>
+    </div>
+  )
 }
 
 export default DistanceTotal
