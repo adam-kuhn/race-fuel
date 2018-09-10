@@ -114,6 +114,8 @@
 .general-body {
     margin: 4% 6%;
     border-radius: 0.8rem;
+    background-color: #519bcc;
+    box-shadow: 1px 1px 3px #404f58;
 }
 
 .body-add {
@@ -123,22 +125,6 @@
   padding: 2% 15%;
   background-color: #c59425;
   box-shadow: 1px 1px 3px #8e801d;
-}
-
-.body-fuel {    
-  background-color: #2d5988;
-  box-shadow: 1px 1px 3px #2c3744;
-}
-
-
-.body-lap {
-  background-color: #10906f;
-  box-shadow: 1px 1px 3px #324e47;
-}
-
-.body-total-split {
-  background-color: #519bcc;
-  box-shadow: 1px 1px 3px #404f58;
 }
 
 .nav {

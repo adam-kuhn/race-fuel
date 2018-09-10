@@ -15,13 +15,13 @@ class LiveList extends React.Component {
   }
   render () {
     return (
-      <div className='card width text-white bg-primary mb-3'>
+      <div className='card width text-white bg-info mb-3'>
         <h3 className='card-header'>Remaining Fuel</h3>
         <div className='toggle'>
           <p>Units</p>
           <LitreMlSelect />
         </div>
-        <div className='card-body general-body body-fuel'>
+        <div className='card-body general-body'>
           {this.props.fuel.map(item => {
             if (item.name !== 'calories') {
               if (item.name === 'water') {

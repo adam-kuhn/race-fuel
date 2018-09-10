@@ -47,7 +47,7 @@ class Splits extends React.Component {
         <div className='card-header'>
           <h2>Split Component</h2>
         </div>
-        <div className='card-body general-body body-total-split'>
+        <div className='card-body general-body'>
           <div className='center'>
             <LapInfo info={this.props.lapInfo[this.state.lapIndex]} />
           </div>
