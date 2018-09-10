@@ -167,6 +167,10 @@
 }
 
 @media (min-width: 500px) {
+  .center {
+    width: 80%;
+  }
+
   .fuel-list {
     width: 80%;
   }
