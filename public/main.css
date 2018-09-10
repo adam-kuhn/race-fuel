@@ -179,6 +179,7 @@
   color: #504848;
   background-color: #ded2d2d1;
   height: 2rem;
+  box-shadow: 1px 1px 3px #404f58;
 }
 
 .toggle {
