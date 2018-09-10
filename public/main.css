@@ -23,12 +23,13 @@
 .card-btn {
   width: 100%;
 }
-
-.btn-primary-card {
-  background-color: #2b4764;
-  border-color: #28415b;
+.btn-info {
+  background-color: #06558a;
+  border: none;
+  box-shadow: 1px 1px 2px #010304;
 }
-.btn-primary-card:hover {
+
+.btn-info:hover {
   background-color: #6089b5;
   border-color: #6089b5;
 }
@@ -41,16 +42,6 @@
 .btn-warning-card:hover {
   background-color: #d6a559;
   border-color: #c87f0a;
-}
-
-.btn-success-card {
-  background-color: #009670;
-  border-color: #008966;
-}
-
-.btn-success-card:hover {
-  background-color: #97dac9;
-  border-color: #97dac9;
 }
 
 .btn-select {
