@@ -36,7 +36,8 @@
 
 .btn-warning-card {
   background-color: #d4860b;
-    border-color: #c87f0a;
+  border-color: #c87f0a;
+  box-shadow: 1px 1px 3px #404f58;
 }
 
 .btn-warning-card:hover {
