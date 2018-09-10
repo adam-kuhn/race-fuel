@@ -20,6 +20,10 @@
   width: 80%;
 }
 
+.card-btn {
+  width: 100%;
+}
+
 .btn-primary-card {
   background-color: #2b4764;
   border-color: #28415b;

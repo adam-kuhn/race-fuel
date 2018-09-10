@@ -199,7 +199,7 @@ class Lap extends React.Component {
             })}
             <h3>Calories {this.state.fuel.calories.value}</h3>
             <Measurements change={this.handleChange} lapState={this.state.fuel}/>
-            <div className="center">
+            <div className="center card-btn">
               <button type='button' className="btn btn-success btn-success-card"
                 onClick={this.submitLap}>Next Lap</button>
             </div>
