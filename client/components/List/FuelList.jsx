@@ -48,7 +48,7 @@ class FuelList extends React.Component {
   render () {
     return (
       <div className='width'>
-        <div className="card text-white bg-primary mb-3">
+        <div className="card text-white bg-info mb-3">
           <h3 className="card-header">Input Fuel List</h3>
           <div className='toggle'>
             <p>Units</p>
@@ -56,7 +56,7 @@ class FuelList extends React.Component {
           </div>
           {this.state.wrongInput &&
           <p className='text-danger'>Please input numbers only.</p>}
-          <div className="card-body list-body general-body body-fuel">
+          <div className="card-body list-body general-body">
             {this.props.fuel.map(item => {
               if (item.name !== 'calories') {
                 return (
@@ -72,7 +72,7 @@ class FuelList extends React.Component {
             })}
             <div className="center">
               <Link to={'/RemainingFuel'}>
-                <button type='button' className="btn btn-primary btn-primary-card"
+                <button type='button' className="btn btn-info"
                   onClick={this.closeList}>Submit Fuel List</button>
               </Link>
             </div>
