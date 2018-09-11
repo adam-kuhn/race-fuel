@@ -162,8 +162,8 @@ class Lap extends React.Component {
             <p>Need to eat ~200-400 calories per hour</p>
             <p>Input amount eaten</p>
           </div>
-          <div className='toggle'>
-            <p>Units</p>
+          <div className='toggle card-header'>
+            <h4>Units</h4>
             <LitreMlSelect updateWater={this.updateWater}/>
             <DistanceSelect updateKm={this.updateKm}/>
           </div>
