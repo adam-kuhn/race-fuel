@@ -37,7 +37,8 @@ const SplitBarGraph = (props) => {
       data={{labels: graphLabels,
         datasets: [{
           label: 'Fuel Consumes',
-          data: graphValues
+          data: graphValues,
+          backgroundColor: '#7d6c6c'
 
         }]
       }}
