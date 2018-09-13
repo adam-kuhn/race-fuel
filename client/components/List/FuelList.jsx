@@ -50,8 +50,8 @@ class FuelList extends React.Component {
       <div className='width'>
         <div className="card text-white bg-info mb-3">
           <h3 className="card-header">Input Fuel List</h3>
-          <div className='toggle'>
-            <p>Units</p>
+          <div className='toggle card-header'>
+            <h4>Units</h4>
             <LitreMlSelect />
           </div>
           {this.state.wrongInput &&

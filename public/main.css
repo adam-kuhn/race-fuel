@@ -47,6 +47,7 @@
 
 .btn-select {
   margin: 3rem 10%;
+  box-shadow: 1px 1px 1px 0px #cad5dc;
 }
 
 .title {
@@ -163,7 +164,8 @@
 .toggle {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 0.6rem;
+  margin-top: 0;
+  background-color: #5169af5c;
 }
 
 @media (min-width: 500px) {

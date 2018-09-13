@@ -10,8 +10,8 @@ class Totals extends React.Component {
     return (
       <div className="card width text-white bg-info mb-3">
         <h2 className="card-header">Totals!</h2>
-        <div className='toggle'>
-          <p>Units</p>
+        <div className='toggle card-header'>
+          <h4>Units</h4>
           <LitreMlSelect />
           <DistanceSelect />
         </div>
