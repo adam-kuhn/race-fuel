@@ -168,6 +168,15 @@
   background-color: #5169af5c;
 }
 
+.split-graph {
+  display: none
+}
+
+@media (min-width: 415px) {
+  .split-graph {
+    display: flex
+  }
+}
 @media (min-width: 500px) {
   .center {
     width: 80%;
@@ -180,4 +189,5 @@
   .list-item input {
     width: 11rem;
   }
+ 
 }

@@ -26,7 +26,9 @@ const LapInfo = (props) => {
           }
         }
       })}
-      <SplitBarGraph lapInfo={props}/>
+      <div className='split-graph'>
+        <SplitBarGraph lapInfo={props}/>
+      </div>
     </div>
   )
 }
