@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack && node server",
     "dev": "nodemon --watch server & webpack --watch",
-    "test": "jest --watch --noStackTrace"
+    "test": "jest --watch --noStackTrace",
+    "postinstall": "webpack"
   },
   "description": "keep track of an athlete's nutrition during an event",
   "repository": "https://github.com/adam-kuhn/boilerplate.git",
