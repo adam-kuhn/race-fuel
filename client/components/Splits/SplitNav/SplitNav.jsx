@@ -7,15 +7,10 @@ const SplitNav = (props) => {
       <p className='split-info'>{errorMsg}</p>
       <div>
         <button type='button' onClick={nav} value={-1}
-          className="nav-btn">left
-          {/* <button type='button' onClick={nav} value={-1}
-          className="nav-btn far fa-3x fa-arrow-alt-circle-left"> */}
+          className="nav-btn far fa-3x fa-arrow-alt-circle-left">
         </button>
         <button type='button' onClick={nav} value={1}
-          className="nav-btn">
-          right
-          {/* <button type='button' onClick={nav} value={1}
-          className="nav-btn far fa-3x fa-arrow-alt-circle-right"> */}
+          className="nav-btn far fa-3x fa-arrow-alt-circle-right">
         </button>
       </div>
     </div>
