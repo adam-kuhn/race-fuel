@@ -11,7 +11,6 @@
     "start": "node server",
     "dev": "nodemon --watch server & webpack --watch",
     "test": "jest --watch --noStackTrace",
-    "build":  "webpack --config webpack.config.js",
     "postinstall": "webpack --config webpack.config.js"
   },
   "description": "keep track of an athlete's nutrition during an event",
