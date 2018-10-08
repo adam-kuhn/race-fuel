@@ -8,7 +8,7 @@ import FuelList from './List/FuelList'
 import LiveList from './LiveList/LiveList'
 import Lap from './Lap/Lap'
 import Select from './Select/Select'
-import Splits from './Splits/Splits'
+// import Splits from './Splits/Splits'
 import Totals from './Totals/Totals'
 
 class App extends React.Component {
