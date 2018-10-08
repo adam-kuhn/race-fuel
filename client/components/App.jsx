@@ -25,7 +25,7 @@ class App extends React.Component {
           <Route path="/RemainingFuel" component={LiveList} />
           <Route path="/LapDetails" component={Lap} />
           <Route path="/Totals" component={Totals} />
-          <Route path="/Splits" component={Splits} />
+          {/* <Route path="/Splits" component={Splits} /> */}
           {this.props.live && <HomeBtn />}
         </div>
       </Router>
