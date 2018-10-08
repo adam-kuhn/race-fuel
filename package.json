@@ -2,7 +2,8 @@
   "name": "race-fuel",
   "version": "1.0.0",
   "engines": {
-    "node": "8.9.4"
+    "node": "8.9.4",
+    "npm": "6.1.0" 
   },
   "main": "server/index.js",
   "scripts": {
@@ -45,7 +46,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.3",
     "nodemon": "^1.17.3",
-    "webpack": "^3.10.0",
+    "webpack": "^3.11.0",
     "webpack-dev-server": "^3.1.3"
   }
 }
