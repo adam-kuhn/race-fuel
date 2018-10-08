@@ -44,7 +44,7 @@ class Splits extends React.Component {
   render () {
     return (
       <div className='card width text-white bg-info mb-3'>
-        {/* <div className='card-header'>
+        <div className='card-header'>
           <h2>Split Component</h2>
         </div>
         <div className='card-body general-body'>
@@ -54,7 +54,7 @@ class Splits extends React.Component {
           <SplitNav
             errorMsg={this.state.errorMessage}
             nav={this.handleSplitNav}/>
-        </div> */}
+        </div>
         <p>hi</p>
       </div>
     )
