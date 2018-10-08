@@ -178,9 +178,13 @@
   }
 }
 @media (min-width: 500px) {
-  .center {
+  /* .center {
     width: 80%;
-  }
+  } */
+
+  /* .card-btn {
+    width: 100%;
+  } */
 
   .fuel-list {
     width: 80%;
