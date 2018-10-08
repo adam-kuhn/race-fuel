@@ -55,7 +55,6 @@ class Splits extends React.Component {
             errorMsg={this.state.errorMessage}
             nav={this.handleSplitNav}/>
         </div>
-        <p>hi</p>
       </div>
     )
   }
