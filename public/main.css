@@ -47,7 +47,7 @@
 
 .btn-select {
   margin: 3rem 10%;
-  box-shadow: 1px 1px 1px 0px #cad5dc;
+  box-shadow:1px 1px 1px 1px #223948;
 }
 
 .title {
@@ -178,10 +178,6 @@
   }
 }
 @media (min-width: 500px) {
-  .center {
-    width: 80%;
-  }
-
   .fuel-list {
     width: 80%;
   }
