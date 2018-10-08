@@ -8,7 +8,7 @@ import FuelList from './List/FuelList'
 import LiveList from './LiveList/LiveList'
 import Lap from './Lap/Lap'
 import Select from './Select/Select'
-import Splits from './Splits/Splits'
+// import Splits from './Splits/Splits'
 import Totals from './Totals/Totals'
 
 class App extends React.Component {
@@ -25,7 +25,7 @@ class App extends React.Component {
           <Route path="/RemainingFuel" component={LiveList} />
           <Route path="/LapDetails" component={Lap} />
           <Route path="/Totals" component={Totals} />
-          <Route path="/Splits" component={Splits} />
+          {/* <Route path="/Splits" component={Splits} /> */}
           {this.props.live && <HomeBtn />}
         </div>
       </Router>
