@@ -9,7 +9,7 @@
     "start": "webpack && node server",
     "dev": "nodemon --watch server & webpack --watch",
     "test": "jest --watch --noStackTrace",
-    "postinstall": "webpack"
+    "postinstall": "yarn webpack"
   },
   "description": "keep track of an athlete's nutrition during an event",
   "repository": "https://github.com/adam-kuhn/boilerplate.git",
@@ -25,7 +25,14 @@
   "dependencies": {
     "express": "^4.16.3",
     "chart.js": "^2.7.2",
-    "react-chartjs-2": "^2.7.4"
+    "react-chartjs-2": "^2.7.4",
+    "react": "^16.3.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "redux-persist": "^5.10.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -38,13 +45,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.3",
     "nodemon": "^1.17.3",
-    "react": "^16.3.2",
-    "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.3.2",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
-    "redux": "^4.0.0",
-    "redux-persist": "^5.10.0",
+
     "webpack": "^3.11.0",
     "webpack-dev-server": "^3.1.3"
   }
