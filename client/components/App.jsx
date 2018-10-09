@@ -17,7 +17,7 @@ class App extends React.Component {
       <Router>
         <div className='main-container'>
           <div className="center title">
-            <h2>Nutrition Tracker</h2>
+            <h2>Race Fuel</h2>
           </div>
           {this.props.live && this.props.nav && <Nav />}
           <Route exact path="/" component={Select} />
