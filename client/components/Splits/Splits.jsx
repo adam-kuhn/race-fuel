@@ -45,7 +45,7 @@ class Splits extends React.Component {
     return (
       <div className='card width text-white bg-info mb-3'>
         <div className='card-header'>
-          <h2>Split Component</h2>
+          <h2>Splits</h2>
         </div>
         <div className='card-body general-body'>
           <div>
