@@ -10,6 +10,8 @@ import Lap from './Lap/Lap'
 import Select from './Select/Select'
 import Splits from './Splits/Splits'
 import Totals from './Totals/Totals'
+import Login from './Login/Login'
+import Register from './Register/Register'
 
 class App extends React.Component {
   render () {
@@ -21,6 +23,8 @@ class App extends React.Component {
           </div>
           {this.props.live && this.props.nav && <Nav />}
           <Route exact path="/" component={Select} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/AddFuel/:list" component={FuelList} />
           <Route path="/RemainingFuel" component={LiveList} />
           <Route path="/LapDetails" component={Lap} />
