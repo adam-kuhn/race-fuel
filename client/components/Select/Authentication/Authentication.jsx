@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const Authentication = () => {
   return (
     <div>
-      <Link to='/login'>Existing User</Link>
+      <Link to='/auth/login'>Existing User</Link>
       <div>
         <p>Get an account and store passed races</p>
         <Link to='/register'>Register</Link>

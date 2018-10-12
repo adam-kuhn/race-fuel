@@ -13,6 +13,8 @@ import Totals from './Totals/Totals'
 import Login from './Login/Login'
 import Register from './Register/Register'
 
+import Auth from './Auth/Auth'
+
 class App extends React.Component {
   render () {
     return (
@@ -23,6 +25,7 @@ class App extends React.Component {
           </div>
           {this.props.live && this.props.nav && <Nav />}
           <Route exact path="/" component={Select} />
+          <Auth />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/AddFuel/:list" component={FuelList} />
