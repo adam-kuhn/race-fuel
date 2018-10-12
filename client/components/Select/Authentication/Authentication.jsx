@@ -7,7 +7,7 @@ const Authentication = () => {
       <Link to='/auth/login'>Existing User</Link>
       <div>
         <p>Get an account and store passed races</p>
-        <Link to='/register'>Register</Link>
+        <Link to='auth/register'>Register</Link>
       </div>
     </div>
   )
