@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
+import Authentication from '../Auth/Authentication/Authentication'
 import {standard, custom} from '../../actions/select'
 import {cleanApp} from '../../actions/reset'
 
@@ -32,6 +33,7 @@ class Select extends React.Component {
           <button type='button' className="btn btn-primary btn-select select"
             onClick={this.standard}>Standard List</button>
         </Link>
+        <Authentication />
       </div>
     )
   }
