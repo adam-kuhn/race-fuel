@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import DistanceSelect from '../Select/UnitSelect/DistanceSelect'
-import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+import DistanceSelect from '../UnitSelect/UnitSelect/DistanceSelect'
+import LitreMlSelect from '../UnitSelect/UnitSelect/LitreMlSelect'
 import Measurements from './Measurements/Measurements'
 
 import {nextLap} from '../../actions/fuelList'

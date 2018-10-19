@@ -6,7 +6,7 @@ import Authentication from '../Auth/Authentication/Authentication'
 import {standard, custom} from '../../actions/select'
 import {cleanApp} from '../../actions/reset'
 
-class Select extends React.Component {
+class LandingPage extends React.Component {
   constructor () {
     super()
     this.custom = this.custom.bind(this)
@@ -46,4 +46,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Select)
+export default connect(mapStateToProps)(LandingPage)

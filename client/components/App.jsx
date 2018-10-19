@@ -7,7 +7,7 @@ import HomeBtn from './HomeBtn/HomeBtn'
 import FuelList from './List/FuelList'
 import LiveList from './LiveList/LiveList'
 import Lap from './Lap/Lap'
-import Select from './Select/Select'
+import LandingPage from './LandingPage/LandingPage'
 import Splits from './Splits/Splits'
 import Totals from './Totals/Totals'
 
@@ -22,8 +22,7 @@ class App extends React.Component {
             <h2>Race Fuel</h2>
           </div>
           {this.props.live && this.props.nav && <Nav />}
-          <Route exact path="/" component={Select} />
-          {/* <Route exact path="/" component={Auth} /> */}
+          <Route exact path="/" component={LandingPage} />
           <Auth />
           <Route path="/AddFuel/:list" component={FuelList} />
           <Route path="/RemainingFuel" component={LiveList} />
