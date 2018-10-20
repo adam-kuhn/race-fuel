@@ -25,11 +25,4 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
-  return {
-    live: state.display.live,
-    nav: state.display.nav
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default connect()(App)

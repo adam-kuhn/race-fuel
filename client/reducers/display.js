@@ -1,29 +1,15 @@
 import {TOGGLE_UNITS, TOGGLE_WATER} from '../actions/toggle'
-import {NEXT_LAP, LIVE_APP, SETLIST, CLOSE_NAV} from '../actions/fuelList'
+import {NEXT_LAP} from '../actions/fuelList'
 import {CLEAN_APP} from '../actions/reset'
 
 const initialState = {
   disableSplitButton: true,
   km: true,
-  litre: true,
-  live: false,
-  nav: false
+  litre: true
 }
 
 function display (state = initialState, action) {
   switch (action.type) {
-    case (LIVE_APP): {
-      return {
-        ...state,
-        live: true
-      }
-    }
-    case (SETLIST): {
-      return {
-        ...state,
-        nav: true
-      }
-    }
     case (TOGGLE_UNITS): {
       return {
         ...state,
@@ -40,12 +26,6 @@ function display (state = initialState, action) {
       return {
         ...state,
         disableSplitButton: false
-      }
-    }
-    case (CLOSE_NAV): {
-      return {
-        ...state,
-        nav: false
       }
     }
     case (CLEAN_APP): {
