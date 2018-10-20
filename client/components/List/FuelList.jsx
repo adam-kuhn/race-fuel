@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import AddItem from './AddItem/AddItem'
-import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+import LitreMlSelect from '../UnitSelect/UnitSelect/LitreMlSelect'
 import FuelListItem from './FuelListItem/FuelListItem'
 
 import {setList, appIsLive} from '../../actions/fuelList'
