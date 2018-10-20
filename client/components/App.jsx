@@ -4,14 +4,10 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Nav from './Nav/Nav'
 import HomeBtn from './HomeBtn/HomeBtn'
-import FuelList from './List/FuelList'
-import LiveList from './LiveList/LiveList'
-import Lap from './Lap/Lap'
 import LandingPage from './LandingPage/LandingPage'
-import Splits from './Splits/Splits'
-import Totals from './Totals/Totals'
 
 import Auth from './Auth/Auth'
+import LiveApp from './LiveApp/LiveApp'
 
 class App extends React.Component {
   render () {
@@ -24,11 +20,7 @@ class App extends React.Component {
           {this.props.live && this.props.nav && <Nav />}
           <Route exact path="/" component={LandingPage} />
           <Auth />
-          <Route path="/AddFuel/:list" component={FuelList} />
-          <Route path="/RemainingFuel" component={LiveList} />
-          <Route path="/LapDetails" component={Lap} />
-          <Route path="/Totals" component={Totals} />
-          <Route path="/Splits" component={Splits} />
+          <LiveApp />
           {this.props.live && <HomeBtn />}
         </div>
       </Router>

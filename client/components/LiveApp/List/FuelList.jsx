@@ -6,7 +6,7 @@ import AddItem from './AddItem/AddItem'
 import LitreMlSelect from '../UnitSelect/UnitSelect/LitreMlSelect'
 import FuelListItem from './FuelListItem/FuelListItem'
 
-import {setList, appIsLive} from '../../actions/fuelList'
+import {setList, appIsLive} from '../../../actions/fuelList'
 
 class FuelList extends React.Component {
   constructor () {

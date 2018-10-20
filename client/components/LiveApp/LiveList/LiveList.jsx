@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import LitreMlSelect from '../UnitSelect/UnitSelect/LitreMlSelect'
-import {closeNav} from '../../actions/fuelList'
+import {closeNav} from '../../../actions/fuelList'
 
 class LiveList extends React.Component {
   constructor () {
