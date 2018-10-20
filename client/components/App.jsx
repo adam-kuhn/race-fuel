@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Nav from './Nav/Nav'
-import HomeBtn from './HomeBtn/HomeBtn'
+// import HomeBtn from './HomeBtn/HomeBtn'
 import LandingPage from './LandingPage/LandingPage'
 
 import Auth from './Auth/Auth'
@@ -21,7 +21,6 @@ class App extends React.Component {
           <Route exact path="/" component={LandingPage} />
           <Auth />
           <LiveApp />
-          {this.props.live && <HomeBtn />}
         </div>
       </Router>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
 
+import HomeBtn from './HomeBtn/HomeBtn'
 import FuelList from './List/FuelList'
 import LiveList from './LiveList/LiveList'
 import Lap from './Lap/Lap'
@@ -15,6 +16,7 @@ const LiveApp = () => {
       <Route path="/live/LapDetails" component={Lap} />
       <Route path="/live/Totals" component={Totals} />
       <Route path="/live/Splits" component={Splits} />
+      <Route path='/live' component={HomeBtn} />
     </div>
   )
 }
