@@ -2,8 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
-import Nav from './Nav/Nav'
-// import HomeBtn from './HomeBtn/HomeBtn'
 import LandingPage from './LandingPage/LandingPage'
 
 import Auth from './Auth/Auth'
@@ -17,7 +15,6 @@ class App extends React.Component {
           <div className="center title">
             <h2>Race Fuel</h2>
           </div>
-          {this.props.live && this.props.nav && <Nav />}
           <Route exact path="/" component={LandingPage} />
           <Auth />
           <LiveApp />
