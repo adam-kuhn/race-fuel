@@ -2,7 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import Authentication from '../Auth/Authentication/Authentication'
 import {standard, custom} from '../../actions/select'
 import {cleanApp} from '../../actions/reset'
 
@@ -33,8 +32,13 @@ class LandingPage extends React.Component {
           <button type='button' className="btn btn-primary btn-select select"
             onClick={this.standard}>Standard List</button>
         </Link>
-        <Authentication />
-      </div>
+        <div>
+          <Link to='/auth/login'>Existing User</Link>
+          <div>
+            <p>Get an account and store passed races</p>
+            <Link to='auth/register'>Register</Link>
+          </div>
+        </div>      </div>
     )
   }
 }
