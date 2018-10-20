@@ -6,13 +6,13 @@ import GoTo from './GoTo/GoTo'
 const Nav = (props) => {
   return (
     <div className='center nav'>
-      <GoTo route='/RemainingFuel'
+      <GoTo route='/live/RemainingFuel'
         text='Fuel List' />
-      <GoTo route='LapDetails'
+      <GoTo route='/live/LapDetails'
         text='Lap Details' />
-      <GoTo route='/Totals'
+      <GoTo route='/live/Totals'
         text='Totals' />
-      <GoTo route='/Splits'
+      <GoTo route='/live/Splits'
         text='Splits'
         disable={props.disableSplitButton} />
     </div>

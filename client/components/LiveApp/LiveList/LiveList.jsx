@@ -43,7 +43,7 @@ class LiveList extends React.Component {
             }
           })}
           <div className="center card-btn">
-            <Link to='/AddFuel/EditList'>
+            <Link to='/live/AddFuel/EditList'>
               <button type='button' className="btn btn-info"
                 onClick={this.handleClick}>
               Edit Fuel List</button>

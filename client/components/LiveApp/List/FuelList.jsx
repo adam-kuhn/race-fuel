@@ -71,7 +71,7 @@ class FuelList extends React.Component {
               }
             })}
             <div className="center">
-              <Link to={'/RemainingFuel'}>
+              <Link to='/live/RemainingFuel'>
                 <button type='button' className="btn btn-info"
                   onClick={this.closeList}>Submit Fuel List</button>
               </Link>
