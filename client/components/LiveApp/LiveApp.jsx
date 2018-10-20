@@ -10,11 +10,11 @@ import Totals from './Totals/Totals'
 const LiveApp = () => {
   return (
     <div>
-      <Route path="/AddFuel/:list" component={FuelList} />
-      <Route path="/RemainingFuel" component={LiveList} />
-      <Route path="/LapDetails" component={Lap} />
-      <Route path="/Totals" component={Totals} />
-      <Route path="/Splits" component={Splits} />
+      <Route path="/live/AddFuel/:list" component={FuelList} />
+      <Route path="/live/RemainingFuel" component={LiveList} />
+      <Route path="/live/LapDetails" component={Lap} />
+      <Route path="/live/Totals" component={Totals} />
+      <Route path="/live/Splits" component={Splits} />
     </div>
   )
 }

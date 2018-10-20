@@ -24,11 +24,11 @@ class LandingPage extends React.Component {
   render () {
     return (
       <div className="center">
-        <Link to='/AddFuel/Custom'>
+        <Link to='live/AddFuel/Custom'>
           <button type='button' className="btn btn-primary btn-select select"
             onClick={this.custom}>Custom List</button>
         </Link>
-        <Link to='/AddFuel/Standard'>
+        <Link to='live/AddFuel/Standard'>
           <button type='button' className="btn btn-primary btn-select select"
             onClick={this.standard}>Standard List</button>
         </Link>
