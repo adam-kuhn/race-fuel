@@ -10,8 +10,10 @@ const App = () => {
   return (
     <Router>
       <div>
-        <div className="center title">
-          <h2>Race Fuel</h2>
+        <div className='main-container'>
+          <div className="center title">
+            <h2>Race Fuel</h2>
+          </div>
         </div>
         <Route exact path="/" component={LandingPage} />
         <Auth />
