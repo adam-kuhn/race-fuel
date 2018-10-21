@@ -23,6 +23,12 @@ body {
   width: 80%;
 }
 
+.landing-vert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card-btn {
   width: 100%;
 }

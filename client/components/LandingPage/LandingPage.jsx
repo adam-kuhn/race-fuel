@@ -23,22 +23,25 @@ class LandingPage extends React.Component {
   }
   render () {
     return (
-      <div className="center">
-        <Link to='live/AddFuel/Custom'>
-          <button type='button' className="btn btn-primary btn-select select"
-            onClick={this.custom}>Custom List</button>
-        </Link>
-        <Link to='live/AddFuel/Standard'>
-          <button type='button' className="btn btn-primary btn-select select"
-            onClick={this.standard}>Standard List</button>
-        </Link>
+      <div className='landing-vert'>
+        <div className="center">
+          <Link to='live/AddFuel/Custom'>
+            <button type='button' className="btn btn-primary btn-select select"
+              onClick={this.custom}>Custom List</button>
+          </Link>
+          <Link to='live/AddFuel/Standard'>
+            <button type='button' className="btn btn-primary btn-select select"
+              onClick={this.standard}>Standard List</button>
+          </Link>
+        </div>
         <div>
           <Link to='/auth/login'>Existing User</Link>
           <div>
             <p>Get an account and store passed races</p>
             <Link to='auth/register'>Register</Link>
           </div>
-        </div>      </div>
+        </div>
+      </div>
     )
   }
 }
