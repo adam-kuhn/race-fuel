@@ -9,12 +9,14 @@ import LiveApp from './LiveApp/LiveApp'
 const App = () => {
   return (
     <Router>
-      <div className="center title">
-        <h2>Race Fuel</h2>
+      <div>
+        <div className="center title">
+          <h2>Race Fuel</h2>
+        </div>
+        <Route exact path="/" component={LandingPage} />
+        <Auth />
+        <LiveApp />
       </div>
-      <Route exact path="/" component={LandingPage} />
-      <Auth />
-      <LiveApp />
     </Router>
 
   )
