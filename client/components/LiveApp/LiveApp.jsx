@@ -11,7 +11,7 @@ import Nav from './Nav/Nav'
 
 const LiveApp = () => {
   return (
-    <div>
+    <div className='main-container'>
       <Switch>
         <Route path="/live/AddFuel/:list" component={FuelList} />
         <Route path="/live" component={Nav} />
