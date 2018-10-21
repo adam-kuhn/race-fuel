@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import AddItem from './AddItem/AddItem'
-import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
+import LitreMlSelect from '../UnitSelect/UnitSelect/LitreMlSelect'
 import FuelListItem from './FuelListItem/FuelListItem'
 
-import {setList, appIsLive} from '../../actions/fuelList'
+import {setList, appIsLive} from '../../../actions/fuelList'
 
 class FuelList extends React.Component {
   constructor () {
@@ -71,7 +71,7 @@ class FuelList extends React.Component {
               }
             })}
             <div className="center">
-              <Link to={'/RemainingFuel'}>
+              <Link to='/live/RemainingFuel'>
                 <button type='button' className="btn btn-info"
                   onClick={this.closeList}>Submit Fuel List</button>
               </Link>

@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {addItem} from '../../../actions/fuelList'
-import camelize from '../../../lib/camel'
+import {addItem} from '../../../../actions/fuelList'
+import camelize from '../../../../lib/camel'
 
 class AddItem extends React.Component {
   constructor () {

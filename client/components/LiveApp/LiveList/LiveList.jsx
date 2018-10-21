@@ -2,8 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import LitreMlSelect from '../Select/UnitSelect/LitreMlSelect'
-import {closeNav} from '../../actions/fuelList'
+import LitreMlSelect from '../UnitSelect/UnitSelect/LitreMlSelect'
+import {closeNav} from '../../../actions/fuelList'
 
 class LiveList extends React.Component {
   constructor () {
@@ -43,7 +43,7 @@ class LiveList extends React.Component {
             }
           })}
           <div className="center card-btn">
-            <Link to='/AddFuel/EditList'>
+            <Link to='/live/AddFuel/EditList'>
               <button type='button' className="btn btn-info"
                 onClick={this.handleClick}>
               Edit Fuel List</button>

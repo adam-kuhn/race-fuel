@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {deleteItem} from '../../../../actions/fuelList'
+import {deleteItem} from '../../../../../actions/fuelList'
 
 class DeleteItem extends React.Component {
   constructor (props) {
