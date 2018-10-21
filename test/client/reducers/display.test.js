@@ -3,9 +3,7 @@ import {CLEAN_APP} from '../../../client/actions/reset'
 const state = {
   disableSplitButton: true,
   km: true,
-  litre: true,
-  live: false,
-  nav: false
+  litre: true
 }
 
 test('display returns correct display on CLEAN_APP', () => {
@@ -16,12 +14,10 @@ test('display returns correct display on CLEAN_APP', () => {
   const actual = display(state, action)
   expect(actual.km).toBe(expected)
   expect(actual.litre).toBe(expected)
-  expect(actual.live).toBe(!expected)
-  expect(actual.nav).toBe(!expected)
 })
 
 test('display does NOT overwrite previous state CLEAN_APP', () => {
-  const expected = 5
+  const expected = 3
   const action = {
     type: CLEAN_APP
   }
@@ -38,5 +34,5 @@ test('returns state on default', () => {
   const actual = display(state, action)
   const keys = Object.keys(actual)
   expect(actual.km).toBe(expected)
-  expect(keys.length).toBe(5)
+  expect(keys.length).toBe(3)
 })
