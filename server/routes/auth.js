@@ -9,12 +9,9 @@ const register = (req, res) => {
   console.log(username)
   userDb.doesUserExist(username)
     .then(existStatus => {
-      if (existStatus) {
-        return res.status(400).send({message: 'User Exists'})
-      } else {
-        userDb.createUser(username, password)
+      existStatus ? res.status(400).send({message: 'User Exists'})
+        : userDb.createUser(username, password)
           .then(() => res.status(201).end())
-      }
     })
 }
 

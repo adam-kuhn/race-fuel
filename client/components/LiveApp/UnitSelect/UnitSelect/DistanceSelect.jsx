@@ -14,8 +14,8 @@ class DistanceSelect extends React.Component {
     request
       .post('/api/v1/auth')
       .set('Content-Type', 'application/json')
-      .send({username: 'test-user'})
-      .then(res => console.log(res.body.message))
+      .send({username: 'tecest-user', password: '2'})
+      .then(res => console.log(res))
       .catch(err => console.log('caught', err.response.body.message))
   }
   handleClick (e) {
