@@ -14,8 +14,9 @@ class DistanceSelect extends React.Component {
     request
       .post('/api/v1/auth')
       .set('Content-Type', 'application/json')
-      .send({junk: 'junk'})
-      .then(res => console.log(res))
+      .send({username: 'test-user'})
+      .then(res => console.log(res.body.message))
+      .catch(err => console.log('caught', err.response.body.message))
   }
   handleClick (e) {
     const {dispatch, totalDistance, measurements, updateKm} = this.props
