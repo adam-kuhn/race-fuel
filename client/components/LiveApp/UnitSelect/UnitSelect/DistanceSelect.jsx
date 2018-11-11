@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import request from 'superagent'
 
 import {changeUnits} from '../../../../actions/toggle'
 
@@ -8,15 +7,6 @@ class DistanceSelect extends React.Component {
   constructor () {
     super()
     this.handleClick = this.handleClick.bind(this)
-  }
-  componentDidMount () {
-    console.log('eb')
-    request
-      .post('/api/v1/auth')
-      .set('Content-Type', 'application/json')
-      .send({username: 'tecest-user', password: '2'})
-      .then(res => console.log(res))
-      .catch(err => console.log('caught', err.response.body.message))
   }
   handleClick (e) {
     const {dispatch, totalDistance, measurements, updateKm} = this.props
