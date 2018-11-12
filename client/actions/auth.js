@@ -21,7 +21,7 @@ export const registerUser = (dispatch) => {
     request
       .post('/api/v1/auth')
       .set('Content-Type', 'application/json')
-      .send({username: 'h', password: '2'})
+      .send({username: 'keep at it', password: '2'})
       .then(res => dispatch(registerSucess(res))
       )
       .catch(err => dispatch(registerError(err.response.body.message)))

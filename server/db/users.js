@@ -23,7 +23,16 @@ const doesUserExist = (username, testDb) => {
     })
 }
 
+const getUserByName = (username, testDb) => {
+  const db = testDb || knex
+  return db('users')
+    .select()
+    .where('username', username)
+    .first()
+}
+
 module.exports = {
   createUser,
-  doesUserExist
+  doesUserExist,
+  getUserByName
 }
