@@ -1,13 +1,15 @@
 const environment = process.env.NODE_END || 'development'
 const config = require('../../knexfile')[environment]
 const knex = require('knex')(config)
+const hash = require('../auth/hash')
 
 const createUser = (username, password, testDb) => {
+  const passwordHash = hash.generate(password)
   const db = testDb || knex
   return db('users')
     .insert({
       username,
-      hash: password
+      hash: passwordHash
     })
 }
 
