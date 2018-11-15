@@ -21,4 +21,20 @@ const register = (req, res, next) => {
 
 router.post('/', register, token.issue)
 
+const signIn = (req, res, next) => {
+  console.log(req.body.loginDetails)
+  // const loginDetails = req.body.loginDetails
+  userDb.getUserByName(req.body.loginDetails.username)
+    .then(user => {
+      console.log(user)
+      return user ? next() : res.send({message: 'error'})
+    })
+}
+
+router.post('/signin', signIn, token.issue)
+
+router.get('/', token.decode, (req, res) => {
+  res.json({username: req.user.username})
+})
+
 module.exports = router

@@ -16,7 +16,7 @@ export const registerError = (res) => {
     type: REGISTER_ERROR
   }
 }
-export const registerUser = (dispatch) => {
+export const registerUser = () => {
   return dispatch => {
     request
       .post('/api/v1/auth')
@@ -25,5 +25,15 @@ export const registerUser = (dispatch) => {
       .then(res => dispatch(registerSucess(res))
       )
       .catch(err => dispatch(registerError(err.response.body.message)))
+  }
+}
+
+export const requestLogin = (loginDetails) => {
+  return dispatch => {
+    request
+      .post('/api/v1/auth/signin')
+      .set('Content-Type', 'application/json')
+      .send(loginDetails)
+      .then(res => { console.log(res) })
   }
 }

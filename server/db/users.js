@@ -24,6 +24,7 @@ const doesUserExist = (username, testDb) => {
 }
 
 const getUserByName = (username, testDb) => {
+  console.log(username)
   const db = testDb || knex
   return db('users')
     .select()
