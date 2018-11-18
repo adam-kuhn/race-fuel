@@ -22,9 +22,9 @@ const register = (req, res, next) => {
 router.post('/', register, token.issue)
 
 const signIn = (req, res, next) => {
-  console.log(req.body.loginDetails)
+  console.log(req.body.username)
   // const loginDetails = req.body.loginDetails
-  userDb.getUserByName(req.body.loginDetails.username)
+  userDb.getUserByName(req.body.username)
     .then(user => {
       console.log(user)
       return user ? next() : res.send({message: 'error'})

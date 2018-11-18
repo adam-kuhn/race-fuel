@@ -9,20 +9,31 @@ import Splits from './Splits/Splits'
 import Totals from './Totals/Totals'
 import Nav from './Nav/Nav'
 
-const LiveApp = () => {
-  return (
-    <div className='main-container'>
-      <Switch>
-        <Route path="/live/AddFuel/:list" component={FuelList} />
-        <Route path="/live" component={Nav} />
-      </Switch>
-      <Route path="/live/RemainingFuel" component={LiveList} />
-      <Route path="/live/LapDetails" component={Lap} />
-      <Route path="/live/Totals" component={Totals} />
-      <Route path="/live/Splits" component={Splits} />
-      <Route path='/live' component={HomeBtn} />
-    </div>
-  )
+class LiveApp extends React.Component {
+  // componentDidMount () {
+  //   console.log(window.localStorage)
+  //   if (window.localStorage.getItem('token')) {
+  //     console.log('authenicated')
+  //   }
+  //   else {
+  //     console.log('no signed in')
+  //   }
+  // }
+  render () {
+    return (
+      <div className='main-container'>
+        <Switch>
+          <Route path="/live/AddFuel/:list" component={FuelList} />
+          <Route path="/live" component={Nav} />
+        </Switch>
+        <Route path="/live/RemainingFuel" component={LiveList} />
+        <Route path="/live/LapDetails" component={Lap} />
+        <Route path="/live/Totals" component={Totals} />
+        <Route path="/live/Splits" component={Splits} />
+        <Route path='/live' component={HomeBtn} />
+      </div>
+    )
+  }
 }
 
 export default LiveApp

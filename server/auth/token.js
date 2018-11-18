@@ -4,8 +4,8 @@ const verifyJwt = require('express-jwt')
 const db = require('../db/users')
 
 const issue = (req, res) => {
-  console.log('issuing')
-  db.getUserByName(req.body.loginDetails.username)
+  console.log('issuing', req.body.username)
+  db.getUserByName(req.body.username)
     .then(user => {
       const token = createToken(user, process.env.JWT_SECRET)
       res.json({
