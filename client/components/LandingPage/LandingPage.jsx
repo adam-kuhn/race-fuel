@@ -8,12 +8,24 @@ import {cleanApp} from '../../actions/reset'
 class LandingPage extends React.Component {
   constructor () {
     super()
+    this.state = {
+      loggedIn: false
+    }
     this.custom = this.custom.bind(this)
     this.standard = this.standard.bind(this)
   }
   componentDidMount () {
     const {dispatch, list, distanceTime} = this.props
     dispatch(cleanApp(list, distanceTime))
+    if (window.localStorage.getItem('token')) {
+      this.setState({
+        loggedIn: true
+      })
+    } else {
+      this.setState({
+        loggedIn: false
+      })
+    }
   }
   custom () {
     this.props.dispatch(custom())
@@ -39,6 +51,7 @@ class LandingPage extends React.Component {
           <div>
             <p>Get an account and store passed races</p>
             <Link to='auth/register'>Register</Link>
+            {this.state.loggedIn && <h3>LOGGED IN</h3>}
           </div>
         </div>
       </div>

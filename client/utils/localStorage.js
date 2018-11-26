@@ -7,5 +7,7 @@ export const get = (key) => {
 export const set = (key, value) => {
   if (value === null) {
     localStorage.removeItem(key)
+  } else {
+    localStorage.setItem(key, value)
   }
 }

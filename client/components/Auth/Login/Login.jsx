@@ -13,14 +13,6 @@ class Login extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
-  componentDidMount () {
-    console.log(window.localStorage)
-    if (window.localStorage.getItem('token')) {
-      console.log('authenicated')
-    } else {
-      console.log('no signed in')
-    }
-  }
 
   handleChange (e) {
     this.setState({
