@@ -1,21 +1,36 @@
 import request from 'superagent'
+import {saveUserToken} from '../utils/auth'
 
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
+export const RECIEVED_LOGIN = 'RECIEVED_LOGIN'
+export const LOGIN_ERROR = 'LOGIN_ERROR'
 
 export const registerSucess = (res) => {
-  console.log('res', res)
   return {
     type: REGISTER_SUCCESS
   }
 }
 
 export const registerError = (res) => {
-  console.log('error', res)
   return {
     type: REGISTER_ERROR
   }
 }
+
+const recieveLogin = (userInfo) => {
+  return {
+    type: RECIEVED_LOGIN,
+    userInfo
+  }
+}
+
+const loginError = () => {
+  return {
+    type: LOGIN_ERROR
+  }
+}
+
 export const registerUser = () => {
   return dispatch => {
     request
@@ -34,6 +49,14 @@ export const requestLogin = (loginDetails) => {
       .post('/api/v1/auth/signin')
       .set('Content-Type', 'application/json')
       .send(loginDetails)
-      .then(res => { console.log(res) })
+      .then(res => {
+        if (res.ok) {
+          const userInfo = saveUserToken(res.body.token)
+          dispatch(recieveLogin(userInfo))
+        }
+      })
+      .catch(() => {
+        dispatch(loginError())
+      })
   }
 }
