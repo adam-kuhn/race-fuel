@@ -1,4 +1,4 @@
-import {RECIEVED_LOGIN, ERROR_LOGIN} from '../actions/auth'
+import {RECIEVED_LOGIN, ERROR_LOGIN, LOGOUT} from '../actions/auth'
 
 const initialState = {
   loggedIn: false,
@@ -17,6 +17,13 @@ const authReducer = (state = initialState, action) => {
     case (ERROR_LOGIN): {
       return {
         error: true
+      }
+    }
+    case (LOGOUT): {
+      return {
+        loggedIn: false,
+        userInfo: {},
+        error: false
       }
     }
     default:
