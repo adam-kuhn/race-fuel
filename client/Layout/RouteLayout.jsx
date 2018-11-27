@@ -17,14 +17,14 @@ const RouteLayout = () => {
     <div className='main-container'>
       <Route exact path="/" component={LandingPage} />
       <Switch>
-        <Route path="/live/AddFuel/:list" component={FuelList} />
-        <Route path="/live" component={Nav} />
+        <Route path="/:username/live/AddFuel/:list" component={FuelList} />
+        <Route path="/:username/live" component={Nav} />
       </Switch>
-      <Route path="/live/RemainingFuel" component={LiveList} />
-      <Route path="/live/LapDetails" component={Lap} />
-      <Route path="/live/Totals" component={Totals} />
-      <Route path="/live/Splits" component={Splits} />
-      <Route path='/live' component={HomeBtn} />
+      <Route path="/:username/live/RemainingFuel" component={LiveList} />
+      <Route path="/:username/live/LapDetails" component={Lap} />
+      <Route path="/:username/live/Totals" component={Totals} />
+      <Route path="/:username/live/Splits" component={Splits} />
+      <Route path='/:username/live' component={HomeBtn} />
       <Route path='/auth/login' component={Login} />
       <Route path='/auth/register' component={Register} />
     </div>
