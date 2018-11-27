@@ -1,10 +1,8 @@
 import React from 'react'
-import {HashRouter as Router, Route} from 'react-router-dom'
-
-import LandingPage from './LandingPage/LandingPage'
+import {HashRouter as Router} from 'react-router-dom'
 
 import Auth from './Auth/Auth'
-import LiveApp from './LiveApp/LiveApp'
+import RouteLayout from '../Layout/RouteLayout'
 
 const App = () => {
   return (
@@ -15,9 +13,8 @@ const App = () => {
             <h2>Race Fuel</h2>
           </div>
         </div>
-        <Route exact path="/" component={LandingPage} />
+        <RouteLayout />
         <Auth />
-        <LiveApp />
       </div>
     </Router>
 
