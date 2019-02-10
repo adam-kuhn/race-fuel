@@ -10,12 +10,14 @@ const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case (RECIEVED_LOGIN): {
       return {
+        ...state,
         loggedIn: true,
         userInfo: action.userInfo
       }
     }
     case (ERROR_LOGIN): {
       return {
+        ...state,
         error: true
       }
     }
@@ -27,9 +29,7 @@ const authReducer = (state = initialState, action) => {
       }
     }
     default:
-      return {
-        state
-      }
+      return state
   }
 }
 
