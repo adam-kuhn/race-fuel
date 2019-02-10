@@ -37,11 +37,11 @@ class LandingPage extends React.Component {
     return (
       <div className='landing-vert'>
         <div className="center">
-          <Link to='/guest/live/AddFuel/Custom'>
+          <Link to={`/${this.props.user}/live/AddFuel/Custom`}>
             <button type='button' className="btn btn-primary btn-select select"
               onClick={this.custom}>Custom List</button>
           </Link>
-          <Link to='/guest/live/AddFuel/Standard'>
+          <Link to={`/${this.props.user}/live/AddFuel/Standard`}>
             <button type='button' className="btn btn-primary btn-select select"
               onClick={this.standard}>Standard List</button>
           </Link>
@@ -62,7 +62,8 @@ class LandingPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     list: state.fuelList.fuel,
-    distanceTime: state.distanceTime.measurements
+    distanceTime: state.distanceTime.measurements,
+    user: state.auth.userInfo.username ? state.auth.userInfo.username : 'guest'
   }
 }
 

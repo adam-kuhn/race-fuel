@@ -6,13 +6,13 @@ import GoTo from './GoTo/GoTo'
 const Nav = (props) => {
   return (
     <div className='center nav'>
-      <GoTo route='/guest/live/RemainingFuel'
+      <GoTo route={`/${props.user}/live/RemainingFuel`}
         text='Fuel List' />
-      <GoTo route='/guest/live/LapDetails'
+      <GoTo route={`/${props.user}/live/LapDetails`}
         text='Lap Details' />
-      <GoTo route='/guest/live/Totals'
+      <GoTo route={`/${props.user}/live/Totals`}
         text='Totals' />
-      <GoTo route='/guest/live/Splits'
+      <GoTo route={`/${props.user}/live/Splits`}
         text='Splits'
         disable={props.disableSplitButton} />
     </div>
@@ -21,7 +21,8 @@ const Nav = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    disableSplitButton: state.display.disableSplitButton
+    disableSplitButton: state.display.disableSplitButton,
+    user: state.auth.userInfo.username ? state.auth.userInfo.username : 'guest'
   }
 }
 export default connect(mapStateToProps)(Nav)
