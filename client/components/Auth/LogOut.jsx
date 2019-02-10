@@ -1,12 +1,15 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {removeUser} from '../../utils/auth'
+import {logOut} from '../../actions/auth'
 
 class LogOut extends React.Component {
   constructor () {
     super()
-    this.handeClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
   handleClick () {
+    this.props.dispatch(logOut())
     removeUser()
   }
   render () {
@@ -15,4 +18,4 @@ class LogOut extends React.Component {
     )
   }
 }
-export default LogOut
+export default connect()(LogOut)

@@ -1,4 +1,4 @@
-import {RECIEVED_LOGIN, ERROR_LOGIN, LOGOUT} from '../actions/auth'
+import {RECIEVED_LOGIN, ERROR_LOGIN, LOG_OUT} from '../actions/auth'
 
 const initialState = {
   loggedIn: false,
@@ -7,6 +7,7 @@ const initialState = {
 }
 
 const authReducer = (state = initialState, action) => {
+  console.log(action)
   switch (action.type) {
     case (RECIEVED_LOGIN): {
       return {
@@ -21,7 +22,8 @@ const authReducer = (state = initialState, action) => {
         error: true
       }
     }
-    case (LOGOUT): {
+    case (LOG_OUT): {
+      console.log('okkkkk')
       return {
         loggedIn: false,
         userInfo: {},

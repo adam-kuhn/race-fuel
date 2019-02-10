@@ -5,6 +5,7 @@ export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
 export const RECIEVED_LOGIN = 'RECIEVED_LOGIN'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
+export const LOG_OUT = 'LOG_OUT'
 
 export const registerSucess = (res) => {
   return {
@@ -22,6 +23,12 @@ const recieveLogin = (userInfo) => {
   return {
     type: RECIEVED_LOGIN,
     userInfo
+  }
+}
+
+export const logOut = () => {
+  return {
+    type: LOG_OUT
   }
 }
 
