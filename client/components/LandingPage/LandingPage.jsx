@@ -14,6 +14,7 @@ class LandingPage extends React.Component {
     this.custom = this.custom.bind(this)
     this.standard = this.standard.bind(this)
   }
+  // on log out need to clear store and get this to update correctly
   componentDidMount () {
     const {dispatch, list, distanceTime} = this.props
     dispatch(cleanApp(list, distanceTime))
@@ -51,7 +52,7 @@ class LandingPage extends React.Component {
           <div>
             <p>Get an account and store passed races</p>
             <Link to='auth/register'>Register</Link>
-            {this.state.loggedIn && <h3>LOGGED IN</h3>}
+            {this.props.storeLoggedIn && <h3>LOGGED IN</h3>}
           </div>
         </div>
       </div>
@@ -63,7 +64,8 @@ const mapStateToProps = (state) => {
   return {
     list: state.fuelList.fuel,
     distanceTime: state.distanceTime.measurements,
-    user: state.auth.userInfo.username ? state.auth.userInfo.username : 'guest'
+    user: state.auth.userInfo.username ? state.auth.userInfo.username : 'guest',
+    storeLoggedIn: state.auth.loggedIn
   }
 }
 

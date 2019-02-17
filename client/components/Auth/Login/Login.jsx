@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router'
 
 import {requestLogin} from '../../../actions/auth'
 
@@ -22,6 +23,7 @@ class Login extends React.Component {
 
   handleClick () {
     this.props.dispatch(requestLogin(this.state))
+    // this.props.history.push('/')
     console.log(this.state)
   }
   render () {

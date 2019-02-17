@@ -13,6 +13,7 @@ let store = createStore(reducers, compose(applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f))
 
 let persistor = persistStore(store)
+// persistor.purge()
 
 document.addEventListener('DOMContentLoaded', () => {
   render(

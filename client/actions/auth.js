@@ -1,6 +1,5 @@
 import request from 'superagent'
 import {saveUserToken} from '../utils/auth'
-
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
 export const RECIEVED_LOGIN = 'RECIEVED_LOGIN'
