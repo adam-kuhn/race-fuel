@@ -1,10 +1,10 @@
 import React from 'react'
 import {HashRouter as Router} from 'react-router-dom'
 
-import Auth from './Auth/Auth'
+import LogOut from './Auth/LogOut/LogOut'
 import RouteLayout from '../Layout/RouteLayout'
 
-const App = () => {
+const App = (props) => {
   return (
     <Router>
       <div>
@@ -14,7 +14,7 @@ const App = () => {
           </div>
         </div>
         <RouteLayout />
-        <Auth />
+        <LogOut />
       </div>
     </Router>
 
