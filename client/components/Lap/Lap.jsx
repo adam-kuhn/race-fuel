@@ -43,29 +43,35 @@ class Lap extends React.Component {
     this.setState(resetStateWithError)
   }
 
+  updateLapFuelItem (e, itemCalories) {
+    const {value, name} = e.target
+    const lapFuelItems = this.state.fuel
+    const fuelItemValue = lapFuelItems[name] ? lapFuelItems[name].value : 0
+    const difference = value - fuelItemValue
+    const itemText = e.target.getAttribute('data-text') || 'false'
+    const caloriesEaten = (itemCalories * difference) + lapFuelItems.calories.value
+    this.setState({
+      fuel: {
+        ...this.state.fuel,
+        [name]: {
+          value,
+          text: itemText
+        },
+        calories: {
+          value: caloriesEaten
+        }
+      },
+      wrongInput: false
+    })
+  }
+
   handleChange (e) {
     const {value, name} = e.target
     const itemCalories = e.target.getAttribute('data-cal')
     if (isNaN(value)) {
       this.setWrongInputError(name, itemCalories)
     } else {
-      const difference = value - (this.state.fuel[name]
-        ? this.state.fuel[name].value : 0)
-      const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories.value)
-      const itemText = (e.target.getAttribute('data-text') || 'false')
-      this.setState({
-        fuel: {
-          ...this.state.fuel,
-          [name]: {
-            value: value,
-            text: itemText
-          },
-          calories: {
-            value: caloriesEaten
-          }
-        },
-        wrongInput: false
-      })
+      this.updateLapFuelItem(e, itemCalories)
     }
   }
 
