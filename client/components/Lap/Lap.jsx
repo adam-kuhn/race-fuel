@@ -45,11 +45,8 @@ class Lap extends React.Component {
       wrongInput: true
     }
     if (categoryName !== 'time' || categoryName !== 'distance') {
-      const lapFuelItems = this.state.fuel
-      const amountOfCaloriesForThisItem = itemCalories * (lapFuelItems[categoryName]
-        ? lapFuelItems[categoryName].value : 0)
-      const previousCalorieValue = lapFuelItems.calories.value - amountOfCaloriesForThisItem
-      resetStateWithError.fuel.calories.value = previousCalorieValue || 0
+      const previousCalorieValue = this.resetCalories(categoryName, itemCalories)
+      resetStateWithError.fuel.calories.value = previousCalorieValue
     }
     this.setState(resetStateWithError)
   }
@@ -74,6 +71,14 @@ class Lap extends React.Component {
       },
       wrongInput: false
     })
+  }
+
+  resetCalories (categoryName, itemCalories) {
+    const lapFuelItems = this.state.fuel
+    const amountOfCaloriesForThisItem = itemCalories * (lapFuelItems[categoryName]
+      ? lapFuelItems[categoryName].value : 0)
+    const previousCalorieValue = lapFuelItems.calories.value - amountOfCaloriesForThisItem
+    return previousCalorieValue
   }
 
   submitLap () {
