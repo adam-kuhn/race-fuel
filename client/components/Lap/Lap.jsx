@@ -24,6 +24,16 @@ class Lap extends React.Component {
     this.updateKm = this.updateKm.bind(this)
   }
 
+  handleChange (e) {
+    const {value, name} = e.target
+    const itemCalories = e.target.getAttribute('data-cal')
+    if (isNaN(value)) {
+      this.setWrongInputError(name, itemCalories)
+    } else {
+      this.updateLapFuelItem(e, itemCalories)
+    }
+  }
+
   setWrongInputError (categoryName, itemCalories) {
     const resetStateWithError = {
       fuel: {
@@ -35,9 +45,10 @@ class Lap extends React.Component {
       wrongInput: true
     }
     if (categoryName !== 'time' || categoryName !== 'distance') {
-      const lowerCals = this.state.fuel.calories.value -
-      (itemCalories * (this.state.fuel[categoryName]
-        ? this.state.fuel[categoryName].value : 0))
+      const lapFuelItems = this.state.fuel
+      const amountOfCaloriesForThisItem = itemCalories * (lapFuelItems[categoryName]
+        ? lapFuelItems[categoryName].value : 0)
+      const lowerCals = lapFuelItems.calories.value - amountOfCaloriesForThisItem
       resetStateWithError.fuel.calories.value = lowerCals || 0
     }
     this.setState(resetStateWithError)
@@ -63,16 +74,6 @@ class Lap extends React.Component {
       },
       wrongInput: false
     })
-  }
-
-  handleChange (e) {
-    const {value, name} = e.target
-    const itemCalories = e.target.getAttribute('data-cal')
-    if (isNaN(value)) {
-      this.setWrongInputError(name, itemCalories)
-    } else {
-      this.updateLapFuelItem(e, itemCalories)
-    }
   }
 
   submitLap () {
