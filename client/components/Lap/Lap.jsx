@@ -48,8 +48,8 @@ class Lap extends React.Component {
       const lapFuelItems = this.state.fuel
       const amountOfCaloriesForThisItem = itemCalories * (lapFuelItems[categoryName]
         ? lapFuelItems[categoryName].value : 0)
-      const lowerCals = lapFuelItems.calories.value - amountOfCaloriesForThisItem
-      resetStateWithError.fuel.calories.value = lowerCals || 0
+      const previousCalorieValue = lapFuelItems.calories.value - amountOfCaloriesForThisItem
+      resetStateWithError.fuel.calories.value = previousCalorieValue || 0
     }
     this.setState(resetStateWithError)
   }
@@ -58,12 +58,12 @@ class Lap extends React.Component {
     const {value, name} = e.target
     const lapFuelItems = this.state.fuel
     const fuelItemValue = lapFuelItems[name] ? lapFuelItems[name].value : 0
-    const difference = value - fuelItemValue
+    const numberOfItemsAdded = value - fuelItemValue
     const itemText = e.target.getAttribute('data-text') || 'false'
-    const caloriesEaten = (itemCalories * difference) + lapFuelItems.calories.value
+    const caloriesEaten = (itemCalories * numberOfItemsAdded) + lapFuelItems.calories.value
     this.setState({
       fuel: {
-        ...this.state.fuel,
+        ...lapFuelItems,
         [name]: {
           value,
           text: itemText
