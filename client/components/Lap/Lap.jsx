@@ -45,8 +45,7 @@ class Lap extends React.Component {
       wrongInput: true
     }
     if (categoryName !== 'time' || categoryName !== 'distance') {
-      const previousCalorieValue = this.resetCalories(categoryName, itemCalories)
-      resetStateWithError.fuel.calories.value = previousCalorieValue
+      resetStateWithError.fuel.calories.value = this.resetCalories(categoryName, itemCalories)
     }
     this.setState(resetStateWithError)
   }
