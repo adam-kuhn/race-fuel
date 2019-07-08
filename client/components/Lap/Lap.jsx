@@ -108,13 +108,6 @@ class Lap extends React.Component {
       wrongInput: false
     })
   }
-  // submitLap, submits a lap presumable lap data
-  // takes "lap", from props (redux)
-  // takes previous state from component
-  // creates a new value, just the value from lap fuel
-  // if item is a unit of time. add time to lapValues object
-  // if not set lapValue.item to the values from old State, plus this.props.lap
-  // then dispatch action with values and update state
 
   updateWater (litre) {
     const currentFuelState = this.state.fuel
