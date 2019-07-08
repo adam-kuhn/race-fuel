@@ -23,47 +23,41 @@ class Lap extends React.Component {
     this.updateWater = this.updateWater.bind(this)
     this.updateKm = this.updateKm.bind(this)
   }
+
+  setWrongInputError (categoryName, itemCalories) {
+    const resetStateWithError = {
+      fuel: {
+        ...this.state.fuel,
+        [categoryName]: {
+          value: ''
+        }
+      },
+      wrongInput: true
+    }
+    if (categoryName !== 'time' || categoryName !== 'distance') {
+      const lowerCals = this.state.fuel.calories.value -
+      (itemCalories * (this.state.fuel[categoryName]
+        ? this.state.fuel[categoryName].value : 0))
+      resetStateWithError.fuel.calories.value = lowerCals || 0
+    }
+    this.setState(resetStateWithError)
+  }
+
   handleChange (e) {
-    const newValue = Number(e.target.value)
+    const {value, name} = e.target
     const itemCalories = e.target.getAttribute('data-cal')
-    if (!(newValue + 1)) {
-      if (e.target.name === 'time' || e.target.name === 'distance') {
-        this.setState({
-          fuel: {
-            ...this.state.fuel,
-            [e.target.name]: {
-              value: ''
-            }
-          },
-          wrongInput: true
-        })
-      } else {
-        const lowerCals = this.state.fuel.calories.value -
-        (itemCalories * (this.state.fuel[e.target.name]
-          ? this.state.fuel[e.target.name].value : 0))
-        this.setState({
-          fuel: {
-            ...this.state.fuel,
-            [e.target.name]: {
-              value: ''
-            },
-            calories: {
-              value: lowerCals || 0
-            }
-          },
-          wrongInput: true
-        })
-      }
+    if (isNaN(value)) {
+      this.setWrongInputError(name, itemCalories)
     } else {
-      const difference = e.target.value - (this.state.fuel[e.target.name]
-        ? this.state.fuel[e.target.name].value : 0)
+      const difference = value - (this.state.fuel[name]
+        ? this.state.fuel[name].value : 0)
       const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories.value)
       const itemText = (e.target.getAttribute('data-text') || 'false')
       this.setState({
         fuel: {
           ...this.state.fuel,
-          [e.target.name]: {
-            value: e.target.value,
+          [name]: {
+            value: value,
             text: itemText
           },
           calories: {
@@ -102,6 +96,13 @@ class Lap extends React.Component {
       wrongInput: false
     })
   }
+  // submitLap, submits a lap presumable lap data
+  // takes "lap", from props (redux)
+  // takes previous state from component
+  // creates a new value, just the value from lap fuel
+  // if item is a unit of time. add time to lapValues object
+  // if not set lapValue.item to the values from old State, plus this.props.lap
+  // then dispatch action with values and update state
 
   updateWater (litre) {
     const currentFuelState = this.state.fuel
