@@ -23,56 +23,61 @@ class Lap extends React.Component {
     this.updateWater = this.updateWater.bind(this)
     this.updateKm = this.updateKm.bind(this)
   }
+
   handleChange (e) {
-    const newValue = Number(e.target.value)
+    const {value, name} = e.target
     const itemCalories = e.target.getAttribute('data-cal')
-    if (!(newValue + 1)) {
-      if (e.target.name === 'time' || e.target.name === 'distance') {
-        this.setState({
-          fuel: {
-            ...this.state.fuel,
-            [e.target.name]: {
-              value: ''
-            }
-          },
-          wrongInput: true
-        })
-      } else {
-        const lowerCals = this.state.fuel.calories.value -
-        (itemCalories * (this.state.fuel[e.target.name]
-          ? this.state.fuel[e.target.name].value : 0))
-        this.setState({
-          fuel: {
-            ...this.state.fuel,
-            [e.target.name]: {
-              value: ''
-            },
-            calories: {
-              value: lowerCals || 0
-            }
-          },
-          wrongInput: true
-        })
-      }
+    if (isNaN(value)) {
+      this.setWrongInputError(name, itemCalories)
     } else {
-      const difference = e.target.value - (this.state.fuel[e.target.name]
-        ? this.state.fuel[e.target.name].value : 0)
-      const caloriesEaten = ((itemCalories * difference) + this.state.fuel.calories.value)
-      const itemText = (e.target.getAttribute('data-text') || 'false')
-      this.setState({
-        fuel: {
-          ...this.state.fuel,
-          [e.target.name]: {
-            value: e.target.value,
-            text: itemText
-          },
-          calories: {
-            value: caloriesEaten
-          }
-        },
-        wrongInput: false
-      })
+      this.updateLapFuelItem(e, itemCalories)
     }
+  }
+
+  setWrongInputError (categoryName, itemCalories) {
+    const resetStateWithError = {
+      fuel: {
+        ...this.state.fuel,
+        [categoryName]: {
+          value: ''
+        }
+      },
+      wrongInput: true
+    }
+    if (categoryName !== 'time' || categoryName !== 'distance') {
+      resetStateWithError.fuel.calories.value = this.resetCalories(categoryName, itemCalories)
+    }
+    this.setState(resetStateWithError)
+  }
+
+  updateLapFuelItem (e, itemCalories) {
+    const {value, name} = e.target
+    const lapFuelItems = this.state.fuel
+    const fuelItemValue = lapFuelItems[name] ? lapFuelItems[name].value : 0
+    const numberOfItemsAdded = value - fuelItemValue
+    const itemText = e.target.getAttribute('data-text') || 'false'
+    const caloriesEaten = (itemCalories * numberOfItemsAdded) + lapFuelItems.calories.value
+    this.setState({
+      fuel: {
+        ...lapFuelItems,
+        [name]: {
+          value,
+          text: itemText
+        },
+        calories: {
+          value: caloriesEaten
+        }
+      },
+      wrongInput: false
+    })
+  }
+
+  resetCalories (categoryName, itemCalories) {
+    const lapFuelItems = this.state.fuel
+    const amountOfCaloriesForThisItem = itemCalories * (lapFuelItems[categoryName]
+      ? lapFuelItems[categoryName].value : 0)
+    const previousCalorieValue = lapFuelItems.calories.value - amountOfCaloriesForThisItem
+    return previousCalorieValue
   }
 
   submitLap () {
