@@ -5,13 +5,42 @@ class UserDetails extends React.Component {
     super(props)
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      usernameInputError: false,
+      passwordInputError: false
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this)
+    this.handleUsernameInputChange = this.handleUsernameInputChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleChange (e) {
+  handleUsernameInputChange (e) {
+    // TODO: handle input error backend too
+    if (e.target.value.match(/[^A-Za-z0-9-_]+/g)) {
+      this.setState({
+        usernameInputError: true
+      })
+    } else {
+      this.setState({
+        usernameInputError: false
+      })
+    }
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handlePasswordInputChange (e) {
+    // TODO: handle input error backend too
+    if (e.target.value.match(/[<>]+/g)) {
+      this.setState({
+        passwordInputError: true
+      })
+    } else {
+      this.setState({
+        passwordInputError: false
+      })
+    }
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -20,13 +49,20 @@ class UserDetails extends React.Component {
     this.props.submitUserInfo(this.state)
   }
   render () {
+    const {passwordInputError, usernameInputError} = this.state
     return (
       <div>
-        <label>Username: </label>
-        <input name='username' type="text" onChange={this.handleChange}/>
-        <label>Password:</label>
-        <input name='password' type="text" onChange={this.handleChange}/>
-        <button onClick={this.handleClick}>{this.props.submitType}</button>
+        <div>
+          <label>Username: </label>
+          <input name='username' type="text" onChange={this.handleUsernameInputChange}/>
+          {usernameInputError && <p>Input Error! Please no special characters or spaces</p>}
+          <label>Password:</label>
+          <input name='password' type="text" onChange={this.handlePasswordInputChange}/>
+          {passwordInputError && <p>Input Error! Invalid character</p>}
+        </div>
+        <button onClick={this.handleClick} disabled={passwordInputError || usernameInputError}>
+          {this.props.submitType}
+        </button>
       </div>
     )
   }
