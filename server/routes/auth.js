@@ -1,13 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const crypto = require('../auth/hash')
 
 const userDb = require('../db/users')
 const token = require('../auth/token')
 
 const register = (req, res, next) => {
-  console.log('here')
   const {username, password} = req.body
-  console.log(username)
   userDb.doesUserExist(username)
     .then(existStatus => {
       existStatus ? res.status(400).send({message: 'User Exists'})
@@ -22,12 +21,14 @@ const register = (req, res, next) => {
 router.post('/', register, token.issue)
 
 const signIn = (req, res, next) => {
-  console.log(req.body.username)
-  // const loginDetails = req.body.loginDetails
   userDb.getUserByName(req.body.username)
     .then(user => {
-      console.log(user)
-      return user ? next() : res.send({message: 'error'})
+      return crypto.verifyUser(user.hash, req.body.password) ? next() : res.send({message: 'error'})
+    })
+    .catch(() => {
+      res.status(400).send({
+        errorType: 'SIGNIN_ERROR'
+      })
     })
 }
 
