@@ -1,34 +1,22 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import UserDetails from '../../UserDetails/UserDetail'
 import {requestLogin} from '../../../actions/auth'
 
 class Login extends React.Component {
   constructor () {
     super()
-    this.state = {
-      username: '',
-      password: ''
-    }
-    this.handleClick = this.handleClick.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+    this.submitUserInfoForLogin = this.submitUserInfoForLogin.bind(this)
   }
 
-  handleChange (e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
-
-  handleClick () {
-    this.props.dispatch(requestLogin(this.state))
-    console.log(this.state)
+  submitUserInfoForLogin (userInfo) {
+    this.props.dispatch(requestLogin(userInfo))
   }
   render () {
     return (
       <div>
-        <label>Username: <input name='username' type="text" onChange={this.handleChange}/></label>
-        <label>Password: <input name='password' type="text" onChange={this.handleChange}/></label>
-        <button onClick={this.handleClick}>Login</button>
+        <p>Login Component</p>
+        <UserDetails submitUserInfo={this.submitUserInfoForLogin} submitType="Login" />
       </div>
     )
   }
