@@ -6,16 +6,18 @@ class UserDetails extends React.Component {
     this.state = {
       username: '',
       password: '',
+      confirmPassword: '',
       usernameInputError: false,
-      passwordInputError: false
+      passwordInputError: false,
+      confirmPasswordError: false
     }
     this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this)
     this.handleUsernameInputChange = this.handleUsernameInputChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.handleConfirmPasswordInputChange = this.handleConfirmPasswordInputChange.bind(this)
   }
 
   handleUsernameInputChange (e) {
-    // TODO: handle input error backend too
     if (e.target.value.match(/[^A-Za-z0-9-_]+/g)) {
       this.setState({
         usernameInputError: true
@@ -45,10 +47,28 @@ class UserDetails extends React.Component {
     })
   }
   handleClick () {
-    this.props.submitUserInfo(this.state)
+    if (this.props.submitType === 'Register') {
+      if (this.state.password === this.state.confirmPassword) {
+        this.props.submitUserInfo(this.state)
+        this.setState({
+          confirmPasswordError: false
+        })
+      } else {
+        this.setState({
+          confirmPasswordError: true
+        })
+      }
+    } else {
+      this.props.submitUserInfo(this.state)
+    }
+  }
+  handleConfirmPasswordInputChange (e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
   }
   render () {
-    const {passwordInputError, usernameInputError} = this.state
+    const {passwordInputError, usernameInputError, confirmPasswordError} = this.state
     return (
       <div>
         <div>
@@ -58,6 +78,9 @@ class UserDetails extends React.Component {
           <label>Password:</label>
           <input name='password' type="text" onChange={this.handlePasswordInputChange}/>
           {passwordInputError && <p>Input Error! Invalid character.</p>}
+          <label htmlFor='confrim-password'>Confirm Password</label>
+          <input name='confirmPassword' type="text" onChange={this.handleConfirmPasswordInputChange}/>
+          {confirmPasswordError && <p>Passwords do not match</p>}
         </div>
         <button onClick={this.handleClick} disabled={passwordInputError || usernameInputError}>
           {this.props.submitType}

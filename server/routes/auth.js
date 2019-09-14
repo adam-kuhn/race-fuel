@@ -26,7 +26,7 @@ const signIn = (req, res, next) => {
       return crypto.verifyUser(user.hash, req.body.password) ? next() : res.send({message: 'error'})
     })
     .catch(() => {
-      res.status(400).send({
+      res.status(409).send({
         errorType: 'SIGNIN_ERROR'
       })
     })
