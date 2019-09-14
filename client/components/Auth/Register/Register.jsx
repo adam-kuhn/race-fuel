@@ -3,12 +3,16 @@ import {connect} from 'react-redux'
 
 import UserDetails from '../../UserDetails/UserDetail'
 
-import {registerUser} from '../../../actions/auth'
+import {registerUser, clearRegisterUserErrorMessage} from '../../../actions/auth'
 
 class Register extends React.Component {
   constructor () {
     super()
     this.submitUserInfoForRegistration = this.submitUserInfoForRegistration.bind(this)
+  }
+
+  componentDidMount () {
+    this.props.dispatch((clearRegisterUserErrorMessage()))
   }
 
   submitUserInfoForRegistration (userInfo) {
