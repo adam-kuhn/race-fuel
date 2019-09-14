@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import UserDetails from '../../UserDetails/UserDetail'
 
-import {registerUser, clearRegisterUserErrorMessage} from '../../../actions/auth'
+import {registerUser, clearErrorMessage} from '../../../actions/auth'
 
 class Register extends React.Component {
   constructor () {
@@ -12,7 +12,7 @@ class Register extends React.Component {
   }
 
   componentDidMount () {
-    this.props.dispatch((clearRegisterUserErrorMessage()))
+    this.props.dispatch((clearErrorMessage()))
   }
 
   submitUserInfoForRegistration (userInfo) {

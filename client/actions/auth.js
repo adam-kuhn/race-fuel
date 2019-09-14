@@ -5,7 +5,7 @@ export const REGISTER_ERROR = 'REGISTER_ERROR'
 export const RECIEVED_LOGIN = 'RECIEVED_LOGIN'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
 export const LOG_OUT = 'LOG_OUT'
-export const RESET_REGISTER_USER_ERROR = 'RESET_REGISTER_USER_ERROR'
+export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
 
 const recieveLogin = (userInfo) => {
   history.push('/')
@@ -27,9 +27,9 @@ const loginError = () => {
   }
 }
 
-export const clearRegisterUserErrorMessage = () => {
+export const clearErrorMessage = () => {
   return {
-    type: RESET_REGISTER_USER_ERROR
+    type: RESET_ERROR_MESSAGE
   }
 }
 

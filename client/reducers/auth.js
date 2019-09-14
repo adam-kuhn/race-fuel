@@ -1,4 +1,4 @@
-import {RECIEVED_LOGIN, LOGIN_ERROR, LOG_OUT, RESET_REGISTER_USER_ERROR} from '../actions/auth'
+import {RECIEVED_LOGIN, LOGIN_ERROR, LOG_OUT, RESET_ERROR_MESSAGE} from '../actions/auth'
 
 const initialState = {
   loggedIn: false,
@@ -22,7 +22,7 @@ const authReducer = (state = initialState, action) => {
         error: true
       }
     }
-    case (RESET_REGISTER_USER_ERROR): {
+    case (RESET_ERROR_MESSAGE): {
       return {
         ...state,
         error: false
