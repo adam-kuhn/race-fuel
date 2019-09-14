@@ -6,12 +6,6 @@ export const RECIEVED_LOGIN = 'RECIEVED_LOGIN'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
 export const LOG_OUT = 'LOG_OUT'
 
-export const registerError = (res) => {
-  return {
-    type: REGISTER_ERROR
-  }
-}
-
 const recieveLogin = (userInfo) => {
   history.push('/')
   return {
@@ -39,7 +33,8 @@ export const registerUser = (registrationInfo) => {
       .set('Content-Type', 'application/json')
       .send({username: registrationInfo.username, password: registrationInfo.password})
       .then(res => dispatch(recieveLogin(res)))
-      .catch(err => dispatch(registerError(err.response.body.message)))
+      .catch(() => dispatch(loginError())
+      )
   }
 }
 

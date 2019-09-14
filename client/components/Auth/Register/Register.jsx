@@ -19,9 +19,11 @@ class Register extends React.Component {
       <div>
         <p>Register comp</p>
         <UserDetails submitUserInfo={this.submitUserInfoForRegistration} submitType="Register" />
+        {this.props.error && <p>Sorry but this user already exists</p>}
       </div>
     )
   }
 }
 
-export default connect()(Register)
+const mapStateToProps = ({auth}) => ({error: auth.error})
+export default connect(mapStateToProps)(Register)
