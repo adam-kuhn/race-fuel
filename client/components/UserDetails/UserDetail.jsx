@@ -31,8 +31,7 @@ class UserDetails extends React.Component {
   }
 
   handlePasswordInputChange (e) {
-    // TODO: handle input error backend too
-    if (e.target.value.match(/[<>]+/g)) {
+    if (e.target.value.match(/[<>]+/g) || e.target.value.indexOf('%3') >= 0) {
       this.setState({
         passwordInputError: true
       })
@@ -58,7 +57,7 @@ class UserDetails extends React.Component {
           {usernameInputError && <p>Input Error! Please no special characters or spaces</p>}
           <label>Password:</label>
           <input name='password' type="text" onChange={this.handlePasswordInputChange}/>
-          {passwordInputError && <p>Input Error! Invalid character</p>}
+          {passwordInputError && <p>Input Error! Invalid character.</p>}
         </div>
         <button onClick={this.handleClick} disabled={passwordInputError || usernameInputError}>
           {this.props.submitType}
