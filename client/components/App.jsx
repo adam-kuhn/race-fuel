@@ -6,7 +6,7 @@ import LogOut from './Auth/LogOut/LogOut'
 import RouteLayout from '../Layout/RouteLayout'
 
 const App = (props) => {
-  const subTitle = props.userName ? props.userName : 'Guest User'
+  const subTitle = props.username ? props.username : 'Guest User'
   return (
     <Router>
       <div>
