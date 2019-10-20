@@ -5,6 +5,7 @@ import fuelList from './fuelList'
 import display from './display'
 import distanceTime from './distanceTime'
 import splits from './splits'
+import auth from './auth'
 
 const rootPersistConfig = {
   key: 'root',
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   display,
   fuelList,
   distanceTime,
-  splits
+  splits,
+  auth
 })
 
 export default persistReducer(rootPersistConfig, rootReducer)

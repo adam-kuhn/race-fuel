@@ -1,44 +1,29 @@
 import React from 'react'
+import {HashRouter as Router} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {HashRouter as Router, Route} from 'react-router-dom'
 
-import Nav from './Nav/Nav'
-import HomeBtn from './HomeBtn/HomeBtn'
-import FuelList from './List/FuelList'
-import LiveList from './LiveList/LiveList'
-import Lap from './Lap/Lap'
-import Select from './Select/Select'
-import Splits from './Splits/Splits'
-import Totals from './Totals/Totals'
+import LogOut from './Auth/LogOut/LogOut'
+import RouteLayout from '../Layout/RouteLayout'
 
-class App extends React.Component {
-  render () {
-    return (
-      <Router>
+const App = (props) => {
+  const subTitle = props.username ? props.username : 'Guest User'
+  return (
+    <Router>
+      <div>
         <div className='main-container'>
           <div className="center title">
             <h2>Race Fuel</h2>
+            <h5>{subTitle}</h5>
           </div>
-          {this.props.live && this.props.nav && <Nav />}
-          <Route exact path="/" component={Select} />
-          <Route path="/AddFuel/:list" component={FuelList} />
-          <Route path="/RemainingFuel" component={LiveList} />
-          <Route path="/LapDetails" component={Lap} />
-          <Route path="/Totals" component={Totals} />
-          <Route path="/Splits" component={Splits} />
-          {this.props.live && <HomeBtn />}
         </div>
-      </Router>
+        <RouteLayout />
+        <LogOut />
+      </div>
+    </Router>
 
-    )
-  }
+  )
 }
 
-function mapStateToProps (state) {
-  return {
-    live: state.display.live,
-    nav: state.display.nav
-  }
-}
+const mapStateToProps = (state) => ({username: state.auth.userInfo.username})
 
 export default connect(mapStateToProps)(App)

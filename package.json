@@ -4,14 +4,15 @@
   "engines": {
     "node": "8.9.4",
     "npm": "6.1.0",
-    "yarn": "1.3.2" 
+    "yarn": "1.3.2"
   },
   "main": "server/index.js",
   "scripts": {
     "start": "node server",
     "dev": "nodemon --watch server & webpack --watch",
     "test": "jest --watch --noStackTrace",
-    "postinstall": "webpack --config webpack.config.js"
+    "postinstall": "webpack --config webpack.config.js",
+    "knex": "knex"
   },
   "description": "keep track of an athlete's nutrition during an event",
   "repository": "https://github.com/adam-kuhn/boilerplate.git",
@@ -25,8 +26,13 @@
     ]
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "chart.js": "^2.7.2",
+    "dotenv": "^6.1.0",
     "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.3.0",
+    "knex": "^0.15.2",
     "react": "^16.3.2",
     "react-addons-test-utils": "^15.6.2",
     "react-chartjs-2": "^2.7.4",
@@ -35,6 +41,8 @@
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
     "redux-persist": "^5.10.0",
+    "sodium": "^2.0.3",
+    "superagent": "^4.0.0-beta.5",
     "webpack": "^3.11.0"
   },
   "devDependencies": {
@@ -44,10 +52,15 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
+    "css-loader": "^3.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.3",
+    "jwt-decode": "^2.2.0",
     "nodemon": "^1.17.3",
+    "redux-thunk": "^2.3.0",
+    "sqlite3": "^4.0.3",
+    "style-loader": "^1.0.0",
     "webpack-dev-server": "^3.1.3"
   }
 }
