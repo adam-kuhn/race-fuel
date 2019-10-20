@@ -77,12 +77,12 @@ class UserDetails extends React.Component {
           <input name='username' type="text" onChange={this.handleUsernameInputChange}/>
           {usernameInputError && <p>Input Error! Please no special characters or spaces</p>}
           <label>Password:</label>
-          <input name='password' type="text" onChange={this.handlePasswordInputChange}/>
+          <input name='password' type="password" onChange={this.handlePasswordInputChange}/>
           {passwordInputError && <p>Input Error! Invalid character.</p>}
           <label htmlFor='confrim-password'>Confirm Password</label>
           {submitType === 'Register' &&
           <div>
-            <input name='confirmPassword' type="text" onChange={this.handleConfirmPasswordInputChange}/>
+            <input name='confirmPassword' type="password" onChange={this.handleConfirmPasswordInputChange}/>
             {confirmPasswordError && <p>Passwords do not match</p>}
           </div>}
         </div>
