@@ -34,8 +34,4 @@ const signIn = (req, res, next) => {
 
 router.post('/signin', signIn, token.issue)
 
-router.get('/', token.decode, (req, res) => {
-  res.json({username: req.user.username})
-})
-
 module.exports = router
