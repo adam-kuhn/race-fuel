@@ -69,6 +69,7 @@ class UserDetails extends React.Component {
   }
   render () {
     const {passwordInputError, usernameInputError, confirmPasswordError} = this.state
+    const {submitType} = this.props
     return (
       <div>
         <div>
@@ -79,11 +80,14 @@ class UserDetails extends React.Component {
           <input name='password' type="text" onChange={this.handlePasswordInputChange}/>
           {passwordInputError && <p>Input Error! Invalid character.</p>}
           <label htmlFor='confrim-password'>Confirm Password</label>
-          <input name='confirmPassword' type="text" onChange={this.handleConfirmPasswordInputChange}/>
-          {confirmPasswordError && <p>Passwords do not match</p>}
+          {submitType === 'Register' &&
+          <div>
+            <input name='confirmPassword' type="text" onChange={this.handleConfirmPasswordInputChange}/>
+            {confirmPasswordError && <p>Passwords do not match</p>}
+          </div>}
         </div>
         <button onClick={this.handleClick} disabled={passwordInputError || usernameInputError}>
-          {this.props.submitType}
+          {submitType}
         </button>
       </div>
     )
